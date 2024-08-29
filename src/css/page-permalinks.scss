@@ -1,0 +1,64 @@
+/* stylelint-disable */
+/* Styles added by other devs for permalinks page and components */
+.section-permlinked-boxes {
+  padding-bottom: 30px;
+}
+
+@media (min-width: 48rem) {
+
+  .section-permlinked-boxes {
+    padding-bottom: 60px;
+  }
+}
+
+.section-permlink-collections {
+  padding: 60px 0 0;
+}
+
+.section-permlink-collections .collection {
+  margin-bottom: 60px;
+}
+
+@media (min-width: 48rem) {
+
+  .section-permlink-collections {
+    padding: 80px 0 0;
+  }
+
+  .section-permlink-collections .collection {
+    margin-bottom: 80px;
+  }
+}
+
+@media (min-width: 48rem) {
+
+  .section-permlinked-gift .section-imagewtext-text {
+    padding: 120px 60px;
+  }
+}
+
+.section-permlinked-faq {
+  padding: 45px 0 5px;
+}
+
+@media (min-width: 48rem) {
+
+  .section-permlinked-faq {
+    padding: 80px 0;
+  }
+}
+
+.banner-permlinked {
+  background: transparent url("permanent-mom-daughter-fade.jpg") center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  min-height: 80vw;
+}
+
+@media (min-width: 48rem) {
+  .banner-permlinked {
+    min-height: 30vw;
+  }
+}
+
+/* stylelint-enable */

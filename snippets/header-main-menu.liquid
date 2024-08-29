@@ -1,0 +1,149 @@
+<ul role="menu" class="header-nav__list header-nav__list--main accordion js-accordion" data-animation="on" data-multi-items="off" data-component="accordion" data-mobile-accordion>
+  {%- for block in section.blocks -%}
+    {%- comment -%}
+      Reset and reassign variables
+    {%- endcomment -%}
+    {%- liquid
+      assign menu_item = block.settings.menu_item
+      assign menu_label = block.settings.label
+      assign submenu = linklists[block.settings.submenu]
+      assign narrow_submenu = block.settings.narrow_menu
+      assign diamond_submenu = block.settings.diamond_menu
+      assign menu_image = block.settings.image
+      assign menu_image_width = block.settings.image_width | default: menu_image.width
+      assign menu_image_link = block.settings.image_link
+      assign menu_background_image = block.settings.background_image
+      assign menu_collection = block.settings.collection
+      assign menu_collection_title = block.settings.collection_title
+    -%}
+
+    <li class="header-nav__item header-nav__item--main accordion__item js-accordion__item" role="menuitem" aria-haspopup="true" aria-expanded="false">
+      <div class="accordion__header js-accordion__trigger js-tab-focus">
+        <a {% if menu_item contains '/' %}href="{{ menu_item }}" {% endif %} class="header-nav__link" aria-label="Header {{ menu_label }} Button" title="Header {{ menu_label }} Button" {% if menu_item contains '/' %} role="link"{% endif %}>
+          <span>{{ menu_label }}
+          </span>
+        </a>
+
+        <i class="hide@md">
+          {%- render 'icon' icon: 'accordion-arrow', class: 'accordion__icon-arrow no-js:is-hidden' -%}
+        </i>
+      </div>
+
+      {%- if submenu != blank -%}
+        {%- assign section_count = submenu.links.size -%}
+        <div class="header-nav__dropdown header-nav__dropdown--col-{{ section_count }} {% if narrow_submenu %}header-nav__dropdown--narrow{% endif %} {% if diamond_submenu %}header-nav__dropdown--diamonds{% endif %} accordion__panel js-accordion__panel">
+          <div class="container accordion__panel-content">
+            <div class="header-nav__dropdown-wrapper flex">
+              {% if forloop.index == 4 %}
+                <div class="header-nav__split">
+                  <div class="header-nav__subheader">
+                    <img src="{{ 'MJ-Necklace-Icon.svg' | asset_url }}" alt="" width="16" height="18" loading="lazy">
+                    <p>Fine Jewelry</p>
+                  </div>
+                  <div class="header-nav__section-container">
+                    {%- for section in submenu.links -%}
+                      {% if forloop.index <= 3 %}
+                        <div class="header-nav__section">
+                          {% render 'header-menu-section', section: section, diamond_submenu: diamond_submenu %}
+                        </div>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>
+                </div>
+                <div class="header-line"></div>
+                <div class="header-nav__split-side">
+                  <div class="header-nav__subheader accordion__panel js-accordion__panel">
+                    <img src="{{ 'MJ-Watch-Icon.svg' | asset_url }}" alt="" width="16" height="18" loading="lazy">
+                    <p>Timepieces</p>
+                  </div>
+                  <div class="header-nav__section-container accordion__panel-content">
+                    {%- for section in submenu.links -%}
+                      {% if forloop.index >= 4 %}
+                        <div class="header-nav__section">
+                          {% render 'header-menu-section', section: section, diamond_submenu: diamond_submenu %}
+                        </div>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {% elsif forloop.index == 5 %}
+                <div class="header-nav__submenu-container">
+                  <div class="subheader-parent">
+                    <a href="/collections/luxury-handbags" class="hide@md">
+                      <div class="header-nav__section">
+                        <span class="header-nav__label">
+                          <span class="hide@md">Shop All</span>
+                        </span>
+                      </div>
+                    </a>
+                    {%- for section in submenu.links -%}
+                      {% if forloop.index == 1 %}
+                        <div class="header-nav__section">
+                          {% render 'header-menu-section', section: section, diamond_submenu: diamond_submenu %}
+                        </div>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>
+                  <div class="header-line"></div>
+
+                  <div class="subheader-parent">
+                    {%- for section in submenu.links -%}
+                      {% if forloop.index >= 2 %}
+                        <div class="header-nav__section">
+                          {% render 'header-menu-section', section: section, diamond_submenu: diamond_submenu %}
+                        </div>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {% else %}
+                {%- for section in submenu.links -%}
+                  <div class="header-nav__section">
+                    {% render 'header-menu-section', section: section, diamond_submenu: diamond_submenu %}
+                  </div>
+                {%- endfor -%}
+              {% endif %}
+              {%- if menu_image != blank -%}
+                {%- assign img_class = 'header-nav__image' -%}
+                {%- if menu_background_image -%}
+                  {%- assign img_class = img_class | append: ' header-nav__image--bg' -%}
+                {%- endif -%}
+                {%- if menu_image_link -%}
+                  <a class="{{ img_class }}" href="{{ menu_image_link }}">
+                  {%- endif -%}
+                  {% render 'img', img: menu_image, width: menu_image_width, class: img_class %}
+                  {%- if menu_image_link -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- if menu_collection != blank -%}
+                <div class="header-nav__collection">
+                  {%- if menu_collection_title != blank -%}
+                    <div class="header-nav__label">
+                      <span>{{ menu_collection_title }}
+                      </span>
+                    </div>
+                  {%- endif -%}
+
+                  <div class="header-nav__collection-products">
+                    {% assign product_count = 0 %}
+                    {%- for product in collections[menu_collection].products -%}
+                      {%- unless product.title contains "PERSONALIZED SKINNY CHARM BANGLE" -%}
+                        {% render 'product-card', product: product, image_size: 100 %}
+                        {% assign product_count = product_count | plus: 1 %}
+                      {%- endunless -%}
+                      {%- if product_count >= 3 -%}
+                        {%- break -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

@@ -1,0 +1,82 @@
+///*Sticky Form*///
+.product-sticky-form {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 0 5px;
+  z-index: 20;
+  box-shadow: 0 0 3px rgb(0 0 0 / 20%);
+  display: none;
+
+  @media (max-width: 1024px) {
+    visibility: hidden;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  form {
+    display: flex;
+    height: 50px;
+    align-items: center;
+  }
+
+  img {
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .sticky-title {
+    width: 75%;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .sticky-right {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 4px;
+
+    .sticky-divide {
+      width: 1px;
+      height: 50px;
+      margin: 0 8px;
+    }
+
+    .sticky-price {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .sticky-qty {
+
+      .quant__label {
+        padding: 4px 0 0;
+        font-size: 14px;
+      }
+
+      .quantity__input {
+        width: 50px;
+        text-align: center;
+      }
+    }
+
+    .btn {
+      min-height: unset;
+      min-width: 100px;
+      font-size: 14px;
+      text-transform: none;
+      padding: 7px;
+    }
+
+    .sticky-add-cart {
+      display: flex;
+    }
+  }
+}

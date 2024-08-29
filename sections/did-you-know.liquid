@@ -1,0 +1,77 @@
+{%- capture styling -%}
+  {%- if section.settings.section_image != blank -%}
+    --background-image: url({{ section.settings.section_image | image_url }});
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.copy_alignment == 'justify-center' -%}
+    --background-position: center center;
+  {%- elsif section.settings.copy_alignment == 'justify-end' -%}
+    --background-position: left center;
+  {%- else -%}
+    --background-position: right center;
+  {%- endif -%}
+{%- endcapture -%}
+{{ 'section-did-you-know.css' | asset_url | stylesheet_tag }}
+
+<div class="section__did-you-know" style="{{ styling }}">
+  <div class="container flex {{ section.settings.copy_alignment }}">
+    <div class="section__did-you-know--copy">
+      {%- if section.settings.section_paragraph != blank -%}
+      <img src="{{ 'Did-You-Know-Logo.jpg' | asset_url }}" loading="lazy" width="350" height="127" alt="Did You Know Logo">
+        <p> {{ section.settings.section_paragraph }} </p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Did You Know?",
+  "tag": "section",
+  "class": "didyouknow-section",
+  "settings": [
+    {
+      "id": "section_paragraph",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    },
+    {
+      "id": "section_image",
+      "type": "image_picker",
+      "label": "Background image"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "copy_alignment",
+      "type": "select",
+      "label": "Copy position",
+      "options": [
+        {
+          "value": "justify-center",
+          "label": "Center"
+        },
+        {
+          "value": "justify-start",
+          "label": "Left"
+        },
+        {
+          "value": "justify-end",
+          "label": "Right"
+        }
+      ],
+      "default": "justify-start"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Did You Know Block"
+    }
+  ]
+}
+{% endschema %}

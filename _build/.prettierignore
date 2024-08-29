@@ -1,0 +1,8 @@
+node_modules
+_build
+.vscode
+.github
+assets
+templates
+config
+locales

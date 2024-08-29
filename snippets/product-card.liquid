@@ -1,0 +1,48 @@
+{% comment %}
+    Renders a product card
+    Accepts:
+    - product: {Object} Product Liquid object (optional)
+    - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+    - price_class: {String} Adds a price class to the price element (optional)
+    - button_class: {String} Adds a button class to the button element (optional)
+    Usage:
+    {% render 'product-card', product: product %}
+{% endcomment %}
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 1999
+  assign image_size = image_size | default: 260
+-%}
+
+<div class="product-card">
+  {%- if compare_at_price > price -%}
+    <div class="product-card__badge product-card__badge--sale">
+      Sale
+    </div>
+  {%- endif -%}
+  <a class="product-card__image" href="{{ product.url }}">
+    {% if product.featured_image %}
+      {% render 'img', img: product.featured_image, width: image_size, height: image_size, crop: 'center', alt: product.title %}
+    {% else %}
+      <img src="{{ 'placeholder.jpg' | asset_url }}" loading="lazy" width="260" height="260" alt="Placeholder Image">
+    {% endif %}
+  </a>
+
+  <a class="product-card__title" href="{{ product.url }}">
+    {{ product.title }}
+  </a>
+
+  <span class="product-card__price">
+    {% render 'price', product: product, use_variant: use_variant, price_class: price_class %}
+  </span>
+
+  <a class="product-card__button btn" href="{{ product.url }}" title="Product Card Button {{ product.url }}" aria-label="Product Card Button {{ product.url }}">
+    {{ 'products.product.more' | t }}
+  </a>
+</div>

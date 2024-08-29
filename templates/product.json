@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "show_vendor": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_guide": true
+          }
+        },
+        "free_shipping": {
+          "type": "free_shipping",
+          "settings": {
+            "text": "Item will be shipped before or on . Ready for pickup in 2 hours if ordered before 4PM."
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "no_contact_pickup": {
+          "type": "no_contact_pickup",
+          "disabled": true,
+          "settings": {
+            "show_blip": true,
+            "blip": "New!",
+            "text_body": "Available for no contact in-store pickup",
+            "hover_head": "Contactless In-Store-Pickup",
+            "hover_body": "<p>All in-stock items on our website are available for pickup through our secure locker system. Choose \"Locker Pickup\" as your delivery method and we will text you a code when it is ready. Most orders are completed within 4 hours. Text us at 215-362-7132 if you have any questions.<\/p>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "6b450229-64f3-422d-b927-b1adfeb8a319": {
+          "type": "learn_more",
+          "settings": {
+            "learn_more_header": "Our diamond experts are here for you at your convenience.",
+            "learn_more_copy": "Use the button below to speak to someone live at the store."
+          }
+        },
+        "wish_drop": {
+          "type": "wish_drop",
+          "settings": {
+            "wish_txt": "Add to Wishlist",
+            "hint_txt": "Drop Hint",
+            "call_txt": "(215) 362-7132",
+            "call_url": "2153627132"
+          }
+        },
+        "financing_options": {
+          "type": "financing_options",
+          "settings": {
+            "finance_head": "Financing Options",
+            "finance_txt": "We have teamed up with Wells Fargo Bank, N.A. to provide you with the tools necessary to make the best decision. Subject to approved credit, we are proud to offer the following special offers:",
+            "finance_12": "12-month special financing available.",
+            "finance_36": "36-month special financing available.",
+            "finance_60": "60-month special financing available.",
+            "finance_cta": "Get Pre-Qualified"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "share",
+        "price",
+        "variant_picker",
+        "free_shipping",
+        "quantity_selector",
+        "no_contact_pickup",
+        "buy_buttons",
+        "6b450229-64f3-422d-b927-b1adfeb8a319",
+        "wish_drop",
+        "financing_options"
+      ],
+      "settings": {
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "heading": "Recently Viewed"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recently-viewed"
+  ]
+}

@@ -1,0 +1,136 @@
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --confidence-heading-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --confidence-bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_text_color != blank -%}
+    --confidence-cta-text-color: {{ section.settings.section_cta_text_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_bg_color != blank -%}
+    --confidence-cta-bg-color: {{ section.settings.section_cta_bg_color }};
+  {%- endif -%}
+
+{%- endcapture -%}
+
+{{ 'section-home-shop-with-confidence.css' | asset_url | stylesheet_tag }}
+
+<div class="section__confidence" style="{{ styling }}">
+  <h3 class="home-section-heading">{{ section.settings.section_header }}</h3>
+  <div class="confidence-prop__item-row">
+    {% for block in section.blocks %}
+      <div class="confidence-prop__item">
+        {% if block.settings.confidence_prop_image != blank %}
+          <div class="confidence-prop__item-image">
+            {% render 'home-icons', icon: block.settings.confidence_prop_image %}
+          </div>
+        {% endif %}
+        <div class="confidence-prop__item-info">
+          {% if block.setting.confidence_prop_text != '' %}
+            <p class="confidence-prop__item-info-text">{{ block.settings.confidence_prop_text }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% if section.settings.section_cta_url != blank %}
+    <a class="confidence__cta btn" href="{{ section.settings.section_cta_url }}">{{ section.settings.section_cta_text }}</a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Home Shop with Confidence",
+  "tag": "section",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "logo",
+      "type": "image_picker",
+      "label": "Section Logo"
+    },
+    {
+      "id": "section_header",
+      "type": "text",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_cta_text",
+      "type": "text",
+      "label": "Button text"
+    },
+    {
+      "id": "section_cta_text_color",
+      "type": "color",
+      "label": "Button Text Color"
+    },
+    {
+      "id": "section_cta_bg_color",
+      "type": "color",
+      "label": "Button Background Color"
+    },
+    {
+      "id": "section_cta_url",
+      "type": "url",
+      "label": "Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "confidence_prop",
+      "name": "Confidence Prop",
+      "settings": [
+        {
+          "id": "confidence_prop_image",
+          "type": "select",
+          "label": "Confidence Prop Image",
+          "options": [
+            {
+              "value": "free-shipping",
+              "label": "Free Shipping"
+            },
+            {
+              "value": "warranty",
+              "label": "Warranty Shield"
+            },
+            {
+              "value": "diamond-circle",
+              "label": "Diamond in a circle"
+            },
+            {
+              "value": "diamond-upgrade",
+              "label": "Diamond growing larger"
+            },
+            {
+              "value": "money-bag",
+              "label": "Money Bag"
+            }
+          ]
+        },
+        {
+          "id": "confidence_prop_text",
+          "type": "text",
+          "label": "Confidence Prop Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Shop with Confidence"
+    }
+  ]
+}
+{% endschema %}

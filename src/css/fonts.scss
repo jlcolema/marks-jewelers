@@ -1,0 +1,33 @@
+// ==========================================================================
+// FONTS
+// ==========================================================================
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Nunito Sans Light'),
+       local('NunitoSans-Light'),
+       url('./nunitosans-light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Nunito Sans Regular'),
+       local('NunitoSans-Regular'),
+       url('./nunitosans-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Nunito Sans SemiBold'),
+       local('NunitoSans-SemiBold'),
+       url('./nunitosans-semibold.woff2') format('woff2');
+}

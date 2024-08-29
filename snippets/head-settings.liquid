@@ -1,0 +1,36 @@
+{% comment %}
+  Set CSS custom properties and JavaScript global objects/variables
+  from theme settings and Shopify objects
+
+  Usage:
+  {%- render 'head-settings' -%}
+{% endcomment %}
+
+{%- comment -%} JavaScript/Liquid Settings {%- endcomment -%}
+<script defer>
+  window.Shopify = window.Shopify || {};
+  window.Shopify.theme = window.Shopify.theme || {};
+
+  window.Shopify.theme.pageType = `{{ request.page_type | handle }}`;
+
+  window.Shopify.theme.routes = {
+    cart: '{{ routes.cart_url }}',
+    cartAdd: '{{ routes.cart_add_url }}',
+    cartChange: '{{ routes.cart_change_url }}',
+    cartUpdate: '{{ routes.cart_update_url }}',
+    predictiveSearch: '{{ routes.predictive_search_url }}',
+    recommendations:  '{{ routes.product_recommendations_url }}',
+  };
+
+  window.Shopify.theme.strings = {
+    addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+    soldOut: `{{ 'products.product.sold_out' | t }}`,
+    unavailable: `{{ 'products.product.unavailable' | t }}`,
+  };
+
+  document.documentElement.classList.add('js');
+
+  if (/^(.*;)?\s*abar\s*=/.test(document.cookie)) {
+    document.documentElement.classList.add('abar-hidden');
+  }
+</script>

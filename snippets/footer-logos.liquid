@@ -1,0 +1,12 @@
+<ul class="footer__logo-list">
+  {%- for block in section.blocks -%}
+    {%- assign logo = block.settings.logo -%}
+    {%- assign logo_width = block.settings.logo_width | default: logo.width -%}
+
+    {%- if logo != blank -%}
+      <li>
+        {% render 'img', img: logo, width: logo_width %}
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>

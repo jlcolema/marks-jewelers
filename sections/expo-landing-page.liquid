@@ -1,0 +1,16 @@
+{{ 'section-wedding-band-expo.css' | asset_url | stylesheet_tag }}
+{% render "expo-landing-page-header" %}
+{% render "expo-landing-page-cta" %}
+{% render "expo-landing-page-cards" %}
+
+{% schema %}
+{
+  "name": "expo-landing-page",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Landing Page"
+    }
+  ]
+}
+{% endschema %}

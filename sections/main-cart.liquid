@@ -1,0 +1,154 @@
+{{ 'section-main-cart.css' | asset_url | stylesheet_tag }}
+
+{% assign variant_ids = '' %}
+{%- for item in cart.items -%}
+{% if item.vendor == 'VDB' %}
+{% assign variant_ids = variant_ids | append: ',' | append: item.variant_id %}
+{% endif %}
+{%- endfor -%}
+
+<div class="container container--lg padding-y-sm padding-y-lg@md cart{% if cart.item_count == 0 %} cart__empty{% endif %}">
+  <header class="cart__header">
+    <h1 class="margin-bottom-md margin-top-md@md">
+      {%- if cart.item_count == 0 -%}
+        {{ 'sections.cart.empty' | t }}
+      {%- else -%}
+        {{ 'sections.cart.title' | t: count: cart.item_count }}
+      {%- endif -%}
+    </h1>
+  </header>
+  {%- unless cart.item_count == 0 -%}
+    <div class="cart__checkout-buttons--mobile hide@sm">
+      {% render 'cart-mobile-checkout' %}
+    </div>
+  {%- endunless -%}
+  <div class="cart__body">
+    {%- if cart.item_count == 0 -%}
+      <a href="/" class="btn">{{ 'general.continue_shopping' | t }}</a>
+    {%- else -%}
+      <div class="cart__body-col">
+        {% render 'cart-shipping-message' %}
+        <div class="cart-items__container" data-component="cart-items">
+          {% for line_item in cart.items %}
+            {% render 'cart-item', item: line_item %}
+          {% endfor %}
+        </div>
+        <div class="cart__body--under-container">
+          <p class="cart__under--contact">{{ 'sections.cart.contact_html' | t }}</p>
+          <a href="/cart/clear" class="cart__under--clear hide block@md">{{ 'sections.cart.clear' | t }}</a>
+        </div>
+      </div>
+      <div class="cart__body-col">
+        {% render 'cart-order-summary' %}
+        {% render 'cart-accepted-payments' %}
+        {% if section.blocks %}
+          <div class="cart__value-props--container">
+            {% for block in section.blocks %}
+              {% render 'cart-value-props', block: block %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<!-- code added by dinesh for personalized product -->
+{% render 'cart_popup' %}
+<!-- End of code added by dinesh for personalized product -->
+
+<script defer>
+  document.getElementById('checkout_btn_search').onclick = function(){
+    var variant_ids = '{{variant_ids}}';
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var obj = JSON.parse(this.responseText);
+        if(obj.SUCCESS=='TRUE'){
+          var all_available = 'Yes';
+          var err_msg = '';
+          for(var i=0; i<obj.DATA.length; i++){
+            if(obj.DATA[i].available=='No'){
+              all_available = 'No';
+              err_msg += 'Product '+obj.DATA[i].vdb_item_id+' is out of stock. ';
+            }
+          }
+
+          if(all_available=='Yes'){
+            location.href = '/checkout';
+          }else{
+            alert(err_msg);
+          }
+        }else{
+          location.href = '/checkout';
+        }
+      }
+    };
+    xhttp.open("POST", "/apps/vdb-app/search-filters.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("shop="+Shopify.shop+"&action=check_vdb_product_stock&variant_ids="+variant_ids);
+  };
+</script>
+{% if cart.item_count > 0 %}
+    <div id="bread-checkout-btn" style="height:50px; margin:20px 0px;"></div>
+{% endif %}
+<script defer>
+  // Hides "same-day delivery" message when VDB diamond is in cart
+  const itemOptions = document.querySelectorAll('.item__option');
+  if (document.querySelector('.item__option')) {
+    itemOptions.forEach(elem => {
+      const elemText = elem.textContent.toLowerCase();
+      if (elemText.includes('title') && elemText.includes('diamond')) {
+        elem.querySelector('span').remove();
+        elem.textContent = elem.textContent.trim();
+        document.querySelector('.cart__shipping-message').classList.add('hidden');
+      }
+    });
+  }
+</script>
+
+<script defer>
+  // Hides "same-day delivery" message when personalized charm bangle is in cart
+  document.querySelectorAll('.cart__item .item__name').forEach(elem => {
+    if (elem.textContent.toLowerCase().includes('personalized skinny charm bangle')) {
+      document.querySelector('.cart__shipping-message').classList.add('hidden');
+      elem.closest('.cart__item--details').querySelector('.item__stock').style.display = 'none';
+      elem.closest('.cart__item--details').querySelector('.item__qty-container').style.marginTop = '10px';
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Cart",
+  "tag": "section",
+  "class": "cart__container",
+  "max_blocks": 4,
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "name": "Value Prop",
+      "type": "value_prop",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Value Prop image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Value Prop Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<script id="docapp-discount-speedup" defer>
+(() => { if (!document.documentElement.innerHTML.includes('\\/shop' + '\\/js' + '\\/discount-on-cart-pro.min.js') || window.discountOnCartProAppLoaded) return; let script = document.createElement('script'); script.src = "https://d9fvwtvqz2fm1.cloudfront.net/shop/js/discount-on-cart-pro.min.js?shop=marks-jewelers-dev.myshopify.com"; document.getElementById('docapp-discount-speedup').after(script); })();
+</script>

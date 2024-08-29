@@ -1,0 +1,26 @@
+{%- assign social_menu = section.settings.social_menu -%}
+{%- assign img = section.settings.subscribe_image -%}
+
+{%- if social_menu != blank -%}
+  <div class="footer-social flex">
+    {%- for social_link in social_menu.links -%}
+      <span class="footer-social__icon">
+        <a
+          class="footer-social__link"
+          href="{{ social_link.url }}"
+          target="_blank"
+          rel="noopener"
+          aria-label="{{ social_link.title }}">
+          {%- assign social_icon = social_link.title | handleize -%}
+          {% render 'icon', icon: social_icon %}
+        </a>
+      </span>
+    {%- endfor -%}
+
+    {%- if img != blank -%}
+      <span class="footer-social__image hide@sm">
+        {% render 'img', img: img, width: 55, class: 'hide@sm' %}
+      </span>
+    {%- endif -%}
+  </div>
+{%- endif -%}

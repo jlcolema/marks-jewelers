@@ -1,0 +1,38 @@
+root: .
+
+# Disabling some checks
+RequiredDirectories:
+  enabled: false
+LiquidTag:
+  enabled: false
+RemoteAsset:
+  enabled: false
+UnusedSnippet:
+  enabled: false
+AssetPreload:
+  enabled: false
+PaginationSize:
+  enabled: true
+  min_size: 1
+  max_size: 1000
+TemplateLength:
+  enabled: true
+  max_length: 1000
+  exclude_schema: true
+  exclude_stylesheet: true
+  exclude_javascript: true
+ImgLazyLoading:
+  ignore:
+    - snippets/img.liquid
+MatchingTranslations:
+  enabled: true
+
+# Ignoring some files
+ignore:
+  - node_modules
+  - .*
+  - tsconfig.json
+  - package.json
+  - snippets/swymSnippet.liquid
+  - templates/search.gpo-collection.liquid
+  - templates/search.gpo.liquid

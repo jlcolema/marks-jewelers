@@ -1,0 +1,204 @@
+{{ 'section-main-account.css' | asset_url | stylesheet_tag }}
+
+<div class="account container">
+
+  {% render 'account-page-nav' %}
+
+  <div class="account-details">
+    <div class="details-heading">
+      <h2>{{ 'customer.account.details' | t }}</h2>
+
+        <a class="logout" href="{{ routes.account_logout_url }}">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 18 19">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z" fill="currentColor">
+          </svg>
+          <span>{{ 'customer.log_out' | t }}</span>
+        </a>
+    </div>
+    <div class="customer-info">
+      <fieldset>
+        <dl>
+          <dt>First name:</dt>
+          <dd>{{ customer.first_name }}</dd>
+        </dl>
+        <dl>
+          <dt>Last name:</dt>
+          <dd>{{ customer.last_name }}</dd>
+        </dl>
+        <dl>
+          <dt>Email:</dt>
+          <dd>{{ customer.email }}</dd>
+        </dl>
+        <dl>
+          <dt>Phone:</dt>
+          <dd>
+            {% assign ph_ary = customer.phone | split: '' %}
+            {% assign phone = ph_ary[2] | append: ph_ary[3] | append: ph_ary[4] | append: '-' | append: ph_ary[5] | append: ph_ary[6] | append: ph_ary[7] | append: '-' | append: ph_ary[8] | append: ph_ary[9] | append: ph_ary[10] | append: ph_ary[11] %}
+            {{ phone }}
+          </dd>
+        </dl>
+      </fieldset>
+      <fieldset>
+        <dl>
+          <dt>Status:</dt>
+          <dd>Active Account</dd>
+        </dl>
+        <dl>
+          <dt>Last Order:</dt>
+          <dd>
+            {% if customer.last_order.created_at != blank %}
+              {{ customer.last_order.created_at | date: "%B %d, %Y %I:%M%p" }}
+            {% else %}
+              N/A
+            {% endif %}
+          </dd>
+        </dl>
+        <dl>
+          <dt>Credit:</dt>
+          <dd>$0.00</dd>
+        </dl>
+        <dl>
+          <!--<dt><a href="#">Edit Info</a></dt>-->
+          <dd></dd>
+        </dl>
+      </fieldset>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'coupon' %}
+            {%- if block.settings.show_coupon -%}
+              {% assign today_date = 'now' | date: '%s' | times: 1 %}
+              {% assign order_date = customer.last_order.created_at | date: '%s' | times: 1 %}
+              {% assign date_dif = today_date | minus: order_date %}
+              {% assign days = block.settings.days | times: 86400 %}
+              {% if date_dif > days %}
+                <div class="coupon">
+                  <picture>
+                    <source srcset="{{ block.settings.coupon_img | image_url }}" media="(max-width: 767px)">
+                    {% render 'img', img: block.settings.coupon_img, alt: '', class: 'coupon__image' %}
+                  </picture>
+                  <span class="coupon-code">You have not purchased anything within {{ block.settings.days }} days. <span class="save">Save {{ block.settings.percent }}%</span> on your next purchase with code <span class="code">{{ block.settings.code }}</span> in checkout.</span>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% else %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="order-history container">
+  <div class="order-history-heading">
+    <h2>{{ 'customer.orders.title' | t }}</h2>
+  </div>
+  {%- for order in customer.orders -%}
+    {%- if customer.orders.size > 0 -%}
+      <div class="order-card">
+        <div class="order-heading">
+          <span class="account-show-mobile">Order: </span> <a href="{{ order.customer_url }}" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">{{ order.name }}</a>
+        </div>
+        <div class="order-body">
+          <fieldset>
+            <dl class="account-hide-mobile">
+              <dt></dt>
+              <dd>
+                {%- assign title = order.line_items[1].title -%}
+                {{ title | truncate: 22 }}
+              </dd>
+            </dl>
+            <dl>
+              <dt>Date</dt>
+              <dd>{{ order.created_at | time_tag: format: 'date' }}</dd>
+            </dl>
+            <dl>
+              <dt>Total</dt>
+              <dd>{{ order.total_price | money_with_currency }}</dd>
+            </dl>
+            <dl>
+              <dt>Status</dt>
+              <dd>{{ order.fulfillment_status_label }}</dd>
+            </dl>
+          </fieldset>
+        </div>
+        <div class="order-footer">
+          <a href="{{ order.customer_url }}" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">View Order Details</a>
+        </div>
+      </div>
+    {%- else -%}
+      <div class="no-orders"><p>{{ 'customer.orders.none' | t }}</p></div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+<div class="address-info container">
+  <h2>{{ 'customer.account.address' | t }}</h2>
+  <div class="address">
+    <span class="full-address">
+      {{ customer.default_address.street }},
+      {{ customer.default_address.city }}
+      {{ customer.default_address.province_code }},
+      {{ customer.default_address.zip }}
+    </span>
+
+    <a href="{{ routes.account_addresses_url }}">
+      {{ 'customer.account.edit_addresses' | t }}
+    </a>
+  </div>
+</div>
+
+<div class="wishlist-info">
+
+</div>
+
+<div class="loading">
+  <div class="load-container">
+    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  </div>
+</div>
+<div class="order-modal-overlay"></div>
+<div id="order-modal" style="display: none;" data-component="orders-modal"></div>
+
+{% schema %}
+{
+  "name": "Account",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "coupon",
+      "name": "Account Coupon",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_coupon",
+          "label": "Display Coupon?",
+          "info": "Check box to show Coupon"
+        },
+        {
+          "type": "text",
+          "id": "days",
+          "label": "Days since last order"
+        },
+        {
+          "type": "text",
+          "id": "percent",
+          "label": "Code Amount or Percent off"
+        },
+        {
+          "type": "text",
+          "id": "code",
+          "label": "Coupon Code"
+        },
+        {
+          "type": "image_picker",
+          "id": "coupon_img",
+          "label": "Coupon Box Image"
+        }
+      ]
+    }
+  ],
+  "settings": [
+
+  ]
+}
+{% endschema %}

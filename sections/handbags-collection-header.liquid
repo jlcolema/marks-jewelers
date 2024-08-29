@@ -1,0 +1,92 @@
+<div class="z-slide-container" data-component="handbags">
+  <div class="z-slide-wrap" id='slider1'>
+    <ul class="z-slide-content">
+      <li class="z-slide-item">
+        {% render 'img', img: section.settings.image_1, loading: 'lazy' %}
+      </li>
+      {%- if section.settings.image_2 != blank -%}
+      <li class="z-slide-item">
+        {% render 'img', img: section.settings.image_2, loading: 'lazy' %}
+      </li>
+      {%- endif -%}
+      {%- if section.settings.image_3 != blank -%}
+      <li class="z-slide-item">
+        {% render 'img', img: section.settings.image_3, loading: 'lazy' %}
+      </li>
+      {%- endif -%}
+    </ul>
+  </div>
+  <div class="z-slide-wrap" id='slider1-mbl'>
+    <ul class="z-slide-content">
+      <li class="z-slide-item">
+        {% render 'img', img: section.settings.image_1_mobile, loading: 'lazy' %}
+      </li>
+      {%- if section.settings.image_2_mobile != blank -%}
+      <li class="z-slide-item">
+        {% render 'img', img: section.settings.image_2_mobile, loading: 'lazy' %}
+      </li>
+      {%- endif -%}
+      {%- if section.settings.image_3_mobile != blank -%}
+      <li class="z-slide-item">
+        {% render 'img', img: section.settings.image_3_mobile, loading: 'lazy' %}
+      </li>
+      {%- endif -%}
+    </ul>
+  </div>
+</div>
+<div class="x-slide-brands-container">
+  <h2>Popular Brands</h2>
+  <div class="x-slide-brands main-carousel">
+    <div class="x-cell carousel-cell">
+      <a href="/collections/luxury-handbags"><span class="brand-link-all active">All Luxury Handbags</span></a>
+    </div>
+    {%- for filter in collection.filters -%}
+      {%- if filter.label contains 'Designer' -%}
+        {%- for value in filter.values -%}
+          <div class="x-cell carousel-cell">
+            <span class="brand-link">{{ value.label }}</span>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Handbags Header",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "1st Image in Desktop Slide"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1_mobile",
+      "label": "1st Image in Mobile Slide"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "2nd Image in Desktop Slide"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2_mobile",
+      "label": "2nd Image in Mobile Slide"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "3rd Image in Desktop Slide"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3_mobile",
+      "label": "3rd Image in Mobile Slide"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,108 @@
+{%- comment -%}
+  Responsive image
+
+  Specify Shopify image you want to make responsive in the "img" parameter (see examples below).
+
+  You can use following variables to customize the image
+  * size: size of placeholder image until full image is loaded (default: 'master')
+  * crop
+  * sizes: custom string of the size of the image at different viewports
+  * class: additional classes to be applied to an image
+  * alt: alt text for the image
+  * props: additional properties for the <img> tag (data-, styles, id, etc.)
+
+  Usage:
+  {% render 'img', img: product.image, class: 'product-image', alt: 'A simple product', width: '300', height: '300', crop: 'center', props: 'data-id="1"' %}
+
+{%- endcomment -%}
+
+{%- comment -%}
+  Create src and get image width and filetype from our passed-in filename
+  If we are passing in a filename, create an image object
+{%- endcomment -%}
+{%- liquid
+  unless img.src
+    assign img = images[img]
+  endunless
+
+  if width != blank and height == blank
+    assign height = width | divided_by: img.aspect_ratio | round
+  endif
+
+  assign width = width | default: img.width
+  assign height = height | default: img.height
+
+  assign alt = alt | default: img.alt
+  assign crop = crop | default: false
+
+  if crop
+    assign crop_width = width | plus: 0.000000
+    assign crop_height = height | plus: 0.000000
+    assign aspect_ratio = crop_width | divided_by: crop_height
+  endif
+
+
+  assign src_url =  img.src | image_url: width: width, height: height, crop: crop
+  assign img_width = img.width
+  assign img_height = img.height
+  assign filetype = img.src | split: '.' | last
+-%}
+
+{%- comment -%}
+  Limit image widths and heights to valid options based on image.width and image.height
+{%- endcomment -%}
+{%- unless filetype contains 'svg' -%}
+  {%- assign image_widths = '180|360|540|720|900|1080|1296|1512|1728|1944|2160|2376|2592|2808|3024|' | append: img_width | split: '|' -%}
+
+  {%- capture image_widths -%}
+
+    {%- for width in image_widths -%}
+
+      {%- comment -%}
+        If one of the above image widths is less than (or equal to)
+        the width of the master image size, we can use it
+      {%- endcomment -%}
+      {%- assign width_num = width | plus: 0 | round -%}
+      {%- if img_width >= width_num -%}
+
+      {% assign output = output | append: ' ' | append: width_num %}
+
+        {%- comment -%} When cropping, we need to determine if we have a valid height too {%- endcomment -%}
+        {%- if crop -%}
+          {%- comment -%} height = width / aspect ratio {%- endcomment -%}
+          {%- assign height_num = width_num | divided_by: aspect_ratio | round -%}
+          {%- if height_num > img_height -%}
+            {%- comment -%} Jump to the next loop if our height is larger than we can use {%- endcomment -%}
+            {%- continue -%}
+          {%- else -%}
+            {{ img | image_url: width: width_num, height: height_num, crop: crop }} {{ width_num }}w,
+          {%- endif -%}
+
+        {%- comment -%} Only worry about the width if we're not cropping {%- endcomment -%}
+        {%- else -%}
+          {{ img | image_url: width: width_num }} {{ width_num }}w,
+        {%- endif -%}
+
+      {%- endif -%}
+    {%- endfor -%}
+
+  {%- endcapture -%}
+
+  {%- assign image_widths = image_widths | strip -%}
+{%- endunless -%}
+
+{%- unless data_values -%}
+  <img src="{{ src_url }}"
+    {% unless filetype contains 'svg' -%}
+      srcset="{{ image_widths }}"
+      sizes="{% if sizes %}{{ sizes }}{% else %}{{ width }}px{% endif %}"
+    {% endunless -%}
+    alt="{{ alt | escape }}"
+    {% if class %}class="{{ class }}"{% endif %}
+    {% unless loading == 'eager' %}loading="lazy"{% endunless %}
+    width="{{ width }}"
+    height="{{ height }}"
+    {{ props }}>
+{%- else -%}
+  {{ src_url }}|{{ image_widths }}
+{%- endunless -%}

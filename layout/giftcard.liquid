@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="{{ shop.locale }}">
+<head>
+  <meta charset="utf-8">
+  {%- capture seo_title -%}{% render 'head-seo-title' %}{%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+  <link rel="icon" href="{{ 'favicon.ico' | asset_url }}">
+  <link rel="icon" href="{{ 'favicon.svg' | asset_url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ 'apple-touch-icon.png' | asset_url }}">
+
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+  <link rel="preload" href="{{ 'nunitosans-light.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'nunitosans-regular.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'nunitosans-semibold.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'fonts.css' | asset_url }}" as="style" onload="this.onload=null; this.rel='stylesheet'" crossorigin>
+  <noscript>
+    <link rel="stylesheet" href="{{ 'fonts.css' | asset_url }}">
+  </noscript>
+
+  <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style">
+  <link rel="preload" href="{{ 'main.js' | asset_url }}" as="script">
+
+  {%- liquid
+    render 'head-meta-tags'
+    render 'head-settings'
+  -%}
+
+  {{ 'main.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'main.js' | asset_url }}" defer></script>
+
+  {{ content_for_header }}
+</head>
+<body class="layout-{{ request.page_type | handle }} template-{{ template.name }}{% if template.suffix %}-{{ template.suffix }}{% endif %}">
+  {%- comment -%} Accessibilty {%- endcomment -%}
+  <a class="sr-only focusable skip-link" href="#main">{{ 'accessibility.skip_to_content' | t }}</a>
+
+  <div class="wrapper">
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+
+    {{ content_for_layout }}
+
+    <main class="giftcard {% if gift_card.expired or gift_card.enabled != true %} giftcard--disabled{% endif %}">
+
+      <h1>Here's your gift card!</h1>
+      {% unless gift_card.enabled %}
+        <span class="giftcard-tag">Disabled</span>
+      {% endunless %}
+
+      {%- assign gift_card_expiry_date = gift_card.expires_on | date: "%d/%m/%y" -%}
+
+      {% if gift_card.expired and gift_card.enabled %}
+        <span class="giftcard-tag">Expired on {{ gift_card_expiry_date }}</span>
+      {% endif %}
+
+      {% if gift_card.expired != true and gift_card.expires_on and gift_card.enabled %}
+        <span
+          class="giftcard-tag giftcard-tag--active">Expires on {{ gift_card_expiry_date }}</span>
+      {% endif %}
+
+      <img src="{{ 'gift-card/card.jpg' | shopify_asset_url }}" alt="Gift card illustration" height="100" width="100" loading="lazy">
+
+      {% assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros: gift_card.currency %}
+
+      <h2>Gift card value: {{ formatted_initial_value }}</h2>
+
+      {% assign formatted_current_balance = gift_card.balance | money %}
+
+      {% if gift_card.balance != gift_card.initial_value %}
+        <p>{{ formatted_current_balance }} left</p>
+      {% endif %}
+
+      <span id="GiftCardDigits" class="giftcard__code" data-gift-card-digits>{{ gift_card.code | format_code }}</span>
+
+      <p>Use this code at checkout to redeem your gift card</p>
+
+      <a href="{{ shop.url }}" class="button" target="_blank">Start shopping</a>
+
+      <canvas id="QrCode" class="giftcard-qr" data-identifier="{{ gift_card.qr_identifier }}"
+              data-gift-card-qr></canvas>
+
+      {% if gift_card.pass_url %}
+        <a href="{{ gift_card.pass_url }}" class="apple-wallet">
+          <img class="apple-wallet-image" src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}"
+               width="120" height="40" alt="Add to Apple Wallet" loading="lazy">
+        </a>
+      {% endif %}
+    </main>
+
+    {% section 'footer' %}
+  </div>
+
+  {% render 'footer-json-schema' %}
+</body>
+</html>

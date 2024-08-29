@@ -1,0 +1,215 @@
+/* stylelint-disable */
+/* Styles added by other devs for personalized page and components */
+.banner-permlinked {
+  background: transparent url("permanent-mom-daughter-fade.jpg") center center no-repeat;
+  background-size: cover;
+  min-height: 80vw;
+}
+
+@media (min-width: 48rem) {
+
+  .banner-permlinked {
+    min-height: 30vw;
+  }
+}
+
+.section-personalized-steps {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 45px 0 30px;
+}
+
+.section-personalized-steps h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5em;
+}
+
+.section-personalized-steps .btn {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+
+  .section-personalized-steps {
+    font-size: 1.3rem;
+    padding: 60px 0;
+  }
+
+  .section-personalized-steps h2 {
+    font-size: 2.8rem;
+  }
+
+  .section-personalized-steps .btn {
+    margin-bottom: 0;
+    width: auto;
+  }
+}
+
+@media (min-width: 64rem) {
+
+  .section-personalized-steps {
+    text-align: left;
+    font-size: 1.6rem;
+    padding: 80px 0;
+  }
+
+  .section-personalized-steps h2 {
+    margin-bottom: 0;
+  }
+
+  .section-personalized-steps h2 b {
+    font-size: 3.8rem;
+  }
+}
+
+.section-personalized-ep {
+  background-color: var(--color-light-gray);
+  padding: 25px 0;
+}
+
+.section-personalized-ep-wrap {
+  padding: 25px;
+  background-color: #fff;
+}
+
+.section-personalized-ep-bgimage {
+  background: transparent center center no-repeat;
+  background-size: cover;
+  min-height: 250px;
+}
+
+.section-personalized-ep-content {
+  padding: 30px 0;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+
+  .section-personalized-ep-bgimage {
+    min-height: 400px;
+  }
+
+  .section-personalized-ep-content {
+    padding: 45px 25px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 64rem) {
+
+  .section-personalized-ep {
+    padding: 80px 0;
+  }
+
+  .section-personalized-ep-bgimage {
+    min-height: auto;
+  }
+
+  .section-personalized-ep-content {
+    padding: 25px;
+    max-width: none;
+  }
+
+  .section-personalized-ep-content .btn {
+    width: 100%;
+  }
+}
+
+.section-personalized-lockets-tagline {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  text-align: center;
+  background-color: var(--color-purple);
+  padding: 25px 0 20px;
+}
+
+.image-polaroids {
+  margin: -20px -90px;
+  width: calc(100% + 180px);
+  max-width: calc(100% + 180px);
+}
+
+.section-personalized-lockets-content {
+  padding: 100px 0 0 150px;
+  background: transparent url("M-charms-3.jpg") left top no-repeat;
+  background-size: 100%;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+
+  .section-personalized-lockets-tagline {
+    font-size: 1.4rem;
+  }
+
+  .image-polaroids {
+    margin: -30px 0;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .section-personalized-lockets-content {
+    padding: 220px 0 60px 300px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 64rem) {
+
+  .section-personalized-lockets-tagline {
+    text-align: right;
+    font-size: 1.7rem;
+  }
+
+  .image-polaroids {
+    margin: -50px 0 0 -140px;
+    width: calc(100% + 180px);
+    max-width: calc(100% + 180px);
+  }
+
+  .section-personalized-lockets-content {
+    padding: 220px 0 0 300px;
+  }
+}
+
+.section-personalized-boxes {
+  padding: 40px 0;
+}
+
+.section-personalized-jewlvision {
+  background: transparent url("JewlVision-white-2.jpg") center bottom no-repeat;
+  background-size: auto 360px;
+  padding: 0 0 380px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@media (min-width: 48rem) {
+
+  .section-personalized-jewlvision {
+    background-image: url("JewlVision-white.jpg");
+    font-size: 1.3rem;
+    background-size: 550px;
+  }
+}
+
+@media (min-width: 64rem) {
+
+  .section-personalized-jewlvision {
+    background-position: 75% top;
+    background-size: contain;
+    padding: 60px 0;
+    margin-bottom: 80px;
+  }
+}
+
+/* stylelint-enable */

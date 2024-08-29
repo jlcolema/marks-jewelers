@@ -1,0 +1,35 @@
+{% render 'header-search' %}
+
+<a href="{{ routes.account_url }}" class="hide block@md">
+  <i>
+    {% render 'icon', icon: 'account' %}
+  </i>
+  <span class="sr-only">
+    {%- if customer -%}
+      {{ 'sections.header.account.logged_in' | t }}
+    {%- else -%}
+      {{ 'sections.header.account.logged_out' | t }}
+    {%- endif -%}
+  </span>
+</a>
+
+<a href="#" class="hide@md">
+  <i>
+    {% render 'icon', icon: 'phone' %}
+  </i>
+  <span class="sr-only">
+    {{ 'sections.header.contact.call_or_text' | t }}
+  </span>
+</a>
+
+<a class="header__cart" href="{{ routes.cart_url }}">
+  <i>
+    {% render 'icon', icon: 'cart' %}
+  </i>
+  <span class="header__cart-count {% if cart.item_count == 0 %}hide{% endif %}" data-cart-count="{{ cart.item_count }}">
+    {{ cart.item_count }}
+  </span>
+  <span class="sr-only">
+    {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+  </span>
+</a>

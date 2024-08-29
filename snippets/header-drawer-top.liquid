@@ -1,0 +1,17 @@
+<a href="{{ routes.account_url }}" class="drawer__account hide@md">
+  <i>
+    {% render 'icon', icon: 'account' %}
+  </i>
+
+  <span>
+    {%- if customer -%}
+      {{ 'sections.header.account.logged_in' | t }}
+    {%- else -%}
+      {{ 'sections.header.account.logged_out' | t }}
+    {%- endif -%}
+  </span>
+</a>
+
+<div class="drawer__search">
+  {% render 'header-drawer-search' %}
+</div>

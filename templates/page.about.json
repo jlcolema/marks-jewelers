@@ -1,0 +1,156 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "164903130534ee27f7": {
+      "type": "content-image-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/marks-jewelers-exterior-daytime.jpg",
+        "section_image_alt_text": "About Us - Love Grows Here",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_img_url": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_content_img_align": "center"
+      }
+    },
+    "1649620536a2c53407": {
+      "type": "content-text-image-split",
+      "settings": {
+        "page_width": false,
+        "heading_color": "",
+        "heading_desktop_size": 30,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "paragraph_color": "",
+        "section_header": "<p>About Us<\/p>",
+        "section_paragraph": "<p>Since our inception in 1981, Marks Jewelers continues working hard to create a warm and welcoming environment for all of your jewelry needs. Our new 15,000 square foot flagship location in Montgomeryville, PA is designed to create an environment that is comfortable, entertaining, and educational. From the Fashion LoungeⓇ to the Diamond DinerⓇ, our unique pressure-free environment gives you the opportunity to view and try on an unsurpassed selection of products.<\/p><p>It takes extra effort to offer custom jewelry design, solve complicated jewelry repairs, and host local events all under one roof. We incorporate local talent, modern equipment, cutting-edge technology, and old-world craftsmanship to continue to be jewelers and not simply “jewelry resellers”. We feel that all of these skills are essential to our success.<\/p><p>Made in MontgomeryvilleⓇ provides you with unique styling and allows us to guarantee our quality. This is also true for the designers we choose to present to you; each goes through a rigorous vetting process to ensure they follow our strict quality standards.<\/p>",
+        "section_image": "shopify:\/\/shop_images\/about-us.png",
+        "section_image_alt_text": "",
+        "section_image_size": "full",
+        "section_image_url": "",
+        "section_image_position_desktop": "row",
+        "section_image_position_mobile": "column",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_content_text_align": "left"
+      }
+    },
+    "1649620542862a02d5": {
+      "type": "content-text-image-split",
+      "settings": {
+        "page_width": false,
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "paragraph_color": "",
+        "section_header": "",
+        "section_paragraph": "<p>Delivering the highest quality of jewelry also requires a passion for gemstones. Having five graduate gemologists from the Gemological Institute of America on staff gives us an edge in selecting the best diamonds and gemstones available.<\/p><p>In order to deliver that level of quality, we elected to partner with De Beers Forevermark, a DeBeers family of companies. The unique inscription on every De Beers Forevermark diamond is a promise of beauty, rarity, and ethical sourcing. Less than 1% of the diamonds found from select mines across the world qualify to become a De Beers  Forevermark diamond.<\/p><p>We also proudly feature Hearts on Fire, the world’s most perfectly cut diamond. Their consistency of excellence in diamond cutting is unparalleled in today’s market. No other brand features exclusively ideal cut diamonds, regardless of size, in every piece of jewelry they offer.<\/p><p>For over 24 years our dedication to increasing value and obsession with technology helped us discover a unique faceting orientation that delivers more sparkle than traditionally cut diamonds. We call this diamond the Marks 89Ⓡ. With a proprietary faceting arrangement, 89 facets to be exact, any Marks 89Ⓡ diamond regardless of quality will out-sparkle it’s 57 faceted cousins.<\/p><p>Most recently we became the only jeweler in our region to offer lab-grown diamonds produced by ALTR. This gives us the ability to offer a diamond identical to earth-mined diamonds that are truly eco-friendly, sustainable, and socially responsible. This new technology affords you get more diamond for your budget.<\/p>",
+        "section_image": "shopify:\/\/shop_images\/about-window-view.png",
+        "section_image_alt_text": "Another overhead shot of store with windows in the background.",
+        "section_image_size": "full",
+        "section_image_url": "",
+        "section_image_position_desktop": "row-reverse",
+        "section_image_position_mobile": "column",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_content_text_align": "left"
+      }
+    },
+    "16496206604d513191": {
+      "type": "content-text-image-split",
+      "settings": {
+        "page_width": false,
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "paragraph_color": "",
+        "section_header": "",
+        "section_paragraph": "<p>The most unique benefit that we have to offer is our in-house custom design studio, JewlVisionTM. Even though we have hundreds of styles available, we understand that there is nothing more special than giving a personalized gift.<\/p><p>With that in mind, we are the only jeweler in the Philadelphia region that has an in-house manufacturing facility. We choose not to outsource our designs and production so that we can bring you the highest degree of customization. Working one on one with a dedicated design expert, your journey is both highly interactive and rewarding. With the ability to view hand sketches, digital renderings, and 3D printed prototypes, there are no unhappy surprises at completion.<\/p><p>In the end, what makes Marks Jewelers different is our people. We are friendly, knowledgeable, and committed to guiding you through a very emotional purchase. Love Grows Here!<\/p>",
+        "section_image": "shopify:\/\/shop_images\/ring-designers.png",
+        "section_image_alt_text": "Team designing rings on computer",
+        "section_image_size": "full",
+        "section_image_url": "",
+        "section_image_position_desktop": "row",
+        "section_image_position_mobile": "column",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_content_text_align": "left"
+      }
+    },
+    "1649033652329008f1": {
+      "type": "content-video-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/about-yt-thumbnail_486f04ba-0a43-47b8-8fbd-75415694f3bf.jpg",
+        "section_image_alt_text": "Marks Jewelers Commercial",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_iframe_url": "https:\/\/www.youtube.com\/embed\/B1tKmngAQ_A",
+        "section_spacing_top": "60",
+        "section_spacing_bottom": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164903130534ee27f7",
+    "1649620536a2c53407",
+    "1649620542862a02d5",
+    "16496206604d513191",
+    "1649033652329008f1"
+  ]
+}

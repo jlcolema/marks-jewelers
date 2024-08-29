@@ -1,0 +1,87 @@
+{{ 'section-tour.css' | asset_url | stylesheet_tag }}
+
+<div class="section__tour--container container">
+  <ul class="section__tour--navigation">
+    {%- for block in section.blocks -%}
+      <li>
+        <a href="#{{ block.settings.tour_location | camelcase }}" class="btn">View the {{ block.settings.tour_location }} 360° Tour</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+  <script src="https://360player.io/static/dist/scripts/embed.js" defer></script>
+  {%- for block in section.blocks -%}
+    {% assign iframePath = block.settings.tour_iframe | split: '/' %}
+    {% assign dataToken = '' %}
+    {% for path in iframePath %}
+      {% if forloop.last == true %}
+        {% assign dataToken = path %}
+      {% endif %}
+    {% endfor %}
+    <div class="section__tour--iframe" id="{{ block.settings.tour_location | camelcase }}">
+      <iframe
+        src="{{ block.settings.tour_iframe }}"
+        data-token="{{ dataToken }}"
+        width="1140"
+        height="590"
+        frameborder="0"
+        allowfullscreen="true"></iframe>
+      <a href="javascript:void(0);" class="btn">Start {{ block.settings.tour_location }} 360° Tour</a>
+    </div>
+  {%- endfor -%}
+  <script defer>
+    const iframeToggle = document.querySelectorAll('.section__tour--iframe .btn');
+    if (iframeToggle.length) {
+          iframeToggle.forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+              const closestIframeContainer = e.target.closest('.section__tour--iframe');
+              closestIframeContainer.classList.add('iframe-clicked');
+              anchor.blur();
+    
+              document.querySelectorAll('.section__tour--iframe').forEach((elem) => {
+                if (!elem.classList.contains('iframe-clicked')) {
+                  elem.classList.remove('section__tour--active');
+                  elem.querySelector('.btn').textContent = elem.querySelector('.btn').textContent.replace('Stop', 'Start');
+                }
+              });
+    
+              if (! closestIframeContainer.classList.contains('section__tour--active')) {
+                closestIframeContainer.classList.add('section__tour--active');
+                closestIframeContainer.querySelector('.btn').textContent = closestIframeContainer.querySelector('.btn').textContent.replace('Start', 'Stop');
+              } else {
+                closestIframeContainer.classList.remove('section__tour--active');
+                closestIframeContainer.querySelector('.btn').textContent = closestIframeContainer.querySelector('.btn').textContent.replace('Stop', 'Start');
+              } closestIframeContainer.classList.remove('iframe-clicked');
+            });
+          });
+        }</script>
+</div>
+
+
+{% schema %}
+  {
+    "name": "360 Virtual Tours",
+    "tag": "section",
+    "blocks": [
+      {
+        "name": "360 Virtual Tour",
+        "type": "area",
+        "settings": [
+          {
+            "type": "text",
+            "id": "tour_location",
+            "label": "Location label"
+          }, {
+            "type": "url",
+            "id": "tour_iframe",
+            "label": "Location iframe URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "360 Virtual Tour"
+      }
+    ]
+  }
+{% endschema %}

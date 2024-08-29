@@ -1,0 +1,29 @@
+:root {
+  --display: block;
+}
+
+.is-visible {
+  display: var(--display) !important;
+}
+
+.is-hidden {
+  display: none !important;
+
+  &--desktop {
+    @media (--md) {
+      display: none !important;
+    }
+  }
+
+  &--mobile {
+    @media (max-width: calc(64rem - 1px)) {
+      display: none !important;
+    }
+  }
+}
+
+html:not(.js) {
+  .no-js\:is-hidden {
+    display: none !important;
+  }
+}

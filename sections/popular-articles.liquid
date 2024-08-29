@@ -1,0 +1,57 @@
+<div class="article container">
+  <div class="popular-articles">
+    <hr />
+    <h2>Popular Articles</h2>
+    <div class="popular-article-cards">
+      {% for article in blog.articles %}
+        {% for tag in article.tags %}
+          {% if tag contains "Popular" %}
+            <div class="popular-article-card">
+              {%- if article.image -%}
+                <a href="{{ article.url }}">{{ article | image_url: 'large', scale: 1 | image_tag: '' }}</a>
+              {%- endif -%}
+              <div class="article-heading"><a href="{{ article.url }}">{{ article.title }}</a></div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+    <hr />
+  </div>
+
+  <div class="popular-article-mobile slider-wrapper">
+    <button class="slide-arrow" id="slide-arrow-prev">
+
+    </button>
+
+    <button class="slide-arrow" id="slide-arrow-next">
+
+    </button>
+    <ul id="slides-container" class="slides-container" data-component="articles">
+      {% for article in blog.articles %}
+        {% for tag in article.tags %}
+          {% if tag contains "Popular" %}
+            <li class="popular-article slide">
+              <div class="popular-article-content">
+                <div class="popular-article-image">
+                  <a href="{{ article.url }}">
+                    {%- if article.image -%}
+                      {{ article | image_url: 'large', scale: 1 | image_tag: '' }}
+                    {%- endif -%}
+                  </a>
+                </div>
+                <span class="popular-article-title">
+                  <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
+                </span>
+              </div>
+            </li>
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+
+
+

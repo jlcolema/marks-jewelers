@@ -1,0 +1,133 @@
+@use '../settings/breakpoints' as *;
+@use '../tools' as *;
+
+:root {
+  --accordion-border-width: 1px;
+  --accordion-icon-size: 14px;
+  --accordion-icon-stroke-width: 3px;
+}
+
+.accordion__item {
+  border-style: solid;
+  border-color: var(--color-contrast-low);
+  border-bottom-width: var(--accordion-border-width);
+
+  &:first-child {
+    border-top-width: var(--accordion-border-width);
+  }
+}
+
+.accordion__header {
+  /* button */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  line-height: var(--line-height);
+  cursor: pointer;
+  padding: var(--space-sm) var(--space-md);
+
+  .icon {
+    --size: var(--accordion-icon-size);
+
+    .icon__group {
+      stroke-width: var(--accordion-icon-stroke-width);
+    }
+  }
+}
+
+.accordion__icon-arrow {
+  .icon__group {
+    will-change: transform;
+    transform-origin: 50% 50%;
+
+    > * {
+      transform-origin: 10px 14px;
+    }
+  }
+}
+
+.accordion__item--is-open > .accordion__header {
+  .accordion__icon-arrow .icon__group {
+    /* animated arrow icon */
+    > *:first-child {
+      transform: translateY(-8px) rotate(-90deg);
+    }
+
+    > *:last-child {
+      transform: translateY(-8px) rotate(90deg);
+    }
+  }
+}
+
+.js {
+  .accordion__panel {
+    display: none;
+    will-change: height;
+    transform: translateZ(0);
+  }
+
+  .accordion__item--is-open > .accordion__panel {
+    display: block;
+  }
+}
+
+.accordion__panel-content {
+
+  padding: var(--space-sm) var(--space-md);
+
+  h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  p {
+
+    margin-bottom: var(--space-sm);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: var(--space-md);
+  }
+
+    li {
+      font-weight: 100;
+
+      b {
+        font-weight: 400;
+      }
+    }
+}
+
+/* animations */
+.accordion[data-animation="on"] {
+  .accordion__item--is-open .accordion__panel > * {
+    animation: accordion-entry-animation 0.4s var(--ease-out);
+  }
+
+  .icon__group {
+    transition: transform 0.3s var(--ease-out);
+
+    > * {
+      transition: transform 0.3s, stroke-dashoffset 0.3s;
+      transition-timing-function: var(--ease-out);
+    }
+  }
+}
+
+@keyframes accordion-entry-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,166 @@
+{{ 'section-content-usp.css' | asset_url | stylesheet_tag }}
+
+<div class="usp__row text-center" id="{{ section.settings.section_id }}">
+  <div class="container">
+    <div class="usp__row--block">
+      <div class="usp__row--header text-xl">
+        {{ section.settings.section_header }}
+      </div>
+      <div class="usp__row--copy-wrap">
+        {% if section.settings.confidence_prop_image != blank %}
+          <div class="confidence-prop__item-image">
+            {% if section.settings.confidence_prop_image == 'marks-logo' %}
+              {% render 'icon', icon: 'logomark', class: 'logomark' %}
+            {% else %}
+              {% render 'home-icons', icon: section.settings.confidence_prop_image %}
+            {% endif %}
+          </div>
+        {% endif %}
+        {%- if section.settings.section_sub_header != blank -%}
+            <h2 class="section__sub-header text-uppercase">{{ section.settings.section_sub_header }}</h2>
+          {%- endif -%}
+        {%- if section.settings.section_top_paragraph != blank -%}
+          <div class="usp__row--copy"> {{ section.settings.section_top_paragraph }} </div>
+        {%- endif -%}
+        {%- if section.settings.section_highlight != blank -%}
+        <div class="usp__row--highlight text-left">{{ section.settings.section_highlight }}</div>
+        {%- endif -%}
+        {%- if section.settings.section_bottom_paragraph != blank -%}
+          <div class="usp__row--copy"> {{ section.settings.section_bottom_paragraph }} </div>
+        {%- endif -%}
+        {% if section.settings.section_financing %}
+        <div class="usp__row--financing">
+          {% render 'icon', icon: 'logomark', class: 'logomark' %}
+          <strong>Finance your purchase for...</strong>
+          <div class="flex flex-center items-start">
+            <div class="financing__block">
+              <div class="financing__block--time">12</div>
+              <div class="financing__block--label">Months</div>
+            </div>
+            <div class="financing__or">or</div>
+            <div class="financing__block">
+              <div class="financing__block--time">36</div>
+              <div class="financing__block--label">Months</div>
+            </div>
+            <div class="financing__or">or</div>
+            <div class="financing__block">
+              <div class="financing__block--time">60</div>
+              <div class="financing__block--label">Months</div>
+            </div>
+          </div>
+          {% if section.settings.section_disclaimer_paragraph %}
+            <div class="usp__row--disclaimer">{{ section.settings.section_disclaimer_paragraph }}</div>
+          {% endif %}
+          <a href="/pages/flexible-financing" class="btn">Learn More</a>
+        </div>
+        {% endif %}
+        {% if section.settings.section_cta_text != blank and section.settings.section_cta_url != blank %}
+        <div class="content__cta-container">
+          <div class="content__cta--header">{{ section.settings.section_cta_copy }}</div>
+          <a class="content__cta btn" href="{{ section.settings.section_cta_url }}">{{ section.settings.section_cta_text }}</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Copy Block",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "confidence_prop_image",
+      "type": "select",
+      "label": "Top Image",
+      "options": [
+        {
+          "value": "marks-logo",
+          "label": "Marks Logo"
+        },
+        {
+          "value": "free-shipping",
+          "label": "Free Shipping"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty Shield"
+        },
+        {
+          "value": "diamond-circle",
+          "label": "Diamond in a circle"
+        },
+        {
+          "value": "diamond-upgrade",
+          "label": "Diamond growing larger"
+        },
+        {
+          "value": "money-bag",
+          "label": "Money Bag"
+        }
+      ]
+    },
+    {
+      "id": "section_id",
+      "type": "text",
+      "label": "ID of section (for anchors on page)"
+    },
+    {
+      "id": "section_header",
+      "type": "richtext",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_sub_header",
+      "type": "richtext",
+      "label": "Section Sub Header"
+    },
+    {
+      "id": "section_top_paragraph",
+      "type": "richtext",
+      "label": "Section Top Paragraph"
+    },
+    {
+      "id": "section_highlight",
+      "type": "richtext",
+      "label": "Section Highlighted Copy"
+    },
+    {
+      "id": "section_bottom_paragraph",
+      "type": "richtext",
+      "label": "Section Bottom Paragraph"
+    },
+    {
+      "id": "section_financing",
+      "type": "checkbox",
+      "label": "Include Flexible Financing options?"
+    },
+    {
+      "id": "section_cta_copy",
+      "type": "richtext",
+      "label": "Copy over CTA"
+    },
+    {
+      "id": "section_cta_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "section_cta_url",
+      "type": "url",
+      "label": "Button URL"
+    },
+    {
+      "id": "section_disclaimer_paragraph",
+      "type": "richtext",
+      "label": "Section Disclaimer"
+    }
+  ],
+  "presets": [
+    {
+      "name": "USP Block"
+    }
+  ]
+}
+{% endschema %}

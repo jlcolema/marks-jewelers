@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+      }
+    },
+    "featured": {
+      "type": "featured-article",
+      "settings": {
+      }
+    },
+    "1659722485df3c35f8": {
+      "type": "home-value-prop-banner",
+      "blocks": {
+        "8aaafcac-de15-42bf-8068-ad5ecfa58f67": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "ribbon",
+            "value_prop_head": "<p><strong>Best of Philly Custom Jeweler<\/strong><\/p>",
+            "value_prop_text": "Uniquely made in Montogomeryville, PA"
+          }
+        },
+        "92e4764b-f3d8-4c87-8dfa-d1e82c1742e7": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "location-mark",
+            "value_prop_head": "<p><strong>Local Jeweler<\/strong><\/p>",
+            "value_prop_text": "Browse 1000’s of Styles in Store"
+          }
+        },
+        "4cd09e93-2823-49df-bb9c-474b84c76742": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "chat-star",
+            "value_prop_head": "<p><strong>Over 2,000 5 Star Reviews<\/strong><\/p>",
+            "value_prop_text": "Our Business is your Satisfaction"
+          }
+        }
+      },
+      "block_order": [
+        "8aaafcac-de15-42bf-8068-ad5ecfa58f67",
+        "92e4764b-f3d8-4c87-8dfa-d1e82c1742e7",
+        "4cd09e93-2823-49df-bb9c-474b84c76742"
+      ],
+      "settings": {
+        "heading_color": "",
+        "bg_color": "#efefef",
+        "value_props_color": "#a07282"
+      }
+    }
+  },
+  "order": [
+    "featured",
+    "1659722485df3c35f8",
+    "main"
+  ]
+}

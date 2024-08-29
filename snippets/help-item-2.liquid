@@ -1,0 +1,47 @@
+{%- if heading != blank -%}
+  <div class="help__header">{{ heading }}</div>
+{%- endif -%}
+
+{%- if paragraph != blank -%}
+  <p>{{ paragraph }}</p>
+{%- endif -%}
+
+{%- if call_head != blank and call_text != blank -%}
+  <div class="help__section-header">{{ call_head }}</div>
+  <span class="help__text">{{ call_text }}</span>
+{%- endif -%}
+
+{%- if email_text != blank and email_url != blank -%}
+  <div class="help__section-header help__section-header--arrow"><a href="mailto:{{ email_url }}">{{ email_text }}</a></div>
+{%- endif -%}
+
+<div class="help__hours">
+  <div class="help__hours-list accordion js-accordion" data-animation="on" data-multi-items="off" data-component="accordion" data-mobile-accordion>
+    <ul>
+      <li class="accordion__item js-accordion__item {% if open_item %}{{ open_class }}{% endif %}">
+      <button class="reset accordion__header js-accordion__trigger js-tab-focus hide@sm">
+        <span>{{ accordion_trigger_text }}</span>
+        {%- render 'icon' icon: 'accordion-arrow', class: 'accordion__icon-arrow no-js:is-hidden' -%}
+      </button>
+      <div class="accordion__panel js-accordion__panel">
+        <div class="help__hours-list-header">{{ hours_header_text }}</div>
+        {%- for block in hours_of_operation -%}
+          <div class="help__hours-list-item">
+            <span>{{ block.settings.store_hours_day }}</span>
+            <span class="help__hours-list-item-hours">{{ block.settings.store_hours_time }}</span>
+          </div>
+        {%- endfor -%}
+        <div class="help__holiday-hours help__section-header--arrow hide@sm">
+          <a href="{{ holiday_hours_url }}">{{ holiday_hours_text }}</a>
+        </div>
+      </div>
+    </li>
+    </ul>
+  </div>
+</div>
+
+{%- if holiday_hours_text != blank -%}
+    <div class="help__holiday-hours help__section-header--arrow hide block@sm">
+      <a href="{{ holiday_hours_url }}">{{ holiday_hours_text }}</a>
+    </div>
+{%- endif -%}

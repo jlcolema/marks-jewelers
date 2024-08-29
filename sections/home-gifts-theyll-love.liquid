@@ -1,0 +1,123 @@
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {% if section.settings.section_spacing_top != blank %}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {% endif %}
+  {% if section.settings.section_spacing_bottom != blank %}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {% endif %}
+{%- endcapture -%}
+
+{{ 'section-home-gifts-theyll-love.css' | asset_url | stylesheet_tag }}
+
+<div class="gift" style="{{ styling }}">
+  {% if section.settings.logo != blank %}
+    <span class="gift__header-logo">
+      {% render 'img', img: section.settings.logo, width: 50, height: 55, loading: 'lazy' %}
+    </span>
+  {% endif %}
+  {%- if section.settings.heading_text != blank -%}
+    <h2 class="home-section-heading">{{ section.settings.heading_text }}</h2>
+  {%- endif -%}
+  {%- if section.settings.paragraph_text != blank -%}
+  <div class="gift__paragraph">
+    {{ section.settings.paragraph_text }}
+  </div>
+  {%- endif -%}
+  <div class="gift__blocks-container">
+    {%- for block in section.blocks -%}
+      <div class="gift__block">
+        {%- if block.settings.gift_block_url != blank -%}<a href="{{ block.settings.gift_block_url }}">{%- endif -%}
+          {%- if block.settings.gift_block_image != blank -%}
+            {% render 'img', img: block.settings.gift_block_image, class: 'hide block@sm', width: 265, height: 225, loading: 'lazy', crop: 'center' %}
+            {% render 'img', img: block.settings.gift_block_image, class: 'hide@sm', width: 170, height: 140, loading: 'lazy', crop: 'center' %}
+          {%- endif -%}
+          {%- if block.settings.gift_block_text != blank -%}
+            <div class="gift__block-text">
+              {{ block.settings.gift_block_text }}
+            </div>
+          {%- endif -%}
+        {%- if block.settings.gift_block_url != blank -%}</a>{%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Gifts",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    },
+    {
+      "id": "logo",
+      "type": "image_picker",
+      "label": "Section Logo"
+    },
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "value_props_color",
+      "type": "color",
+      "label": "Value prop color"
+    },
+    {
+      "id": "heading_text",
+      "type": "richtext",
+      "label": "Section Heading"
+    },
+    {
+      "id": "paragraph_text",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gift_block",
+      "name": "Gift Block",
+      "settings": [
+        {
+          "id": "gift_block_image",
+          "type": "image_picker",
+          "label": "Gift Block Image"
+        },
+        {
+          "id": "gift_block_text",
+          "type": "text",
+          "label": "Gift Block Text"
+        },
+        {
+          "id": "gift_block_url",
+          "type": "url",
+          "label": "Gift Block URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Gifts"
+    }
+  ]
+}
+{% endschema %}

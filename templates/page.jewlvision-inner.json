@@ -1,0 +1,9 @@
+{
+    "sections": {
+      "main": {
+        "type": "jewlvisionInner-page"
+      }
+    },
+    "order": ["main"]
+  }
+  

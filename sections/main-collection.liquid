@@ -1,0 +1,318 @@
+{{ 'section-faqs.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-collection.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+    px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+    px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | round: 0 }}
+      px;
+      padding-bottom: {{ section.settings.padding_bottom | round: 0 }}
+      px;
+    }
+  }
+</style>
+
+<div class="section-{{ section.id }}-padding">
+
+  {% if collection.handle contains "lagos-fine-jewelry" %}
+    {% render 'lagos-collection-header' %}
+  {% else %}
+    <h1 id="productCollectionTitle">{{ collection.title }}</h1>
+  {% endif %}
+
+  {% if collection.handle == "diamond-stud-earrings" %}
+    {% render 'diamond-stud-header' %}
+  {% elsif collection.handle == "ladies-diamond-wedding-rings" %}
+    {% render 'ladies-diamond-wedding-header' %}
+  {% elsif collection.handle == "engagement-rings" %}
+    {% render 'engagement-rings-header' %}
+  {% elsif collection.handle == "mens-wedding-bands" %}
+    {% render 'mens-wedding-bands-header' %}
+  {% elsif collection.handle == "mens-wedding-bands-1" %}
+    {% render 'mens-wedding-bands-1-header' %}
+  {% elsif collection.handle == "estate" %}
+    {% render 'estate-header' %}
+  {% elsif collection.handle == "necklaces" %}
+    {% render 'necklaces-header' %}
+  {% elsif collection.handle == "placeholder-bracelets" %}
+    {% render 'bracelets-header' %}
+  {% elsif collection.handle == "placeholder-for-bangles" %}
+    {% render 'bangles-header' %}
+  {% elsif collection.handle == "ladies-color-gemstones-wedding-rings" %}
+    {% render 'ladies-color-gemstones-wedding-rings-header' %}
+  {% elsif collection.handle == "ladies-stackable-wedding-rings" %}
+    {% render 'ladies-stackable-wedding-rings-header' %}
+  {% elsif collection.handle == "vintage-engagement-rings" %}
+    {% render 'vintage-engagement-rings-header' %}
+  {% elsif collection.handle == "luxury-handbags" %}
+    {% render 'luxury-handbags-header' %}
+  {% elsif collection.handle == "ladies-eternity-wedding-rings" %}
+    {% render 'ladies-eternity-wedding-rings-header' %}
+  {% elsif collection.handle == "earrings" %}
+    {% render 'earrings-header' %}
+  {% elsif collection.handle == "timepieces-1" %}
+    {% render 'luxury-watches-header' %}
+  {% elsif collection.handle == "recently-purchased-lab-created-engagement-rings" %}
+    {% render 'recently-purchased-lab-created-engagement-rings-header' %}
+  {% elsif collection.handle == "mens-jewelry" %}
+    {% render 'mens-jewelry-header' %}
+  {% endif %}
+
+  {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+    <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'compare.js' | asset_url }}" defer="defer"></script>
+    <div
+      class="page-width start-invis"
+      id="main-collection-filters"
+      data-id="{{ section.id }}">
+      {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: false %}
+    </div>
+  {%- endif -%}
+
+  <div id="ProductGridContainer">
+
+    {% assign products_on_page = section.settings.products_per_page %}
+
+    {%- paginate collection.products by products_on_page -%}
+      {%- if collection.products.size == 0 -%}
+        <div
+          class="collection collection--empty page-width"
+          id="product-grid"
+          data-id="{{ section.id }}">
+          <div class="loading-overlay gradient"></div>
+          <div class="title-wrapper center">
+            <h2 class="title title--primary">
+              {{ 'sections.collection_template.empty' | t }}<br>
+              {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
+            </h2>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="collection page-width">
+          <div class="loading-overlay gradient"></div>
+
+          <div
+            id="product-grid"
+            data-id="{{ section.id }}"
+            class="
+                                                                                                                                                                                                                              grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                                                                                                                                                                                                                              grid--{{ section.settings.columns_desktop }}-col-desktop">
+            {%- for product in collection.products -%}
+              {% assign lazy_load = false %}
+              {%- if forloop.index > 2 -%}
+                {%- assign lazy_load = true -%}
+              {%- endif -%}
+
+              <div class="grid__item">
+                {% render 'card-product'
+                 , card_product: product,
+                 media_aspect_ratio: section.settings.image_ratio,
+                 show_secondary_image: section.settings.show_secondary_image,
+                 show_vendor: section.settings.show_vendor,
+                 show_rating: section.settings.show_rating,
+                 lazy_load: lazy_load %}
+              </div>
+            {%- endfor -%}
+          </div>
+
+          {%- if paginate.pages > 1 -%}
+            {% render 'pagination', paginate: paginate, anchor: '' %}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+
+  {% if collection.handle == "diamond-stud-earrings" %}
+    {% render 'diamond-stud-faq' %}
+  {% elsif collection.handle == "ladies-diamond-wedding-rings" %}
+    {% render 'ladies-diamond-wedding-faq' %}
+  {% elsif collection.handle == "engagement-rings" %}
+    {% render 'engagement-rings-faq' %}
+  {% elsif collection.handle == "mens-wedding-bands" %}
+    {% render 'mens-wedding-bands-faq' %}
+  {% elsif collection.handle == "mens-wedding-bands-1" %}
+    {% render 'mens-wedding-bands-1-faq' %}
+  {% elsif collection.handle == "estate" %}
+    {% render 'estate-faq' %}
+  {% elsif collection.handle == "necklaces" %}
+    {% render 'necklaces-faq' %}
+  {% elsif collection.handle == "placeholder-bracelets" %}
+    {% render 'bracelets-faq' %}
+  {% elsif collection.handle == "placeholder-for-bangles" %}
+    {% render 'bangles-faq' %}
+  {% elsif collection.handle == "ladies-color-gemstones-wedding-rings" %}
+    {% render 'ladies-color-gemstones-wedding-rings-faq' %}
+  {% elsif collection.handle == "ladies-stackable-wedding-rings" %}
+    {% render 'ladies-stackable-wedding-rings-faq' %}
+  {% elsif collection.handle == "vintage-engagement-rings" %}
+    {% render 'vintage-engagement-rings-faq' %}
+  {% elsif collection.handle == "luxury-handbags" %}
+    {% render 'luxury-handbags-faq' %}
+  {% elsif collection.handle == "ladies-eternity-wedding-rings" %}
+    {% render 'ladies-eternity-wedding-rings-faq' %}
+  {% elsif collection.handle == "earrings" %}
+    {% render 'earrings-faq' %}
+  {% elsif collection.handle == "timepieces-1" %}
+    {% render 'luxury-watches-faq' %}
+  {% elsif collection.handle == "recently-purchased-lab-created-engagement-rings" %}
+    {% render 'recently-purchased-lab-created-engagement-rings-faq' %}
+  {% elsif collection.handle == "mens-jewelry" %}
+    {% render 'mens-jewelry-faq' %}
+  {% endif %}
+
+</div>
+
+<script defer>
+  // DESKTOP PROMO CARD METAFIELD ASSIGNMENT
+  const desktopPromoCardOneImgURL = `{{ collection.metafields.custom.desktop_card_promo_1_img_url }}`;
+  const desktopPromoCardOneURL = `{{ collection.metafields.custom.desktop_card_promo_1_url }}`;
+  const desktopPromoCardOnePage = `{{ collection.metafields.custom.desktop_card_promo_1_page }}`;
+  const desktopPromoCardOneRow = `{{ collection.metafields.custom.desktop_card_promo_1_row }}`;
+  const desktopPromoCardOneBegin = `{{ collection.metafields.custom.desktop_card_promo_1_begin }}`;
+  const desktopPromoCardOneEnd = `{{ collection.metafields.custom.desktop_card_promo_1_end }}`;
+  const desktopPromoCardOneClass = `desktop-promo-card-one`;
+
+  const desktopPromoCardTwoImgURL = `{{ collection.metafields.custom.desktop_card_promo_2_img_url }}`;
+  const desktopPromoCardTwoURL = `{{ collection.metafields.custom.desktop_card_promo_2_url }}`;
+  const desktopPromoCardTwoPage = `{{ collection.metafields.custom.desktop_card_promo_2_page }}`;
+  const desktopPromoCardTwoRow = `{{ collection.metafields.custom.desktop_card_promo_2_row }}`;
+  const desktopPromoCardTwoBegin = `{{ collection.metafields.custom.desktop_card_promo_2_begin }}`;
+  const desktopPromoCardTwoEnd = `{{ collection.metafields.custom.desktop_card_promo_2_end }}`;
+  const desktopPromoCardTwoClass = `desktop-promo-card-two`;
+
+  const desktopPromoCardThreeImgURL = `{{ collection.metafields.custom.desktop_card_promo_3_img_url }}`;
+  const desktopPromoCardThreeURL = `{{ collection.metafields.custom.desktop_card_promo_3_url }}`;
+  const desktopPromoCardThreePage = `{{ collection.metafields.custom.desktop_card_promo_3_page }}`;
+  const desktopPromoCardThreeRow = `{{ collection.metafields.custom.desktop_card_promo_3_row }}`;
+  const desktopPromoCardThreeBegin = `{{ collection.metafields.custom.desktop_card_promo_3_begin }}`;
+  const desktopPromoCardThreeEnd = `{{ collection.metafields.custom.desktop_card_promo_3_end }}`;
+  const desktopPromoCardThreeClass = `desktop-promo-card-three`;
+
+  const desktopPromoCardFourImgURL = `{{ collection.metafields.custom.desktop_card_promo_4_img_url }}`;
+  const desktopPromoCardFourURL = `{{ collection.metafields.custom.desktop_card_promo_4_url }}`;
+  const desktopPromoCardFourPage = `{{ collection.metafields.custom.desktop_card_promo_4_page }}`;
+  const desktopPromoCardFourRow = `{{ collection.metafields.custom.desktop_card_promo_4_row }}`;
+  const desktopPromoCardFourBegin = `{{ collection.metafields.custom.desktop_card_promo_4_begin }}`;
+  const desktopPromoCardFourEnd = `{{ collection.metafields.custom.desktop_card_promo_4_end }}`;
+  const desktopPromoCardFourClass = `desktop-promo-card-four`;
+
+// DESKTOP PROMO BANNER METAFIELD ASSIGNMENT
+  const desktopPromoBannerOneImgURL = `{{ collection.metafields.custom.desktop_banner_promo_1_img_url }}`;
+  const desktopPromoBannerOneURL = `{{ collection.metafields.custom.desktop_banner_promo_1_url }}`;
+  const desktopPromoBannerOnePage = `{{ collection.metafields.custom.desktop_banner_promo_1_page }}`;
+  const desktopPromoBannerOneRow = `{{ collection.metafields.custom.desktop_banner_promo_1_row }}`;
+  const desktopPromoBannerOneClass = `desktop-promo-banner-one`;
+
+  const desktopPromoBannerTwoImgURL = `{{ collection.metafields.custom.desktop_banner_promo_2_img_url }}`;
+  const desktopPromoBannerTwoURL = `{{ collection.metafields.custom.desktop_banner_promo_2_url }}`;
+  const desktopPromoBannerTwoPage = `{{ collection.metafields.custom.desktop_banner_promo_2_page }}`;
+  const desktopPromoBannerTwoRow = `{{ collection.metafields.custom.desktop_banner_promo_2_row }}`;
+  const desktopPromoBannerTwoClass = `desktop-promo-banner-two`;
+
+  const desktopPromoBannerThreeImgURL = `{{ collection.metafields.custom.desktop_banner_promo_3_img_url }}`;
+  const desktopPromoBannerThreeURL = `{{ collection.metafields.custom.desktop_banner_promo_3_url }}`;
+  const desktopPromoBannerThreePage = `{{ collection.metafields.custom.desktop_banner_promo_3_page }}`;
+  const desktopPromoBannerThreeRow = `{{ collection.metafields.custom.desktop_banner_promo_3_row }}`;
+  const desktopPromoBannerThreeClass = `desktop-promo-banner-three`;
+
+  const desktopPromoBannerFourImgURL = `{{ collection.metafields.custom.desktop_banner_promo_4_img_url }}`;
+  const desktopPromoBannerFourURL = `{{ collection.metafields.custom.desktop_banner_promo_4_url }}`;
+  const desktopPromoBannerFourPage = `{{ collection.metafields.custom.desktop_banner_promo_4_page }}`;
+  const desktopPromoBannerFourRow = `{{ collection.metafields.custom.desktop_banner_promo_4_row }}`;
+  const desktopPromoBannerFourClass = `desktop-promo-banner-four`;
+
+// MOBILE PROMO CARD METAFIELD ASSIGNMENT
+  const mobilePromoCardOneImgURL = `{{ collection.metafields.custom.mobile_card_promo_1_img_url }}`;
+  const mobilePromoCardOneURL = `{{ collection.metafields.custom.mobile_card_promo_1_url }}`;
+  const mobilePromoCardOnePage = `{{ collection.metafields.custom.mobile_card_promo_1_page }}`;
+  const mobilePromoCardOneRow = `{{ collection.metafields.custom.mobile_card_promo_1_row }}`;
+  const mobilePromoCardOnePosition = `{{ collection.metafields.custom.mobile_card_promo_1_position }}`;
+  const mobilePromoCardOneClass = `mobile-promo-card-one`;
+
+  const mobilePromoCardTwoImgURL = `{{ collection.metafields.custom.mobile_card_promo_2_img_url }}`;
+  const mobilePromoCardTwoURL = `{{ collection.metafields.custom.mobile_card_promo_2_url }}`;
+  const mobilePromoCardTwoPage = `{{ collection.metafields.custom.mobile_card_promo_2_page }}`;
+  const mobilePromoCardTwoRow = `{{ collection.metafields.custom.mobile_card_promo_2_row }}`;
+  const mobilePromoCardTwoPosition = `{{ collection.metafields.custom.mobile_card_promo_2_position }}`;
+  const mobilePromoCardTwoClass = `mobile-promo-card-two`;
+
+  const mobilePromoCardThreeImgURL = `{{ collection.metafields.custom.mobile_card_promo_3_img_url }}`;
+  const mobilePromoCardThreeURL = `{{ collection.metafields.custom.mobile_card_promo_3_url }}`;
+  const mobilePromoCardThreePage = `{{ collection.metafields.custom.mobile_card_promo_3_page }}`;
+  const mobilePromoCardThreeRow = `{{ collection.metafields.custom.mobile_card_promo_3_row }}`;
+  const mobilePromoCardThreePosition = `{{ collection.metafields.custom.mobile_card_promo_3_position }}`;
+  const mobilePromoCardThreeClass = `mobile-promo-card-three`;
+
+  const mobilePromoCardFourImgURL = `{{ collection.metafields.custom.mobile_card_promo_4_img_url }}`;
+  const mobilePromoCardFourURL = `{{ collection.metafields.custom.mobile_card_promo_4_url }}`;
+  const mobilePromoCardFourPage = `{{ collection.metafields.custom.mobile_card_promo_4_page }}`;
+  const mobilePromoCardFourRow = `{{ collection.metafields.custom.mobile_card_promo_4_row }}`;
+  const mobilePromoCardFourPosition = `{{ collection.metafields.custom.mobile_card_promo_4_position }}`;
+  const mobilePromoCardFourClass = `mobile-promo-card-four`;
+
+// MOBILE PROMO BANNER METAFIELD ASSIGNMENT
+  const mobilePromoBannerOneImgURL = `{{ collection.metafields.custom.mobile_banner_promo_1_img_url }}`;
+  const mobilePromoBannerOneURL = `{{ collection.metafields.custom.mobile_banner_promo_1_url }}`;
+  const mobilePromoBannerOnePage = `{{ collection.metafields.custom.mobile_banner_promo_1_page }}`;
+  const mobilePromoBannerOneRow = `{{ collection.metafields.custom.mobile_banner_promo_1_row }}`;
+  const mobilePromoBannerOneClass = `mobile-promo-banner-one`;
+
+  const mobilePromoBannerTwoImgURL = `{{ collection.metafields.custom.mobile_banner_promo_2_img_url }}`;
+  const mobilePromoBannerTwoURL = `{{ collection.metafields.custom.mobile_banner_promo_2_url }}`;
+  const mobilePromoBannerTwoPage = `{{ collection.metafields.custom.mobile_banner_promo_2_page }}`;
+  const mobilePromoBannerTwoRow = `{{ collection.metafields.custom.mobile_banner_promo_2_row }}`;
+  const mobilePromoBannerTwoClass = `mobile-promo-banner-two`;
+
+  const mobilePromoBannerThreeImgURL = `{{ collection.metafields.custom.mobile_banner_promo_3_img_url }}`;
+  const mobilePromoBannerThreeURL = `{{ collection.metafields.custom.mobile_banner_promo_3_url }}`;
+  const mobilePromoBannerThreePage = `{{ collection.metafields.custom.mobile_banner_promo_3_page }}`;
+  const mobilePromoBannerThreeRow = `{{ collection.metafields.custom.mobile_banner_promo_3_row }}`;
+  const mobilePromoBannerThreeClass = `mobile-promo-banner-three`;
+
+  const mobilePromoBannerFourImgURL = `{{ collection.metafields.custom.mobile_banner_promo_4_img_url }}`;
+  const mobilePromoBannerFourURL = `{{ collection.metafields.custom.mobile_banner_promo_4_url }}`;
+  const mobilePromoBannerFourPage = `{{ collection.metafields.custom.mobile_banner_promo_4_page }}`;
+  const mobilePromoBannerFourRow = `{{ collection.metafields.custom.mobile_banner_promo_4_row }}`;
+  const mobilePromoBannerFourClass = `mobile-promo-banner-four`;
+</script>
+
+<script src="{{ 'collection.js' | asset_url }}" defer></script>
+
+{% schema %}
+  {
+    "name": "Collection",
+    "class": "section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "min": 10,
+        "max": 40,
+        "step": 5,
+        "default": 25,
+        "label": "Products Per Page"
+      }, {
+        "type": "header",
+        "content": "Header Content"
+      }, {
+        "type": "checkbox",
+        "id": "enable_filtering",
+        "default": true,
+        "label": "Enable Filters"
+      }, {
+        "type": "checkbox",
+        "id": "enable_sorting",
+        "default": true,
+        "label": "Enable Sorting"
+      }
+    ]
+  }
+{% endschema %}

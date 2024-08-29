@@ -1,0 +1,343 @@
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --heading-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.heading_desktop_size != blank -%}
+    --heading-font-size-desktop: {% render 'to-rem', n: section.settings.heading_desktop_size %};
+  {%- endif -%}
+  {%- if section.settings.heading_mobile_size != blank -%}
+    --heading-font-size-mobile: {% render 'to-rem', n: section.settings.heading_mobile_size %};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_text_color != blank -%}
+    --cta-text-color: {{ section.settings.section_cta_text_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_bg_color != blank -%}
+    --cta-bg-color: {{ section.settings.section_cta_bg_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_color != blank -%}
+    --cta-border-color: {{ section.settings.section_cta_border_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_width != blank -%}
+    --cta-border-width: {{ section.settings.section_cta_border_width }}px;
+  {%- endif -%}
+  {%- if section.settings.section_cta_text_color_two != blank -%}
+    --cta-text-color-two: {{ section.settings.section_cta_text_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_bg_color_two != blank -%}
+    --cta-bg-color-two: {{ section.settings.section_cta_bg_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_color_two != blank -%}
+    --cta-border-color-two: {{ section.settings.section_cta_border_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_width_two != blank -%}
+    --cta-border-width-two: {{ section.settings.section_cta_border_width_two }}px;
+  {%- endif -%}
+  {%- if section.settings.section_content_position != blank -%}
+    --content-position: {{ section.settings.section_content_position }};
+  {%- endif -%}
+  {%- if section.settings.section_content_text_align != blank -%}
+    --text-alignment: {{ section.settings.section_content_text_align }};
+  {%- endif -%}
+  {%- if section.settings.section_image_position_desktop != blank -%}
+    --image-position-desktop: {{ section.settings.section_image_position_desktop }};
+  {%- endif -%}
+  {%- if section.settings.section_image_position_mobile != blank -%}
+    --image-position-mobile: {{ section.settings.section_image_position_mobile }};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_top != blank -%}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_bottom != blank -%}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-content-text-image-split.css' | asset_url | stylesheet_tag }}
+
+<div class="section__text-half-image-half{% if section.settings.page_width != true %} container{% endif %}" style="{{ styling }}">
+  <div class="text-half-image-half__text-container">
+    {%- if section.settings.section_header != blank -%}
+      <h2 class="section__text-half-image-half-heading">{{ section.settings.section_header }}</h2>
+    {%- endif -%}
+    {%- if section.settings.section_paragraph != blank -%}
+      <p> {{ section.settings.section_paragraph }} </p>
+    {%- endif -%}
+    <div class="text-half-image-half__cta-container">
+      {% if section.settings.section_cta_text != blank and section.settings.section_cta_url != blank %}
+        <a class="text-half-image-half__cta btn" href="{{ section.settings.section_cta_url }}" role="button">{{ section.settings.section_cta_text }}</a>
+      {% endif %}
+      {% if section.settings.section_cta_or_text == true %}
+        <span class="text-uppercase margin-x-sm">or</span>
+      {% endif %}
+      {% if section.settings.section_cta_text_two != blank and section.settings.section_cta_url_two != blank %}
+        <a class="text-half-image-half__cta-two btn" href="{{ section.settings.section_cta_url_two }}">{{ section.settings.section_cta_text_two }}</a>
+      {% endif %}
+    </div>
+  </div>
+  {% if section.settings.section_image != blank %}
+    <div class="text-half-image-half__image {{ section.settings.section_image_size }} {% if section.settings.section_image_url %} text-half-image-half__image-has-url {% endif %}">
+      {% if section.settings.section_image_url %}
+        <a href="{{ section.settings.section_image_url }}" class="text-half-image-half__image-url youtube-icon">
+      {% endif %}
+        {% if section.settings.section_image_size == 'full' %}
+          {% render 'img', img: section.settings.section_image, width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy', alt: section.settings.section_image_alt_text %}
+        {% else %}
+          {% render 'img', img: section.settings.section_image, width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy', alt: section.settings.section_image_alt_text %}
+        {% endif %}
+        <span class="text-half-image-half__image-image" style="background-image: url({{ section.settings.section_image | image_url }}); {% if section.settings.section_image_position_desktop == 'row-reverse' %} left: 0; right: unset;{% endif %}"></span>
+      {% if section.settings.section_image_url %}
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Text/Image Split",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "page_width",
+      "type": "checkbox",
+      "label": "Do you want this section full width?"
+    },
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "heading_desktop_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size desktop"
+    },
+    {
+      "id": "heading_mobile_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size mobile"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "paragraph_color",
+      "type": "color",
+      "label": "Paragraph text color"
+    },
+    {
+      "id": "section_header",
+      "type": "richtext",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_paragraph",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    },
+    {
+      "id": "section_image",
+      "type": "image_picker",
+      "label": "Image"
+    },
+    {
+      "id": "section_image_alt_text",
+      "type": "text",
+      "label": "Image alt text"
+    },
+    {
+      "id": "section_image_size",
+      "type": "select",
+      "label": "Image Size",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full Height"
+        },
+        {
+          "value": "cropped",
+          "label": "Cropped Height"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "id": "section_image_url",
+      "type": "url",
+      "label": "Image link"
+    },
+    {
+      "id": "section_image_position_desktop",
+      "type": "select",
+      "label": "Image Position Desktop",
+      "options": [
+        {
+          "value": "row-reverse",
+          "label": "Left"
+        },
+        {
+          "value": "row",
+          "label": "Right"
+        }
+      ],
+      "default": "row-reverse"
+    },
+    {
+      "id": "section_image_position_mobile",
+      "type": "select",
+      "label": "Image Position Mobile",
+      "options": [
+        {
+          "value": "column-reverse",
+          "label": "Above Text"
+        },
+        {
+          "value": "column",
+          "label": "Below Text"
+        }
+      ],
+      "default": "column-reverse"
+    },
+    {
+      "id": "section_cta_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "section_cta_url",
+      "type": "url",
+      "label": "Button URL"
+    },
+    {
+      "id": "section_cta_text_color",
+      "type": "color",
+      "label": "Button Text Color"
+    },
+    {
+      "id": "section_cta_bg_color",
+      "type": "color",
+      "label": "Button Background Color"
+    },
+    {
+      "id": "section_cta_border_color",
+      "type": "color",
+      "label": "Button Border Color"
+    },
+    {
+      "id": "section_cta_border_width",
+      "type": "range",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "label": "Button Border Width"
+    },
+    {
+      "id": "section_cta_text_two",
+      "type": "text",
+      "label": "Second Button Text"
+    },
+    {
+      "id": "section_cta_url_two",
+      "type": "url",
+      "label": "Second Button URL"
+    },
+    {
+      "id": "section_cta_text_color_two",
+      "type": "color",
+      "label": "Second Button Text Color"
+    },
+    {
+      "id": "section_cta_bg_color_two",
+      "type": "color",
+      "label": "Second Button Background Color"
+    },
+    {
+      "id": "section_cta_border_color_two",
+      "type": "color",
+      "label": "Second Button Border Color"
+    },
+    {
+      "id": "section_cta_border_width_two",
+      "type": "range",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "label": "Second Button Border Width"
+    },
+    {
+      "id": "section_cta_or_text",
+      "type": "checkbox",
+      "label": "Check if you would like 'OR' between the CTA's"
+    },
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_top",
+      "type": "text",
+      "label": "Section Top Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_content_text_align",
+      "type": "select",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Text/Image Split"
+    }
+  ]
+}
+{% endschema %}

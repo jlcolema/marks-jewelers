@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="{{ shop.locale }}">
+<head>
+  <meta charset="utf-8">
+  {%- capture seo_title -%}{% render 'head-seo-title' %}{%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="{{ 'favicon.ico' | asset_url }}">
+  <link rel="icon" href="{{ 'favicon.svg' | asset_url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ 'apple-touch-icon.png' | asset_url }}">
+
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+  <link rel="preload" href="{{ 'nunitosans-light.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'nunitosans-regular.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'nunitosans-semibold.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'fonts.css' | asset_url }}" as="style" onload="this.onload=null; this.rel='stylesheet'"
+        crossorigin>
+  <noscript>
+    <link rel="stylesheet" href="{{ 'fonts.css' | asset_url }}">
+  </noscript>
+
+  <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style">
+  <link rel="preload" href="{{ 'main.js' | asset_url }}" as="script">
+
+  {{ 'main.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'main.js' | asset_url }}" defer></script>
+  <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+
+  {{ content_for_header }}
+
+  {%- liquid
+    render 'head-meta-tags'
+    render 'head-settings'
+  -%}
+
+  <!-- Google Tag Manager -->
+  <script defer>(function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start':
+          new Date().getTime(),
+        event: 'gtm.js',
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5WV9CQ4');</script>
+  <!-- End Google Tag Manager -->
+
+  {% if template == 'product' %}
+    <script src="https://static.ghostretail.com/js/marksjewelers/ghostconfig.js" defer></script>
+    <script src="https://static.ghostretail.com/js/ghostretail.js" defer></script>
+    <script src="https://static.ghostretail.com/js/ghostwidget.js" defer></script>
+  {% endif %}
+    <script src="https://shopper.ghostretail.com/gp-shopper.js" defer></script>
+<!--DOOFINDER-SHOPIFY--> {% if content_for_header contains 'doofinder-installed.js' %} {% render 'doofinder-script-tag' %} {% endif %} <!--/DOOFINDER-SHOPIFY-->
+<script defer>(() => {const installerKey = 'docapp-discount-auto-install'; const urlParams = new URLSearchParams(window.location.search); if (urlParams.get(installerKey)) {window.sessionStorage.setItem(installerKey, JSON.stringify({integrationId: urlParams.get('docapp-integration-id'), divClass: urlParams.get('docapp-install-class'), check: urlParams.get('docapp-check')}));}})();</script>
+
+<script defer>(() => {const previewKey = 'docapp-discount-test'; const urlParams = new URLSearchParams(window.location.search); if (urlParams.get(previewKey)) {window.sessionStorage.setItem(previewKey, JSON.stringify({active: true, integrationId: urlParams.get('docapp-discount-inst-test')}));}})();</script>
+<!--DOOFINDER-SHOPIFY--> {% if content_for_header contains 'doofinder-installed.js' %} {% render 'doofinder-script-tag' %} {% endif %} <!--/DOOFINDER-SHOPIFY-->
+  {% section 'vwo' %}
+
+  {% if template == 'index' %}
+  <script type="application/ld+json" async>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mark's Jewelers",
+    "url": "https://www.marks-jewelers.com/",
+    "logo": "https://cdn.shopify.com/s/files/1/0608/9752/5982/files/logo.png?height=628&pad_color=fff&v=1642009158&width=1200",
+    "description": "Mark's Jewelers is a family-owned jewelry store that offers a wide selection of engagement rings, wedding bands, and fine jewelry.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "975 Bethlehem Pike",
+      "addressLocality": "Montgomeryville",
+      "addressRegion": "PA",
+      "postalCode": "18936",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "(215)-362-7132",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/MarksJewelersPA/",
+      "https://twitter.com/MarksJewelersPA",
+      "https://www.instagram.com/marksjewelerspa/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json" async>
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "Marks Jewelers",
+      "url": "https://www.marks-jewelers.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.marks-jewelers.com/#/de222d8a-9c30-40ea-94be-7bf86dac300d/fullscreen-initial/page=1&rpp=10{search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+   <script type="application/ld+json" async>
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Marks Jewelers - Your Destination for Fine Jewelry",
+      "description": "Discover the beauty of our fine jewelry collections, from engagement rings to diamond necklaces and more.",
+      "thumbnailUrl": "https://www.marks-jewelers.com/wp-content/uploads/2023/05/homepage-video-thumbnail.jpg",
+      "uploadDate": "2023-05-01T00:00:00-07:00",
+      "duration": "PT1M30S",
+      "contentUrl": "https://www.marks-jewelers.com/wp-content/uploads/2023/05/homepage-video.mp4",
+      "embedUrl": "https://www.marks-jewelers.com/",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/WatchAction",
+        "userInteractionCount": "1000"
+      }
+    }
+    </script>
+  {% endif %}
+  {% if request.path == '/pages/contact' %}
+  <script type="application/ld+json" async>
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Us",
+      "url": "https://www.marks-jewelers.com/pages/contact",
+      "description": "Get in touch with us at Marks Jewelers. Fill out our contact form or visit us in-store for all of your jewelry needs.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "(215) 362-7132",
+        "contactType": "customer support",
+        "areaServed": ["US", "CA"],
+        "availableLanguage": ["English", "Spanish"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "975 Bethlehem Pike",
+        "addressLocality": "Montgomeryville",
+        "addressRegion": "PA",
+        "postalCode": "18936",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/MarksJewelersPA/",
+        "https://twitter.com/MarksJewelersPA",
+        "https://www.instagram.com/marksjewelerspa/"
+      ]
+    }
+    </script>
+  {% endif %}
+
+  {% if request.path == '/pages/about-us' %}
+  <script type="application/ld+json" async>
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Us",
+    "url": "https://www.marks-jewelers.com/pages/about-us",
+    "description": "Learn more about Marks Jewelers, a family-owned and operated jewelry store with a wide selection of fine jewelry, engagement rings, and custom designs.",
+    "image": "https://www.marks-jewelers.com/images/logo.jpg",
+    "foundingDate": "1981",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Jim Brusilovsky"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "975 Bethlehem Pike",
+      "addressLocality": "Montgomeryville",
+      "addressRegion": "PA",
+      "postalCode": "18936",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "(215) 362-7132",
+      "contactType": "customer service",
+      "areaServed": ["US", "CA"],
+      "availableLanguage": ["English", "Spanish"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/MarksJewelersPA/",
+      "https://twitter.com/MarksJewelersPA",
+      "https://www.instagram.com/marksjewelerspa/"
+    ]
+  }
+  </script>
+  {% endif %}
+  {% if request.path == '/pages/montgomeryville-store'%}
+  <script type="application/ld+json" async>
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "Marks Jewelers",
+    "image": "https://cdn.shopify.com/s/files/1/0608/9752/5982/files/logo.png?height=628&pad_color=fff&v=1642009158&width=1200",
+    "@id": "https://www.marks-jewelers.com/pages/montgomeryville-store",
+    "url": "https://www.marks-jewelers.com/pages/montgomeryville-store",
+    "telephone": "(215)-362-7132",
+    "priceRange": "$$$-$$$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "975 Bethlehem Pike",
+      "addressLocality": "Montgomeryville",
+      "addressRegion": "PA",
+      "postalCode": "18936",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.22762,
+      "longitude": -75.2348762
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "11:00",
+      "closes": "17:00"
+    },{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "11:00",
+      "closes": "20:00"
+    },{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "11:00",
+      "closes": "20:00"
+    },{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "11:00",
+      "closes": "18:00"
+    },{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "17:00"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/MarksJewelersPA/",
+      "https://twitter.com/MarksJewelersPA",
+      "https://www.instagram.com/marksjewelerspa/"
+    ]
+  }
+  </script>
+  {% endif %}
+
+  {% if request.page_type == 'product' %}
+  {% assign currentYear = 'now' | date: "%Y" %}
+  <script type="application/ld+json" async>
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{{product.title}}",
+    "image": "{{product.images[0]}}",
+    "description": "{{product.description}}",
+    "brand": {
+      "@type": "Brand",
+      "name": "{{product.vendor}}"
+    },
+    "sku": "FAN-S3589/WG",
+    "offers": {
+      "@type": "Offer",
+      "url": "{{product.url}}",
+      "priceCurrency": "USD",
+      "price": "{{product.price}}",
+      "priceValidUntil": "{{currentYear}}-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
+  }
+  </script>
+  {% endif %}
+
+<!--DOOFINDER-SHOPIFY--> {% if content_for_header contains 'doofinder-installed.js' %} {% render 'doofinder-script-tag' %} {% endif %} <!--/DOOFINDER-SHOPIFY--></head>
+
+<body
+  class="layout-{{ request.page_type | handle }} template-{{ template.name }}{% if template.suffix %}-{{ template.suffix }}{% endif %}">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WV9CQ4"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{%- comment -%} Accessibilty {%- endcomment -%}
+<a class="sr-only focusable skip-link" href="#main">{{ 'accessibility.skip_to_content' | t }}</a>
+{%- comment -%} End Accessibilty {%- endcomment -%}
+
+<div class="wrapper">
+  {% section 'announcement-bar' %}
+  {% section 'header' %}
+
+  <div>
+    {% if settings.show_breadcrumb_nav %}
+      {% render 'breadcrumbs' %}
+    {% endif %}
+  </div>
+
+  <div id="main" role="main" aria-label="Main Content">
+    {% if collection.handle contains "luxury-handbags" %}
+    <script src="{{ 'zslider.js' | asset_url }}" defer></script>
+      {% section 'handbags-collection-header' %}
+    {% endif %}
+    <div class="globoRecommendationsTop"></div>
+    {{ content_for_layout }}
+    <div class="globoRecommendationsBottom"></div>
+    {% section 'customer-testimonials' %}
+  </div>
+  {% section 'footer' %}
+</div>
+
+{% render 'footer-json-schema' %}
+<script defer src="https://connect.podium.com/widget.js#API_TOKEN=099145d6-295d-40ac-a454-b36253961bc8"
+        id="podium-widget" data-api-token="099145d6-295d-40ac-a454-b36253961bc8"></script>
+{% render 'vdb-gemstone-app' %}
+
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUH1EuBVwsOJPrGy-iE-bHeYv6v-iyNPU&libraries=places">
+</script>
+
+<!-- VDB Component Styling -->
+<style>
+  .diamond-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    max-width: 550px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .diamond-search__button {
+    margin: 12px 0;
+    background-color: #000;
+    color: #fff;
+  }
+
+  .diamond-search__button:hover {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+  }
+
+  .diamond-header {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .diamond-type {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .diamond-search__cta {
+    border: 1px solid #000;
+    padding: 32px 20px 20px
+  }
+
+  .diamond-search__logo {
+    margin-bottom: 15px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0608/9752/5982/files/m-logo.png?v=1642431897);
+    height: 50px;
+    width: 50px;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+
+<!-- VDB Customization -->
+<script defer>
+  function createDiamondSearchText(type) {
+    let altType = 'lab-grown';
+    let searchLink = '/apps/vdb-app/search-filters?diamondSearchType=Lab_grown_Diamond&structure=new';
+    if (type.toLowerCase() === 'lab-grown') {
+      altType = 'natural';
+      searchLink = '/apps/vdb-app/search-filters?structure=new';
+    }
+    const diamondTextEle = document.createElement('div');
+    diamondTextEle.classList.add('diamond-search');
+    diamondTextEle.innerHTML = `
+        <div class="diamond-search__logo"></div>
+        <div class="diamond-search__text">
+            <p class="diamond-header">Search For ${type} Diamonds</p>
+        </div>
+        <div class="diamond-search__cta">
+          <div>Looking for a ${altType} diamond? Click the button below.</div>
+          <a href=${searchLink} class="btn diamond-search__button">
+              Search ${altType} Diamonds
+          </a>
+        </div>
+      `;
+    document.querySelector('.container.breadcrumb-nav')
+      .after(diamondTextEle);
+  }
+
+  if (window.location.href.includes('/apps/vdb-app/search-filters?diamondSearchType=Lab_grown_Diamond&structure=new')) {
+    createDiamondSearchText('Lab-Grown');
+  }
+  if (window.location.href.includes('/apps/vdb-app/search-filters?structure=new')) {
+    createDiamondSearchText('Natural');
+  }
+</script>
+
+<!-- Main Nav Accessibility -->
+<script defer>
+  (() => {
+    const sectionHeaderInterval = setInterval(function () {
+      if (!document.querySelector('#shopify-section-header')) return;
+      document.querySelectorAll('#shopify-section-header')
+        .forEach(elem => {
+          elem.setAttribute('aria-label', 'Main Navigation');
+        });
+      clearInterval(sectionHeaderInterval);
+    }, 200);
+  })();
+
+  (() => {
+    const shareButtonInterval = setInterval(function () {
+      if (!document.querySelector('#single_share_btn')) return;
+      document.querySelectorAll('#single_share_btn')
+        .forEach(elem => {
+          elem.remove();
+        });
+      clearInterval(shareButtonInterval);
+    }, 200);
+  })();
+</script>
+
+<div class="ab-icon__container ab-remove" role="button" aria-label="Activate Accessibe" tabindex="0">
+  <svg role="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 131.3"
+       enable-background="new 0 0 100 131.3" xml:space="preserve">
+        <path
+          d="M71.6,131.3c1,0,2.1-0.3,3.1-0.8c3.9-1.8,5.5-6.2,3.6-10.1c0,0-14.3-32.7-16.9-44.7c-1-4.2-1.6-15.3-1.8-20.5c0-1.8,1-3.4,2.6-3.9l32-9.6c3.9-1,6.2-5.5,5.2-9.4c-1-3.9-5.5-6.2-9.4-5.2c0,0-29.6,9.6-40.3,9.6c-10.4,0-39.8-9.4-39.8-9.4c-3.9-1-8.3,0.8-9.6,4.7c-1.3,4.2,1,8.6,5.2,9.6l32,9.6c1.6,0.5,2.9,2.1,2.6,3.9c-0.3,5.2-0.8,16.4-1.8,20.5c-2.6,12-16.9,44.7-16.9,44.7c-1.8,3.9,0,8.3,3.6,10.1c1,0.5,2.1,0.8,3.1,0.8c2.9,0,5.7-1.6,6.8-4.4l15.3-31.2l14.6,31.4C66.1,129.7,68.7,131.3,71.6,131.3z"
+          fill="#fff"></path>
+    <circle style="fill: #fff;" cx="50.3" cy="14.6" r="14.6"></circle>
+    </svg>
+</div>
+
+<!-- Accessibe Styles -->
+<style>
+  .ab-icon__container {
+    border-radius: 50%;
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    background-color: #146ff8 !important;
+    inset: auto 220px 20px auto;
+    cursor: pointer;
+    z-index: 999999999999;
+    transition: all 0.15s ease;
+  }
+
+  .ab-icon__container:hover,
+  .ab-icon__container:focus {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .ab-icon__container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    max-width: 50%;
+  }
+</style>
+
+<!-- Accessibe Lazy Load -->
+<script defer>
+  const abScript = document.createElement('script');
+  abScript.innerHTML = `(function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'right', leadColor : '#146FF8', triggerColor : '#146FF8', triggerRadius : '50%', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'bottom', triggerOffsetX : 220, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerOffsetX : 20, triggerOffsetY : 20, triggerRadius : '20' } }); }; h.appendChild(s); })();`;
+
+  var abTarget = document.querySelector('body');
+  var abObserver = new MutationObserver(function () {
+    if (abTarget.querySelector('.acsb-actions-active-icon')) {
+      abObserver.disconnect();
+      document.querySelector('.acsb-trigger')
+        .click();
+    }
+  });
+  abObserver.observe(abTarget, {
+    subtree: true,
+    childList: true,
+  });
+
+  document.querySelector('.ab-icon__container')
+    .addEventListener('click', () => {
+      document.querySelector('body')
+        .append(abScript);
+      document.querySelectorAll('.ab-remove')
+        .forEach(el => {
+          el.remove();
+        });
+    });
+</script>
+
+<!-- Accessibility Fixes -->
+<script defer>
+  const notepadAnchorTitle = document.querySelector('#notepad-anchor-title');
+  if (notepadAnchorTitle) {
+    notepadAnchorTitle.setAttribute('role', 'button');
+  }
+
+  if (document.querySelector('.header-nav__item')) {
+    document.querySelectorAll('.header-nav__item')
+      .forEach(function (elem) {
+        elem.setAttribute('aria-expanded', 'false');
+        elem.addEventListener('mouseenter', function (e) {
+          e.target.closest('.header-nav__item')
+            .setAttribute('aria-expanded', 'true');
+        });
+        elem.addEventListener('mouseleave', function (e) {
+          e.target.closest('.header-nav__item')
+            .setAttribute('aria-expanded', 'false');
+        });
+      });
+  }
+
+  if (document.querySelector('.header-nav__item > .accordion__header')) {
+    document.querySelectorAll('.header-nav__item > .accordion__header')
+      .forEach(function (elem) {
+        elem.setAttribute('aria-expanded', 'false');
+        elem.setAttribute('aria-haspopup', 'true');
+        elem.setAttribute('role', 'menuitem');
+        elem.addEventListener('mouseenter', function (e) {
+          e.target.closest('.accordion__header')
+            .setAttribute('aria-expanded', 'true');
+        });
+        elem.addEventListener('mouseleave', function (e) {
+          e.target.closest('.accordion__header')
+            .setAttribute('aria-expanded', 'false');
+        });
+      });
+  }
+
+  if (document.querySelector('.header-nav__dropdown')) {
+    document.querySelectorAll('.header-nav__dropdown')
+      .forEach(function (elem) {
+        elem.addEventListener('mouseenter', function (e) {
+          e.target.closest('.header-nav__item')
+            .querySelector('.accordion__header')
+            .setAttribute('aria-expanded', 'true');
+        });
+        elem.addEventListener('mouseleave', function (e) {
+          e.target.closest('.header-nav__item')
+            .querySelector('.accordion__header')
+            .setAttribute('aria-expanded', 'false');
+        });
+      });
+  }
+  document.querySelectorAll('.header-nav__dropdown')[0].closest('.header-nav__item');
+
+  if (document.querySelector('.swym-notepad-white')) {
+    document.querySelectorAll('.swym-notepad-white')
+      .forEach(function (elem) {
+        elem.setAttribute('role', 'none');
+      });
+  }
+</script>
+
+<!-- Mobile Nav Menu Fixes -->
+<script defer>
+  if (window.innerWidth < 1024) {
+    document.querySelectorAll('.header-nav__link')
+      .forEach(function (elem) {
+        elem.removeAttribute('href');
+      });
+
+    document.querySelectorAll('.header-nav__item--main')
+      .forEach(function (elem) {
+        elem.addEventListener('click', function (e) {
+
+          if (e.target.classList.contains('header-nav__label')) return;
+          if (e.target.getAttribute('href')) return;
+
+          const closestDropdown = e.target.closest('.header-nav__item')
+            .querySelector('.header-nav__dropdown');
+
+          const closestArrow = e.target.closest('.header-nav__item')
+            .querySelector('svg');
+
+          document.querySelectorAll('.header-nav__dropdown')
+            .forEach(function (dropdown) {
+              dropdown.classList.remove('open-dropdown');
+            });
+
+          closestDropdown.classList.add('open-dropdown');
+
+          document.querySelectorAll('.header-nav__dropdown')
+            .forEach(function (dropdown) {
+              if (!dropdown.classList.contains('open-dropdown')) {
+                dropdown.style.display = 'none';
+              }
+            });
+
+          document.querySelectorAll('.header-nav__item--main svg')
+            .forEach(function (dropdownSVG) {
+              dropdownSVG.style.transform = 'none';
+            });
+
+          if (getComputedStyle(closestDropdown).display !== 'block') {
+            closestDropdown.style.display = 'block';
+            closestDropdown.classList.add('open-dropdown');
+            closestArrow.style.transform = 'rotate(180deg)';
+          } else {
+            closestDropdown.style.display = 'none';
+            closestDropdown.classList.remove('open-dropdown');
+            closestArrow.style.transform = 'none';
+          }
+        });
+      });
+
+    document.querySelectorAll('.header-nav__item--main i')
+      .forEach(function (elem) {
+        elem.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.target.closest('.header-nav__item--main').click();
+        });
+      });
+  }
+</script>
+
+{% # theme-check-disable %}
+{% include 'swymSnippet' %}
+{% # theme-check-enable %}
+
+</body>
+</html>

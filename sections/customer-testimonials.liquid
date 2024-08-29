@@ -1,0 +1,26 @@
+{{ 'section-customer-testimonials.css' | asset_url | stylesheet_tag }}
+<div class="container">
+  <div id="map" class="hidden"></div>
+
+  {%- if section.settings.title != blank -%}
+    <h3 class="section-title" style="text-align: center">{{ section.settings.title }}</h3>
+  {%- endif -%}
+   
+  <div class="customer-testimonials__items" data-component="customer-testimonials"></div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Customer Testimonials",
+  "tag": "section",
+  "class": "customer-testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ]
+}
+{% endschema %}

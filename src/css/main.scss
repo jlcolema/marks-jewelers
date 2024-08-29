@@ -1,0 +1,41 @@
+// ==========================================================================
+// LAYOUT: BASE
+// ==========================================================================
+
+///  @content
+///  DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
+///  Instead, use imports to add extensions or snippets.
+
+/// SETTINGS & TOOLS (MUST BE AT THE TOP)
+/// Common settings and tools.
+
+@forward './settings/colors';
+@forward './settings/breakpoints';
+
+// Base
+@use './base/reset';
+@use './base/spacing';
+@use './base/grid';
+@use './base/typography';
+@use './base/z-index';
+@use './base/visibility';
+@use './base/accessibility';
+@use './base/util';
+@use './base/radius';
+@use './base/timing';
+
+// Global components
+@use './components/icons';
+@use './components/buttons';
+@use './components/forms';
+@use './components/klaviyo';
+@use './components/accordion';
+@use './components/snap-slider';
+@use './components/related-products';
+@use './components/zslider';
+
+// Global sections
+@use './sections/header';
+@use './sections/footer';
+@use './components/breadcrumbs';
+

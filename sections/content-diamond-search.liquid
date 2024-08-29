@@ -1,0 +1,117 @@
+{%- capture styling -%}
+  {%- if section.settings.section_spacing_top != blank -%}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_bottom != blank -%}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {%- endif -%}
+  {%- if section.settings.section_max_width != blank -%}
+    --section-width: {{ section.settings.section_max_width }}px;
+  {%- else -%}
+    --section-width: 100%;
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_top != blank -%}
+    --section-inner-spacing-top: {% render 'to-rem', n: section.settings.section_inner_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_bottom != blank -%}
+    --section-inner-spacing-bottom: {% render 'to-rem', n: section.settings.section_inner_spacing_bottom %};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-diamond-search.css' | asset_url | stylesheet_tag }}
+
+<div class="section__diamond--search text-center" style="{{ styling }}">
+  <div class="container flex justify-between@lg justify-center">
+    <div class="content__cta-container flex-center">
+      {% if section.settings.section_cta_text != blank and section.settings.section_cta_url != blank %}
+        <a class="content__cta btn" href="{{ section.settings.section_cta_url }}">{{ section.settings.section_cta_text }}</a>
+      {% endif %}
+    </div>
+    <div class="flex justify-between items-end diamond__row">
+      {%- for block in section.blocks -%}
+        <div class="diamond">
+          {%- if block.settings.diamond_url != '' -%}<a href="{{ block.settings.diamond_url }}">{% endif %}
+            {% render 'img', img: block.settings.diamond_image, width: block.settings.diamond_image.width, height: block.settings.diamond_image.height, loading: 'lazy' %}
+            <span>{{ block.settings.diamond_name }}</span>
+          {%- if block.settings.diamond_url != '' -%}</a>{% endif %}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Diamond Search",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "section_cta_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "section_cta_url",
+      "type": "url",
+      "label": "Button URL"
+    },
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_top",
+      "type": "text",
+      "label": "Section Top Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_max_width",
+      "type": "number",
+      "label": "Max width (in pixels)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Diamond",
+      "settings": [
+        {
+          "id": "diamond_image",
+          "type": "image_picker",
+          "label": "Diamond image"
+        },
+        {
+          "id": "diamond_name",
+          "type": "text",
+          "label": "Diamond label"
+        },
+        {
+          "id": "diamond_url",
+          "type": "url",
+          "label": "Diamond URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Diamond Search Block"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1649015731f7e7fa9c": {
+      "type": "content-image-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/lag_bn.jpg",
+        "section_image_mobile": "shopify:\/\/shop_images\/lag_bn-small.jpg",
+        "section_image_alt_text": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_img_url": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_img_align": "center"
+      }
+    },
+    "1649016298928c1fa7": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 36,
+        "heading_mobile_size": 30,
+        "bg_color": "",
+        "text_color": "",
+        "section_header": "<p><strong>SHOP THE LAGOS 2021 STYLE GUIDE<\/strong><\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>Steven Lagos founded LAGOS in 1977 in Philadelphia. He draws his design inspiration from the effortless style of the LAGOS woman as well as the art, culture, and sights from his frequent travels. His values are integrity, strength and smart. These values define the culture of the company and are represented in every piece of jewelry he designs.<\/p>",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "80",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_text_align": "center",
+        "section_max_width": 1000
+      }
+    },
+    "16490163146504fed2": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 30,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "text_color": "",
+        "section_header": "<p>Browse the LAGOS 2021 Style Guide below<br\/>and shop the top designs for the summer season.<\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "70",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_text_align": "center",
+        "section_max_width": 1000
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1649015731f7e7fa9c",
+    "1649016298928c1fa7",
+    "16490163146504fed2"
+  ]
+}

@@ -1,0 +1,241 @@
+@use '../settings/breakpoints' as *;
+@use '../tools' as *;
+
+:root {
+  // font family
+  --font-primary: 'Nunito Sans', Arial, sans-serif;
+
+  // font size
+  --text-base-size: 1rem; // body font-size
+
+  // line-height
+  --line-height: 1.4;
+  --line-height-sm: 1.2;
+  --line-height-md: 1.55;
+  --line-height-lg: 1.8;
+  --heading-line-height: var(--line-height-sm);
+
+  // capital letters - used in combo with the lhCrop mixin
+  --font-primary-capital-letter: 1;
+
+  // unit
+  --text-unit: var(--text-base-size);
+
+  // flow
+  --flow-margin: 1em;
+}
+
+:root,
+* {
+  // type scale
+  --text-base: var(--text-unit);
+  --text-xxxs: calc(var(--text-unit) * 0.75);  // 12px
+  --text-xxs: calc(var(--text-unit) * 0.8125); // 13px
+  --text-xs: calc(var(--text-unit) * 0.875);   // 14px
+  --text-sm: calc(var(--text-unit) * 0.9375);  // 15px
+  --text-md: calc(var(--text-unit) * 1.125);   // 18px
+  --text-lg: calc(var(--text-unit) * 1.25);    // 20px
+  --text-xl: calc(var(--text-unit) * 1.5);
+  --text-xxl: calc(var(--text-unit) * 2);
+  --text-xxxl: calc(var(--text-unit) * 2.375);
+  --text-xxxxl: calc(var(--text-unit) * 3);
+  --text-main-heading: calc(var(--text-unit) * 1.75);
+
+  @media (--md) {
+    --text-main-heading: calc(var(--text-unit) * 3);
+  }
+}
+
+h1, h2, h3, h4 {
+  --heading-font-weight: 700;
+
+  color: var(--color-contrast-higher, hsl(204, 28%, 7%));
+  line-height: var(--heading-line-height, 1.2);
+  font-weight: var(--heading-font-weight, 700);
+}
+
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+body {
+  font-size: var(--text-base-size, 1rem);
+  font-family: var(--font-primary, sans-serif);
+  line-height: var(--line-height, 1.4);
+  color: var(--color-text);
+  font-weight: var(--body-font-weight, 400);
+}
+
+h1 {
+  font-size: var(--text-xxl, 2rem);
+}
+
+h2 {
+  font-size: var(--text-xl, 1.75rem);
+}
+
+h3 {
+  font-size: var(--text-lg, 1.375rem);
+}
+
+h4 {
+  font-size: var(--text-md, 1.125rem);
+}
+
+small {
+  font-size: var(--text-sm, 0.75rem);
+}
+
+// --------------------------------
+// Text
+// --------------------------------
+
+a,
+.link {
+  color: inherit;
+  text-decoration: none;
+
+  &:where(:not(.btn)):hover,
+  &:where(:not(.btn)):focus {
+    text-decoration: underline;
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+u {
+  text-decoration: underline;
+}
+
+.text-component {
+  font-size: var(--text-sm);
+
+  @media (--sm) {
+    font-size: var(--text-base);
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+
+  &:not(.flow) {
+    ul,
+    ol,
+    p,
+    blockquote {
+      margin-bottom: 1em;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+  }
+
+  ul {
+    list-style-type: disc;
+
+    ul,
+    ol {
+      margin-left: var(--space-lg);
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+
+    ul,
+    ol {
+      margin-left: var(--space-lg);
+    }
+  }
+}
+
+p {
+  font-weight: 100;
+}
+
+strong {
+  font-weight: 700;
+}
+
+// --------------------------------
+// Section heading
+// --------------------------------
+.section-heading {
+  --gap: var(--space-sm);
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: var(--gap);
+  @media (--md) {
+    --gap: var(--space-unit);
+  }
+
+  .icon {
+    --size: 3.75rem;
+  }
+}
+
+.section-title {
+  font-size: var(--text-xl);
+  font-weight: 400;
+
+  @media (--sm) {
+    font-size: var(--text-xxl);
+  }
+
+  @media (--md) {
+    font-size: var(--text-xxxl);
+  }
+}
+
+.home-section-heading {
+  font-size: var(--text-xl);
+  font-weight: 400;
+  text-transform: capitalize;
+  background-color: #FFF;
+  color: #000;
+  @media(--sm) {
+    font-size: 38px;
+  }
+
+  p {
+    font-size: var(--text-xl);
+    font-weight: 400;
+    text-transform: capitalize;
+    @media(--sm) {
+      font-size: 38px;
+    }
+  }
+}
+.section__confidence .home-section-heading {
+  background-color: var(--confidence-bg-color);
+  color: #000;
+}
+
+// --------------------------------
+// Vertical flow
+// --------------------------------
+.flow {
+  > * + * {
+    margin-top: var(--flow-margin);
+  }
+}
+
+.flow--fixed {
+  > * + * {
+    --flow-margin: 1rem;
+  }
+}

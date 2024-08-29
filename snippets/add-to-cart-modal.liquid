@@ -1,0 +1,49 @@
+<div id="add-to-cart-modal" class="modals">
+  <div class="modal-overlay" data-modal="true" data-dismiss="modal"></div>
+  <div class="modal-window add-to-cart-modal">
+    <span class="close" data-modal="true" data-dismiss="modal">&times;</span>
+    <div class="add-to-cart-modal__title-container">
+      <div class="add-to-cart-modal__title">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+        <span class="add-qty"></span> item added to Cart
+      </div>
+    </div>
+    <div class="add-to-cart-modal__content">
+      <div class="add-to-cart-modal__product-info">
+        <div class="modal-image"><img src="{{ product_option.name }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" alt="{{ product_option.name }}"></div>
+        <div class="product-details">
+          <span class="product-vendor"></span>
+          <span class="product-title"></span>
+          <span class="product-price"></span>
+          <div class="product-options-selected">
+            <span class="option-title">{{ product_option.name }}</span>
+            <span class="selected-option"></span>
+          </div>
+          <div class="quantity-selected">
+            QTY: <span class="prod-qty"></span>
+          </div>
+        </div>
+      </div>
+      <div class="add-to-cart-modal__cart-summary">
+        <div class="add-to-cart-modal__summary">Cart Summary</div>
+        <div class="add-to-cart-modal__cart-info">
+          <div class="items-in-cart">
+            <span>Items in Cart:</span><span class="total-items-in-cart"></span>
+          </div>
+          <div class="cart-subtotal">
+            <span><strong>Subtotal:</strong></span><span class="cart-subtotal-price"></span>
+          </div>
+        </div>
+        <div class="add-to-cart-modal__summary-buttons">
+          <a class="btn view-cart-cta" href="/cart">Cart</a>
+          <div class="add-to-cart-modal__checkout"><a class="btn checkout-cta" href="/checkout">Checkout now</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-recently-viewed">
+
+    </div>
+  </div>
+</div>
+
+

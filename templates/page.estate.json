@@ -1,0 +1,621 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "164903130534ee27f7": {
+      "type": "content-image-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/estate-desktop-hero.jpg",
+        "section_image_mobile": "shopify:\/\/shop_images\/estate-mobile-hero.jpg",
+        "section_image_alt_text": "About Us - Love Grows Here",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_img_url": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_img_align": "center"
+      }
+    },
+    "164963343422cb6320": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 36,
+        "heading_mobile_size": 24,
+        "bg_color": "#a07383",
+        "text_color": "#ffffff",
+        "section_header": "<p>We're Passionate About Excellence<\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>Marks Jewelers is one of the most reputable buyers and sellers of estate jewelry in the world. We guarantee our offers to be higher than other smaller dealers because our clients are from Europe, Asia, and the Middle East and are not just limited to North America.<\/p>",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "40",
+        "section_inner_spacing_bottom": "20",
+        "section_content_text_align": "center",
+        "section_max_width": 600
+      }
+    },
+    "164980976117f45be2": {
+      "type": "did-you-know",
+      "settings": {
+        "section_paragraph": "<p>Jewelry that is 100 years old or more is considered to be Antique including Georgian, Victorian, Art Nouveau, Edwardian & Belle Epoque, as well as very early Art Deco pieces.<\/p>",
+        "section_image": "shopify:\/\/shop_images\/estate-DYK-1.jpg",
+        "bg_color": "#d8d6d4",
+        "copy_alignment": "justify-start"
+      }
+    },
+    "1649814661f05bc83a": {
+      "type": "content-image-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/Estate-Jewlery-Through-The-Ages.png",
+        "section_image_alt_text": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "#a07282",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_img_url": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "20",
+        "section_inner_spacing_bottom": "30",
+        "section_content_img_align": "center"
+      }
+    },
+    "1649633427816fb95c": {
+      "type": "estate-period",
+      "blocks": {
+        "49908a1c-c3bd-43b9-a0e3-8ee888936070": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Marks-Diamonds-GeorgianEra-Diamonds.jpg"
+          }
+        },
+        "4ea71ce4-bb3c-4612-bda7-120df46581a4": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Marks-Diamonds-GeorgianEra-Diamonds2.jpg"
+          }
+        },
+        "97de7278-648c-46a1-b5f8-a46322c95d91": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Marks-Diamonds-GeorgianEra-Diamonds3.jpg"
+          }
+        },
+        "17edf673-e7f2-4742-94ac-fa9d78f4fb3a": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Marks-Diamonds-GeorgianEra4.jpg"
+          }
+        },
+        "4c2ddc30-83f7-40ae-a36e-b2f8f6dea761": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Marks-Diamonds-GeorgiaEra5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "49908a1c-c3bd-43b9-a0e3-8ee888936070",
+        "4ea71ce4-bb3c-4612-bda7-120df46581a4",
+        "97de7278-648c-46a1-b5f8-a46322c95d91",
+        "17edf673-e7f2-4742-94ac-fa9d78f4fb3a",
+        "4c2ddc30-83f7-40ae-a36e-b2f8f6dea761"
+      ],
+      "settings": {
+        "section_header": "Georgian Era",
+        "section_sub_header": "1714-1837",
+        "section_image": "shopify:\/\/shop_images\/Estate-Jewlery-Georgian-Era.jpg"
+      }
+    },
+    "16496408599dbd2830": {
+      "type": "estate-period",
+      "blocks": {
+        "1326cbf4-6c15-41d6-ad00-55e26b80969b": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victoria-Era-Jewlery-1.jpg"
+          }
+        },
+        "e8856974-5f60-460a-aef4-71194791379c": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victorian-Era-Jewlery-2.jpg"
+          }
+        },
+        "4b91b7ba-4233-4c42-8d24-a3f5fb82b147": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victorian-Era-Jewlery-3.jpg"
+          }
+        },
+        "6a114745-00e6-4303-9ab5-6ce0b3bc5b1e": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victorian-Era-Jewlery-4.jpg"
+          }
+        },
+        "78e6f814-ddd6-4b2d-930a-84f2e2848851": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victoria-Early-Jewlery-5.jpg"
+          }
+        },
+        "5d09bbed-9cdd-4057-91b0-7756c4e67f86": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victorian-Era-Jewlery-6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1326cbf4-6c15-41d6-ad00-55e26b80969b",
+        "e8856974-5f60-460a-aef4-71194791379c",
+        "4b91b7ba-4233-4c42-8d24-a3f5fb82b147",
+        "6a114745-00e6-4303-9ab5-6ce0b3bc5b1e",
+        "78e6f814-ddd6-4b2d-930a-84f2e2848851",
+        "5d09bbed-9cdd-4057-91b0-7756c4e67f86"
+      ],
+      "settings": {
+        "section_header": "Victorian Early Period",
+        "section_sub_header": "1837-1860",
+        "section_image": "shopify:\/\/shop_images\/Victorian-Early-Period.jpg"
+      }
+    },
+    "1649640862c4d2e0a0": {
+      "type": "estate-period",
+      "blocks": {
+        "7a25c367-0fdd-4a39-a191-3313cdd4f9d3": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victoria-Middle-Jewelry1.jpg"
+          }
+        },
+        "1fcec58b-204c-44b0-94e3-85d4b1a9a3c0": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victoria-Middle-Jewlery2.jpg"
+          }
+        },
+        "05a9e913-a1e9-45ae-9f55-ec0fadc761ed": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victoria-Middle-Jewlery3.jpg"
+          }
+        },
+        "87274b70-7f5f-47c7-81b8-6c9dd1a34ef5": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victoria-Middle-Jewlery4.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "7a25c367-0fdd-4a39-a191-3313cdd4f9d3",
+        "1fcec58b-204c-44b0-94e3-85d4b1a9a3c0",
+        "05a9e913-a1e9-45ae-9f55-ec0fadc761ed",
+        "87274b70-7f5f-47c7-81b8-6c9dd1a34ef5"
+      ],
+      "settings": {
+        "section_header": "Victorian Middle Period",
+        "section_sub_header": "1860-1880",
+        "section_image": "shopify:\/\/shop_images\/Victoria-Middle-Period.jpg"
+      }
+    },
+    "1649641071034d4aa0": {
+      "type": "estate-period",
+      "blocks": {
+        "477c42c7-e634-470d-97ca-7a352229937b": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victorian-Late-Jewelry1.jpg"
+          }
+        },
+        "39b7509d-d556-4614-acf5-3209821684ac": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victorian-Late-Jewelry2.jpg"
+          }
+        },
+        "738ff5e4-32f6-4661-8190-c391d53b9b11": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Victorian-Late-Jewelry3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "477c42c7-e634-470d-97ca-7a352229937b",
+        "39b7509d-d556-4614-acf5-3209821684ac",
+        "738ff5e4-32f6-4661-8190-c391d53b9b11"
+      ],
+      "settings": {
+        "section_header": "Victorian Late Period",
+        "section_sub_header": "1880-1901",
+        "section_image": "shopify:\/\/shop_images\/Victorian-Late-Period.jpg"
+      }
+    },
+    "1649641188735481d6": {
+      "type": "estate-period",
+      "blocks": {
+        "0b355155-fcfb-4cf2-a3ed-49085e999c96": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Edwardian-Belle-Jewelry1.jpg"
+          }
+        },
+        "bb03f707-2c2f-4e6c-97f8-14defdb4908b": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Edwardian-Belle-Jewelry2.jpg"
+          }
+        },
+        "b48c4c6a-ea70-4ecb-b17e-316ea0d1175e": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Edwardian-Belle-Jewelry3.jpg"
+          }
+        },
+        "b8e77447-6947-44e0-a3ed-46ef5eebf9d3": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Edwardian-Belle-Jewelry4.jpg"
+          }
+        },
+        "a2238e59-5442-4cca-9d2c-6414f4f4e886": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Edwardian-Belle-Jewelry5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "0b355155-fcfb-4cf2-a3ed-49085e999c96",
+        "bb03f707-2c2f-4e6c-97f8-14defdb4908b",
+        "b48c4c6a-ea70-4ecb-b17e-316ea0d1175e",
+        "b8e77447-6947-44e0-a3ed-46ef5eebf9d3",
+        "a2238e59-5442-4cca-9d2c-6414f4f4e886"
+      ],
+      "settings": {
+        "section_header": "Edwardian & Belle Epoque",
+        "section_sub_header": "1890-1920",
+        "section_image": "shopify:\/\/shop_images\/Edwardian-Belle-Period.jpg"
+      }
+    },
+    "16498097703d1988b6": {
+      "type": "did-you-know",
+      "settings": {
+        "section_paragraph": "<p>Vintage Jewelry is less than 100 years old, but more than 20 years old. Vintage includes most Art Deco jewelry, as well as Retro and later, including 50's, 60's and 70's.<\/p>",
+        "section_image": "shopify:\/\/shop_images\/Did-You-Know-BckgrndImg.jpg",
+        "bg_color": "#d8d6d4",
+        "copy_alignment": "justify-start"
+      }
+    },
+    "1649641272869cea8d": {
+      "type": "estate-period",
+      "blocks": {
+        "8c268404-b5fc-4076-bedb-575c1c6e3d75": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Nouveau-Jewelry1.jpg"
+          }
+        },
+        "d9d4e349-4f4d-45cc-bc16-22903edc30ee": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Nouveau-Jewelry2.jpg"
+          }
+        },
+        "968c792f-c0d2-49e2-bf01-635992879754": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Nouveau-Jewelry3.jpg"
+          }
+        },
+        "ca389d09-fbb2-4be8-a8d1-3aed843099c6": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Nouveau-Jewelry4.jpg"
+          }
+        },
+        "8059d466-7f9b-4caa-8e38-61972663734c": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Nouveau-Jewelry5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "8c268404-b5fc-4076-bedb-575c1c6e3d75",
+        "d9d4e349-4f4d-45cc-bc16-22903edc30ee",
+        "968c792f-c0d2-49e2-bf01-635992879754",
+        "ca389d09-fbb2-4be8-a8d1-3aed843099c6",
+        "8059d466-7f9b-4caa-8e38-61972663734c"
+      ],
+      "settings": {
+        "section_header": "Art Nouveau",
+        "section_sub_header": "1890-1915",
+        "section_image": "shopify:\/\/shop_images\/Art-Nouveau-Logo.jpg"
+      }
+    },
+    "164964139785479057": {
+      "type": "estate-period",
+      "blocks": {
+        "66d031af-bc65-4d44-91ff-1a492c7309f1": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Deco-Jewelry1.jpg"
+          }
+        },
+        "04f304bf-45a5-4f8c-98b5-c4666bec1505": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Deco-Jewelry2.jpg"
+          }
+        },
+        "07169751-0410-4edd-a6ab-ebd522292c88": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Deco-Jewelry3.jpg"
+          }
+        },
+        "99f1ad9d-c6e0-4888-81f3-49f20e3ec0ef": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Deco-Jewelry4.jpg"
+          }
+        },
+        "b5fe243e-de28-4107-99d8-d0f466e15c25": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Deco-Jewelry5.jpg"
+          }
+        },
+        "2906ccb3-dcb5-4f76-91ba-239b1c8d0b6e": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Art-Deco-Jewelry6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "66d031af-bc65-4d44-91ff-1a492c7309f1",
+        "04f304bf-45a5-4f8c-98b5-c4666bec1505",
+        "07169751-0410-4edd-a6ab-ebd522292c88",
+        "99f1ad9d-c6e0-4888-81f3-49f20e3ec0ef",
+        "b5fe243e-de28-4107-99d8-d0f466e15c25",
+        "2906ccb3-dcb5-4f76-91ba-239b1c8d0b6e"
+      ],
+      "settings": {
+        "section_header": "Art Deco",
+        "section_sub_header": "1920-1935",
+        "section_image": "shopify:\/\/shop_images\/Art-Deco-Logo.jpg"
+      }
+    },
+    "1649641524d0aac520": {
+      "type": "estate-period",
+      "blocks": {
+        "0bd103eb-0cc3-4ab4-9dd3-7b0996103d94": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/Retro-Era-Jewlery1.jpg"
+          }
+        },
+        "c052cbb0-6e9f-4977-8165-e9e95341288c": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/retro-2.jpg"
+          }
+        },
+        "cae4050e-f798-453d-9f39-833ccfff5f3c": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/retro-3.jpg"
+          }
+        },
+        "b97e6cbb-605b-4eca-9a64-d91c94ba0285": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/retro-4.jpg"
+          }
+        },
+        "6216b9c3-8555-4f49-8889-cf14d904c849": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/retro-5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "0bd103eb-0cc3-4ab4-9dd3-7b0996103d94",
+        "c052cbb0-6e9f-4977-8165-e9e95341288c",
+        "cae4050e-f798-453d-9f39-833ccfff5f3c",
+        "b97e6cbb-605b-4eca-9a64-d91c94ba0285",
+        "6216b9c3-8555-4f49-8889-cf14d904c849"
+      ],
+      "settings": {
+        "section_header": "Retro Era",
+        "section_sub_header": "1930-1960",
+        "section_image": "shopify:\/\/shop_images\/Retro-Era-Logo.jpg"
+      }
+    },
+    "164964166525769c9b": {
+      "type": "estate-period",
+      "blocks": {
+        "24533ba3-e742-499a-beed-9d9a035f2647": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/modern-1.jpg"
+          }
+        },
+        "de5cd304-9ba1-447b-899f-4462d22ea8fd": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/modern-2.jpg"
+          }
+        },
+        "2f1fbaf1-66f3-4704-83c1-b9fa58c7d907": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/modern-3.jpg"
+          }
+        },
+        "1aba91fe-bd34-450a-9cec-5cc93a5bdbe1": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/modern-4.jpg"
+          }
+        },
+        "e13384a0-5c5a-4e09-999a-f41fc526ac3c": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/modern-5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "24533ba3-e742-499a-beed-9d9a035f2647",
+        "de5cd304-9ba1-447b-899f-4462d22ea8fd",
+        "2f1fbaf1-66f3-4704-83c1-b9fa58c7d907",
+        "1aba91fe-bd34-450a-9cec-5cc93a5bdbe1",
+        "e13384a0-5c5a-4e09-999a-f41fc526ac3c"
+      ],
+      "settings": {
+        "section_header": "Modern Period",
+        "section_sub_header": "1950-1980",
+        "section_image": "shopify:\/\/shop_images\/modern-hero.jpg"
+      }
+    },
+    "1649641908565afb34": {
+      "type": "estate-period",
+      "blocks": {
+        "c9bf97b1-03ab-434e-92bc-c647d8d213ce": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/new-modern-1.jpg"
+          }
+        },
+        "a08c9977-cf21-4277-994f-5b84c437a154": {
+          "type": "carousel",
+          "settings": {
+            "section__carousel_image": "shopify:\/\/shop_images\/new-modern-2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "c9bf97b1-03ab-434e-92bc-c647d8d213ce",
+        "a08c9977-cf21-4277-994f-5b84c437a154"
+      ],
+      "settings": {
+        "section_header": "Modern Era - 1970's",
+        "section_sub_header": "1970-1979",
+        "section_image": "shopify:\/\/shop_images\/new-modern.jpg"
+      }
+    },
+    "164980995275055098": {
+      "type": "did-you-know",
+      "settings": {
+        "section_paragraph": "<p>Vintage Jewelry is less than 100 years old, but more than 20 years old. Vintage includes most Art Deco jewelry, as well as Retro and later, including 50's, 60's and 70's.<\/p>",
+        "section_image": "shopify:\/\/shop_images\/estate-DYK-3.jpg",
+        "bg_color": "#d8d6d4",
+        "copy_alignment": "justify-start"
+      }
+    },
+    "16498148718c3382d6": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "text_color": "",
+        "section_header": "<p>OUR SERVICES COME<br\/>WITH THE <strong>UTMOST CARE<\/strong><\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>We understand that the decision to let go of your vintage or estate jewelry may be a hard one. It may have a unique story with emotion behind it or it may have legitimate providence. As a reputable curator, our team is focused on assisting you while giving you peace of mind.<\/p>",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "40",
+        "section_inner_spacing_bottom": "30",
+        "section_content_text_align": "center",
+        "section_max_width": 690
+      }
+    },
+    "16498163605fcae5ed": {
+      "type": "content-get-started",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 36,
+        "heading_mobile_size": 24,
+        "section_image": "shopify:\/\/shop_images\/wood-pic.jpg",
+        "text_color": "#ffffff",
+        "section_header": "<p>Let's <strong>Get Started<\/strong><\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>Please contact us or schedule an appointment with<br\/>our in-house experts who will be happy to discreetly evaluate your possessions.<\/p>",
+        "section_cta_text": "Schedule Appointment",
+        "section_cta_url": "https:\/\/marks-jewelers.appointlet.com\/?field__sku=3741632",
+        "section_cta_text_two": "Contact Us",
+        "section_cta_url_two": "shopify:\/\/pages\/contact-us",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_text_align": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164903130534ee27f7",
+    "164963343422cb6320",
+    "164980976117f45be2",
+    "1649814661f05bc83a",
+    "1649633427816fb95c",
+    "16496408599dbd2830",
+    "1649640862c4d2e0a0",
+    "1649641071034d4aa0",
+    "1649641188735481d6",
+    "16498097703d1988b6",
+    "1649641272869cea8d",
+    "164964139785479057",
+    "1649641524d0aac520",
+    "164964166525769c9b",
+    "1649641908565afb34",
+    "164980995275055098",
+    "16498148718c3382d6",
+    "16498163605fcae5ed"
+  ]
+}

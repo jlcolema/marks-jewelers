@@ -1,0 +1,838 @@
+{
+  "sections": {
+    "f459c4b9-dce2-45be-82e2-ad66b5abb118": {
+      "type": "home-hero-slider",
+      "blocks": {
+        "9baab7ab-fb3a-479a-bed2-5b3f59516880": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify:\/\/shop_images\/MJ-desktop-Summer2023-WB-extend-B_1.jpg",
+            "slide_image_mobile": "shopify:\/\/shop_images\/MJ-mobile-Summer2023-WB-extend_1.jpg",
+            "slide_link": ""
+          }
+        },
+        "ff7350c7-4caf-4f7f-b476-7b286bba7760": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify:\/\/shop_images\/MJ-desktop-Summer2023-WB-extend-B_2.jpg",
+            "slide_image_mobile": "shopify:\/\/shop_images\/MJ-mobile-Summer2023-WB-extend_2.jpg",
+            "slide_link": "https:\/\/www.marks-jewelers.com\/collections\/mothers-day-gift-guide"
+          }
+        },
+        "f4574549-6a46-47ba-a3e8-96a09f10b83a": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "slide_image": "shopify:\/\/shop_images\/MJ-Moms-2023-desktop-B.jpg",
+            "slide_image_mobile": "shopify:\/\/shop_images\/MJ-Moms-2023-mobile-B.jpg",
+            "slide_link": "https:\/\/www.marks-jewelers.com\/collections\/mothers-day-gift-guide"
+          }
+        }
+      },
+      "block_order": [
+        "9baab7ab-fb3a-479a-bed2-5b3f59516880",
+        "ff7350c7-4caf-4f7f-b476-7b286bba7760",
+        "f4574549-6a46-47ba-a3e8-96a09f10b83a"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_top_padding": "0",
+        "desktop_bottom_padding": "0",
+        "mobile_top_padding": "0",
+        "mobile_bottom_padding": "0",
+        "border_color": "",
+        "border_opacity": 1
+      }
+    },
+    "1642083118ccce6a43": {
+      "type": "home-value-prop-banner",
+      "blocks": {
+        "3505ccc1-53a2-496e-b634-77f7091e87ef": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "ribbon",
+            "value_prop_head": "<p><strong>Best of Philly Custom Jeweler<\/strong><\/p>",
+            "value_prop_text": "Uniquely made in Montgomeryville, PA"
+          }
+        },
+        "7522a413-0e20-48a3-b709-015803689905": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "location-mark",
+            "value_prop_head": "<p><strong>Local Jeweler<\/strong><br\/><\/p>",
+            "value_prop_text": "Browse 1000’s of Styles in Store"
+          }
+        },
+        "5a79dec2-425d-4714-9c7d-b2e56551eaaa": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "chat-star",
+            "value_prop_head": "<p><strong>Over 2,000 5 Star Reviews<\/strong><\/p>",
+            "value_prop_text": "Our Business is your Satisfaction"
+          }
+        }
+      },
+      "block_order": [
+        "3505ccc1-53a2-496e-b634-77f7091e87ef",
+        "7522a413-0e20-48a3-b709-015803689905",
+        "5a79dec2-425d-4714-9c7d-b2e56551eaaa"
+      ],
+      "settings": {
+        "heading_color": "",
+        "bg_color": "#efefef",
+        "value_props_color": "#a07282"
+      }
+    },
+    "1642431701a508f5c9": {
+      "type": "home-shop-by-shape",
+      "blocks": {
+        "b2ce6131-c982-4c08-afad-d574d3ccdf66": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-round1.jpg",
+            "diamond_shape_text": "Round",
+            "diamond_shape_link": ""
+          }
+        },
+        "29e0b7c1-39f7-463f-8164-5295d8f9175c": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-oval.png",
+            "diamond_shape_text": "Oval",
+            "diamond_shape_link": ""
+          }
+        },
+        "01d49c8f-6203-4bb0-99d7-e0988de13187": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-princess.png",
+            "diamond_shape_text": "Princess",
+            "diamond_shape_link": ""
+          }
+        },
+        "a38918e8-52fd-4c1b-b383-80c281ecc539": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shape-cushion.png",
+            "diamond_shape_text": "Cushion",
+            "diamond_shape_link": ""
+          }
+        },
+        "0603c77a-6dce-47fa-9523-26b72d18b2ae": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-pear1.png",
+            "diamond_shape_text": "Pear",
+            "diamond_shape_link": ""
+          }
+        },
+        "cabd7990-c38b-4ae0-b239-907fb79bb37a": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-assher1.png",
+            "diamond_shape_text": "Asscher",
+            "diamond_shape_link": ""
+          }
+        },
+        "b2c35d78-53eb-48f2-82a2-0045c8655651": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-radiant1.png",
+            "diamond_shape_text": "Radiant",
+            "diamond_shape_link": ""
+          }
+        },
+        "de07380a-d791-46c8-a248-9d6f91a5adaf": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-emerald1.png",
+            "diamond_shape_text": "Emerald",
+            "diamond_shape_link": ""
+          }
+        },
+        "3fad4a06-ae94-4e10-a225-af26eacf5bc8": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-marquise1.png",
+            "diamond_shape_text": "Marquise",
+            "diamond_shape_link": ""
+          }
+        },
+        "b6079c12-7646-45dc-873b-c16bc1b7a55a": {
+          "type": "diamond_shape",
+          "settings": {
+            "diamond_shape_image": "shopify:\/\/shop_images\/diamond-shapes-heart1.png",
+            "diamond_shape_text": "Heart",
+            "diamond_shape_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b2ce6131-c982-4c08-afad-d574d3ccdf66",
+        "29e0b7c1-39f7-463f-8164-5295d8f9175c",
+        "01d49c8f-6203-4bb0-99d7-e0988de13187",
+        "a38918e8-52fd-4c1b-b383-80c281ecc539",
+        "0603c77a-6dce-47fa-9523-26b72d18b2ae",
+        "cabd7990-c38b-4ae0-b239-907fb79bb37a",
+        "b2c35d78-53eb-48f2-82a2-0045c8655651",
+        "de07380a-d791-46c8-a248-9d6f91a5adaf",
+        "3fad4a06-ae94-4e10-a225-af26eacf5bc8",
+        "b6079c12-7646-45dc-873b-c16bc1b7a55a"
+      ],
+      "settings": {
+        "heading_color": "",
+        "bg_color": "",
+        "diamond_text_color": "",
+        "logo": "shopify:\/\/shop_images\/m-logo.png",
+        "section_header": "Diamonds",
+        "section_paragraph": "<p>We offer both Mined Diamonds and Lab-Grown Diamonds. Click on the buttons below to begin your search for the perfect diamond.<\/p>"
+      }
+    },
+    "16432064036eb63172": {
+      "type": "home-text-video-split",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 38,
+        "heading_mobile_size": 24,
+        "bg_color": "#efefef",
+        "paragraph_color": "",
+        "section_header": "<p>Customized by you, <\/p><p>Handcrafted by JEWL<strong>VISION™<\/strong><\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>Exclusive to Marks Jewelers, JEWL<strong>VISION™<\/strong> was developed over a decade ago in response to our customers` requests for custom jewelry design. JEWL<strong>VISION™<\/strong> is ideal for creating: a one-of-a-kind engagement ring, the perfect matching wedding band, or any masterpiece you can imagine - even repurposing gemstones from existing jewelry or a family heirloom. <\/p><p>The JEWL<strong>VISION™<\/strong>  Process is affordable and easier than you think. It’s as easy as 1, 2, 3<\/p>",
+        "section_jewelry_step_1": "Free consultation virtually or in-store",
+        "section_jewelry_step_2": "Collaborate with your JEWLVISION™ design architect",
+        "section_jewelry_step_3": "Your masterpiece comes to life",
+        "section_video": "<iframe src=\"https:\/\/player.vimeo.com\/video\/727116118?h=c795846146&amp;color=A07282&amp;title=0&amp;byline=0&amp;portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" aria-label=\"JewlVision Video\"><\/iframe>",
+        "section_video_embed_code": "",
+        "video_full_height": false,
+        "section_image_position_desktop": "row-reverse",
+        "section_image_position_mobile": "column-reverse",
+        "section_cta_text": "Start your design",
+        "section_cta_class": "get-started",
+        "section_cta_dc": "jewlvision-modal",
+        "section_cta_url": "#",
+        "section_cta_text_color": "#ffffff",
+        "section_cta_bg_color": "#000000",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "See how it works",
+        "section_cta_url_two": "\/pages\/jewlvision?view=jewlvision",
+        "section_cta_text_color_two": "#000000",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "#000000",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": true,
+        "section_content_position": "left",
+        "section_spacing_top": "30",
+        "section_spacing_bottom": "50",
+        "section_content_text_align": "left"
+      }
+    },
+    "9e60bf7e-e005-45cd-ad6d-bb5b1f479a9f": {
+      "type": "home-shop-categories",
+      "blocks": {
+        "5f4caf9b-b89c-4f11-916b-5c3bd3620d80": {
+          "type": "shop-categories_prop",
+          "settings": {
+            "prop_name": "Engagement Rings",
+            "prop_logo": "shopify:\/\/shop_images\/engage-ring-1.jpg",
+            "prop_url": "shopify:\/\/collections\/engagement-rings"
+          }
+        },
+        "51187ce2-3d47-43d2-a2e4-38eae0599b8d": {
+          "type": "shop-categories_prop",
+          "settings": {
+            "prop_name": "Wedding Rings",
+            "prop_logo": "shopify:\/\/shop_images\/wedding-band-1.jpg",
+            "prop_url": "shopify:\/\/collections\/wedding-rings"
+          }
+        },
+        "096460ca-3b66-47ae-a90b-d12e82915413": {
+          "type": "shop-categories_prop",
+          "settings": {
+            "prop_name": "Loose Diamonds",
+            "prop_logo": "shopify:\/\/shop_images\/loose-3.jpg",
+            "prop_url": "https:\/\/www.marks-jewelers.com\/apps\/vdb-app\/search-filters?structure=new"
+          }
+        },
+        "fa591e48-537f-4b2b-9e5b-3a36892c0a14": {
+          "type": "shop-categories_prop",
+          "settings": {
+            "prop_name": "Fashion Jewelry",
+            "prop_logo": "shopify:\/\/shop_images\/diamond-jewelry-6.jpg",
+            "prop_url": "shopify:\/\/collections\/fashion-forward-jewelry"
+          }
+        },
+        "08799fd1-e60c-4b25-8a06-26cad4d29b45": {
+          "type": "shop-categories_prop",
+          "settings": {
+            "prop_name": "Timepieces",
+            "prop_logo": "shopify:\/\/shop_images\/time-2.jpg",
+            "prop_url": "shopify:\/\/collections\/timepieces"
+          }
+        },
+        "00ae2135-956a-4dd3-a770-0713f7fb79f4": {
+          "type": "shop-categories_prop",
+          "settings": {
+            "prop_name": "Luxury Handbags",
+            "prop_logo": "shopify:\/\/shop_images\/m-lux-5.jpg",
+            "prop_url": "shopify:\/\/collections\/luxury-handbags"
+          }
+        },
+        "59274924-0a6c-48f1-81aa-8dbca92cdb09": {
+          "type": "shop-categories_prop",
+          "settings": {
+            "prop_name": "Sell or Trade",
+            "prop_logo": "shopify:\/\/shop_images\/sell-trade-1.jpg",
+            "prop_url": "#"
+          }
+        },
+        "d61756a6-c850-4007-aad3-92a6061f825f": {
+          "type": "shop-categories_prop",
+          "settings": {
+            "prop_name": "Jewelry Repair",
+            "prop_logo": "shopify:\/\/shop_images\/repairs-4.jpg",
+            "prop_url": "shopify:\/\/pages\/repairs"
+          }
+        }
+      },
+      "block_order": [
+        "5f4caf9b-b89c-4f11-916b-5c3bd3620d80",
+        "51187ce2-3d47-43d2-a2e4-38eae0599b8d",
+        "096460ca-3b66-47ae-a90b-d12e82915413",
+        "fa591e48-537f-4b2b-9e5b-3a36892c0a14",
+        "08799fd1-e60c-4b25-8a06-26cad4d29b45",
+        "00ae2135-956a-4dd3-a770-0713f7fb79f4",
+        "59274924-0a6c-48f1-81aa-8dbca92cdb09",
+        "d61756a6-c850-4007-aad3-92a6061f825f"
+      ],
+      "settings": {
+        "heading_color": "",
+        "bg_color": "",
+        "section_logo": "shopify:\/\/shop_images\/m-icon.webp",
+        "section_header": "Not Your Average Jewelry Store",
+        "section_text": "<p>We are not just jewelry experts, we offer all services from repairs to appraisals, buying and selling of diamonds, jewelry, and luxury handbags.<\/p>",
+        "enable_modal": false
+      }
+    },
+    "1643128818952cd44e": {
+      "type": "home-text-video-split",
+      "blocks": {
+        "11c7b7f2-e6fd-47c3-b9fb-d2ab95b7bd55": {
+          "type": "paragraphs",
+          "settings": {
+            "block_header": "BEST OF PHILADELPHIA",
+            "block_text": "At more than one-thousand 5-star reviews—including our experienced bridal customers.",
+            "block_header_color": "#a07282",
+            "list_block_header": "",
+            "list_block_text": "",
+            "list_block_header_color": ""
+          }
+        },
+        "b7241152-16af-4b0e-8faa-4de6c5ebd58c": {
+          "type": "paragraphs",
+          "settings": {
+            "block_header": "Connected",
+            "block_text": "To a vast network of bridal retail partners, so we can get virtually any style you’re looking for, even if we don’t stock it.",
+            "block_header_color": "#a07282",
+            "list_block_header": "",
+            "list_block_text": "",
+            "list_block_header_color": ""
+          }
+        },
+        "5738cd9e-c837-4f9c-9d06-ef92bb953447": {
+          "type": "paragraphs",
+          "settings": {
+            "block_header": "FAMILY-OWNED IN THE BUSINESS OF LOVE",
+            "block_text": "For nearly 40 years and counting!",
+            "block_header_color": "#a07282",
+            "list_block_header": "",
+            "list_block_text": "",
+            "list_block_header_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "11c7b7f2-e6fd-47c3-b9fb-d2ab95b7bd55",
+        "b7241152-16af-4b0e-8faa-4de6c5ebd58c",
+        "5738cd9e-c837-4f9c-9d06-ef92bb953447"
+      ],
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 30,
+        "heading_mobile_size": 24,
+        "bg_color": "#fafafa",
+        "paragraph_color": "",
+        "section_header": "<p>Your Local Jewelry Experts<\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>With thousands of quality styles in-store, and bridal designs uniquely made in Montgomeryville, PA. Did you know we have the Delaware valley’s largest in-door shopping area for jewelers? Don’t take our word for it, see it for yourself!<\/p>",
+        "section_jewelry_step_1": "",
+        "section_jewelry_step_2": "",
+        "section_jewelry_step_3": "",
+        "section_video": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/tXjKUNXI9qo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
+        "section_video_embed_code": "",
+        "video_full_height": true,
+        "section_image_position_desktop": "row-reverse",
+        "section_image_position_mobile": "column-reverse",
+        "section_cta_text": "Start your tour",
+        "section_cta_class": "",
+        "section_cta_dc": "",
+        "section_cta_url": "shopify:\/\/pages\/360",
+        "section_cta_text_color": "#ffffff",
+        "section_cta_bg_color": "#000000",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_content_position": "center",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_content_text_align": "center"
+      }
+    },
+    "1642626872e2c4c3e4": {
+      "type": "home-text-image-split",
+      "blocks": {
+        "81661dc0-f275-4d98-ac18-008f9fa55184": {
+          "type": "paragraphs",
+          "settings": {
+            "block_header": "",
+            "block_text": "",
+            "block_header_color": "",
+            "list_block_header": "Routine-ready safety checks",
+            "list_block_text": "Masks, disinfectants, regular cleaning & more.",
+            "list_block_header_color": ""
+          }
+        },
+        "ab7751f5-6854-404f-a66e-40577212118f": {
+          "type": "paragraphs",
+          "settings": {
+            "block_header": "",
+            "block_text": "",
+            "block_header_color": "",
+            "list_block_header": "No-contact services",
+            "list_block_text": "Contactless locker and Curbside pickup, same-day delivery & more.",
+            "list_block_header_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "81661dc0-f275-4d98-ac18-008f9fa55184",
+        "ab7751f5-6854-404f-a66e-40577212118f"
+      ],
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 30,
+        "heading_mobile_size": 24,
+        "bg_color": "#fafafa",
+        "paragraph_color": "",
+        "section_header": "<p>Your Social Distancing Jeweler<\/p>",
+        "section_sub_header": "<p>Shopping our 25,000 sq feet store? Expect...<\/p>",
+        "section_paragraph": "<p>At Marks Jewelers, we’re committed to helping the people we serve in good times and bad. We’ve taken a number of steps in support of our team and clients with increased safety measures and operational changes.<\/p>",
+        "section_jewelry_step_1": "",
+        "section_jewelry_step_2": "",
+        "section_jewelry_step_3": "",
+        "section_image": "shopify:\/\/shop_images\/MJ-InteriorImage.jpg",
+        "section_image_alt_text": "Image of store inside",
+        "section_image_size": "full",
+        "section_image_url": "",
+        "section_image_position_desktop": "row",
+        "section_image_position_mobile": "column-reverse",
+        "section_cta_text": "Contact Us",
+        "section_cta_url": "shopify:\/\/pages\/contact",
+        "section_cta_text_color": "#000000",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "#000000",
+        "section_cta_border_width": 2,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_content_position": "center",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_content_text_align": "center"
+      }
+    },
+    "1644414707be5abadd": {
+      "type": "home-discover-our-selection",
+      "blocks": {
+        "68872db8-3b3f-493b-b4a5-ebd6639ca37e": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-Engagement-Image.jpg",
+            "collection_text": "Engagement Rings",
+            "collection_link": "shopify:\/\/collections\/engagement-rings"
+          }
+        },
+        "1080e22c-7b48-4526-b777-4e28d1e5842f": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-WeddingRings-Image.jpg",
+            "collection_text": "Wedding Rings",
+            "collection_link": "shopify:\/\/collections\/wedding-rings"
+          }
+        },
+        "28b575ed-524c-48f3-ab0e-2b3c55aaf4af": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-Diamonds-Image.jpg",
+            "collection_text": "Loose Diamonds",
+            "collection_link": "\/apps\/vdb-app\/search-filters?structure=new"
+          }
+        },
+        "59198bbc-a81b-45c9-8b8e-76baa3293de8": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-FineJewelry-Image.jpg",
+            "collection_text": "Diamond Jewelry",
+            "collection_link": "shopify:\/\/collections\/fine-jewelry"
+          }
+        },
+        "228130cd-685c-45e4-9de1-44fdf29bcb06": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-Timepieces-Homepage.jpg",
+            "collection_text": "Timepieces",
+            "collection_link": "shopify:\/\/collections\/timepieces"
+          }
+        },
+        "1cded1bc-1c5a-42b3-96e8-97d300b9358a": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-Engagement-Image.jpg",
+            "collection_text": "Sale",
+            "collection_link": "shopify:\/\/collections\/sale-items"
+          }
+        }
+      },
+      "block_order": [
+        "68872db8-3b3f-493b-b4a5-ebd6639ca37e",
+        "1080e22c-7b48-4526-b777-4e28d1e5842f",
+        "28b575ed-524c-48f3-ab0e-2b3c55aaf4af",
+        "59198bbc-a81b-45c9-8b8e-76baa3293de8",
+        "228130cd-685c-45e4-9de1-44fdf29bcb06",
+        "1cded1bc-1c5a-42b3-96e8-97d300b9358a"
+      ],
+      "settings": {
+        "heading_color": "",
+        "logo": "shopify:\/\/shop_images\/m-logo.png",
+        "section_header": "Discover Our Selection",
+        "section_paragraph": "<p>Enough about us. We know you're here for jewelry.<\/p>"
+      }
+    },
+    "da293fcc-952b-4929-a7e9-6225bc21533c": {
+      "type": "ghostshoppablevideo",
+      "disabled": true,
+      "settings": {
+        "Shoppable-Videos": "shoppable videos",
+        "video_snippets": "<div data-gp-account=\"647a3dca5aea49f7be1611e7\" data-gp-collection=\"647a3dca5aea49f7be1611e9\" data-gp-video=\"647a3f7d5aea49f7be16196b\" data-gp-type=\"shoppable\"><\/div>"
+      }
+    },
+    "16439883038946da8e": {
+      "type": "home-help",
+      "blocks": {
+        "6dc003b3-0e61-4921-bfd7-746322d445cd": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Monday:<\/strong><\/p>",
+            "store_hours_time": "Closed"
+          }
+        },
+        "e719cae8-e4e3-4a4f-a241-68568566bd3c": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Tuesday:<\/strong><\/p>",
+            "store_hours_time": "11:00 AM to 5:00 PM"
+          }
+        },
+        "36fbc9ec-964b-48f2-b27d-65f72c8c141e": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Wednesday:<\/strong><\/p>",
+            "store_hours_time": "11:00 AM to 8:00 PM"
+          }
+        },
+        "d486367a-2e5f-48da-b714-2e44d85998b4": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Thursday:<\/strong><\/p>",
+            "store_hours_time": "11:00 AM to 8:00 PM"
+          }
+        },
+        "9877dfde-e4a3-4604-b6e8-5bc2c8548ec2": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Friday:<\/strong><\/p>",
+            "store_hours_time": "11:00 AM to 6:00 PM"
+          }
+        },
+        "bd7874e5-6ab5-45f3-bb9a-e8ceffda84f9": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Saturday:<\/strong><\/p>",
+            "store_hours_time": "10:00 AM to 5:00 PM"
+          }
+        },
+        "48a7df9f-6d52-4631-86db-c79adb575fc0": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Sunday:<\/strong><\/p>",
+            "store_hours_time": "Closed"
+          }
+        }
+      },
+      "block_order": [
+        "6dc003b3-0e61-4921-bfd7-746322d445cd",
+        "e719cae8-e4e3-4a4f-a241-68568566bd3c",
+        "36fbc9ec-964b-48f2-b27d-65f72c8c141e",
+        "d486367a-2e5f-48da-b714-2e44d85998b4",
+        "9877dfde-e4a3-4604-b6e8-5bc2c8548ec2",
+        "bd7874e5-6ab5-45f3-bb9a-e8ceffda84f9",
+        "48a7df9f-6d52-4631-86db-c79adb575fc0"
+      ],
+      "settings": {
+        "subscribe_id": "JA5WrG",
+        "subscribe_endpoint": "https:\/\/manage.kmail-lists.com\/ajax\/subscriptions\/subscribe",
+        "top_border_color": "#a07282",
+        "top_border_width": 3,
+        "border_color": "#e7e7e7",
+        "border_width": 1,
+        "item_1_heading_text": "View Our How to Buy Guide",
+        "item_1_heading_color": "",
+        "item_1_paragraph_text": "Explore our guide on how to buy a ring or diamond. Enter your email address to receive our exclusive buying guide.",
+        "item_1_background": "shopify:\/\/shop_images\/buy-guide.jpg",
+        "item_1_background_position": "left",
+        "item_1_background_size": 100,
+        "item_1_background_repeat": "no-repeat",
+        "item_1_email_flag": true,
+        "item_2_heading_text": "Need help? Text Us Anytime",
+        "right_heading_color": "",
+        "item_2_paragraph_text": "Our diamond and jewelry experts are available day and night to answer your jewelry questions.",
+        "item_2_background": "shopify:\/\/shop_images\/MJ-DiamondsImage.jpg",
+        "item_2_background_position": "bottom right",
+        "item_2_background_size": 50,
+        "item_2_background_repeat": "no-repeat",
+        "item_2_top_border_color": "#a07282",
+        "store_hours_placement": "left",
+        "call_head": "Call\/Text",
+        "call_phone_number": "(215) 362-7132",
+        "email_text": "Email us",
+        "email_url": "shopify:\/\/pages\/contact",
+        "store_hours_accordion_head": "Store Hours",
+        "hours_header_text": "Normal hours of operation (EST)",
+        "holiday_hours_url": "shopify:\/\/pages\/contact",
+        "holiday_hours_text": "Click here for our holiday hours"
+      }
+    },
+    "1643219067ca76e5d3": {
+      "type": "home-gifts-theyll-love",
+      "blocks": {
+        "e4a1376d-c789-49bf-b2fd-70fb69a29259": {
+          "type": "gift_block",
+          "settings": {
+            "gift_block_image": "shopify:\/\/shop_images\/anniversary.jpg",
+            "gift_block_text": "Anniversary",
+            "gift_block_url": ""
+          }
+        },
+        "0b68924c-f17e-4f4b-976e-44933ef6225f": {
+          "type": "gift_block",
+          "settings": {
+            "gift_block_image": "shopify:\/\/shop_images\/wedding-day.jpg",
+            "gift_block_text": "Wedding day",
+            "gift_block_url": ""
+          }
+        },
+        "68c44f48-0bf9-4c14-811e-957ca8089c32": {
+          "type": "gift_block",
+          "settings": {
+            "gift_block_image": "shopify:\/\/shop_images\/bridesmades.jpg",
+            "gift_block_text": "Bridesmaids",
+            "gift_block_url": ""
+          }
+        },
+        "b7ed9c32-3414-4d89-88ab-5af11e97c900": {
+          "type": "gift_block",
+          "settings": {
+            "gift_block_image": "shopify:\/\/shop_images\/groomsmen.jpg",
+            "gift_block_text": "Groomsmen",
+            "gift_block_url": ""
+          }
+        },
+        "ab2b69be-768e-4cfc-b82a-0f66b07f2b7d": {
+          "type": "gift_block",
+          "settings": {
+            "gift_block_image": "shopify:\/\/shop_images\/birthday.jpg",
+            "gift_block_text": "Birthday",
+            "gift_block_url": ""
+          }
+        },
+        "8093ac06-b56c-4c27-86f8-fbb9c41bbb8e": {
+          "type": "gift_block",
+          "settings": {
+            "gift_block_image": "shopify:\/\/shop_images\/push-present.jpg",
+            "gift_block_text": "Push Present",
+            "gift_block_url": ""
+          }
+        },
+        "00954246-4894-44db-a691-0c8da820fe10": {
+          "type": "gift_block",
+          "settings": {
+            "gift_block_image": "shopify:\/\/shop_images\/mothers-day.jpg",
+            "gift_block_text": "Mothers Day",
+            "gift_block_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "e4a1376d-c789-49bf-b2fd-70fb69a29259",
+        "0b68924c-f17e-4f4b-976e-44933ef6225f",
+        "68c44f48-0bf9-4c14-811e-957ca8089c32",
+        "b7ed9c32-3414-4d89-88ab-5af11e97c900",
+        "ab2b69be-768e-4cfc-b82a-0f66b07f2b7d",
+        "8093ac06-b56c-4c27-86f8-fbb9c41bbb8e",
+        "00954246-4894-44db-a691-0c8da820fe10"
+      ],
+      "settings": {
+        "section_spacing_top": "60",
+        "section_spacing_bottom": "60",
+        "logo": "shopify:\/\/shop_images\/m-logo.png",
+        "heading_color": "",
+        "bg_color": "",
+        "value_props_color": "",
+        "heading_text": "<p>Gifts They’ll Love<\/p>",
+        "paragraph_text": "<p>Graduation and weddings, babies and anniversaries - life is full of celebrations. And yes, sometimes you want to show your sentiment with a gift. There are gifts that say, \"thank you\", gifts that say, \"I love you\" and gifts that say, \"I want to spend the rest of my life with you\".<br\/><br\/><strong>Just let us know what chapter you are in.<\/strong><\/p>"
+      }
+    },
+    "1648062592c62bb58e": {
+      "type": "recently-purchased",
+      "settings": {
+        "heading": "Recently Purchased Engagement Rings",
+        "text": "<p>Explore what other customers have created and find inspiration for your own unique piece.<\/p>",
+        "cta_text": "Shop All Recently Purchased Engagement Rings",
+        "cta_link": "shopify:\/\/collections\/recently-purchased-engagement-rings",
+        "collection": "recently-purchased-engagement-rings",
+        "collection_number": 4
+      }
+    },
+    "1642453376ec76aee7": {
+      "type": "home-our-services",
+      "blocks": {
+        "dfc16090-8488-4fc8-bfc1-93488e9e7775": {
+          "type": "our_services",
+          "settings": {
+            "our_services_image": "shopify:\/\/shop_images\/rep_tiny.jpg",
+            "our_service_cta_text": "Repair Services",
+            "our_service_cta_bg_color": "#ffffff",
+            "our_service_cta_border": "#000000",
+            "our_service_cta_border_width": 1,
+            "our_service_cta_color": "#000000",
+            "our_service_cta_link": "shopify:\/\/pages\/repairs"
+          }
+        },
+        "cfcf4e04-2418-448f-adb2-d0b811866ce5": {
+          "type": "our_services",
+          "settings": {
+            "our_services_image": "shopify:\/\/shop_images\/chan_tiny.jpg",
+            "our_service_cta_text": "Appraisal Services",
+            "our_service_cta_bg_color": "",
+            "our_service_cta_border": "#000000",
+            "our_service_cta_border_width": 1,
+            "our_service_cta_color": "#000000",
+            "our_service_cta_link": "shopify:\/\/pages\/appraisals"
+          }
+        },
+        "991a7c06-76d8-4e64-ad7c-67ef5c6608e1": {
+          "type": "our_services",
+          "settings": {
+            "our_services_image": "shopify:\/\/shop_images\/rings_tiny.jpg",
+            "our_service_cta_text": "Custom design Jewlvision",
+            "our_service_cta_bg_color": "",
+            "our_service_cta_border": "#000000",
+            "our_service_cta_border_width": 1,
+            "our_service_cta_color": "#000000",
+            "our_service_cta_link": "\/pages\/jewlvision?view=jewlvision"
+          }
+        }
+      },
+      "block_order": [
+        "dfc16090-8488-4fc8-bfc1-93488e9e7775",
+        "cfcf4e04-2418-448f-adb2-d0b811866ce5",
+        "991a7c06-76d8-4e64-ad7c-67ef5c6608e1"
+      ],
+      "settings": {
+        "heading_color": "#000000",
+        "bg_color": "",
+        "paragraph_color": "",
+        "logo": "shopify:\/\/shop_images\/m-logo.png",
+        "section_header": "Our Services",
+        "section_paragraph": "It takes extra effort to offer custom jewelry design, solve complicated jewelry repairs and host local events all under one roof. We incorporate local talent, modern equipment, cutting-edge technology and old world craftsmanship to continue to be jewelers and not simply \"jewelry resellers\"."
+      }
+    },
+    "1642523869a3f46738": {
+      "type": "home-shop-with-confidence",
+      "blocks": {
+        "aa8da837-bfad-4f6c-9ac0-851dc3d72de0": {
+          "type": "confidence_prop",
+          "settings": {
+            "confidence_prop_image": "diamond-circle",
+            "confidence_prop_text": "30 Day <br>Returns"
+          }
+        },
+        "e5fab10a-cc38-48b8-8d3d-a60a6946c8b8": {
+          "type": "confidence_prop",
+          "settings": {
+            "confidence_prop_image": "diamond-upgrade",
+            "confidence_prop_text": "100% <br>Upgrade <br>Policy"
+          }
+        },
+        "f4a9b256-eede-4356-a794-d765c10583ac": {
+          "type": "confidence_prop",
+          "settings": {
+            "confidence_prop_image": "money-bag",
+            "confidence_prop_text": "Flexible <br>Financing"
+          }
+        }
+      },
+      "block_order": [
+        "aa8da837-bfad-4f6c-9ac0-851dc3d72de0",
+        "e5fab10a-cc38-48b8-8d3d-a60a6946c8b8",
+        "f4a9b256-eede-4356-a794-d765c10583ac"
+      ],
+      "settings": {
+        "heading_color": "",
+        "bg_color": "#efefef",
+        "section_header": "Shop with Confidence",
+        "section_cta_text": "Learn More",
+        "section_cta_text_color": "#ffffff",
+        "section_cta_bg_color": "#000000",
+        "section_cta_url": "shopify:\/\/pages\/usp"
+      }
+    }
+  },
+  "order": [
+    "f459c4b9-dce2-45be-82e2-ad66b5abb118",
+    "1642083118ccce6a43",
+    "1642431701a508f5c9",
+    "16432064036eb63172",
+    "9e60bf7e-e005-45cd-ad6d-bb5b1f479a9f",
+    "1643128818952cd44e",
+    "1642626872e2c4c3e4",
+    "1644414707be5abadd",
+    "da293fcc-952b-4929-a7e9-6225bc21533c",
+    "16439883038946da8e",
+    "1643219067ca76e5d3",
+    "1648062592c62bb58e",
+    "1642453376ec76aee7",
+    "1642523869a3f46738"
+  ]
+}

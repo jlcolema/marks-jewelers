@@ -1,0 +1,33 @@
+.section__did-you-know {
+  background-color: var(--bg-color);
+  padding: var(--space-xl) 0;
+
+  @media(--md) {
+    background-position: var(--background-position);
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+  }
+
+  .section__did-you-know--copy {
+    @media(--md) {
+      flex-basis: 41%;
+    }
+
+    img {
+      margin: -70px auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    p {
+      margin: var(--space-xl) auto;
+      width: 80%;
+      text-align: center;
+    }
+  }
+}
+
+.didyouknow-section ~ .estate-section {
+  padding-top: var(--space-md);
+}
+

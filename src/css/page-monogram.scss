@@ -1,0 +1,82 @@
+/* stylelint-disable */
+/* Styles added by other devs for monogram page and components */
+
+.section-monogram-collections {
+  padding: 0 0 60px;
+}
+
+@media (min-width: 48rem) {
+
+  .section-monogram-collections {
+    padding: 0 0 80px;
+  }
+}
+
+.banner-monogram {
+  background: transparent url("name-double.jpeg") center center no-repeat;
+  background-size: cover;
+  min-height: 80vw;
+}
+
+@media (min-width: 48rem) {
+
+  .banner-monogram {
+    min-height: 45vw;
+  }
+}
+
+.section-monogram-boxes {
+  padding: 25px 0 80px;
+}
+
+@media (min-width: 48rem) {
+
+  .section-monogram-boxes {
+    padding: 80px 0;
+  }
+}
+
+.section-howworks {
+  padding: 0 0 25px;
+}
+
+.section-howworks .slide {
+  padding: 0 15px;
+}
+
+.slide-card {
+  border: 1px solid var(--color-purple);
+  text-align: center;
+}
+
+.slick-slide .slide-card img {
+  display: inline-block;
+}
+
+.card-title {
+  display: block;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--color-purple);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.section-howworks h3 {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 48rem) {
+
+  .section-howworks {
+    padding: 0 0 80px;
+  }
+
+  .section-howworks h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* stylelint-enable */

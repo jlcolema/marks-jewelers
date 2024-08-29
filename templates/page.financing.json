@@ -1,0 +1,263 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1649619541a2f5a713": {
+      "type": "content-text-image-split",
+      "settings": {
+        "page_width": false,
+        "heading_color": "",
+        "heading_desktop_size": 30,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "paragraph_color": "",
+        "section_header": "<p>Flexible Financing<\/p>",
+        "section_paragraph": "<p>Getting the Jewelry of your dreams is only a few steps away.<\/p><p>Marks has teamed up with several of the largest lenders in North America to provide the financing that will allow you to get the jewelry you want without compromising yourself. Accelerate the process by clicking the button below. We will be in touch to help you finish your application.<\/p><p><em>Financing is subject to approved credit.<\/em><\/p>",
+        "section_image": "shopify:\/\/shop_images\/MJ-Financing-Hero-900x387.jpg",
+        "section_image_alt_text": "Couple kissing",
+        "section_image_size": "full",
+        "section_image_url": "",
+        "section_image_position_desktop": "row-reverse",
+        "section_image_position_mobile": "column-reverse",
+        "section_cta_text": "Get Pre-Qualified",
+        "section_cta_url": "https:\/\/mylpro.com\/2xk2x",
+        "section_cta_text_color": "#ffffff",
+        "section_cta_bg_color": "#000000",
+        "section_cta_border_color": "#2e2e2e",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_text_align": "center"
+      }
+    },
+    "1648925934b7346067": {
+      "type": "home-value-prop-banner",
+      "blocks": {
+        "a42998e4-970d-412e-b3e1-971c44eec500": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "ribbon",
+            "value_prop_head": "<p><strong>Best of Philly Custom Jeweler<\/strong><\/p>",
+            "value_prop_text": "Uniquely made in Montgomery, PA"
+          }
+        },
+        "98444da0-1ae7-4d2d-bc41-5587afe4b70f": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "location-mark",
+            "value_prop_head": "<p><strong>Local Jeweler<\/strong><\/p>",
+            "value_prop_text": "Browse 1000's of Styles in Store"
+          }
+        },
+        "695cfdd7-da0f-48ac-813f-97a7701d241a": {
+          "type": "value_prop",
+          "settings": {
+            "value_prop_image": "chat-star",
+            "value_prop_head": "<p><strong>Over 1000 5 Star Reviews<\/strong><\/p>",
+            "value_prop_text": "Our Business is your Satisfaction"
+          }
+        }
+      },
+      "block_order": [
+        "a42998e4-970d-412e-b3e1-971c44eec500",
+        "98444da0-1ae7-4d2d-bc41-5587afe4b70f",
+        "695cfdd7-da0f-48ac-813f-97a7701d241a"
+      ],
+      "settings": {
+        "heading_color": "#000000",
+        "bg_color": "#f8f8f8",
+        "value_props_color": "#a07282"
+      }
+    },
+    "164893413091ecbca8": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 30,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "text_color": "",
+        "section_header": "<p>Flexible Payment Options<\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>There are a few purchases in your life as significant as an engagement ring or wedding bands. Marks Jewelers believes that you should be fiscally responsible with your money. For this reason we have teamed up with Wells Fargo Bank, N.A. to provide you with the tools necessary to make the best decision. We are proud to offer the following special offers:<\/p>",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "55",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "60",
+        "section_inner_spacing_bottom": "20",
+        "section_content_text_align": "center",
+        "section_max_width": 728
+      }
+    },
+    "1650835106ed5037de": {
+      "type": "financing-modal",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/60Months_LearnMore_728x90_A.png",
+        "section_image_mobile": "shopify:\/\/shop_images\/60Months_LearnMore_300x250_A_a94bde39-59e1-4193-b7ea-e16e228698d5.png",
+        "section_image_alt_text": "60 Months special financing available",
+        "section_months": 60,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "20",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": ""
+      }
+    },
+    "1648935590f5b6d6ac": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "text_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_paragraph": "<p>Please don't hesitate to contact us if you have any questions regarding any of our financing options or how that could help you reach your goal even sooner than you expected.<\/p><p><\/p><p><\/p>",
+        "section_cta_text": "Get Pre-Qualified",
+        "section_cta_url": "https:\/\/mylpro.com\/2xk2x",
+        "section_cta_text_color": "#ffffff",
+        "section_cta_bg_color": "#000000",
+        "section_cta_border_color": "#000000",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_text_align": "center",
+        "section_max_width": 728
+      }
+    },
+    "164894442552109ce9": {
+      "type": "faqs",
+      "blocks": {
+        "8cb96d07-34b6-406e-a9a8-2a00e71d8c4b": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How long is the application process?",
+            "description": "<p>The entire application takes less than 10 minutes. Everything is digital and you can complete it in the comfort of our Diamond Diner, away from prying eyes.<\/p>"
+          }
+        },
+        "9da44eb6-f1ab-4fa3-a58a-23a70bfa5df7": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What happens if I am not approved for as much as I want to spend?",
+            "description": "<p>Our lenders all offer the ability to request a credit increase. Simply let us know that you would like more purchasing power and we will work with you to make it happen.<\/p>"
+          }
+        },
+        "fc8c5ed2-74a5-4b05-bd20-f4c1a7bb51fb": {
+          "type": "accordion",
+          "settings": {
+            "heading": "What happens if I am declined for credit?",
+            "description": "<p>We work with 4 different lenders who specialize in different types of lending. We have an option for people with nearly any credit score.<\/p>"
+          }
+        },
+        "569262ab-144d-456c-b36a-95621c35794a": {
+          "type": "accordion",
+          "settings": {
+            "heading": "If I am approved, how quickly can I make a purchase?",
+            "description": "<p>Our lenders will make a decision in 15 minutes or less. Once approved, you can make a purchase immediately.<\/p>"
+          }
+        },
+        "1ae53f2c-34eb-4bfa-96ee-08511f9eb1ca": {
+          "type": "accordion",
+          "settings": {
+            "heading": "If I apply for financing, do I have to make a purchase with you?",
+            "description": "<p>No, applying for financing does not obligate you to make any purchase with us.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8cb96d07-34b6-406e-a9a8-2a00e71d8c4b",
+        "9da44eb6-f1ab-4fa3-a58a-23a70bfa5df7",
+        "fc8c5ed2-74a5-4b05-bd20-f4c1a7bb51fb",
+        "569262ab-144d-456c-b36a-95621c35794a",
+        "1ae53f2c-34eb-4bfa-96ee-08511f9eb1ca"
+      ],
+      "settings": {
+        "heading": "Frequently asked questions",
+        "description": "",
+        "allow_multiple_items": true,
+        "open_first_item": false,
+        "section_max_width": 945
+      }
+    },
+    "164892593633d7ded3": {
+      "type": "home-shop-with-confidence",
+      "blocks": {
+        "4c7f9b4a-1d57-4055-83b5-cbda668ac43c": {
+          "type": "confidence_prop",
+          "settings": {
+            "confidence_prop_image": "diamond-circle",
+            "confidence_prop_text": "30 DAY RETURNS"
+          }
+        },
+        "c9efafcd-5c77-46a7-a2f4-ba4d41c55ebe": {
+          "type": "confidence_prop",
+          "settings": {
+            "confidence_prop_image": "diamond-upgrade",
+            "confidence_prop_text": "100% UPGRADE POLICY"
+          }
+        },
+        "b2712618-d6c4-4bf7-89ff-01d2828d70ef": {
+          "type": "confidence_prop",
+          "settings": {
+            "confidence_prop_image": "money-bag",
+            "confidence_prop_text": "FLEXIBLE FINANCING"
+          }
+        }
+      },
+      "block_order": [
+        "4c7f9b4a-1d57-4055-83b5-cbda668ac43c",
+        "c9efafcd-5c77-46a7-a2f4-ba4d41c55ebe",
+        "b2712618-d6c4-4bf7-89ff-01d2828d70ef"
+      ],
+      "settings": {
+        "heading_color": "#2e2e2e",
+        "bg_color": "#efefef",
+        "section_header": "Shop with Confidence",
+        "section_cta_text": "Learn More",
+        "section_cta_text_color": "#ffffff",
+        "section_cta_bg_color": "#000000",
+        "section_cta_url": "shopify:\/\/pages\/contact"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1649619541a2f5a713",
+    "1648925934b7346067",
+    "164893413091ecbca8",
+    "1650835106ed5037de",
+    "1648935590f5b6d6ac",
+    "164894442552109ce9",
+    "164892593633d7ded3"
+  ]
+}

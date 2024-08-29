@@ -1,0 +1,109 @@
+{{ 'section-contact-info.css' | asset_url | stylesheet_tag }}
+
+<div class="page container contact">
+  <h1 class="text-center margin-bottom-lg">
+    {{ page.title | escape }}
+  </h1>
+  <div class="flex@md">
+    <div class="contact__block">
+      <div class="contact__call margin-bottom-md">
+        <h2 class="margin-bottom-sm">{{ section.settings.call_header }}</h2>
+        <div class="margin-bottom-sm">{{ section.settings.call_sub_header }}</div>
+        <div class="bg-contrast-lower padding-md">
+          <p>{{ section.settings.call_para }}</p>
+        </div>
+      </div>
+      <div class="contact__mail margin-bottom-md">
+        <h2 class="margin-bottom-sm">{{ section.settings.mail_header }}</h2>
+        <p>{{ section.settings.mail_para }}</p>
+      </div>
+    </div>
+    <div class="contact__block">
+      <div class="contact__email margin-bottom-md">
+        <h2 class="margin-bottom-sm">{{ section.settings.email_header }}</h2>
+        <p>{{ section.settings.email_para }}</p>
+        <div class="klaviyo-form-{{ section.settings.contact_form_list }} clearfix"></div>
+      </div>
+      <div class="contact__text margin-bottom-md">
+        <h2 class="margin-bottom-sm">{{ section.settings.chat_header }}</h2>
+        <a class="content__cta btn" href="javscript:void(0);"
+           onclick="window.PodiumWebChat.open()">{{ section.settings.section_chat_cta }}</a>
+        <p>{{ section.settings.chat_para }}</p>
+      </div>
+      <div class="contact__text margin-bottom-md">
+        <h2 class="margin-bottom-sm" style="font-weight: 200;">Schedule A Virtual Meeting</h2>
+        <a class="content__cta btn" href="https://calendly.com/marks-jewelers" target="_blank">Schedule</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Contact info",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "call_header",
+      "type": "richtext",
+      "label": "Call section header"
+    },
+    {
+      "id": "call_sub_header",
+      "type": "richtext",
+      "label": "Call section subheader"
+    },
+    {
+      "id": "call_para",
+      "type": "richtext",
+      "label": "Call section paragraph"
+    },
+    {
+      "id": "mail_header",
+      "type": "richtext",
+      "label": "Mail section header"
+    },
+    {
+      "id": "mail_para",
+      "type": "richtext",
+      "label": "Mail section paragraph"
+    },
+    {
+      "id": "email_header",
+      "type": "richtext",
+      "label": "Email section header"
+    },
+    {
+      "id": "email_para",
+      "type": "richtext",
+      "label": "Email section paragraph"
+    },
+    {
+      "id": "contact_form_list",
+      "type": "text",
+      "label": "Klaviyo form id"
+    },
+    {
+      "id": "chat_header",
+      "type": "richtext",
+      "label": "Chat section header"
+    },
+    {
+      "id": "section_chat_cta",
+      "type": "text",
+      "label": "Chat cta"
+    },
+    {
+      "id": "chat_para",
+      "type": "richtext",
+      "label": "Chat section paragraph"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact page"
+    }
+  ]
+}
+{% endschema %}

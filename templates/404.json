@@ -1,0 +1,169 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-404"
+    },
+      "404-discover-section": {
+      "type": "home-discover-our-selection",
+      "blocks": {
+        "68872db8-3b3f-493b-b4a5-ebd6639ca37e": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-Engagement-Image.jpg",
+            "collection_text": "Engagement Rings",
+            "collection_link": "shopify:\/\/collections\/engagement-rings"
+          }
+        },
+        "1080e22c-7b48-4526-b777-4e28d1e5842f": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-WeddingRings-Image.jpg",
+            "collection_text": "Wedding Rings",
+            "collection_link": "shopify:\/\/collections\/wedding-rings"
+          }
+        },
+        "28b575ed-524c-48f3-ab0e-2b3c55aaf4af": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-Diamonds-Image.jpg",
+            "collection_text": "Loose Diamonds",
+            "collection_link": "\/apps\/vdb-app\/search-filters?structure=new"
+          }
+        },
+        "59198bbc-a81b-45c9-8b8e-76baa3293de8": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-FineJewelry-Image.jpg",
+            "collection_text": "Diamond Jewelry",
+            "collection_link": "shopify:\/\/collections\/fine-jewelry"
+          }
+        },
+        "228130cd-685c-45e4-9de1-44fdf29bcb06": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-Timepieces-Homepage.jpg",
+            "collection_text": "Timepieces",
+            "collection_link": "shopify:\/\/collections\/timepieces"
+          }
+        },
+        "1cded1bc-1c5a-42b3-96e8-97d300b9358a": {
+          "type": "collections",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/MJ-Engagement-Image.jpg",
+            "collection_text": "Sale",
+            "collection_link": "shopify:\/\/collections\/sale-items"
+          }
+        }
+      },
+      "block_order": [
+        "68872db8-3b3f-493b-b4a5-ebd6639ca37e",
+        "1080e22c-7b48-4526-b777-4e28d1e5842f",
+        "28b575ed-524c-48f3-ab0e-2b3c55aaf4af",
+        "59198bbc-a81b-45c9-8b8e-76baa3293de8",
+        "228130cd-685c-45e4-9de1-44fdf29bcb06",
+        "1cded1bc-1c5a-42b3-96e8-97d300b9358a"
+      ],
+      "settings": {
+        "logo": ""
+      }
+    },
+    "16439883038946da8e": {
+      "type": "home-help",
+      "blocks": {
+        "6dc003b3-0e61-4921-bfd7-746322d445cd": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Monday:<\/strong><\/p>",
+            "store_hours_time": "Closed"
+          }
+        },
+        "e719cae8-e4e3-4a4f-a241-68568566bd3c": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Tuesday:<\/strong><\/p>",
+            "store_hours_time": "11:00 AM to 5:00 PM"
+          }
+        },
+        "36fbc9ec-964b-48f2-b27d-65f72c8c141e": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Wednesday:<\/strong><\/p>",
+            "store_hours_time": "11:00 AM to 8:00 PM"
+          }
+        },
+        "d486367a-2e5f-48da-b714-2e44d85998b4": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Thursday:<\/strong><\/p>",
+            "store_hours_time": "11:00 AM to 8:00 PM"
+          }
+        },
+        "9877dfde-e4a3-4604-b6e8-5bc2c8548ec2": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Friday:<\/strong><\/p>",
+            "store_hours_time": "11:00 AM to 5:00 PM"
+          }
+        },
+        "bd7874e5-6ab5-45f3-bb9a-e8ceffda84f9": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Saturday:<\/strong><\/p>",
+            "store_hours_time": "10:00 AM to 5:00 PM"
+          }
+        },
+        "48a7df9f-6d52-4631-86db-c79adb575fc0": {
+          "type": "store_hours",
+          "settings": {
+            "store_hours_day": "<p><strong>Sunday:<\/strong><\/p>",
+            "store_hours_time": "Closed"
+          }
+        }
+      },
+      "block_order": [
+        "6dc003b3-0e61-4921-bfd7-746322d445cd",
+        "e719cae8-e4e3-4a4f-a241-68568566bd3c",
+        "36fbc9ec-964b-48f2-b27d-65f72c8c141e",
+        "d486367a-2e5f-48da-b714-2e44d85998b4",
+        "9877dfde-e4a3-4604-b6e8-5bc2c8548ec2",
+        "bd7874e5-6ab5-45f3-bb9a-e8ceffda84f9",
+        "48a7df9f-6d52-4631-86db-c79adb575fc0"
+      ],
+      "settings": {
+        "subscribe_id": "JA5WrG",
+        "subscribe_endpoint": "https:\/\/manage.kmail-lists.com\/ajax\/subscriptions\/subscribe",
+        "top_border_color": "#a07282",
+        "top_border_width": 3,
+        "border_color": "#e7e7e7",
+        "border_width": 1,
+        "item_1_heading_text": "View Our How to Buy Guide",
+        "item_1_heading_color": "",
+        "item_1_paragraph_text": "Explore our guide on how to buy a ring or diamond. Enter your email address to receive our exclusive buying guide.",
+        "item_1_background": "shopify:\/\/shop_images\/buy-guide.jpg",
+        "item_1_background_position": "left",
+        "item_1_background_size": 100,
+        "item_1_background_repeat": "no-repeat",
+        "item_1_email_flag": true,
+        "item_2_heading_text": "Need help? Text Us Anytime",
+        "right_heading_color": "",
+        "item_2_paragraph_text": "Our diamond and jewelry experts are available day and night to answer your jewelry questions.",
+        "item_2_background": "shopify:\/\/shop_images\/MJ-DiamondsImage.jpg",
+        "item_2_background_position": "bottom right",
+        "item_2_background_size": 50,
+        "item_2_background_repeat": "no-repeat",
+        "item_2_top_border_color": "#a07282",
+        "store_hours_placement": "left",
+        "call_head": "Call\/Text",
+        "call_phone_number": "(215) 362-7132",
+        "email_text": "Email us",
+        "email_url": "shopify:\/\/pages\/contact",
+        "store_hours_accordion_head": "Store Hours",
+        "hours_header_text": "Normal hours of operation (EST)",
+        "holiday_hours_url": "shopify:\/\/pages\/contact",
+        "holiday_hours_text": "Click here for our holiday hours"
+      }
+    }
+  },
+
+  "order": ["main", "404-discover-section", "16439883038946da8e"]
+}

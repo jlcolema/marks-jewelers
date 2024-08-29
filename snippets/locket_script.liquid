@@ -1,0 +1,597 @@
+<script defer>
+
+  $(document).ready(function() {
+  $(".locket-accordion").on("click", function() {
+      $(this).toggleClass("active").parent().siblings().children().removeClass('active');
+      $(this).next('.panel').slideToggle(200).parent().siblings().children('.panel').slideUp(200);
+    });
+  
+    var wWidth = $(window).width();
+    if(wWidth <= 820){
+    $('#tabs-data .list').removeClass('active').addClass('hide');
+      $('.locket-info-total-outr').hide();
+      $('.addtocart-angle').on('click', function(){
+        $('.locket-info-total-outr').toggle();
+        $(this).children().addClass('active-icon').children().siblings().removeClass('active-icon');
+      })
+    }
+  });
+  
+  
+    window.onload = function() {
+        document.getElementsByClassName('clickme')[0].style.removeProperty('pointer-events');
+        document.getElementsByClassName('clickme')[1].style.removeProperty('pointer-events');
+        document.getElementsByClassName('clickme')[2].style.removeProperty('pointer-events');
+    };
+  
+    //Code to sort the alphabet charms in alphabetic order
+    $(".charms_Sub_Alphabet").sort(function (a, b) {
+    let x = a.getElementsByClassName('cust-tooltip')[0].getElementsByTagName('span')[0].innerText.split(' ')[1];
+    let y = b.getElementsByClassName('cust-tooltip')[0].getElementsByTagName('span')[0].innerText.split(' ')[1];
+    let check = a.getElementsByClassName('cust-tooltip')[0].getElementsByTagName('span')[0].innerText.split(' ')[0];
+    if (check == 'Letter') {
+      if (x < y) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+    }).appendTo('#sort_Sub_Alphabet');
+    //Code to sort the Roman Charms in asc order start here
+    function sortList() {
+        var list, i, switching, b, shouldSwitch;
+        list = document.getElementById("sort_Sub_Roman Numerals");
+        switching = true;
+        while (switching) {
+          switching = false;
+          b = list.getElementsByTagName("LI");
+          for (i = 0; i < (b.length - 1); i++) {
+            shouldSwitch = false;
+            if (Number(b[i].getAttribute('data-id')) > Number(b[i + 1].getAttribute('data-id'))) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            b[i].parentNode.insertBefore(b[i + 1], b[i]);
+            switching = true;
+          }
+        }
+      }
+    //End here.....
+  
+    $(document).ready(function(){
+      $('.clickme').click(function(){
+        $(this).siblings().removeClass('activelink');
+        $(this).addClass('activelink');
+        var tagid = $(this).children().data('tag');
+        var tabID = $(this).children().attr('data-tag');
+        console.log("tabID", tabID)
+        if(tabID == 'tab3'){
+          $(".drag_drop").hide();
+          $(".select_size").show();
+        }else{
+          $(".drag_drop").show();
+          $(".select_size").hide();
+        }
+        $(this).parent().siblings().find('.list').removeClass('active').addClass('hide');
+        $('#'+tagid).addClass('active').removeClass('hide');
+      });
+    });
+    $(document).ready(function () {
+      var pathname = window.location.pathname;
+      if(pathname == '/pages/locket'){
+        $('html').addClass("locket-page");
+      }
+    });
+  
+    var Products = []{%- for block in section.blocks -%}
+    {% assign cust_product = all_products[block.settings.product_s] %}
+    Products.push({{ cust_product.variants[0] | json }});
+  {% endfor %}
+  var Charms = [];
+  var allCharms = [];
+  {% capture charms_tag %}Sub_Alphabet,Sub_Roman Numerals,Sub_Zodiac Signs,Sub_Birthstones,Sub_Symbols{% endcapture %}
+  {% assign charms_tag = charms_tag | split: ',' %}
+  {% for cust_tag in charms_tag %}
+    {% paginate collections['locket'].products by 1000 %}
+      {% for product in collections['locket'].products %}
+        {% if product.tags contains cust_tag %}
+          allCharms.push({{ product | json }} );
+          var charmtest = {{ product.variants[0] | json }};
+          charmtest['image_src'] = {{ product.variants[0].featured_image.src | image_url: '100x' | json }};
+          Charms.push(charmtest );
+        {% endif %}
+      {% endfor %}
+    {% endpaginate %}
+  {% endfor %}
+  var Chains = []
+  {% paginate collections['locket'].products by 1000 %}
+    {% for product in collections['locket'].products %}
+      {% for tag in product.tags %}
+        {% if tag contains 'Sub_Layered Necklace' %}
+          Chains.push({{ product.variants[0] | json }});
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endpaginate %}
+
+
+  String.prototype.splice = function (idx, rem, str) {
+  return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+    };
+    dollarUSLocale = Intl.NumberFormat('en-US');
+  
+    $(document).ready(function () {
+      const queryString = window.location.search;
+      var locket_id = '';
+      if (queryString) {
+        locket_id =   queryString.split('&')[0].split('=')[1];
+        localStorage.setItem("locketID", locket_id);
+      }else{
+        locket_id = localStorage.getItem('locketID')
+      }
+  
+      if (locket_id) {
+        locket_id = locket_id;
+      } else {
+        var idSwap = localStorage.setItem("locketID", "43609383960798");
+        locket_id = localStorage.getItem('locketID')
+      }
+      console.log(locket_id)
+      changeLocket(locket_id)
+      let locket_product = Products.find(x => x.id === Number(locket_id))
+      let product_total_text = locket_product.price.toString();
+      var price = "$" + product_total_text.splice(-2, 0, ".");
+      var cust_title = locket_product.name;
+      var productData = `<div class="locket-cart-inner" id="${locket_id}">
+    <div>
+      <img src="${locket_product.featured_image.src}" alt="" />
+    </div>
+    <div class="locket-cart-info">
+      <span class="p-title">${locket_product.name}</span>
+      <span class="p-price">${price}</span>
+    </div>
+  </div>`;
+  $(".pendant_image").attr("src", locket_product.featured_image.src);
+      $('.locket-cart').append(productData);
+      $('#locketShape').text("Round");
+    });
+  
+    $(document).on('click', '.ad_to_cart', function () {
+      var wWidth = $(window).width();
+      if(wWidth <= 820){
+        $("#author_bio_wrap_toggle").click();
+        $("#tabs-data .list").addClass('hide');
+      }
+  
+      var productImage = $(this).find('.ad_to_cart_id').find("img").attr("src");
+      $(".pendant_image").attr("src", productImage);
+      $(this).addClass("active");
+      $(this).siblings().removeClass("active");
+      var ID = $(this).find('.ad_to_cart_id').attr("data-id");
+      var custTitle = $(this).find('.ad_to_cart_id').attr("data-title");
+      var product = Products.find(x => x.id === Number(ID));
+      let divID = product.sku;
+      let product_total_text = product.price.toString();
+      var price = "$" + product_total_text.splice(-2, 0, ".");
+      var productData = `<div class="locket-cart-inner" id="${ID}">
+    <div>
+      <img src="${product.featured_image.src}" alt="" />
+    </div>
+    <div class="locket-cart-info">
+      <span class="p-title">${product.name}</span>
+      <span class="p-price">${price}</span>
+    </div>
+  </div>`;
+  var locket_id = localStorage.getItem('locketID');
+      if (locket_id == ID) {
+        return false;
+      } else {
+        changeLocket(ID);
+        charmsState();
+        setTimeout(function(){
+          changeCharmsState();
+        },3000)
+        var divId = "#" + locket_id;
+        $(divId).remove();
+        $('.locket-cart').append(productData);
+        localStorage.setItem("locketID", ID);
+      }
+      $('#locketShape').text(custTitle);
+    })
+  
+    $(document).ready(function () {
+      var chain_size = localStorage.getItem('chain_size')
+      if(chain_size){
+        let sizeCount =  $('.ad_to_cart_chain_size');
+          for (let i = 0; i < sizeCount.length; i++) {
+            let check = $('.ad_to_cart_chain_size')[i].title;
+            if(check == chain_size){
+              document.getElementsByClassName('ad_to_cart_chain_size')[i].parentNode.className+=' active';
+              $(".chain_size_price").append(chain_size);
+            }
+          }
+  
+      }else{
+          let sizeCount =  $('.ad_to_cart_chain_size');
+          for (let i = 0; i < sizeCount.length; i++) {
+            let check = $('.ad_to_cart_chain_size')[i].title;
+            if(check == '16'){
+              document.getElementsByClassName('ad_to_cart_chain_size')[i].parentNode.className+=' active';
+               $(".chain_size_price").append('16');
+            }
+          }
+        localStorage.setItem('chain_size', '16')
+      }
+      });
+    $(document).on('click', '.ad_to_cart_chain', function () {
+      var size = $(this).find('.ad_to_cart_chain_size').attr("data-id");
+      $(this).addClass('active').siblings().removeClass('active');
+      $(".chain_size_price").empty();
+      $(".chain_size_price").append(size);
+      localStorage.setItem('chain_size', size)
+      var wWidth = $(window).width();
+      if(wWidth <= 820){
+        $("#author_bio_wrap_toggle").click();
+        $("#tabs-data .list").addClass('hide');
+      }
+    })
+  
+    //Charms Code here
+    $(document).ready(function () {
+      var testing = localStorage.getItem("charmsID");
+      var charmsArray = JSON.parse(testing);
+      if (charmsArray) {
+        charmsArray = charmsArray;
+      } else {
+        charmsArray = [];
+        localStorage.setItem("charmsID", JSON.stringify(charmsArray))
+      }
+      for (let i = 0; i < charmsArray.length; i++) {
+        var chain_product = Charms.find(x => x.id === Number(charmsArray[i]))
+        let product_total_text = chain_product.price.toString();
+        var price = "$" + product_total_text.splice(-2, 0, ".");
+        var productData =`<div class="locket-cart-inner" id="${chain_product.id}">
+    <div>
+      <img src="${chain_product.featured_image.src}" alt="" />
+    </div>
+    <div class="locket-cart-info">
+      <span class="p-title">
+        ${chain_product.name}</span>
+      <span class="p-price">${price}</span>
+      <span class="p-del" data-id="${chain_product.id}">
+        <img src="{{ 'trash.svg' | asset_url }}" alt="heart01" /></span>
+    </div>
+  </div>`
+  }
+    });
+  
+    $(document).on('click', '.ad_to_cart_id_charms', function () {
+      var ID = $(this).attr("data-id");
+       var charmsArray = JSON.parse(localStorage.getItem("charmsID"));
+      if (charmsArray.length <= 6) {
+        let backData = addToCartCharm(ID);
+        addcharmonClick(backData, ID)
+      }else{
+        alert("Can't add more than Seven Charms.");
+        return false;
+      }
+  
+      var wWidth = $(window).width();
+      if(wWidth <= 820){
+      $("#author_bio_wrap_toggle").click();
+        $("#tabs-data .list").addClass('hide');
+      }
+  
+    })
+    $(document).on('click', 'body *', function () {
+      sortList();
+      var totalPrice = '';
+      var locket_id = Products.find(x => x.id === Number(localStorage.getItem('locketID')));
+      var locket_price = Number(locket_id.price);
+      var charms_id = JSON.parse(localStorage.getItem('charmsID'));
+      totalPrice = locket_price ;
+      for (let i = 0; i < charms_id.length; i++) {
+        var charms_data = Charms.find(x => x.id === Number(charms_id[i]))
+        totalPrice += charms_data.price;
+      }
+      totalPrice +=15000;
+      let product_total_text = totalPrice.toString();
+      var result = "$" + product_total_text.splice(-2, 0, ".");
+      $("#Total_price").text(result);
+    });
+  
+    //Clear Charms
+    $(document).on('click', '.clear_charms', function () {
+      var charms_id = JSON.parse(localStorage.getItem('charmsID'));
+      for (let i = 0; i < charms_id.length; i++) {
+        let divID = "#" + charms_id[i]+"_deleteid";
+        $(divID).remove();
+      }
+      let charmsArray = [];
+      clearCharms()
+      localStorage.setItem("charmsID", JSON.stringify(charmsArray))
+    })
+  
+  
+    $(document).on('click', '.p-del', function () {
+      var divId =  $(this).attr('data-id')+"_deleteid";
+      let product_id = $(this).attr('data-id');
+      var charmsDiv = document.getElementsByClassName('charms');
+      for (let i = 0; i < charmsDiv.length; i++) {
+        if(charmsDiv[i].getAttribute('data-id') == divId) {
+          charmsDiv[i].remove()
+          break;
+        }
+      }
+      var charmsArray = JSON.parse(localStorage.getItem("charmsID"));
+      charmsArray.pop($(this).attr('data-id'));
+      localStorage.setItem("charmsID", JSON.stringify(charmsArray))
+      deleteCharm(product_id);
+    });
+  
+    $(document).on('click', '.remove_charm img', function () {
+      var divId = "#" + $(this).attr('id');
+      $(divId).remove();
+      var charmsArray = JSON.parse(localStorage.getItem("charmsID"));
+      charmsArray.pop($(this).attr('id'));
+      localStorage.setItem("charmsID", JSON.stringify(charmsArray))
+    })
+  
+    $(document).ready(function () {
+      var totalPrice = '';
+      var locket_id = Products.find(x => x.id === Number(localStorage.getItem('locketID')));
+      var locket_price = Number(locket_id.price);
+      var charms_id = JSON.parse(localStorage.getItem('charmsID'));
+      totalPrice = locket_price ;
+      for (let i = 0; i < charms_id.length; i++) {
+        var charms_data = Charms.find(x => x.id === Number(charms_id[i]))
+        totalPrice += charms_data.price;
+      }
+  
+      let product_total_text = totalPrice.toString();
+      var result = "$" + product_total_text.splice(-2, 0, ".");
+      $("#Total_price").text(result);
+    });
+  
+    $(document).on("click", '.share_btn', function () {
+      var charmsId = JSON.parse(localStorage.getItem('charmsID'));
+      var locketID = localStorage.getItem('locketID');
+      var queryString = "https://justdesi.com/pages/locket?locketID=" + locketID + "&charms=" + charmsId.toString();
+  
+      var shareLink = queryString;
+      var sampleTextarea = document.createElement("textarea");
+      document.body.appendChild(sampleTextarea);
+      sampleTextarea.value = shareLink; //save main text in it
+      sampleTextarea.select();{{ product.variants[0].featured_image.src | image_url: '100x' | json }}
+  document.execCommand("copy");
+  document.body.removeChild(sampleTextarea);
+    });
+  
+    $(document).ready(function () {
+      const queryString = window.location.search;
+      if (queryString) {
+        let productArray = queryString.split('&')[2].split('=')[1].split(',');
+        localStorage.setItem('charmsID', JSON.stringify(productArray))
+      } else {
+        return false;
+      }
+    });
+  
+    var zoom = 1;
+    $('.zoom-init').on('click', function () {
+      $('.zoom-init').addClass('active');
+      $('.zoom-out').removeClass('active');
+      zoom += 0.1;
+      $('#canvas-container').css('transform', 'scale(' + zoom + ')');
+    });
+    $('.zoom-out').on('click', function () {
+      zoom -= 0.1;
+      if (zoom > '1') {
+        $('#locket_image_product').css('transform', 'scale(' + zoom + ')');
+      }
+    });
+  
+    var zoomer = document.getElementById('zoomer');
+    var hubblepic = document.getElementById('canvas-container');
+  
+    function deepdive() {
+      zoomlevel = zoomer.valueAsNumber;
+      console.log('zoomlevel', zoomlevel)
+      hubblepic.style.webkitTransform = "scale(" + zoomlevel + ")";
+      hubblepic.style.transform = "scale(" + zoomlevel + ")";
+      $('#canvas-container').css('transform', 'scale(' + zoomlevel + ')');
+    }
+  
+    var canvas = new fabric.Canvas('canvas');
+    var circle = new fabric.Circle({
+      radius: 20,
+      fill: 'green',
+      left: 300,
+      top: 300
+    });
+    canvas.add(circle);
+  
+    function handleDragStart(e) {
+      [].forEach.call(images, function (img) {
+        img.classList.remove('img_dragging');
+      });
+      this.classList.add('img_dragging');
+    }
+  
+    function handleDragOver(e) {
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+      e.dataTransfer.dropEffect = 'copy';
+      return false;
+    }
+  
+    function handleDragEnter(e) {
+      this.classList.add('over');
+    }
+  
+    function handleDragLeave(e) {
+      this.classList.remove('over');
+    }
+  
+    function handleDrop(e) {
+      if (e.stopPropagation) {
+        e.stopPropagation();
+      }
+      var img = document.querySelector('#images img.img_dragging');
+      var newImage = new fabric.Image(img, {
+        type: 'linear',
+        width: img.width,
+        height: img.height,
+        left: e.layerX,
+        top: e.layerY,
+        originY: 'center',
+        originX: 'center',
+        angle: fabric.util.getRandomInt(-30, 30)
+      });
+      animateCharms(newImage._element.currentSrc, newImage._element.id);
+      return false;
+    }
+  
+    function handleDragEnd(e) {
+      [].forEach.call(images, function (img) {
+        img.classList.remove('img_dragging');
+      });
+    }
+    if (Modernizr.draganddrop) {
+      var images = document.querySelectorAll('#images img');
+      [].forEach.call(images, function (img) {
+        img.addEventListener('dragstart', handleDragStart, false);
+        img.addEventListener('dragend', handleDragEnd, false);
+      });
+      var canvasContainer = document.getElementById('canvas-container');
+      canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+      canvasContainer.addEventListener('dragover', handleDragOver, false);
+      canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+      canvasContainer.addEventListener('drop', handleDrop, false);
+    } else {
+      alert("This browser doesn't support the HTML5 Drag and Drop API.");
+    }
+  
+    function addToCartCharm(ID){
+     let productId = '';
+     let selectorHtml = '';
+     allCharms.map(function(ele, index){
+       ele.variants.map(function(val, key){
+         if(val.id == ID){
+           productId += allCharms[index].id;
+           selectorHtml += `<input
+    name="sealColor_${ID}"
+    id="${productId}"
+    class="whiteRadio metal-selector"
+    value="${ele.variants[1].id}"
+    type='radio' />
+  <input
+    name="sealColor_${ID}"
+    id="${productId}"
+    class="yelloRadioAlt metal-selector"
+    value="${ele.variants[0].id}"
+    type='radio' />
+  <input
+    name="sealColor_${ID}"
+    id="${productId}"
+    class="roseRadio metal-selector"
+    value="${ele.variants[2].id}"
+    type='radio' />`
+  }
+       });
+     });
+      var product = Charms.find(x => x.id === Number(ID));
+      let product_total_text = product.price.toString();
+      var price = "$" + product_total_text.splice(-2, 0, ".");
+    var productData = `<div
+    class="locket-cart-inner charms"
+    data-id="${ID}_deleteid"
+    quantity="">
+    <div>
+      <img
+        class="lettersImg"
+        src="${product.featured_image.src}"
+        id="metal_${productId}"
+        alt="letters" />
+    </div>
+    <div class="locket-cart-info">
+      <span class="p-title" id="title_${productId}">${product.name}</span>
+      <span class="p-price">${price}</span>
+      <div class="metal-color">
+        <span>
+          <label>Metal:
+          </label>
+          ${selectorHtml}
+        </span>
+      </div>
+      <span class="p-del" data-id="${product.id}">
+        <img src="{{ 'trash.svg' | asset_url }}" alt="heart03" /></span>
+    </div>
+  </div>`;
+  $('.locket-cart').append(productData);
+      return product.image_src;
+   }
+  
+    $(document).on('click', '.metal-selector', function () {
+      let varId =  $(this).val();
+      let productId = $(this).attr('id');
+      let selectedId = $("#"+productId).attr("name");
+      let divID = selectedId.split('_')[1];
+      let productData = allCharms.find(x => x.id === Number(productId))
+      productData.variants.map(function(val, key){
+        if(varId == val.id){
+          let imgTagId = "#metal_"+productId;
+          let titleTag = "#title_"+productId;
+  
+          let imgSrc = val.featured_image.src;
+          $(imgTagId).attr('src', val.featured_image.src)
+          $(titleTag).text(val.name);
+          changeCharms(productId, divID, imgSrc)
+        }
+      });
+    });
+  
+    $(document).on('click', '.product__submit__add', function () {
+      var chamsID = JSON.parse(localStorage.getItem("charmsID"));
+      var itemsArray = [];
+      for (let i = 0; i < chamsID.length; i++) {
+        var radioValue = $("input[name='sealColor_"+chamsID[i]+"']:checked").val();
+        if(radioValue){
+          var feed = { quantity: "1", id: radioValue };
+          itemsArray.push(feed);
+        }else{
+          var feed = { quantity: "1", id: chamsID[i] };
+          itemsArray.push(feed);
+        }
+      }
+      var locket_chain =  { quantity: "1", id: 43609448349918 };
+      itemsArray.push(locket_chain);
+  
+      var locket_ID = { quantity: "1", id: localStorage.getItem("locketID"), "properties" : {"Chain Size": localStorage.getItem("chain_size") }};
+      itemsArray.push(locket_ID);
+      $.ajax({
+        type: "POST",
+        url: '/cart/clear.js',
+        data: '',
+        dataType: 'json',
+        success: function() {
+          $.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            data: {
+              items: itemsArray
+            },
+            dataType: 'json',
+            success: function () {
+              window.location.replace('/cart')
+            }
+          });
+        },
+        error: function(XMLHttpRequest, textStatus) {
+          /* error code */
+        }
+      });
+    });</script>

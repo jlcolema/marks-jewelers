@@ -1,0 +1,17 @@
+#modal-strict-guidelines {
+  background-color: rgba(0, 0, 0, .3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal__content {
+    max-width: var(--max-width-xs);
+    width: 95%;
+    background-color: var(--color-white);
+    padding: var(--space-lg);
+  }
+
+  .modal__close-btn {
+    color: var(--color-white);
+  }
+}

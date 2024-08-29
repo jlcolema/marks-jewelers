@@ -1,0 +1,21 @@
+<div class="cart__checkout-buttons--container">
+<!--   <a id="checkout_btn" href="/checkout" class="btn btn--primary btn__checkout">
+    {{ 'sections.cart.checkout' | t }}
+  </a> -->
+  <button id="checkout_btn_search" class="btn btn--primary btn__checkout">{{ 'sections.cart.checkout' | t }}</button>
+      {% if cart.item_count > 0 %}
+    <div id="bread-checkout-btn" style="height:50px; margin:20px 0px;"></div>
+{% endif %}
+  {%- if additional_checkout_buttons -%}
+    <div class="cart__checkout-buttons--separator">
+      <span>
+        {{ 'sections.cart.additional_buttons_separator' | t }}
+      </span>
+    </div>
+    <div class="order-summary__adtl-checkout">
+      {{ content_for_additional_checkout_buttons }}
+    </div>
+  {%- else -%}
+    <p style="margin-top: 10px"></p>
+  {%- endif -%}
+</div>

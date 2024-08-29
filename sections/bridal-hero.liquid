@@ -1,0 +1,127 @@
+{%- capture styling -%}
+  {%- if section.settings.bg_color != blank -%}
+    --bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.text_color != blank -%}
+  --section-text-color: {{ section.settings.text_color }};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_top != blank -%}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_bottom != blank -%}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_top != blank -%}
+    --section-inner-spacing-top: {% render 'to-rem', n: section.settings.section_inner_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_bottom != blank -%}
+    --section-inner-spacing-bottom: {% render 'to-rem', n: section.settings.section_inner_spacing_bottom %};
+  {%- endif -%}
+{%- endcapture -%}
+{{ 'section-bridal-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="section__bridal--shop" style="{{ styling }}">
+  <div class="container">
+    <div class="content__bridal--header text-center">
+      {% render 'icon', icon: 'logomark', class: 'logomark' %}
+      <h1>{{ section.settings.section_header }}</h1>
+      <p>{{ section.settings.section_paragraph }}</p>
+    </div>
+    <div class="content__bridal--shop flex flex-center">
+      {%- for block in section.blocks -%}
+          <div class="content__bridal--copy">
+            <p>{{ block.settings.block_paragraph }}</p>
+            <a href="{{ block.settings.block_cta_url }}" class="btn">{{ block.settings.block_cta_text }}</a>
+            {% render 'img', img: block.settings.bridal_img, width: block.settings.bridal_img.width, height: block.settings.bridal_img.height, loading: 'lazy' %}
+          </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Bridal Stages",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "text_color",
+      "type": "color",
+      "label": "Text color"
+    },
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_top",
+      "type": "text",
+      "label": "Section Top Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_header",
+      "type": "text",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_paragraph",
+      "type": "text",
+      "label": "Section Paragraph"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Diamond Collection",
+      "settings": [
+        {
+          "id": "block_paragraph",
+          "type": "richtext",
+          "label": "Section Paragraph"
+        },
+        {
+          "id": "bridal_img",
+          "type": "image_picker",
+          "label": "Select prompt image"
+        },
+        {
+          "id": "block_cta_text",
+          "type": "text",
+          "label": "Button Text"
+        },
+        {
+          "id": "block_cta_url",
+          "type": "url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bridal Stages"
+    }
+  ]
+}
+{% endschema %}

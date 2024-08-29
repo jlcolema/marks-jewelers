@@ -1,0 +1,99 @@
+<div class="ContactBubble">
+  <button id="chatBubble" class="ContactBubble__Bubble" aria-label="Chat widget open">
+    <div class="ContactBubble__IconContainer">
+      <div class="ContactBubble__Icon">
+        <svg width="27px" height="24px" viewBox="0 0 18 26" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink" alt="Open Webchat">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Settings-11-Copy" transform="translate(-303.000000, -368.000000)" stroke="#FFFFFF"
+              stroke-width="2.08">
+              <g id="button-3-icon-only" transform="translate(304.000000, 369.000000)">
+                <path
+                  d="M13.6047001,23.436913 L2.47166739,23.436913 C1.23300558,23.436913 0.231463758,22.4998207 0.231463758,21.3427826 L0.231463758,2.26327174 C0.231463758,1.10778261 1.23300558,0.170690217 2.47166739,0.170690217 L13.6047001,0.170690217 C14.8417038,0.170690217 15.8465619,1.10778261 15.8465619,2.26327174 L15.8465619,21.3427826 C15.8465619,22.4998207 14.8417038,23.436913 13.6047001,23.436913 Z"
+                  id="Stroke-1"></path>
+                <path d="M0.230800485,4.44383152 L15.8458987,4.44383152" id="Stroke-3"></path>
+                <path d="M0.230800485,18.8431467 L15.8458987,18.8431467" id="Stroke-5"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </button>
+</div>
+
+<script defer>
+  document.getElementById("chatBubble").addEventListener("click", function () {
+    if(!document.getElementById('podium-widget')) {
+      const podiumChatScript = document.createElement("script");
+      podiumChatScript.setAttribute(
+        "src",
+        "https://connect.podium.com/widget.js#API_TOKEN=099145d6-295d-40ac-a454-b36253961bc8"
+      );
+      podiumChatScript.setAttribute("id", "podium-widget");
+      podiumChatScript.setAttribute(
+        "data-api-token",
+        "099145d6-295d-40ac-a454-b36253961bc8"
+      );
+
+      podiumChatScript.setAttribute('defer', 'defer');
+      document.body.append(podiumChatScript);
+
+      //open chat
+      const podiumInterval = setInterval(() => {
+        if (window.PodiumWebChat) {
+          clearInterval(podiumInterval);
+          window.PodiumWebChat.open();
+        }
+      }, 500);
+    }
+  });
+</script>
+
+<style>
+  .ContactBubble__Bubble {
+    background-color: #a07282;
+  }
+
+  .ContactBubble__Bubble:hover {
+    background-color: rgb(118, 79, 93);
+  }
+
+  .ContactBubble__Bubble--opened:hover {
+    background-color: rgb(118, 79, 93);
+  }
+
+  .ContactBubble {
+    -webkit-animation: fadeIn 0.25s ease;
+    animation: fadeIn 0.25s ease;
+    position: fixed;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    right: 30px;
+    bottom: 32px;
+    z-index: 99999999;
+  }
+
+  .ContactBubble__Icon {
+    padding: 10px;
+  }
+
+  .ContactBubble__Bubble {
+    background-color: #a07282;
+    border: none;
+    border-radius: 200px;
+    padding: 5px;
+  }
+
+  .ContactBubble__Bubble:hover {
+    cursor: pointer;
+  }
+</style>

@@ -1,0 +1,42 @@
+// ==========================================================================
+// SECTION: RECENTLY PURCHASED
+// ==========================================================================
+
+.recently-purchased {
+  margin-top: var(--space-xl);
+}
+
+.recently-purchased__content {
+  text-align: center;
+
+  @media (--sm) {
+    font-size: var(--text-md);
+  }
+}
+
+.recently-purchased__cta {
+  font-size: var(--text-xs);
+  text-decoration: underline;
+}
+
+.recently-purchased__collection {
+  --gap: var(--space-md);
+  --cols: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gap);
+  max-width: var(--max-width-xs);
+  margin: 2.5rem auto 0;
+
+  @media (--sm) {
+    --gap: var(--space-xl);
+  }
+
+  @media (--md) {
+    --gap: 5rem;
+    --cols: 4;
+
+    max-width: 100%;
+  }
+}

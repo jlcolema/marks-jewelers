@@ -1,0 +1,11 @@
+{%- comment -%}
+  Convert a pixel value to rem. 1rem = 16.000px.
+{%- endcomment -%}
+
+{%- liquid
+  assign rem = 16.000
+  assign unit = 'rem'
+  assign number = n | plus: 0 | divided_by: rem
+-%}
+
+{{- number | append: unit -}}

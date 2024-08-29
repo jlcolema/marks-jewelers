@@ -1,0 +1,184 @@
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --our-services-heading-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --our-services-bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.paragraph_color != blank -%}
+    --our-services-color: {{ section.settings.paragraph_color }};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-section-content-text-block.css' | asset_url | stylesheet_tag }}
+
+<div class="container">
+<div class="content-text" style="{{ styling }}">
+  <h2 class="section-heading">
+    <div class="usp-header-logo">
+      {% render 'img', img: section.settings.logo, width: 125, height: 200, crop: 'center', loading: 'lazy' %}
+    </div>
+    {{ section.settings.section_header }}
+  </h2>
+  <div class="usp-logo">
+    {% render 'img', img: section.settings.header-logo, width: 50, height: 55, crop: 'center', loading: 'lazy' %}
+    </div>
+    {%- if section.settings.section_sub_header != blank -%}
+    <span class="section__sub-header">{{ section.settings.section_sub_header }}</span>
+  {%- endif -%}
+  <p>{{ section.settings.section_paragraph }}</p>
+
+<div class="diamond__row">
+  {%- for block in section.blocks -%}
+    <div class="diamond diamond-logo">
+        {% render 'img', img: block.settings.diamond_image, width: 25, height: 30, loading: 'lazy' %}
+        <span>{{ block.settings.diamond_name }}</span>
+      <a class="content__cta btn" href="{{ block.settings.section_cta_url }}">{{ block.settings.section_cta_text }}</a>
+      </div>
+    {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Text Block",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "heading_desktop_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size desktop"
+    },
+    {
+      "id": "heading_mobile_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size mobile"
+    },
+    {
+      "id": "header-logo",
+      "type": "image_picker",
+      "label": "header icon"
+    },
+    {
+      "id": "logo",
+      "type": "image_picker",
+      "label": "Logo"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "section_header",
+      "type": "richtext",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_sub_header",
+      "type": "richtext",
+      "label": "Section Sub Header"
+    },
+    {
+      "id": "section_paragraph",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    },
+    {
+      "id": "section_content_text_align",
+      "type": "select",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "id": "section_max_width",
+      "type": "number",
+      "label": "Max width (in pixels)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Diamond",
+      "settings": [
+        {
+          "id": "diamond_image",
+          "type": "image_picker",
+          "label": "Diamond image"
+        },
+        {
+          "id": "diamond_name",
+          "type": "text",
+          "label": "Diamond label"
+        },
+        {
+          "id": "diamond_url",
+          "type": "url",
+          "label": "Diamond URL"
+        },
+        {
+          "id": "section_cta_text",
+          "type": "text",
+          "label": "Button Text"
+        },
+        {
+          "id": "section_cta_url",
+          "type": "url",
+          "label": "Button URL"
+        },
+        {
+          "id": "section_cta_text_color",
+          "type": "color",
+          "label": "Button Text Color"
+        },
+        {
+          "id": "cta_bg_color",
+          "type": "color",
+          "label": "Button Background Color"
+        },
+        {
+          "id": "section_cta_border_color",
+          "type": "color",
+          "label": "Button Border Color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Block"
+    }
+  ]
+}
+{% endschema %}

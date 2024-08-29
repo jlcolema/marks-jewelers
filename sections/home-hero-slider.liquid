@@ -1,0 +1,149 @@
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- comment -%} General appearance {%- endcomment -%}
+  {%- if section.settings.background_color != blank -%}
+    --background-color: {{ section.settings.background_color }};
+  {%- endif -%}
+  {%- if section.settings.border_color != blank -%}
+    --border-color: {{ section.settings.border_color | color_modify: 'alpha', section.settings.border_opacity }};
+  {%- endif -%}
+  {%- if section.settings.mobile_top_padding != blank -%}
+    --mobile-top-padding: {% render 'to-rem', n: section.settings.mobile_top_padding %};
+  {%- endif -%}
+  {%- if section.settings.mobile_bottom_padding != blank -%}
+    --mobile-bottom-padding: {% render 'to-rem', n: section.settings.mobile_bottom_padding %};
+  {%- endif -%}
+  {%- if section.settings.desktop_top_padding != blank -%}
+    --desktop-top-padding: {% render 'to-rem', n: section.settings.desktop_top_padding %};
+  {%- endif -%}
+  {%- if section.settings.desktop_bottom_padding != blank -%}
+    --desktop-bottom-padding: {% render 'to-rem', n: section.settings.desktop_bottom_padding %};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-home-hero-slider.css' | asset_url | stylesheet_tag }}
+
+{% capture inline_style %}--image-ratio:{{ section.settings.mobile_image.aspect_ratio }};{% endcapture %}
+{% capture inline_style %}--desk-image-ratio:{{ section.settings.desktop_image.aspect_ratio }};{% endcapture %}
+
+{{ 'custom_slick.css' | asset_url | stylesheet_tag }}
+{{ 'custom_slick_theme.css' | asset_url | stylesheet_tag }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+
+<div class="hero-slider__content" style="{{ inline_style }} {{ styling }}">
+
+  <div class="slider">
+    {% for block in section.blocks %}
+      <div class="slide">
+
+        {%- if block.settings.slide_link != blank -%}<a href="{{ block.settings.slide_link }}">{%- endif -%}
+
+        <picture>
+          <source srcset="{{ block.settings.slide_image_mobile | image_url }}" media="(max-width: 767px)">
+          <source srcset="{{ block.settings.slide_image | image_url }}" media="(min-width: 768px)">
+          {% render 'img', img: block.settings.slide_image, alt: '', class: 'hero-slider__image' %}
+        </picture>
+
+        {%- if block.settings.slide_link != blank -%}</a>{%- endif -%}
+
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+<script type="module" defer>
+  $(document).ready(function () {
+      $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 10000,
+        arrows: false,
+        dots: true,
+      });
+    });
+</script>
+
+{% render 'start-design-modal' %}
+
+{% schema %}
+{
+  "name": "Hero Slider",
+  "tag": "section",
+  "class": "hero-slider",
+  "settings": [
+    {
+      "id": "background_color",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "id": "desktop_top_padding",
+      "type": "text",
+      "label": "Desktop padding top",
+      "info": "px"
+    },
+    {
+      "id": "desktop_bottom_padding",
+      "type": "text",
+      "label": "Desktop padding bottom",
+      "info": "px"
+    },
+    {
+      "id": "mobile_top_padding",
+      "type": "text",
+      "label": "Mobile padding top",
+      "info": "px"
+    },
+    {
+      "id": "mobile_bottom_padding",
+      "type": "text",
+      "label": "Mobile padding bottom",
+      "info": "px"
+    },
+    {
+      "id": "border_color",
+      "label": "Border color",
+      "type": "color"
+    },
+    {
+      "id": "border_opacity",
+      "label": "Border color opacity",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.1,
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "id": "slide_image",
+          "type": "image_picker",
+          "label": "Desktop Slide Image"
+        },
+        {
+          "id": "slide_image_mobile",
+          "type": "image_picker",
+          "label": "Mobile Slide Image"
+        },
+        {
+          "id": "slide_link",
+          "type": "url",
+          "label": "Slide Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Slider",
+      "category": "Homepage"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,76 @@
+{{ 'section-home-discover-our-selection.css' | asset_url | stylesheet_tag }}
+
+<div class="discover">
+  <span class="discover__header-logo">
+    {%- render 'img', img: section.settings.logo, width: 50, height: 55, crop: 'center', loading: 'lazy' -%}
+  </span>
+  <div class="discover__heading">
+    {{ section.settings.section_header }}
+  </div>
+  <div class="discover__paragraph">
+    {{ section.settings.section_paragraph }}
+  </div>
+
+  <div class="discover__collection snap-slider__container">
+    {% render 'discover-collection' collection_block: section.blocks %}
+    {% render 'snap-slider-arrows' %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Discover Selection",
+  "tag": "section",
+  "class": "container container--lg",
+  "settings": [
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "logo",
+      "type": "image_picker",
+      "label": "Section Logo"
+    },
+    {
+      "id": "section_header",
+      "type": "text",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_paragraph",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collections",
+      "name": "Discover Collection",
+      "settings": [
+        {
+          "id": "collection_image",
+          "type": "image_picker",
+          "label": "Collection Image"
+        },
+        {
+          "id": "collection_text",
+          "type": "text",
+          "label": "Collection Text"
+        },
+        {
+          "id": "collection_link",
+          "type": "url",
+          "label": "Collection URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Discover Selection"
+    }
+  ]
+}
+{% endschema %}

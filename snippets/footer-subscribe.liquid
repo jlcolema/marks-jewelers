@@ -1,0 +1,13 @@
+{%- assign img = section.settings.subscribe_image -%}
+{%- assign img_width = section.settings.subscribe_image_width | default: img.width -%}
+
+<p class="footer-nav__heading hide block@sm">{{ 'sections.footer.form.heading' | t }}</p>
+{% render 'subscribe-form-footer' %}
+
+<p id="footer-subscribe-description" class="footer-subscribe__description">
+  {{ 'sections.footer.form.description' | t }}
+</p>
+
+{%- if img != blank -%}
+  {% render 'img', img: img, width: img_width, class: 'hide block@sm' %}
+{%- endif -%}

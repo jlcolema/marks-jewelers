@@ -1,0 +1,88 @@
+.hidden {
+  display: none;
+}
+
+.customer-testimonials {
+  margin: var(--space-xl) auto var(--space-xs);
+}
+
+.customer-testimonials__items {
+  --item-width: 95%;
+  --item-spacing: var(--space-sm);
+
+  display: grid;
+  gap: var(--item-spacing);
+  grid-template-columns: repeat(3, var(--item-width));
+  margin: var(--space-md) calc(-1 * var(--component-padding)) 0;
+  padding: var(--item-spacing);
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  position: static;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--item-spacing);
+  font-size: var(--text-xs);
+
+  // Scrollbars
+  scrollbar-width: none; // W3/Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Safari/Chrome/Edge
+  }
+
+  @media (--allow-motion) {
+    scroll-behavior: smooth;
+  }
+
+  @media (--xs) {
+    --item-width: 21.25rem;
+    --item-spacing: var(--space-md);
+  }
+
+  @media (--md) {
+    --item-width: 1fr;
+  }
+}
+
+.customer-testimonials__item {
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  box-shadow: -1px 0 4px alpha(var(--color-black), 0.25);
+  border-radius: var(--radius-md);
+  display: block;
+  scroll-snap-align: center;
+
+  &:first-child {
+    scroll-snap-align: start;
+  }
+
+  &:last-child {
+    scroll-snap-align: end;
+  }
+}
+
+.customer-testimonials__content {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+  min-height: 99px;
+}
+
+.customer-testimonials__info {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: var(--space-sm);
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.customer-testimonials__name {
+  font-weight: 600;
+}
+
+.customer-testimonials__date {
+  font-size: var(--text-xxxs);
+}

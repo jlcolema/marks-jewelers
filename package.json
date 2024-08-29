@@ -1,0 +1,167 @@
+{
+  "name": "trinity-shopify-starter-theme",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "author": "Trinity",
+  "license": "",
+  "browserslist": [
+    ">= 1%"
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "airbnb-base"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "rules": {
+      "consistent-return": "off",
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "no-plusplus": "off",
+      "guard-for-in": "warn",
+      "no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "args": "none"
+        }
+      ],
+      "no-new": "off",
+      "no-param-reassign": "off",
+      "no-shadow": [
+        "warn",
+        {
+          "allow": [
+            "done",
+            "resolve",
+            "reject",
+            "cb",
+            "response",
+            "res",
+            "request",
+            "req"
+          ]
+        }
+      ],
+      "comma-dangle": [
+        "error",
+        "only-multiline"
+      ],
+      "class-methods-use-this": "warn",
+      "import/no-import-module-exports": "off",
+      "no-restricted-syntax": [
+        "error",
+        {
+          "selector": "ForInStatement",
+          "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+        },
+        {
+          "selector": "LabeledStatement",
+          "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+        },
+        {
+          "selector": "WithStatement",
+          "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+        }
+      ]
+    },
+    "globals": {
+      "Shopify": "readonly"
+    },
+    "ignorePatterns": [
+      "node_modules",
+      "_build",
+      ".vscode",
+      ".github",
+      "assets"
+    ]
+  },
+  "stylelint": {
+    "extends": "stylelint-config-recommended-scss",
+    "rules": {
+      "at-rule-no-unknown": null,
+      "scss/at-rule-no-unknown": true,
+      "selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9:@%]+(?:-[a-zA-Z0-9:@%]+)*(?:__[a-zA-Z0-9:@%]+(?:-[a-zA-Z0-9:@%]+)*)?(?:--[a-zA-Z0-9:@%]+(?:-[a-zA-Z0-9:@%]+)*)?(?:\\[.+\\])?$",
+      "selector-max-compound-selectors": 5,
+      "max-nesting-depth": 3,
+      "no-descending-specificity": null
+    },
+    "ignoreFiles": [
+      "node_modules",
+      "_build",
+      ".vscode",
+      ".github",
+      "assets"
+    ]
+  },
+  "scripts": {
+    "init": "shx rm -rf .git && git init -b main",
+    "clean": "shx rm -rf assets/*.{css,js} && touch assets/.gitkeep",
+    "start": "run-p serve watch",
+    "serve": "shopify theme serve",
+    "build": "webpack --config _build/webpack/webpack.config.dev.js",
+    "watch": "webpack watch --config _build/webpack/webpack.config.dev.js",
+    "zip": "run-s build && shopify theme package .",
+    "check": "shopify theme check --config .theme-check.yml",
+    "lint": "run-s lint:css lint:js",
+    "lint:css": "stylelint src/**/*.{.css,scss,sass}",
+    "lint:js": "eslint src/**/*.js",
+    "format": "prettier --config _build/prettier.config.js --ignore-path _build/.prettierignore --write .",
+    "pull": "shopify theme pull -n",
+    "push": "shopify theme push",
+    "deploy": "run-s build push",
+    "create": "run-s build && shopify theme push --unpublished"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-transform-block-scoping": "^7.22.5",
+    "@babel/plugin-transform-destructuring": "^7.22.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@fullhuman/postcss-purgecss": "^4.1.3",
+    "autoprefixer": "^10.4.1",
+    "babel-loader": "^9.1.2",
+    "browserslist-to-esbuild": "^1.1.1",
+    "copy-webpack-plugin": "^10.1.0",
+    "core-js": "^3.31.0",
+    "css-loader": "^6.5.1",
+    "esbuild-loader": "^2.18.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-unicorn": "^40.0.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.11",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-inline-svg": "^5.0.0",
+    "postcss-loader": "^6.2.0",
+    "postcss-media-minmax": "^5.0.0",
+    "prettier": "^2.5.1",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "shx": "^0.3.3",
+    "size-plugin": "2.0.2",
+    "stylelint": "^14.2.0",
+    "stylelint-config-recommended-scss": "^5.0.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-merge": "^5.8.0",
+    "webpack-remove-empty-scripts": "^0.7.1"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  }
+}

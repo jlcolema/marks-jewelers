@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="{{ shop.locale }}">
+<head>
+  <meta charset="utf-8">
+  {%- capture seo_title -%}{% render 'head-seo-title' %}{%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+  <link rel="icon" href="{{ 'favicon.ico' | asset_url }}">
+  <link rel="icon" href="{{ 'favicon.svg' | asset_url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ 'apple-touch-icon.png' | asset_url }}">
+
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+  <link rel="preload" href="{{ 'nunitosans-light.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'nunitosans-regular.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'nunitosans-semibold.woff2' | asset_url }}" as="font" crossorigin>
+  <link rel="preload" href="{{ 'fonts.css' | asset_url }}" as="style" onload="this.onload=null; this.rel='stylesheet'"
+        crossorigin>
+  <noscript>
+    <link rel="stylesheet" href="{{ 'fonts.css' | asset_url }}">
+  </noscript>
+
+  <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style">
+  <link rel="preload" href="{{ 'main.js' | asset_url }}" as="script">
+
+  {{ 'main.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'main.js' | asset_url }}" defer></script>
+  <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+
+  {{ content_for_header }}
+
+  {%- liquid
+    render 'head-meta-tags'
+    render 'head-settings'
+  -%}
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WV9CQ4');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body
+  class="layout-{{ request.page_type | handle }} template-{{ template.name }}{% if template.suffix %}-{{ template.suffix }}{% endif %}">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WV9CQ4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+{%- comment -%} Accessibilty {%- endcomment -%}
+<a class="sr-only focusable skip-link" href="#main">{{ 'accessibility.skip_to_content' | t }}</a>
+
+<div class="wrapper">
+  {% section 'announcement-bar' %}
+  {% section 'header' %}
+
+  <main id="main">
+    {% if settings.show_breadcrumb_nav %}
+      {% render 'breadcrumbs' %}
+    {% endif %}
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'customer-testimonials' %}
+  {% section 'footer' %}
+</div>
+
+{% render 'footer-json-schema' %}
+<script defer src="https://connect.podium.com/widget.js#API_TOKEN=099145d6-295d-40ac-a454-b36253961bc8"
+        id="podium-widget" data-api-token="099145d6-295d-40ac-a454-b36253961bc8"></script>
+{% render 'vdb-gemstone-app' %}
+
+<style>
+  .swym-wishlist-button-bar {
+    display: none;
+  }
+</style>
+{% render 'swymSnippet' %}
+
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUH1EuBVwsOJPrGy-iE-bHeYv6v-iyNPU&libraries=places">
+</script>
+
+<style>
+  .swym-wishlist-button-bar {
+    display: none;
+  }
+
+  .diamond-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    max-width: 550px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .diamond-search__button {
+    margin: 12px 0;
+  }
+  .diamond-header {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .diamond-type {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+</style>
+<script>
+  function createDiamondSearchText(type) {
+    let altType = 'lab-grown';
+    let searchLink = "/apps/vdb-app/search-filters?diamondSearchType=Lab_grown_Diamond&structure=new";
+    if (type === 'lab-grown') {
+      altType = 'natural';
+      searchLink = "/apps/vdb-app/search-filters?structure=new";
+    }
+    const diamondTextEle = document.createElement('div');
+    diamondTextEle.classList.add('diamond-search');
+    diamondTextEle.innerHTML = `
+        <div class="diamond-search__text">
+            <p class="diamond-header">The diamond search below is our <span class="diamond-type">${type} DIAMOND</span> search only.</p>
+            <p>Looking for a ${altType} diamond? Click the button below.</p>
+        </div>
+        <a href=${searchLink} class="diamond-search__button btn">
+            Search ${altType} Diamonds
+        </a>
+      `;
+    document.querySelector('.container.breadcrumb-nav').after(diamondTextEle);
+  }
+
+  if (window.location.href.includes('/apps/vdb-app/search-filters?diamondSearchType=Lab_grown_Diamond&structure=new')) {
+    createDiamondSearchText('lab-grown');
+  }
+  if (window.location.href.includes('/apps/vdb-app/search-filters?structure=new')) {
+    createDiamondSearchText('natural');
+  }
+</script>
+</body>
+</html>

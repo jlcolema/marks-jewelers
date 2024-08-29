@@ -1,0 +1,16 @@
+<form
+  method="POST"
+  action="{{ section.settings.subscribe_endpoint }}"
+  data-list-id="{{ section.settings.subscribe_id }}"
+  data-success-msg="{{ 'components.form.post_success' | t }}"
+  data-error-msg="{{ 'components.form.post_error' | t }}"
+  data-component="klaviyo-subscribe form-validator"
+  aria-label="Footer Signup"
+  title="Footer Signup"
+>
+  <div class="js-form-validate__input-wrapper">
+    <input aria-label="{{ 'components.form.label' | t }}" class="form-control" type="email" placeholder="{{ 'components.form.placeholder' | t }}" required aria-required="true">
+    <p role="alert" class="form-validate__error-msg">{{ 'components.form.invalid_email' | t }}</p>
+  </div>
+  <button class="btn btn--primary btn--sm">{{ 'components.form.submit' | t }}</button>
+</form>

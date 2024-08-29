@@ -1,0 +1,41 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Trinity Starter Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Trinity",
+    "theme_documentation_url": "https:\/\/trinity.one\/",
+    "theme_support_url": "https:\/\/trinity.one\/"
+  },
+  {
+    "name": "Contact Info",
+    "settings": [
+      {
+        "type": "text",
+        "id": "phone_number",
+        "label": "Phone number"
+      },
+      {
+        "type": "text",
+        "id": "email_address",
+        "label": "Email address"
+      },
+      {
+        "type": "textarea",
+        "id": "address",
+        "label": "Address"
+      }
+    ]
+  },
+  {
+    "name": "Navigation",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_breadcrumb_nav",
+        "label": "Show breadcrumb navigation",
+        "default": true
+      }
+    ]
+  }
+]

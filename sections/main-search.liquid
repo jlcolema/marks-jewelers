@@ -1,0 +1,61 @@
+<style>
+  .search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-result {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .result-image {
+    margin-top: 10px;
+  }
+  .article-results-card {
+    margin-bottom: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  @media(min-width: 768px) {
+    .search-results {
+      flex-direction: row;
+    }
+    .search-result {
+      width: 25%;
+    }
+  }
+</style>
+
+<div class="search-results">
+{% for item in search.results %}
+  <div class="search-result">
+  {% unless item.object_type == 'article' or item.object_type == 'page' %}
+    <h3>{{ item.title | link_to: item.url }}</h3>
+    {% if item.featured_image %}
+      <div class="result-image">
+        <a href="{{ item.url }}" title="{{ item.title | escape }}">
+          {{ item.featured_image | image_url: width: 100 | image_tag }}
+        </a>
+      </div>
+    {% endif %}
+  {% endunless %}
+  {% unless item.object_type == 'product' or item.object_type == 'page' %}
+    <div class="article-results">
+      <div class="article-results-card">
+        {%- if item.image -%}
+        <a href="{{ item.url }}">{{ item | image_url: 'large', scale: 1 | image_tag: '' }}</a>
+        {%- endif -%}
+        <h3><a href="{{ item.url }}" aria-label="{{ item.title | escape }}">{{ item.title | escape }}</a></h3>
+      </div>
+    </div>
+  {% endunless %}
+  </div>
+{% endfor %}
+</div>

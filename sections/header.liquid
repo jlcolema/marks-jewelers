@@ -1,0 +1,170 @@
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
+
+<div class="header__wrap" data-component="mobile-menu">
+  <div class="container">
+    <div class="header__main">
+
+      <div class="header__mobile">
+        <button class="reset mobile-menu-btn js-mobile-menu-btn" aria-label="{{ 'sections.header.toggle_menu' | t }}" aria-controls="main-navigation">
+          <i class="mobile-menu-btn__icon mobile-menu-btn__icon--close" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="header__contact">
+        {%- assign phone_number_link = settings.phone_number | replace: ' ', '' | replace: '-', '' | replace: '(', '' | replace: ')', '' | prepend: 'tel:+1' -%}
+        {{ section.settings.contact_text | replace: '[phone]', settings.phone_number | replace: 'tel:phone', phone_number_link }}
+      </div>
+
+      <div class="header__logo">
+          {%- assign logo_tag = 'div' -%}
+          {%- if request.page_type == 'index' -%}{%- assign logo_tag = 'h1' -%}{%- endif -%}
+          <{{ logo_tag }} class="header__logo-wrapper">
+              <a href="{{ shop.url }}">
+                  {% render 'img', img: section.settings.logo, width: section.settings.logo_width, loading: 'eager' %}
+                  <span class="visually-hidden">Marks Jewelers</span>
+              </a>
+          </{{ logo_tag }}>
+      </div>
+
+
+      <div class="header__utility">
+        {% render 'header-utility-menu' %}
+      </div>
+
+      <div class="header__mobile-search">
+        {% render 'header-mobile-search' %}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="header-drawer drawer js-drawer" id="main-navigation">
+      <div class="drawer__content">
+        <div class="drawer__section">
+          {% render 'header-drawer-top' %}
+        </div>
+
+        <nav class="header-nav" role="navigation" aria-label="Header Navigation Buttons">
+          {% render 'header-main-menu', section: section %}
+        </nav>
+
+        <div class="drawer__section drawer__section--contact">
+          {% render 'header-drawer-contact' %}
+        </div>
+
+        <div class="drawer__section drawer__section--copyright">
+          {%- assign year = 'now' | date: '%Y' -%}
+          <p>{{ 'general.copyright' | t: year: year }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "number",
+      "id": "logo_width",
+      "label": "Logo width",
+      "info": "px",
+      "default": 204
+    },
+    {
+      "type": "header",
+      "content": "Contact Text"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_text",
+      "label": "Content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "main_menu_item",
+      "name": "Main Menu Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "menu_item",
+          "label": "Link to"
+        },
+        {
+          "type": "link_list",
+          "id": "submenu",
+          "label": "Submenu"
+        },
+        {
+          "type": "checkbox",
+          "id": "narrow_menu",
+          "label": "Narrow menu"
+        },
+        {
+          "type": "checkbox",
+          "id": "diamond_menu",
+          "label": "Diamond menu"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Choose an image"
+        },
+        {
+          "type": "number",
+          "id": "image_width",
+          "label": "Image width",
+          "info": "px"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image link"
+        },
+        {
+          "type": "checkbox",
+          "id": "background_image",
+          "label": "Make background image"
+        },
+        {
+          "type": "header",
+          "content": "Collection"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Show a collection"
+        },
+        {
+          "type": "text",
+          "id": "collection_title",
+          "label": "Collection title"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,71 @@
+<div class="product-hide-mobile">
+  <div class="product-page__props">
+    <div class="warranty">
+      <span><img src="{{ 'bridal.svg' | asset_url }}" width="{{ image.width }}" height="{{ image.height }}" alt="Lifetime Warranty" loading="lazy"></span>
+      <p>Lifetime Warranty</p>
+    </div>
+    <div class="returns">
+      <span><img src="{{ 'returns.svg' | asset_url }}" width="{{ image.width }}" height="{{ image.height }}" alt="30 Day Returns" loading="lazy"></span>
+      <p>30 day returns</p>
+    </div>
+    <div class="upgrade">
+      <span><img src="{{ 'upgrade.svg' | asset_url }}" width="{{ image.width }}" height="{{ image.height }}" alt="110% Upgrade Policy" loading="lazy"></span>
+      <p>100% upgrade policy</p>
+    </div>
+  </div>
+</div>
+<div class="product-page__accordion">
+  <details open>
+    <summary>Description<span class="icon"><span class="plus">+</span><span class="minus">-</span></span></summary>
+    <p>
+      {%- if product.tags contains 'ReMARKable Product' -%}
+        <span>ReMARKable Designs </span>
+      {%- elsif product.tags contains 'Forevermark Product' -%}
+        <span>De Beers </span>
+      {%- else -%}
+        <span>{{ product.vendor }} </span>
+      {%- endif -%}
+      {{ product.description }}
+    </p>
+  </details>
+  <details>
+    <summary>Specifications<span class="icon"><span class="plus" >+</span><span class="minus">-</span></span></summary>
+    <div class="product-specifications">
+      <fieldset>
+        <span class="specs-heading">PRODUCT DETAILS</span>
+        {% if product.vendor != blank %}
+          <dl>
+            <dt>Brand</dt>
+            <dd>
+              {%- if  product.tags contains 'ReMARKable Product' -%}
+                ReMARKable Designs
+              {%- elsif  product.tags contains 'Forevermark Product' -%}
+                De Beers Forevermark
+              {%- else -%}
+                {{ product.vendor }}
+              {%- endif -%}
+            </dd>
+          </dl>
+        {% endif %}
+        {% assign item_details_count = product.metafields.itemDetails | size %}
+        {% if item_details_count %}
+
+          {% for item in product.metafields.itemDetails %}
+            <dl>
+              <dt>{{ item | first | replace: '_', ' ' }}</dt>
+              <dd>{{ item | last }}</dd>
+            </dl>
+          {% endfor %}
+
+        {% endif %}
+          <dl>
+            <dt>SKU</dt>
+            <dd>
+              {% assign current_variant = product.selected_or_first_available_variant %}
+              {{ current_variant.sku }}
+            </dd>
+          </dl>
+      </fieldset>
+    </div>
+  </details>
+</div>

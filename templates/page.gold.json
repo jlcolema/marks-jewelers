@@ -1,0 +1,222 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "164903130534ee27f7": {
+      "type": "content-image-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/gold-desktop.webp",
+        "section_image_mobile": "shopify:\/\/shop_images\/gold-mobile.jpg",
+        "section_image_alt_text": "Need a Gold Buyer?",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_img_url": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_img_align": "center"
+      }
+    },
+    "1649622372feaeea5c": {
+      "type": "content-text-image-split",
+      "custom_css": [
+        "section {background: blue;}",
+        "h1 {color: #ffffff;}",
+        "p {color: #ffffff;}",
+        ".text-half-image-half__cta-container {justify-content: flex-start;}"
+      ],
+      "settings": {
+        "page_width": false,
+        "heading_color": "#ffffff",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "#a07383",
+        "paragraph_color": "#ffffff",
+        "section_header": "<h1>Buying Gold<\/h1>",
+        "section_paragraph": "<p>Are you looking to get top dollar for your treasured collection of gold coins? Perhaps you’ve inherited a gold family heirloom that isn’t quite your taste. Or maybe, you have a few “golden cobwebs” in the back of your jewelry box, made up of broken gold jewelry or gold designs you’ve simply outgrown. Why let these items that no longer serve you collect dust? Marks Jewelers is your trusted source to sell your gold, diamonds, and <a href=\"https:\/\/www.marks-jewelers.com\/collections\/estate?page=1\"><span style=\"text-decoration:underline\">estate jewelry<\/span><\/a>. With years of experience in the industry, we offer fair prices and excellent customer service. Whether you have gold jewelry, coins, or gemstones, we're here to help you get the best value for your items.<\/p>",
+        "section_image": "shopify:\/\/shop_images\/goldexpert.jpg",
+        "section_image_alt_text": "Gold expert",
+        "section_image_size": "full",
+        "section_image_url": "",
+        "section_image_position_desktop": "row",
+        "section_image_position_mobile": "column-reverse",
+        "section_cta_text": "Sell Your Gold",
+        "section_cta_url": "shopify:\/\/pages\/appraisals",
+        "section_cta_text_color": "#ffffff",
+        "section_cta_bg_color": "#000000",
+        "section_cta_border_color": "#000000",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_text_align": "left"
+      }
+    },
+    "2bb7adad-721a-46b6-980c-027a06f69ffd": {
+      "type": "faqs",
+      "blocks": {
+        "ed5a987b-13e9-4e1f-a366-e8880b30f7bb": {
+          "type": "accordion",
+          "settings": {
+            "heading": "We Buy Gold",
+            "description": "<p>At Marks Jewelers, we buy all types of gold, including 9k, 10k, 14k, 18k and finer. We also buy gold coins and bullion. We use the most current market prices to ensure that you get the best value for your gold. Our team of experts will evaluate your items on the spot and make you a fair offer. We want to give you the most for your treasured items and are committed to providing top service.<\/p>"
+          }
+        },
+        "1151a7de-cb24-4960-a99f-d9757b96e3e7": {
+          "type": "accordion",
+          "settings": {
+            "heading": "If You Need Help To Sell Your Gold",
+            "description": "<p>If you're not sure how to sell your gold or need help navigating the process, we're here to assist you. Our knowledgeable team can answer any questions you may have and guide you through the selling process. We make the process quick and easy, so you can get the cash you need right away.<\/p>"
+          }
+        },
+        "0a057b83-d433-43f7-9339-5070bf7d2a02": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Selling Gold Jewelry or Diamonds",
+            "description": "<p>Do you have unwanted or broken gold jewelry or loose diamonds? We buy those too. Whether you have a single item or a whole collection, we'll evaluate your pieces and offer you a fair price. We're always looking for unique and rare pieces, so bring them in for a free evaluation.<\/p>"
+          }
+        },
+        "ff93a023-02b4-4115-b493-ec69ce30857d": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Selling Broken Gold Jewelry To a Buyer",
+            "description": "<p>You may have a jewelry box full of broken gold chains or pieces. Don't throw it away – sell it to us. We buy all types of broken gold jewelry, including chains, bracelets, earrings, and more. Some pieces might be worth bringing in for <a href=\"https:\/\/www.marks-jewelers.com\/pages\/repairs\"><span style=\"text-decoration:underline\">jewelry repair<\/span><\/a>, but for those that might be considered beyond repair, we can gladly take them off your hands. We'll evaluate your pieces and offer you a fair price based on the gold content. Why not make some money off of what would otherwise be taking up space?<\/p>"
+          }
+        },
+        "f2696b05-92ab-4d7b-8916-f0755e8454fc": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Ask the Vintage Jewelry and Antique Experts",
+            "description": "<p>Do you have vintage or antique jewelry you’re unsure how to value? Our team of experts can help. We specialize in vintage and antique jewelry and can provide you with an accurate appraisal. We understand the value of vintage and antique pieces and will offer you a fair price for your items. We'll evaluate your pieces and offer you a fair price based on their condition, rarity, and historical significance.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ed5a987b-13e9-4e1f-a366-e8880b30f7bb",
+        "1151a7de-cb24-4960-a99f-d9757b96e3e7",
+        "0a057b83-d433-43f7-9339-5070bf7d2a02",
+        "ff93a023-02b4-4115-b493-ec69ce30857d",
+        "f2696b05-92ab-4d7b-8916-f0755e8454fc"
+      ],
+      "settings": {
+        "heading": "",
+        "description": "",
+        "allow_multiple_items": false,
+        "open_first_item": false
+      }
+    },
+    "165059163110e310e1": {
+      "type": "content-form-block",
+      "settings": {
+        "form_list_id": "KJb37e",
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "#000000",
+        "text_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_paragraph": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "50",
+        "section_inner_spacing_bottom": "30",
+        "section_content_text_align": "center",
+        "section_max_width": 750
+      }
+    },
+    "16496228176c3194a5": {
+      "type": "content-text-image-split",
+      "settings": {
+        "page_width": true,
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "paragraph_color": "",
+        "section_header": "<p>5 Golden Things You Can Do with Your Earnings<\/p>",
+        "section_paragraph": "<p><strong>1. Pay Your Bills: <\/strong>Pay off monthly bills or unanticipated expenses!<\/p><p><strong>2. Save It for a Rainy Day: <\/strong>Put your money away to save for a special treat on a rainy day!<\/p><p><strong>3. Invest It: <\/strong>Make your money work for you!<\/p><p><strong>4. Donate It to Charity:<\/strong>Bless others with your earnings!<\/p><p><strong>5. Buy Jewelry at Marks Jewelers: <\/strong>Use the money you receive from your old or unworn gold to buy a new jewelry design from Marks Jewelers you can wear and treasure for years to come.<\/p>",
+        "section_image": "shopify:\/\/shop_images\/gold-earrings.jpg",
+        "section_image_alt_text": "Gold earrings",
+        "section_image_size": "full",
+        "section_image_url": "",
+        "section_image_position_desktop": "row-reverse",
+        "section_image_position_mobile": "column",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_text_align": "left"
+      }
+    },
+    "1649622690dfb4420e": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "#ffffff",
+        "heading_desktop_size": 32,
+        "heading_mobile_size": 24,
+        "bg_color": "#a07383",
+        "text_color": "#ffffff",
+        "section_header": "<p>Let’s Get Your Gold <strong>SOLD!<\/strong><\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>Conveniently located on Bethlehem Pike, our gold buying experts are always ready and willing to assess your gold item(s) for purchase. Stop into our Montgomeryville jewelry<br\/>store to get top dollar for your gold today!<\/p>",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "70",
+        "section_inner_spacing_bottom": "70",
+        "section_content_text_align": "center",
+        "section_max_width": 920
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164903130534ee27f7",
+    "1649622372feaeea5c",
+    "2bb7adad-721a-46b6-980c-027a06f69ffd",
+    "165059163110e310e1",
+    "16496228176c3194a5",
+    "1649622690dfb4420e"
+  ]
+}

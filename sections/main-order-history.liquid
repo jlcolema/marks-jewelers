@@ -1,0 +1,91 @@
+{{ 'section-main-account.css' | asset_url | stylesheet_tag }}
+
+<div class="account container">
+  {% render 'account-page-nav' %}
+  <div class="history-details">
+    <div class="history-heading">
+      <h2>{{ 'customer.orders.history' | t }}</h2>
+      <p>View your order history. Click on order details to view the order information.</p>
+    </div>
+    <div class="order-history container history">
+      {%- if customer.orders.size > 0 -%}
+        <div class="account-hide-mobile">
+          <fieldset>
+            <dl class="heading-row">
+              <dd class="first">Order #</dd>
+              <dd class="second"></dd>
+              <dd class="third">Date</dd>
+              <dd class="fourth">Total</dd>
+              <dd class="fifth">Status</dd>
+              <dd class="sixth">Order Details</dd>
+            </dl>
+          </fieldset>
+        </div>
+        {%- for order in customer.orders -%}
+          <div class="order-card">
+            <div class="order-heading account-show-mobile">
+              Order: <a href="{{ order.customer_url }}" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">{{ order.name }}</a>
+            </div>
+            <div class="order-body">
+              <fieldset>
+                <dl class="account-hide-mobile order-number">
+                  <dt></dt>
+                  <dd>
+                    <a href="{{ order.customer_url }}" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">{{ order.name }}</a>
+                  </dd>
+                </dl>
+                <dl class="account-hide-mobile">
+                  <dt></dt>
+                  <dd class="title">
+                    {%- assign title = order.line_items[1].title -%}
+                    {{ title | truncate: 22 }}
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>Date</dt>
+                  <dd>{{ order.created_at | time_tag: format: 'date' }}</dd>
+                </dl>
+                <dl>
+                  <dt>Total</dt>
+                  <dd>{{ order.total_price | money }}</dd>
+                </dl>
+                <dl>
+                  <dt>Status</dt>
+                  <dd>{{ order.fulfillment_status_label }}</dd>
+                </dl>
+                <dl class="account-hide-mobile">
+                  <dt></dt>
+                  <dd>
+                    <a href="{{ order.customer_url }}" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">View Order Details</a>
+                  </dd>
+                </dl>
+              </fieldset>
+            </div>
+            <div class="order-footer account-show-mobile">
+              <a href="{{ order.customer_url }}" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">View Order Details</a>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+          <div class="no-orders"><p>{{ 'customer.orders.none' | t }}</p></div>
+      {%- endif -%}
+    </div>
+  </div>
+  <div class="loading">
+    <div class="load-container">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+  <div class="order-modal-overlay"></div>
+  <div id="order-modal" style="display: none;" data-component="orders-modal"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Order History",
+  "tag": "section",
+  "settings": [
+
+  ]
+}
+{% endschema %}

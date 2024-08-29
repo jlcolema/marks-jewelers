@@ -1,0 +1,100 @@
+@use '../settings/breakpoints' as *;
+@use '../tools' as *;
+
+.snap-slider__container {
+  --slider-arrow-button-size: 2rem;
+  --pagination-dot-size: 0.5rem;
+
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+
+  @media (--sm) {
+    padding-left: var(--slider-arrow-button-size);
+    padding-right: var(--slider-arrow-button-size);
+  }
+}
+
+.snap-slider {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  scroll-snap-type: inline mandatory;
+  display: grid;
+  grid-auto-flow: column;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+
+  // Scrollbars
+  scrollbar-width: none; // W3/Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Safari/Chrome/Edge
+  }
+}
+
+.snap-slider__item {
+  display: block;
+  scroll-snap-align: start;
+  width: 100%;
+
+  &:last-child {
+    scroll-snap-align: end;
+  }
+}
+
+.snap-slider__arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: var(--slider-arrow-button-size);
+  right: var(--slider-arrow-button-size);
+  height: 100%;
+  pointer-events: none;
+}
+
+.snap-slider__arrow {
+  color: var(--color-primary);
+  pointer-events: auto;
+  cursor: pointer;
+  width: var(--slider-arrow-button-size);
+  height: var(--slider-arrow-button-size);
+  display: grid;
+  place-items: center;
+}
+
+.snap-slider__arrow--prev {
+  transform: translateX(-100%);
+}
+
+.snap-slider__arrow--next {
+  transform: translateX(100%);
+}
+
+.snap-slider__arrow--disabled {
+  pointer-events: none;
+  color: transparent;
+}
+
+.snap-slider__pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.snap-slider__pagination-dot {
+  margin: 0 var(--space-xxxxs);
+  border: 1px solid var(--color-primary-lighter);
+  border-radius: 50%;
+  width: var(--pagination-dot-size);
+  height: var(--pagination-dot-size);
+  padding: 0;
+}
+
+.snap-slider__pagination-dot--active {
+  background-color: var(--color-primary-lighter);
+}

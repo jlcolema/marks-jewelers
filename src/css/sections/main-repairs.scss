@@ -1,0 +1,67 @@
+// restore default ul styling
+.template-page-repairs {
+  .page__repairs ul {
+    list-style-type: disc;
+    margin-block: 1em;
+    margin-inline: 0px;
+    padding-inline-start: 40px;
+  }
+
+  .repairs__heading {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  .repairs__img--container {
+    justify-content: center;
+
+    img {
+      @media (--md) {
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+  }
+
+  .page__repairs {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: var(--space-lg);
+    padding-bottom: 0;
+
+    @media (--md) {
+      grid-template-columns: 1fr 350px;
+    }
+  }
+
+  .repairs__content {
+    li {
+      font-weight: 100;
+    }
+
+    hr {
+      height: 1px;
+      background-color: var(--color-contrast-low);
+    }
+  }
+
+  .repairs__form {
+    @media (--sm) {
+      padding-top: 40px;
+    }
+    
+    @media (--md) {
+      position: relative;
+      margin-top: calc((var(--space-xl) + 65px) * -1);
+      padding-top: 0;
+    }
+  }
+
+  #shopify-section-customer-testimonials {
+    margin-top: 0;
+    @media (--md) {
+      margin-top: var(--space-xl);
+    }
+  }
+}

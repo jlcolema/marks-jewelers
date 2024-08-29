@@ -1,0 +1,182 @@
+// ==========================================================================
+// SECTION: Text Left Image Right
+// ==========================================================================
+
+.section__text-half-image-half {
+  position: relative;
+  display: flex;
+  background-color: var(--bg-color);
+  margin-top: var(--section-spacing-top);
+  margin-bottom: var(--section-spacing-bottom);
+  text-align: var(--text-alignment);
+  flex-direction: var(--image-position-mobile);
+  align-items: center;
+
+  @media(--md) {
+    flex-direction: var(--image-position-desktop);
+  }
+}
+
+.section__text-half-image-half-heading {
+  font-size: var(--heading-font-size-mobile);
+  font-weight: 100;
+
+  @media(--sm) {
+    font-size: var(--heading-font-size-desktop);
+  }
+}
+
+.text-half-image-half__image {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+
+  @media(--sm) {
+    width: 50%;
+  }
+
+  @media(--md) {
+    margin: initial;
+  }
+
+  &.cropped {
+    @media(--sm) {
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      padding: 0 0 0 5%;
+    }
+  }
+
+  &.full {
+    .text-half-image-half__image-image {
+      display: none !important;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      right: 0;
+      bottom: 0;
+
+      @media(--md) {
+        width: 50%;
+        display: block;
+      }
+    }
+  }
+
+  &.text-half-image-half__image-has-url {
+    display: flex;
+    height: auto;
+    margin: auto;
+
+    @media(--md) {
+      margin: initial;
+    }
+  }
+
+  img {
+    @media(--sm) {
+      height: auto;
+      width: 100%;
+      max-height: 450px;
+      max-width: 850px;
+    }
+  }
+}
+
+.text-half-image-half__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: var(--content-position);
+  align-items: var(--content-position);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  width: 100%;
+  margin: auto;
+
+  @media(--sm) {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  @media (--md) {
+    width: 50%;
+    padding-left: var(--space-xxl);
+    padding-right: var(--space-xxl);
+    margin: initial;
+  }
+
+  > p {
+    margin-bottom: var(--space-sm);
+  }
+}
+
+.text-half-image-half__cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: var(--space-sm);
+
+  @media(--md) {
+    flex-direction: row;
+  }
+}
+
+.text-half-image-half__cta {
+  color: var(--cta-text-color);
+  background-color: var(--cta-bg-color);
+  border-color: var(--cta-border-color);
+  border-width: var(--cta-border-width);
+  border-style: solid;
+  border-radius: 2px;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  text-transform: uppercase;
+  width: auto;
+  text-align: center;
+
+  &.btn {
+    min-width: 210px;
+    border-width: 1px;
+  }
+}
+
+.text-half-image-half__cta-two {
+  color: var(--cta-text-color-two);
+  background-color: var(--cta-bg-color-two);
+  border-color: var(--cta-border-color-two);
+  border-width: var(--cta-border-width-two);
+  border-style: solid;
+  border-radius: 2px;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  text-transform: uppercase;
+  width: auto;
+  text-align: center;
+}
+
+.text-half-image-half__cta-two.btn {
+  min-width: 210px;
+  border-width: 1px;
+}
+
+// From Joshua
+// TODO: Temporary addition until a better solution is found
+// Adds a full background color to the "Buying Gold" section on the
+// "Gold Buying" page `/pages/gold-buying`
+
+.template-page-gold #main .shopify-section:nth-of-type(2) {
+  background-color: #a07383;
+}

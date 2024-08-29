@@ -1,0 +1,98 @@
+<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<div class="popup">
+  <div class="popup-content">
+    <img src="" alt="dynamic_img" class="dynamic_img" width="auto" height="auto" loading="lazy"/>
+    <a class="closeBtn" href="javascript:void(0)">x</a>
+  </div>
+</div>
+</div>
+
+<style type="text/css">
+  .openBtn {
+    text-decoration: none;
+  }
+
+  .popup {
+    z-index: 99;
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.58);
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  .popup-content {
+    width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    margin-top: 100px;
+    border-radius: 3px;
+    background: #fff;
+    position: relative;
+    display: flex;
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    font-size: 40px;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .dynamic_img {
+    margin: 0 auto;
+    width: 100% !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .popup-content {
+      width: 100% !important;
+    }
+
+    .dynamic_img {
+      width: 100% !important;
+    }
+  }
+</style>
+
+<script async type="text/javascript">
+  const waitForJQ = setInterval(function () {
+    if ($) {
+      clearInterval(waitForJQ);
+      $(document)
+        .ready(function () {
+          $('.openBtn')
+            .on('click', function (e) {
+              e.preventDefault();
+              $('.cart-dropdown.is-open')
+                .css('display', 'none');
+              var img = $(this)
+                .attr('data-img');
+              $('.popup-content .dynamic_img')
+                .attr('src', img);
+              $('.popup')
+                .fadeIn(300);
+            });
+          $('.closeBtn')
+            .on('click', function () {
+              $('.popup')
+                .fadeOut(300);
+            });
+          $('.popup')
+            .on('click', function () {
+              $('.popup')
+                .fadeOut(300);
+            })
+            .children()
+            .click(function () {
+              return false;
+            });
+        });
+    }
+  }, 500);
+</script>

@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "main": {
+      "type": "expo-landing-page"
+    }
+  },
+  "order": ["main"]
+}

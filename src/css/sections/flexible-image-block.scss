@@ -1,0 +1,84 @@
+// ==========================================================================
+// SECTION: Flexible image banner
+// ==========================================================================
+
+.section__image--content {
+  margin-top: var(--section-spacing-top);
+  margin-bottom: var(--section-spacing-bottom);
+  padding-top: var(--section-inner-spacing-top);
+  padding-bottom: var(--section-inner-spacing-bottom);
+
+  @media(--sm) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .content__img--container {
+    display: flex;
+    justify-content: center;
+  }
+}
+div[id*="modal-financing"] {
+  background-color: rgba(0, 0, 0, .3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon--logomark {
+    width: 65px;
+    height: 60px;
+    margin-bottom: var(--space-md);
+  }
+
+  .modal__content {
+    max-width: var(--max-width-xs);
+    background-color: var(--color-white);
+    padding: var(--space-lg);
+    max-height: 100vh;
+    overflow: auto;
+
+    @media(--sm) {
+      border-radius: 10px;
+      width: 95%;
+    }
+  }
+
+  .modal__close-btn {
+    color: var(--color-contrast-low);
+    background: transparent;
+    border: 1px solid var(--color-contrast-low);
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  h2 {
+    margin-bottom: var(--space-md);
+
+    strong {
+      color: var(--color-accent);
+    }
+  }
+
+  p {
+    margin-bottom: var(--space-md);
+  }
+
+  .btn--link.js-modal__close {
+    background-color: transparent;
+  }
+
+  .btn {
+    background-color: var(--color-black);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-black);
+    }
+  }
+
+  .modal-financing__disclaimer {
+    font-size: var(--text-small);
+  }
+}

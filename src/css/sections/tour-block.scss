@@ -1,0 +1,32 @@
+.section-content.section__tour--block {
+
+  .section__tour--wrapper {
+    background-image: var(--background-image);
+    background-size: cover;
+    width: 1024px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .section__tour--copy {
+    width: 415px;
+    padding: var(--space-lg) var(--space-sm);
+    max-width: 100%;
+    background: rgba(0,0,0,0.6);
+
+    img {
+      margin: var(--space-sm) auto;
+    }
+  }
+
+  .btn {
+    color: var(--color-black);
+    border-color: #ffffff;
+    background-color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+  }
+}

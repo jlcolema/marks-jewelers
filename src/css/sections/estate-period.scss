@@ -1,0 +1,77 @@
+.estate-section:first-of-type {
+  padding-top: var(--space-md);
+
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: var(--header-image);
+    width: 200px;
+    background-size: 200px;
+  }
+}
+
+.section__period-container {
+  background-color: var(--color-accent);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  padding-bottom: var(--space-md);
+
+  .container {
+    align-items: center;
+    border: 1px solid #000;
+    background: #fff;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 750px;
+
+    @media(--md) {
+      max-width: 1335px;
+    }
+  }
+
+  .section__period--hero {
+    position: relative;
+    @media(--md) {
+      width: 40%;
+    }
+
+    .section__period--image {
+      img {
+        width: 100%;
+      }
+    }
+
+    .section__period--label {
+      text-align: center;
+      background-color: rgba(0, 0, 0, .75);
+      color: #ffffff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-sm);
+
+      .section__content-heading {
+        font-size: 36px;
+        text-transform: uppercase;
+      }
+
+      .section__sub-header {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .snap-slider__container {
+    @media(--md) {
+      width: 60%;
+    }
+  }
+
+  .section__period--carousel {
+    grid-auto-columns: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

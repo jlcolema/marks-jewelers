@@ -1,0 +1,29 @@
+// ==========================================================================
+// SECTION: FAQS
+// ==========================================================================
+
+.faqs {
+  padding: var(--space-lg) 0;
+
+  @media (--md) {
+    padding: var(--space-xxl) 0;
+  }
+
+  .faqs__items {
+    max-width: var(--section-width);
+    margin: 0 auto;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.faqs__content {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+
+  .faqs__heading {
+      text-transform: capitalize;
+    }
+}

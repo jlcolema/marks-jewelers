@@ -1,0 +1,97 @@
+<div class="cart__item" data-id="{{ item.variant.id }}">
+  <div class="cart__item--container">
+    <div class="cart__item--image">
+      {% assign image = item.product.featured_image %}
+      {%- if item.variant.image -%}
+        {% assign image = item.variant.image %}
+      {%- endif -%}
+
+      {% render 'img', img: image %}
+      <div class="cart__item-links--container">
+        <a class="cart__item-links--remove" href="{{ item.url_to_remove }}">{{ 'sections.cart.remove' | t }}</a>
+        <a href="#">{{ 'sections.cart.move_to_wish_list' | t }}</a>
+      </div>
+    </div>
+    <div class="cart__item--details">
+      <a href="{{ item.variant.url }}" class="item__name">{{ item.product.title }}</a>
+
+      {%- unless item.product.has_only_default_variant -%}
+        {%- for option in item.options_with_values -%}
+          <p class="item__option"><span>{{ option.name }}</span> {{ option.value }}</p>
+        {%- endfor -%}
+      {%- endunless -%}
+  <!-- code added by dinesh for personalized product -->
+      {%- assign property_size = item.properties | size -%}
+          {%- if property_size > 0 -%}
+            {%- for p in item.properties -%}
+              {% if p.first == 'Preview' %}
+                <span>{{ p.first }}: </span>
+                          {% assign preimg = p.last %}
+                          <a class="openBtn" data-img="{{ preimg }}" href="javascript:void(0)"> Click to open Popup </a>
+             {% else %}
+              {%- assign property_first_char = p.first | slice: 0 -%}
+              {%- if p.last != blank and property_first_char != '_' -%}
+                <p class="cart-item__property">
+                  <span>{{ p.first }}: </span>
+                  <span>
+                    {%- if p.last contains '/uploads/' -%}
+                      <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                    {%- else -%}
+                      {{ p.last }}
+                    {%- endif -%}
+                  </span>
+                </p>
+              {%- endif -%}
+            {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+  <!-- End of code added by dinesh for personalized product -->
+      <div class="cart__item--price hide@sm">
+        {%- if item.variant.compare_at_price -%}
+          {%- assign total_compared = item.variant.compare_at_price | times: item.quantity | money -%}
+          {%- assign saved = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity | money -%}
+          <p class="item__price--compare">{{ total_compared }}</p>
+          <p class="item__price--savings">{{ 'sections.cart.save' | t: savings: saved }}</p>
+        {%- endif -%}
+        <p class="item__price--total">{%- if item.quantity > 1 -%}<span class="item__price--per-unit">({{ item.variant.price | money }} each)</span>{%- endif -%}<span class="item__price">{{ item.final_line_price | money }}</span></p>
+      </div>
+
+      <p class="item__stock{% unless item.variant.available %} item__stock--out{% endunless %}">
+        {%- if item.variant.available -%}
+          {{ 'sections.cart.in_stock' | t }}
+        {%- else -%}
+          {{ 'sections.cart.out_of_stock' | t }}
+        {%- endif -%}
+      </p>
+
+      {% if item.vendor == "VDB" %}
+      <div class="item__qty-container">
+        <span class="qty__control qty__control--reduce" style="display:none;"></span>
+        <div class="qty-count" style="border: 1px solid var(--color-black);">{{ item.quantity }}</div>
+        <span class="qty__control qty__control--increase" style="display:none;"></span>
+      </div>
+      {% else %}
+      <div class="item__qty-container">
+        <a href="javascript:void(0)" class="qty__control qty__control--reduce">
+          -
+        </a>
+        <div class="qty-count">
+          {{ item.quantity }}
+        </div>
+        <a href="/cart/add?id={{ item.variant.id }}" class="qty__control qty__control--increase">
+          +
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="cart__item--price hide block@sm">
+      {%- if item.variant.compare_at_price -%}
+        {%- assign total_compared = item.variant.compare_at_price | times: item.quantity | money -%}
+        {%- assign saved = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity | money -%}
+        <p class="item__price--compare">{{ total_compared }}</p>
+        <p class="item__price--savings">{{ 'sections.cart.save' | t: savings: saved }}</p>
+      {%- endif -%}
+      <p>{%- if item.quantity > 1 -%}<span class="item__price--per-unit">({{ item.variant.price | money }} each)</span>{%- endif -%}<span class="item__price">{{ item.final_line_price | money }}</span></p>
+    </div>
+  </div>
+</div>

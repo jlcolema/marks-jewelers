@@ -1,0 +1,170 @@
+{{ 'custom_page_base.css' | asset_url | stylesheet_tag }}
+{{ 'page_personalized.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-collection.css' | asset_url | stylesheet_tag }}
+
+<div class="page">
+  <section class="page-header">
+    <div class="container">
+
+      <h1 class="page-title">Personalized Jewelry</h1>
+      <p>It&rsquo;s never been easier to express yourself with personalized jewelry from Marks Jewelers! There are
+        endless ways to tell your unique story: choose from charms, permanently linked bracelets and anklets, customized
+        lockets, fingerprint jewelry, and truly custom jewelry from JewlVision.</p>
+
+    </div>
+  </section>
+
+  <div class="banner-permlinked"></div>
+
+  <section class="section-personalized-steps">
+    <div class="container">
+
+      <div class="grid gap-x-xxl margin-bottom-lg">
+        <div class="col-4-md">
+          <h2 class="text-right-md">Permanent <b>Jewelry</b></h2>
+        </div>
+        <div class="col-8-md">
+          <p>Celebrate a friendship or special bond with a seamless bracelet or anklet. You pick the dainty gold chain
+            and charms, and we fuse it on you. It&rsquo;s fun - share the experience with a friend or loved one and
+            cherish the bond as you become Permanently Linked&trade;.</p>
+        </div>
+      </div>
+
+      <div class="block-steps grid gap-x-lg gap-x-xxxl-md margin-bottom-lg">
+        <div class="col-4-sm">
+          <div class="block-steps-number">1</div>
+          <p class="block-steps-title">Pick your chain<br> style and length</p>
+        </div>
+
+        <div class="col-4-sm">
+          <div class="block-steps-number">2</div>
+          <p class="block-steps-title">Select your charms<br> and gemstones</p>
+        </div>
+
+        <div class="col-4-sm">
+          <div class="block-steps-number">3</div>
+          <p class="block-steps-title">Get Permanently<br> Linked&trade; at Marks!</p>
+        </div>
+      </div>
+
+      <p class="text-center">
+        <a class="btn" href="https://calendly.com/marks-jewelers-pa/permanently-linked-appointment?month=2022-11">Make
+          Appointment</a>
+        <a class="btn" href="/pages/permanently-linked">Pricing &amp; Learn More</a>
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section-personalized-ep">
+    <div class="container">
+
+      <div class="section-personalized-ep-wrap">
+        <div class="grid">
+          <div class="section-personalized-ep-bgimage col-4-md"
+               style="background-image: url({{ 'EP-1.jpg' | asset_url }});"></div>
+          <div class="section-personalized-ep-content col-4-md">
+            <h2 class="sr-only">EP Jewelry</h2>
+            <img class="margin-bottom-sm" src="{{ 'EP-logo.jpg' | asset_url }}" alt="EP Jewelry logo" width="320"
+                 height="149" loading="lazy">
+            <p>Create your one-of-a-kind charm bracelet or necklace, filled with beautiful, personalized charms.</p>
+            <p>First make your necklace or bracelet selection, then find your favorite charms. Tell your story with EP
+              Jewelry.</p>
+            <a class="btn" href="/products/personalized-skinny-charm-bangle-%E2%84%A2">Shop Now</a>
+          </div>
+          <div class="section-personalized-ep-bgimage col-4-md"
+               style="background-image: url({{ 'EP-3.jpg' | asset_url }});"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-personalized-lockets">
+    <div class="section-personalized-lockets-tagline">
+      <div class="container">
+        Capture your memories one charm at a time.
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="grid">
+        <div class="col-5-md">
+          <img class="image-polaroids" src="{{ 'M-charms-polaroids.png' | asset_url }}" alt="Marks Lockets polaroids"
+               width="1195" height="1000" loading="lazy">
+        </div>
+        <div class="section-personalized-lockets-content col-7-md">
+          <h2 class="sr-only">Lockets</h2>
+          <img class="margin-bottom-sm" src="{{ 'MJ-charms-logo.png' | asset_url }}" alt="Marks Lockets logo"
+               width="205" height="94" loading="lazy">
+          <p>Select from one of four locket shapes and then fill with love and charms!</p>
+          <a class="btn" href="/pages/locket">Shop Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-personalized-boxes section-boxes">
+    <div class="container">
+
+      <div class="section-boxes-wrap">
+        <div class="section-boxes-tagline">Make a mark that lasts forever</div>
+
+        <div class="grid">
+          <div class="section-boxes-bg col-6-sm order-2-sm"
+               style="background-image: url({{ 'Summer-ad-4.jpg' | asset_url }});"></div>
+          <div class="section-boxes-content col-6-sm order-1-sm">
+            <h2 class="sr-only">Fingerprints</h2>
+            <img class="margin-bottom-sm" src="{{ 'MJ-fingerprints-logo.png' | asset_url }}"
+                 alt="Marks Fingerprints logo" width="230" height="79" loading="lazy">
+            <p>The people we share our lives with are as unique as their finger prints. Fingerprint jewelry brings a
+              personal touch that is beautiful and individual to you and your loved one.</p>
+            <a class="btn" href="/pages/fingerprint-jewelry">Learn More</a>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="section-boxes-bg col-6-sm"
+               style="background-image: url({{ 'monogram-necklace.jpeg' | asset_url }});"></div>
+          <div class="section-boxes-content col-6-sm">
+            <h2 class="sr-only">Monograms</h2>
+            <img class="margin-bottom-sm" src="{{ 'MJ-monogram-logo.png' | asset_url }}" alt="Marks Monograms logo"
+                 width="212" height="79" loading="lazy">
+            <p>Create you very own monogram or name necklace in a special font of your choice. It's the perfect
+              personalized keepsake</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-personalized-jewlvision">
+    <div class="container">
+
+      <div class="grid">
+        <div class="col-4-md">
+          <h2 class="sr-only">JewlVision</h2>
+          <p class="sr-only">If you can dream it, we can design it.</p>
+          <img class="margin-bottom-sm" src="{{ 'MJ-JewlVision-logo-tag.png' | asset_url }}"
+               alt="Marks JewlVision logo. If you can dream it, we can design it." width="282" height="175"
+               loading="lazy">
+          <p>It&rsquo;s time to be your favorite designer and go completely custom with JewlVision. Our unique custom
+            jewelry design platform was developed by Marks Jewelers years ago, in response to customers&rsquo; demand
+            for custom jewelry.</p>
+          <a class="btn" href="/pages/jewlvision?view=jewlvision">Learn More</a>
+        </div>
+        <div class="col-8-md"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer-tagline">
+    <div class="container">
+      Love <b>grows</b> here
+    </div>
+  </div>
+</div>

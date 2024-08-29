@@ -1,0 +1,86 @@
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+
+
+<div class="infinite-carousel" style="align-items: center; justify-content: center; padding-top: 30px; padding-bottom: 20px;">
+  {{ section.settings.video_snippets }}
+</div>
+
+<script type="text/javascript" defer>
+
+  $.noConflict();
+    jQuery(document).ready(function() {
+    jQuery('.infinite-carousel').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      arrows: false,
+      centerMode: true, // Enable center mode
+      centerPadding: '240px', // Adjust the padding around the centered slide
+      //variableWidth: true
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '40px',
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '20px',
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '40px',
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Shoppable-Videos",
+    "class": "shoppable-videos",
+    "settings": [
+      {
+        "type": "text",
+        "id": "Shoppable-Videos",
+        "label": "title",
+        "default": "shoppable videos"
+      },
+      {
+        "type": "textarea",
+        "id": "video_snippets",
+        "label": "Video Snippets",
+        "default": "<div data-gp-account='' data-gp-collection='' data-gp-video='' data-gp-type='' ></div>"
+      }
+    ],
+     "presets": [
+      {
+        "name": "Shoppable-Videos",
+        "category": "text"
+      }
+    ]
+  }
+{% endschema %}

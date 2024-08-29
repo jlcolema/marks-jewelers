@@ -1,0 +1,70 @@
+<div class="section-content section__period-container">
+  <div class="container flex@md flex-center">
+    <div class="section__period--hero">
+      <div class="section__period--image">
+        {% render 'img', img: section.settings.section_image, width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy', alt: section.settings.section_header %}
+      </div>
+      <div class="section__period--label">
+        {%- if section.settings.section_header != blank -%}
+          <h2 class="section__content-heading">{{ section.settings.section_header }}</h2>
+        {%- endif -%}
+        {%- if section.settings.section_sub_header != blank -%}
+          <p class="section__sub-header">{{ section.settings.section_sub_header }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="snap-slider__container">
+      <div class="section__period--carousel snap-slider" data-component="snap-slider">
+        {%- for block in section.blocks -%}
+          <div class="section__period--slide snap-slider__item">
+            {% render 'img', img: block.settings.section__carousel_image, width: block.settings.section__carousel_image, height: block.settings.section__carousel_image, loading: 'lazy' %}
+          </div>
+        {%- endfor -%}
+      </div>
+      {% render 'snap-slider-arrows' %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Period Block",
+  "tag": "section",
+  "class": "estate-section",
+  "settings": [
+    {
+      "id": "section_header",
+      "type": "text",
+      "label": "Period name"
+    },
+    {
+      "id": "section_sub_header",
+      "type": "text",
+      "label": "Period years"
+    },
+    {
+      "id": "section_image",
+      "type": "image_picker",
+      "label": "Main period image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "carousel",
+      "name": "Period carousel images",
+      "settings": [
+        {
+          "id": "section__carousel_image",
+          "type": "image_picker",
+          "label": "Carousel image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Estate Period Block"
+    }
+  ]
+}
+{% endschema %}

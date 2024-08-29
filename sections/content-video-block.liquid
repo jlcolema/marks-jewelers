@@ -1,0 +1,137 @@
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --heading-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.heading_desktop_size != blank -%}
+    --heading-font-size-desktop: {% render 'to-rem', n: section.settings.heading_desktop_size %};
+  {%- endif -%}
+  {%- if section.settings.heading_mobile_size != blank -%}
+    --heading-font-size-mobile: {% render 'to-rem', n: section.settings.heading_mobile_size %};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.section_content_text_align != blank -%}
+    --text-alignment: {{ section.settings.section_content_text_align }};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_top != blank -%}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_bottom != blank -%}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-content-video-block.css' | asset_url | stylesheet_tag }}
+
+<div class="container section__video--content" style="{{ styling }}">
+  {%- if section.settings.section_header != blank -%}
+    <h2 class="section__video--content-heading">{{ section.settings.section_header }}</h2>
+  {%- endif -%}
+  {%- if section.settings.section_sub_header != blank -%}
+      <span class="section__video--sub-header">{{ section.settings.section_sub_header }}</span>
+  {%- endif -%}
+  <div class="content__video--container">
+    <div class="content__video--thumbnail" data-iframe-url="{{ section.settings.section_iframe_url }}" onclick="renderIframe(this);">
+      {% render 'img', img: section.settings.section_image, width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy', alt: section.settings.section_image_alt_text %}
+    </div>
+  </div>
+</div>
+<script defer>
+  function renderIframe(elem){
+    const iframeSrc = elem.getAttribute('data-iframe-url');
+    elem.innerHTML = `<iframe src="${iframeSrc}?autoplay=1&controls=0&rel=0" frameborder="0" allow="autoplay" allowfullscreen="true"></iframe>`;
+    elem.classList.add('video-loaded');
+  }
+</script>
+{% schema %}
+{
+  "name": "Video Block",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "section_image",
+      "type": "image_picker",
+      "label": "Select video thumbnail"
+    },
+    {
+      "id": "section_image_alt_text",
+      "type": "text",
+      "label": "Thumbnail alt text"
+    },
+    {
+      "id": "heading_desktop_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size desktop"
+    },
+    {
+      "id": "heading_mobile_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size mobile"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "section_header",
+      "type": "richtext",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_sub_header",
+      "type": "richtext",
+      "label": "Section Sub Header"
+    },
+    {
+      "id": "section_content_text_align",
+      "type": "select",
+      "label": "Image Alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "id": "section_iframe_url",
+      "type": "url",
+      "label": "Video URL"
+    },
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Block"
+    }
+  ]
+}
+{% endschema %}

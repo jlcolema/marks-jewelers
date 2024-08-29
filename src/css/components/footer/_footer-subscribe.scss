@@ -1,0 +1,65 @@
+@use '../../tools' as *;
+@use '../../settings/breakpoints' as *;
+
+.footer-subscribe {
+  display: flex;
+  flex-direction: column;
+
+  form {
+    --gap: var(--space-xxxs);
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: var(--gap);
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-sm);
+
+    > * {
+      min-width: 0;
+    }
+  }
+
+  input {
+    font-size: var(--text-xs);
+  }
+
+  .btn {
+    line-height: 1.65;
+  }
+}
+
+.subscribe__message {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: var(--text-xs);
+  text-align: center;
+  padding: var(--space-md);
+  margin-bottom: var(--space-unit);
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+
+  p {
+    max-width: 30ch;
+  }
+
+  + .footer-subscribe__description {
+    display: none;
+  }
+}
+
+.footer-subscribe__description {
+  order: -1;
+  font-size: var(--text-xs);
+  margin-bottom: var(--space-xs);
+
+  @media (--sm) {
+    order: 1;
+    margin-bottom: var(--space-unit);
+
+    ~ * {
+      order: 1;
+    }
+  }
+}

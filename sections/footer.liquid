@@ -1,0 +1,132 @@
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+<div class="footer__message">
+  <div class="container">
+    {{ section.settings.footer_text }}
+  </div>
+</div>
+
+<div class="footer__content">
+  <div class="container">
+    {%- assign menu = section.settings.footer_menu -%}
+    {%- if menu != blank -%}
+      <div class="footer-nav">
+        {%- for menu in menu.links -%}
+          <div class="col">
+            <div class="accordion js-accordion" data-animation="on" data-component="accordion" data-mobile-accordion>
+              {% render 'footer-menu', menu: menu %}
+
+            {%- if forloop.last -%}
+              {% render 'footer-social-menu', section: section %}
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+
+        <div class="col footer-subscribe">
+          
+          {% render 'footer-subscribe', section: section %}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<div class="footer__associations">
+  <div class="container">
+    {% render 'footer-logos', section: section %}
+  </div>
+</div>
+
+<div class="footer__info">
+  <div class="container">
+    <div class="footer__payment-logos">
+      <img src="{{ 'logo-mastercard.svg' | asset_url }}" alt="{{ 'sections.footer.payment.mastercard' | t }}" width="30" height="24" loading="lazy">
+      <img src="{{ 'logo-visa.svg' | asset_url }}" alt="{{ 'sections.footer.payment.visa' | t }}" width="30" height="19" loading="lazy">
+      <img src="{{ 'logo-amex.svg' | asset_url }}" alt="{{ 'sections.footer.payment.amex' | t }}" width="30" height="11" loading="lazy">
+      <img src="{{ 'logo-discover.svg' | asset_url }}" alt="{{ 'sections.footer.payment.discover' | t }}" width="30" height="5" loading="lazy">
+      <img src="{{ 'logo-affirm.svg' | asset_url }}" alt="{{ 'sections.footer.payment.affirm' | t }}" width="30" height="30" loading="lazy">
+      <img src="{{ 'logo-paypal.svg' | asset_url }}" alt="{{ 'sections.footer.payment.paypal' | t }}" width="30" height="8" loading="lazy">
+    </div>
+
+    {%- assign year = 'now' | date: '%Y' -%}
+    <p class="footer__copyright">{{ 'general.copyright' | t: year: year }}</p>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "class": "footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Footer Message"
+    },
+    {
+      "type": "richtext",
+      "id": "footer_text",
+      "label": "Content"
+    },
+    {
+      "type": "header",
+      "content": "Footer Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer menu"
+    },
+    {
+      "type": "link_list",
+      "id": "social_menu",
+      "label": "Social menu"
+    },
+    {
+      "type": "header",
+      "content": "Subscribe Form"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_id",
+      "label": "List ID"
+    },
+    {
+      "type": "url",
+      "id": "subscribe_endpoint",
+      "label": "Endpoint"
+    },
+    {
+      "type": "image_picker",
+      "id": "subscribe_image",
+      "label": "Additional image"
+    },
+    {
+      "type": "number",
+      "id": "subscribe_image_width",
+      "label": "Image width",
+      "info": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "footer_logo",
+      "name": "Footer logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Choose a logo"
+        },
+        {
+          "type": "number",
+          "id": "logo_width",
+          "label": "Logo width",
+          "info": "px"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

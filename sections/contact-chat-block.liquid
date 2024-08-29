@@ -1,0 +1,230 @@
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --heading-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.text_color != blank -%}
+    --copy-color: {{ section.settings.text_color }};
+  {%- endif -%}
+  {%- if section.settings.heading_desktop_size != blank -%}
+    --heading-font-size-desktop: {% render 'to-rem', n: section.settings.heading_desktop_size %};
+  {%- endif -%}
+  {%- if section.settings.heading_mobile_size != blank -%}
+    --heading-font-size-mobile: {% render 'to-rem', n: section.settings.heading_mobile_size %};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_text_color != blank -%}
+    --cta-text-color: {{ section.settings.section_cta_text_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_bg_color != blank -%}
+    --cta-bg-color: {{ section.settings.section_cta_bg_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_color != blank -%}
+    --cta-border-color: {{ section.settings.section_cta_border_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_width != blank -%}
+    --cta-border-width: {{ section.settings.section_cta_border_width }}px;
+  {%- endif -%}
+  {%- if section.settings.section_cta_text_color_two != blank -%}
+    --cta-text-color-two: {{ section.settings.section_cta_text_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_bg_color_two != blank -%}
+    --cta-bg-color-two: {{ section.settings.section_cta_bg_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_color_two != blank -%}
+    --cta-border-color-two: {{ section.settings.section_cta_border_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_width_two != blank -%}
+    --cta-border-width-two: {{ section.settings.section_cta_border_width_two }}px;
+  {%- endif -%}
+  {%- if section.settings.section_content_text_align != blank -%}
+    --text-alignment: {{ section.settings.section_content_text_align }};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_top != blank -%}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_bottom != blank -%}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {%- endif -%}
+  {%- if section.settings.section_max_width != blank -%}
+    --section-width: {{ section.settings.section_max_width }}px;
+  {%- else -%}
+    --section-width: 100%;
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_top != blank -%}
+    --section-inner-spacing-top: {% render 'to-rem', n: section.settings.section_inner_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_bottom != blank -%}
+    --section-inner-spacing-bottom: {% render 'to-rem', n: section.settings.section_inner_spacing_bottom %};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-content-chat-block.css' | asset_url | stylesheet_tag }}
+
+<div class="section-content" style="{{ styling }}">
+  <div class="container">
+    {%- if section.settings.section_header != blank -%}
+      <h2 class="section__content-heading">{{ section.settings.section_header }}</h2>
+    {%- endif -%}
+    {%- if section.settings.section_sub_header != blank -%}
+        <span class="section__sub-header">{{ section.settings.section_sub_header }}</span>
+      {%- endif -%}
+    <div class="content__cta-container">
+      {% if section.settings.section_cta_text != blank and section.settings.section_cta_url != blank %}
+        <a class="content__cta btn" href="javscript:void(0);" onclick="window.PodiumWebChat.open()">{{ section.settings.section_cta_text }}</a>
+      {% endif %}
+    </div>
+    {%- if section.settings.section_paragraph != blank -%}
+      <p> {{ section.settings.section_paragraph }} </p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Copy Chat Block",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "heading_desktop_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size desktop"
+    },
+    {
+      "id": "heading_mobile_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size mobile"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "text_color",
+      "type": "color",
+      "label": "Text color"
+    },
+    {
+      "id": "section_header",
+      "type": "richtext",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_sub_header",
+      "type": "richtext",
+      "label": "Section Sub Header"
+    },
+    {
+      "id": "section_paragraph",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    },
+    {
+      "id": "section_cta_text",
+      "type": "text",
+      "label": "Chat Button Text"
+    },
+    {
+      "id": "section_cta_url",
+      "type": "url",
+      "label": "Button URL"
+    },
+    {
+      "id": "section_cta_text_color",
+      "type": "color",
+      "label": "Chat Button Text Color"
+    },
+    {
+      "id": "section_cta_bg_color",
+      "type": "color",
+      "label": "Button Background Color"
+    },
+    {
+      "id": "section_cta_border_color",
+      "type": "color",
+      "label": "Button Border Color"
+    },
+    {
+      "id": "section_cta_border_width",
+      "type": "range",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "label": "Button Border Width"
+    },
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_top",
+      "type": "text",
+      "label": "Section Top Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_content_text_align",
+      "type": "select",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "id": "section_max_width",
+      "type": "number",
+      "label": "Max width (in pixels)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Copy Chat Block"
+    }
+  ]
+}
+{% endschema %}

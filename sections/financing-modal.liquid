@@ -1,0 +1,107 @@
+{%- capture styling -%}
+  {%- if section.settings.section_spacing_top != blank -%}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_bottom != blank -%}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_top != blank -%}
+  --section-inner-spacing-top: {% render 'to-rem', n: section.settings.section_inner_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_bottom != blank -%}
+    --section-inner-spacing-bottom: {% render 'to-rem', n: section.settings.section_inner_spacing_bottom %};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-flexible-image-block.css' | asset_url | stylesheet_tag }}
+
+<div class="container section__image--content" style="{{ styling }}">
+  <div class="content__img--container">
+    <a href="javascript:void(0);" class="btn btn--link" aria-label="Open 12 Month Special Financing modal" aria-controls="modal-financing-{{ section.settings.section_months }}">
+      {% if section.settings.section_image_mobile != blank %}
+        <picture>
+          <source srcset="{{ section.settings.section_image_mobile | image_url }}" media="(max-width: 767px)">
+          <source srcset="{{ section.settings.section_image | image_url }}" media="(min-width: 768px)">
+          {% render 'img', img: section.settings.section_image, alt: section.settings.section_image_alt_text %}
+        </picture>
+      {% else %}
+        {% render 'img', img: section.settings.section_image, width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy', alt: section.settings.section_image_alt_text %}
+      {% endif %}
+    </a>
+  </div>
+</div>
+
+{{ 'component-modal-dialog.css' | asset_url | stylesheet_tag }}
+
+<div id="modal-financing-{{ section.settings.section_months }}" class="modal modal--animate-scale js-modal" data-component="modal">
+  <div class="modal__content text-center" role="alertdialog" aria-label="Modal Content Dialogue Box">
+    <button class="reset modal__close-btn modal__close-btn--outer js-modal__close">X</button>
+    {% render 'icon', icon: 'logomark', class: 'logomark' %}
+    <h2>No Interest if Paid in Full within <strong>{{ section.settings.section_months }} months</strong></h2>
+    <p>Interest will be charged to your account from the purchase date if the purchase balance is not paid in full within the promotional period.</p>
+    <p>
+      <strong>Minimum purchase of $995 required.</strong>
+    </p>
+    <a href="https://mylpro.com/2xk2x" class="btn" target="_blank">Get Pre-Qualified</a>
+    <p class="text-xs margin-top-md">*The Wells Fargo Jewelry Advantage credit card is issued by Wells Fargo Financial National Bank. Special terms apply to qualifying purchases charged with approved credit. The special terms APR will continue to apply until all qualifying purchases are paid in full. Regular monthly payments are required during the promotional {{ section.settings.section_months }} month period. The APR for Purchases will apply to certain fees such as a late payment fee or if you use the card for other transactions. For new accounts, the APR for Purchases is 28.99%. If you are charged interest in any billing cycle, the minimum interest charge will be $1.00. This information is accurate as of 09/01/2016 and is subject to change. For current information, call us at <a href="tel:18004315921">1-800-431-5921</a></p>
+    <p><button class="btn--link js-modal__close text-xs">Close Window</button></p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Finance Block",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "section_image",
+      "type": "image_picker",
+      "label": "Select financing image"
+    },
+    {
+      "id": "section_image_mobile",
+      "type": "image_picker",
+      "label": "Different image for mobile?"
+    },
+    {
+      "id": "section_image_alt_text",
+      "type": "text",
+      "label": "Image alt text"
+    },
+    {
+      "id": "section_months",
+      "type": "number",
+      "label": "Number of months of financing"
+    },
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_top",
+      "type": "text",
+      "label": "Section Top Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Padding",
+      "info": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Finance Block"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,111 @@
+@use '../../tools' as *;
+@use '../../settings/breakpoints' as *;
+
+:root {
+  --expandable-search-height: 2.2rem; // overall height
+  --expandable-search-width-compact: 2.5rem; // width - compact
+  --expandable-search-width-expanded: 100%; // width - expanded
+  --expandable-search-icon-size-compact: 1.5rem; // lens icon size - compact
+  --expandable-search-icon-size-expanded: 1rem; // lens icon size - expanded
+}
+
+.expandable-search {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  user-select: none;
+  font-size: var(--text-xxs);
+
+  .header__utility & {
+    display: none;
+
+    @media (--md) {
+      display: flex;
+    }
+  }
+}
+
+.expandable-search__input {
+  width: var(--expandable-search-width-compact);
+  height: var(--expandable-search-height);
+  padding: 0;
+  color: transparent;
+  overflow: hidden;
+  transition: width 0.2s var(--ease-out);
+
+  &::placeholder {
+    opacity: 0;
+    color: transparent;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus,
+  &.expandable-search__input--has-content,
+  .header__mobile-search &,
+  .drawer__search & {
+    width: var(--expandable-search-width-expanded);
+    padding-top: 0;
+    padding-right: calc(1em + var(--expandable-search-width-compact));
+    padding-bottom: 0;
+    padding-left: var(--space-sm);
+    outline: none;
+    color: var(--color-text);
+    cursor: auto;
+    user-select: auto;
+    border: 1px solid var(--color-contrast-low);
+
+    &::placeholder {
+      opacity: 1;
+      color: var(--color-text);
+    }
+  }
+
+  &:focus + .expandable-search__btn {
+    pointer-events: auto;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.expandable-search__btn {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  width: var(--expandable-search-width-compact);
+  height: var(--expandable-search-height);
+  z-index: 1;
+  pointer-events: none;
+
+  .icon {
+    display: block;
+    margin: auto;
+    height: var(--expandable-search-icon-size-compact);
+    width: var(--expandable-search-icon-size-compact);
+    transition: width 0.3s var(--bounce), height 0.3s var(--bounce);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  .expandable-search__input:focus + &,
+  .expandable-search__input--has-content + &,
+  .header__mobile-search &,
+  .drawer__search & {
+    .icon {
+      height: var(--expandable-search-icon-size-expanded); // icon size
+      width: var(--expandable-search-icon-size-expanded); // icon size
+    }
+  }
+}
+

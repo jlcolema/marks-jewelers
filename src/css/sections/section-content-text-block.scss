@@ -1,0 +1,213 @@
+// ==========================================================================
+// SECTION: Content Text Block
+// ==========================================================================
+
+.container {
+  max-width: 1368px;
+  margin-bottom: 40px;
+
+}
+
+.content-text {
+  text-align: center;
+  @media(--sm) {
+    padding: 20px;
+    border: #000 solid 1px;
+  }
+
+  p {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-lg);
+    font-size: 15px;
+    @media(--sm) {
+      padding-right: 0;
+      padding-left: 0;
+      font-size: 20px;
+    }
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 24px;
+  }
+}
+
+.section__sub-header {
+  font-size: 38px;
+  margin-bottom: var(--space-md);
+  padding-right: var(--space-md);
+  padding-left: var(--space-md);
+
+  @media(--sm) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+}
+
+h2.section-heading {
+  font-weight: 300;
+  text-transform: capitalize;
+  font-size: 28px;
+  line-height: 30px;
+  text-align: center;
+  padding: 25px 20px;
+  z-index: 1;
+  background-color: #A07383;
+  position: relative;
+  margin: -20px -20px 0 -20px;
+
+  @media(--sm) {
+    padding: 25px 20px 25px 100px;
+  }
+
+
+  p {
+    font-size: var(--text-xl);
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 0;
+  }
+}
+
+.usp-logo {
+  display: block;
+  width: 100%;
+  margin-top: -25px;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 2;
+
+  @media(--sm) {
+    margin-top: 0;
+    padding-top: var(--space-md);
+  }
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.diamond-logo {
+  display: block;
+  width: 100%;
+  margin-top: -25px;
+  margin-bottom: var(--space-sm);
+
+  @media(--sm) {
+    margin-top: 0;
+    padding-top: var(--space-md);
+  }
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -12px;
+
+    @media(--sm) {
+      margin-top: 0;
+      position: relative;
+      top: -32px;
+    }
+  }
+}
+
+.usp-header-logo {
+  display: flex;
+  z-index: 2;
+
+  @media(--sm) {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+  }
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.diamond__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.diamond {
+  border: #000 solid 1px;
+  display: block;
+  margin: 10px;
+  width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.content__cta-container {
+  display: block;
+  flex-direction: row;
+  width: 300px;
+  max-width: 90%;
+  font-size: 19px;
+
+  @media(--sm) {
+    flex-direction: column;
+  }
+}
+
+a.content__cta {
+  color: #fff;
+  background-color: #7F7F7F;
+  border-color: #fff;
+  border-radius: 2px;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  text-transform: uppercase;
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+  bottom: 10px;
+}
+
+
+.content-text-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media(--sm) {
+    flex-direction: row;
+    grid-column-gap: var(--space-xl);
+  }
+}
+
+.content-text__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-md);
+
+  a {
+    padding-bottom: var(--space-sm);
+    padding-top: var(--space-sm);
+    padding-right: var(--space-md);
+    padding-left: var(--space-md);
+    margin-top: var(--space-md);
+    width: fit-content;
+    text-transform: uppercase;
+    border-style: solid;
+    border-radius: 2px;
+    background-color: var(--our-services-cta-bg-color);
+    border-color: var(--our-services-cta-border-color);
+    border-width: var(--our-services-cta-border-width);
+    color: var(--our-services-cta-text-color);
+  }
+}

@@ -1,0 +1,402 @@
+
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- if section.settings.border_color != blank -%}
+    --border-color: {{ section.settings.border_color }};
+  {%- endif -%}
+  {%- if section.settings.border_width != blank -%}
+    --border-width: {{ section.settings.border_width }}px;
+  {%- endif -%}
+  {%- if section.settings.top_border_color != blank -%}
+    --top-border-color: {{ section.settings.top_border_color }};
+  {%- endif -%}
+  {%- if section.settings.top_border_width != blank -%}
+    --top-border-width: {{ section.settings.top_border_width }}px;
+  {%- endif -%}
+  {%- if section.settings.item_1_heading_color != blank -%}
+    --item-1-heading-color: {{ section.settings.item_1_heading_color }};
+  {%- endif -%}
+  {%- if section.settings.item_1_heading_color != blank -%}
+    --item-1-heading-color: {{ section.settings.item_1_heading_color }};
+  {%- endif -%}
+  {%- if section.settings.item_1_background != blank -%}
+    --item-1-background: url({{ section.settings.item_1_background | image_url }});
+  {%- endif -%}
+  {%- if section.settings.item_1_background_size != blank -%}
+    {% if section.settings.item_1_background_size == 100 %}
+      --item-1-background-size: cover;
+    {% else %}
+      --item-1-background-size: {{ section.settings.item_1_background_size }}%;
+    {% endif %}
+  {%- endif -%}
+  {%- if section.settings.item_1_background_repeat != blank -%}
+    --item-1-background-repeat: {{ section.settings.item_1_background_repeat }};
+  {%- endif -%}
+  {%- if section.settings.item_1_background_position != blank -%}
+    --item-1-background-position: {{ section.settings.item_1_background_position }};
+  {%- endif -%}
+  {%- if section.settings.item_2_heading_color != blank -%}
+    --item-2-heading-color: {{ section.settings.item_2_heading_color }};
+  {%- endif -%}
+  {%- if section.settings.item_2_background != blank -%}
+    --item-2-background: url({{ section.settings.item_2_background | image_url }});
+  {%- endif -%}
+  {%- if section.settings.item_2_background_size != blank -%}
+    {% if section.settings.item_2background_size == 100 %}
+      --item-2-background-size: cover;
+    {% else %}
+      --item-2-background-size: {{ section.settings.item_2_background_size }}%;
+    {% endif %}
+  {%- endif -%}
+  {%- if section.settings.item_2_background_repeat != blank -%}
+    --item-2-background-repeat: {{ section.settings.item_2_background_repeat }};
+  {%- endif -%}
+  {%- if section.settings.item_2_background_position != blank -%}
+    --item-2-background-position: {{ section.settings.item_2_background_position }};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-home-help.css' | asset_url | stylesheet_tag }}
+
+<div class="help" style="{{ styling }}">
+  <div class="help__item help__item--1">
+    {%- render 'help-item-1', heading: section.settings.item_1_heading_text, paragraph: section.settings.item_1_paragraph_text, email_visible: section.settings.item_1_email_flag -%}
+  </div>
+  <div class="help__item help__item--2">
+    {%- render 'help-item-2', heading: section.settings.item_2_heading_text, paragraph: section.settings.item_2_paragraph_text, call_head: section.settings.call_head, call_text: section.settings.call_phone_number, email_text: section.settings.email_text, email_url: section.settings.email_url, hours_header_text: section.settings.hours_header_text, accordion_trigger_text: section.settings.store_hours_accordion_head, hours_of_operation: section.blocks, holiday_hours_text: section.settings.holiday_hours_text, holiday_hours_url: section.settings.holiday_hours_url -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Help Section",
+  "tag": "section",
+  "class": "container container--lg",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Subscribe Form"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_id",
+      "label": "List ID"
+    },
+    {
+      "type": "url",
+      "id": "subscribe_endpoint",
+      "label": "Endpoint"
+    },
+    {
+      "id": "top_border_color",
+      "type": "color",
+      "label": "Border Top Color"
+    },
+    {
+      "id": "top_border_width",
+      "type": "range",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Top Width",
+      "default": 1
+    },
+    {
+      "id": "border_color",
+      "type": "color",
+      "label": "Main Border Color"
+    },
+    {
+      "id": "border_width",
+      "type": "range",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Main Border Width",
+      "default": 0
+    },
+    {
+      "id": "item_1_heading_text",
+      "type": "html",
+      "label": "Item 1 Heading Text"
+    },
+    {
+      "id": "item_1_heading_color",
+      "type": "color",
+      "label": "Item 1 Heading color"
+    },
+    {
+      "id": "item_1_paragraph_text",
+      "type": "text",
+      "label": "Item 1 Paragraph Text"
+    },
+    {
+      "id": "item_1_background",
+      "type": "image_picker",
+      "label": "Item 1 Background Image"
+    },
+    {
+      "id": "item_1_background_position",
+      "type": "select",
+      "label": "Item 1 Background Image Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left Side"
+        },
+        {
+          "value": "right",
+          "label": "Right side"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left center",
+          "label": "Center Left"
+        },
+        {
+          "value": "right center",
+          "label": "Center Right"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "bottom right",
+          "label": "Right Bottom"
+        },
+        {
+          "value": "bottom left",
+          "label": "Left Bottom"
+        },
+        {
+          "value": "top right",
+          "label": "Top Right"
+        },
+        {
+          "value": "top left",
+          "label": "Top Left"
+        }
+      ]
+    },
+    {
+      "id": "item_1_background_size",
+      "type": "range",
+      "label": "Item 1 Background Image Size",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "id": "item_1_background_repeat",
+      "type": "select",
+      "label": "Item 1 Background Image Repeat",
+      "options": [
+        {
+          "value": "no-repeat",
+          "label": "No Repeat"
+        },
+        {
+          "value": "repeat",
+          "label": "Repeat"
+        }
+      ]
+    },
+    {
+      "id": "item_1_email_flag",
+      "type": "checkbox",
+      "label": "Display email signup on the item 1 side?"
+    },
+    {
+      "id": "item_2_heading_text",
+      "type": "html",
+      "label": "Item 2 Heading Text"
+    },
+    {
+      "id": "right_heading_color",
+      "type": "color",
+      "label": "Item 2 Heading color"
+    },
+    {
+      "id": "item_2_paragraph_text",
+      "type": "text",
+      "label": "item 2 Paragraph Text"
+    },
+    {
+      "id": "item_2_background",
+      "type": "image_picker",
+      "label": "Item 2 Background Image"
+    },
+    {
+      "id": "item_2_background_position",
+      "type": "select",
+      "label": "Item 2 Background Image Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left Side"
+        },
+        {
+          "value": "right",
+          "label": "Right side"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left center",
+          "label": "Center Left"
+        },
+        {
+          "value": "right center",
+          "label": "Center Right"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "bottom right",
+          "label": "Right Bottom"
+        },
+        {
+          "value": "bottom left",
+          "label": "Left Bottom"
+        },
+        {
+          "value": "top right",
+          "label": "Top Right"
+        },
+        {
+          "value": "top left",
+          "label": "Top Left"
+        }
+      ]
+    },
+    {
+      "id": "item_2_background_size",
+      "type": "range",
+      "label": "Item 2 Background Image Size",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "id": "item_2_background_repeat",
+      "type": "select",
+      "label": "Item 2 Background Image Repeat",
+      "options": [
+        {
+          "value": "no-repeat",
+          "label": "No Repeat"
+        },
+        {
+          "value": "repeat",
+          "label": "Repeat"
+        }
+      ]
+    },
+    {
+      "id": "item_2_top_border_color",
+      "type": "color",
+      "label": "Item 2 Top Border Top Color"
+    },
+    {
+      "id": "store_hours_placement",
+      "type": "select",
+      "label": "Which side would you like the store hours?",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left Side"
+        },
+        {
+          "value": "right",
+          "label": "Right side"
+        }
+      ]
+    },
+    {
+      "id": "call_head",
+      "type": "text",
+      "label": "Call/Text Header"
+    },
+    {
+      "id": "call_phone_number",
+      "type": "text",
+      "label": "Call/Text Phone Number"
+    },
+    {
+      "id": "email_text",
+      "type": "text",
+      "label": "Email Label Text"
+    },
+    {
+      "id": "email_url",
+      "type": "url",
+      "label": "Email url"
+    },
+    {
+      "id": "store_hours_accordion_head",
+      "type": "text",
+      "label": "Store hours accordion head"
+    },
+    {
+      "id": "hours_header_text",
+      "type": "text",
+      "label": "Hours Header Text"
+    },
+    {
+      "id": "holiday_hours_url",
+      "type": "url",
+      "label": "Holiday Hours URL"
+    },
+    {
+      "id": "holiday_hours_text",
+      "type": "text",
+      "label": "Holiday Hours Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "store_hours",
+      "name": "Store Hours Day and Time",
+      "settings": [
+        {
+          "id": "store_hours_day",
+          "type": "richtext",
+          "label": "Store Hours Day of Week"
+        },
+        {
+          "id": "store_hours_time",
+          "type": "text",
+          "label": "Store Hours Time"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Help"
+    }
+  ]
+}
+{% endschema %}

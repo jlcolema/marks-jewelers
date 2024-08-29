@@ -1,0 +1,219 @@
+// ==========================================================================
+// SECTION: MAIN ADDRESSES
+// ==========================================================================
+@use '../components/account-nav.scss';
+.adresses {
+  padding-top: 20px;
+  padding-left: 0;
+  padding-right: 0;
+
+  h2 {
+    @media (--md) {
+      font-size: var(--text-xxl);
+    }
+  }
+
+  svg {
+    display: none;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  [aria-expanded=true]~div[id] {
+    display: block;
+  }
+  [aria-expanded=false]~div[id] {
+    display: none;
+  }
+
+  .field-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media (--md) {
+      flex-direction: row;
+    }
+
+    .field {
+      width: 100%;
+
+      @media (--md) {
+        width: 48%;
+      }
+    }
+  }
+
+  label {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 3px 0;
+  }
+
+  input {
+    height: 35px;
+    padding-left: 5px;
+  }
+
+  .field-row-long {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media (--md) {
+      flex-direction: row;
+    }
+
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @media (--md) {
+        width: 32%;
+      }
+    }
+
+    .select {
+      width: 100%;
+    }
+
+    select {
+      height: 35px;
+      padding-left: 5px;
+    }
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+
+.current-info {
+  background: #F6F6F6;
+  padding: 10px 25px;
+  margin: 15px 0;
+
+  .default-address-form {
+    padding: 10px 0 30px;
+  }
+}
+
+.new-address {
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+#AddAddress {
+  padding: 10px 0;
+}
+
+.all-addresses {
+  padding: 15px 0;
+
+  .full-address {
+    margin-bottom: 25px;
+  }
+
+  .btn.short {
+    width: 105px;
+    min-width: unset;
+  }
+
+  .edit-address {
+    padding-top: 15px;
+  }
+}
+
+.edit-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (--md) {
+    flex-direction: row;
+  }
+}
+
+
+
+@media (--md) {
+  .address-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 65px;
+    margin-top: 20px;
+  }
+
+
+  .edit-address {
+    position: absolute;
+    background: #fff;
+    top: 40%;
+    left: 25%;
+    width: 50%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+    border-radius: 15px;
+    z-index: 15;
+  }
+
+  .edit-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.35);
+    display: none;
+    z-index: 10;
+  }
+}
+
+@media (--lg) {
+  .edit-address {
+    width: 40%;
+    left: 30%;
+  }
+}
+
+@media (max-width: 668px) {
+  .btn-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+
+    .btn {
+      min-width: 65%;
+    }
+  }
+
+  .new-address-form {
+    text-align: center;
+
+    .btn.add {
+      min-width: 65%;
+    }
+
+    #AddAddress {
+      text-align: left;
+    }
+  }
+
+  .all-addresses .btn.short {
+    width: 42%;
+  }
+}

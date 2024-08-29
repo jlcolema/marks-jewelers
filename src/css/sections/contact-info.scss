@@ -1,0 +1,29 @@
+.contact {
+  h2 {
+    font-size: 24px;
+
+    @media (--sm) {
+      font-size: 36px;
+    }
+  }
+
+  .contact__mail {
+    p {
+      margin-bottom: var(--space-sm);
+    }
+  }
+
+  .contact__block {
+    @media (--sm) {
+      padding: 0 var(--space-md);
+    }
+  }
+
+  .btn {
+    margin-bottom: var(--space-sm);
+  }
+
+  input[placeholder="GCLID collector"] {
+    display: none !important;
+  }
+}

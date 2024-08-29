@@ -1,0 +1,148 @@
+.image-header {
+  position: relative;
+  min-height: 475px;
+  max-width: 1440px;
+  margin: 0 auto;
+  max-height: 33vw;
+
+  .permlink-image-container {
+    width: 100%;
+    max-height: 475px;
+    object-fit: cover;
+    overflow: hidden;
+
+    @media (max-width: 1023px) {
+      background: url('https://cdn.shopify.com/s/files/1/0608/9752/5982/files/MJ-permanently-linked-besties.jpg?v=1678303209&width=2500');
+      background-position: center;
+      height: 700px;
+      background-size: cover;
+    }
+
+    img {
+      max-width: 1440px;
+      height: auto;
+
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      max-height: 700px;
+    }
+  }
+
+  .margin-bottom-sm {
+    margin-bottom: 0;
+  }
+
+  .container {
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    max-width: 403px;
+    background: rgba(151,116,128,0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1023px) {
+      top: initial;
+      bottom: 0;
+      width: 100%;
+      max-width: 100%;
+      max-height: 400px;
+      justify-content: flex-start;
+    }
+
+    p {
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      max-width: 350px;
+      margin-top: .75em;
+    }
+
+    .book-now {
+      color: #000;
+      background: #fff;
+      padding: 15px 25px;
+      text-transform: uppercase;
+      font-weight: 500;
+
+      @media (max-width: 330px) {
+        font-size: 16px;
+      }
+    }
+
+    img {
+      @media (max-width: 1023px) {
+        top: -23px;
+        position: relative;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1350px) {
+    min-height: 475px;
+  }
+
+  @media (max-width: 1023px) {
+    min-height: 700px;
+  }
+}
+
+@media(max-width: 768px) {
+  .image-header  .container p {
+    margin-top: 0;
+  }
+
+  .image-header .container .book-now {
+    margin-top: 0.75em;
+  }
+}
+
+@media (max-width: 768px ) {
+  .grid {
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+.block-steps-number {
+  @media (min-width: 64rem) {
+    font-size: 2rem;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+  }
+}
+
+.section-boxes-content {
+  p {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+}
+
+.breadcrumb-nav {
+  display: none;
+}
+
+.permlink-book {
+  color: #000 !important;
+  background: #fff;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  font-weight: 500;
+  max-width: unset;
+  border: none !important;
+
+  @media (max-width: 320px) {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

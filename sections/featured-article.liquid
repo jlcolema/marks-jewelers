@@ -1,0 +1,84 @@
+<div class="blog container">
+  <div class="featured-article-desktop">
+    {%- for article in blog.articles limit: 1 -%}
+      <div class="featured-article">
+        <div class="featured-article-content">
+          <div class="blog-logo">
+            <svg class="icon icon--logomark logomark" viewBox="0 0 168.37 176.69" aria-hidden="true" focusable="false">
+              <path d="M160.43,73.54V44.31l-5.65-3.26L153,30.87l-43.52-16L84.19.31,78.55,3.56,68.83,0,33.27,29.69,7.94,44.31v6.53L0,57.47l7.94,45.68v29.16l5.64,3.25,1.78,10.26L59.23,161.9l25,14.41,5.56-3.21,9.79,3.59,35.82-29.92,25.07-14.46v-6.46l7.94-6.63ZM7.94,88.49l-5.22-30,5.22-4.36ZM69.33,2.86,75.72,5.2,46,22.37ZM17.58,144l-1.17-6.77,30.11,17.38ZM99,173.83l-6.45-2.37,30.09-17.37Zm32.28-43.52H117.11v-69h-.48l-34.53,69H79.2L44.25,61.8h-1v68.51h-6.2V46.07H51.5l32.78,64.65h.66l32.17-64.65h14.21ZM122.2,22.24l28.59,10.49L152,39.41Zm38.23,66,5.22,30-5.22,4.36Z"></path>
+            </svg>
+          </div>
+          <span class="featured-article-title">
+            <h2>{{ article.title }}</h2>
+          </span>
+          <div class="featured-article-excerpt">
+            {{ article.excerpt | strip_html | truncate: 250 }}
+          </div>
+          <span class="featured-article-readmore">
+            <a href="{{ article.url }}" aria-label="Read more: {{ article.title }}">
+              Read more >
+            </a>
+          </span>
+        </div>
+        <div class="featured-article-image">
+          <a href="{{ article.url }}">
+            {%- if article.image -%}
+              {{ article | image_url: 'large', scale: 1 | image_tag: '' }}
+            {%- endif -%}
+          </a>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="featured-article-mobile slider-wrapper">
+    <button class="slide-arrow" id="slide-arrow-prev">
+
+    </button>
+
+    <button class="slide-arrow" id="slide-arrow-next">
+
+    </button>
+    <ul id="slides-container" class="slides-container" data-component="articles">
+      {%- for article in blog.articles limit: 3 -%}
+        <li class="featured-article slide">
+          <div class="featured-article-content">
+            <div class="featured-article-image">
+              <a href="{{ article.url }}">
+                {%- if article.image -%}
+                  {{ article | image_url: 'large', scale: 1 | image_tag: '' }}
+                {%- endif -%}
+              </a>
+            </div>
+            <div class="blog-logo">
+              <svg class="icon icon--logomark logomark" viewBox="0 0 168.37 176.69" aria-hidden="true" focusable="false">
+                <path d="M160.43,73.54V44.31l-5.65-3.26L153,30.87l-43.52-16L84.19.31,78.55,3.56,68.83,0,33.27,29.69,7.94,44.31v6.53L0,57.47l7.94,45.68v29.16l5.64,3.25,1.78,10.26L59.23,161.9l25,14.41,5.56-3.21,9.79,3.59,35.82-29.92,25.07-14.46v-6.46l7.94-6.63ZM7.94,88.49l-5.22-30,5.22-4.36ZM69.33,2.86,75.72,5.2,46,22.37ZM17.58,144l-1.17-6.77,30.11,17.38ZM99,173.83l-6.45-2.37,30.09-17.37Zm32.28-43.52H117.11v-69h-.48l-34.53,69H79.2L44.25,61.8h-1v68.51h-6.2V46.07H51.5l32.78,64.65h.66l32.17-64.65h14.21ZM122.2,22.24l28.59,10.49L152,39.41Zm38.23,66,5.22,30-5.22,4.36Z"></path>
+              </svg>
+            </div>
+            <span class="featured-article-title">
+              <h2>{{ article.title }}</h2>
+            </span>
+            <div class="featured-article-excerpt">
+              {{ article.excerpt | strip_html | truncate: 250 }}
+            </div>
+            <span class="featured-article-readmore">
+              <a href="{{ article.url }}" aria-label="Read more: {{ article.title }}">
+                Read more >
+              </a>
+            </span>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Article",
+  "tag": "section",
+  "settings": [
+
+  ]
+}
+{% endschema %}

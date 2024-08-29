@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "blocks": {
+        "2b17212b-b3aa-476b-83f1-9f10dcc5923f": {
+          "type": "value_prop",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FlexibleFinancing.png",
+            "text": "FLEXIBLE <br>FINANCING"
+          }
+        },
+        "c6f2e155-e580-4676-b86f-e89cbdbd23d9": {
+          "type": "value_prop",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/30DayReturns.png",
+            "text": "30 DAY <br>RETURNS"
+          }
+        },
+        "6a5ba0ff-425a-4bdd-a87e-0c1dbc485dda": {
+          "type": "value_prop",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/UpgradePolicy.png",
+            "text": "100% <br>UPGRADE <br>POLICY"
+          }
+        }
+      },
+      "block_order": [
+        "2b17212b-b3aa-476b-83f1-9f10dcc5923f",
+        "c6f2e155-e580-4676-b86f-e89cbdbd23d9",
+        "6a5ba0ff-425a-4bdd-a87e-0c1dbc485dda"
+      ],
+      "settings": {
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "heading": "Recently Viewed"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recently-viewed"
+  ]
+}

@@ -1,0 +1,85 @@
+.discover__collection {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+
+  @media (--sm) {
+    margin-top: var(--space-xxl);
+    margin-bottom: var(--space-lg);
+  }
+
+  .icon {
+    width: 0.75rem;
+  }
+
+  .snap-slider__arrows {
+    display: none;
+
+    @media (--sm) {
+      display: flex;
+    }
+  }
+}
+
+.discover__header-logo {
+  display: block;
+  margin-top: 3.75rem;
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.discover__heading {
+  font-size: var(--text-xl);
+  text-align: center;
+  color: #000;
+  background-color: #FFF;
+
+  @media (--sm) {
+    font-size: var(--text-xxxl);
+  }
+}
+
+.discover__paragraph {
+  text-align: center;
+}
+
+.discover__collection-row {
+  --items: 2;
+  --gap: var(--space-lg);
+  --gap-fill: calc(var(--gap) / var(--items)); // add back in extra space to align items to right edge
+
+  @media (--to-sm) {
+    overflow-x: visible;
+    overflow-y: visible;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: var(--gap);
+  }
+
+  @media (--sm) {
+    --items: 4;
+
+    grid-auto-columns: calc((100% / var(--items)) - var(--gap) + var(--gap-fill));
+    gap: var(--gap);
+  }
+}
+
+.discover__collection-item {
+  text-align: center;
+
+  a {
+    font-size: var(--text-sm);
+    color: #000;
+    background-color: #FFF;
+
+    @media(--sm) {
+      font-size: var(--text-md);
+    }
+  }
+}
+
+.discover__collection-image {
+  margin-top: var(--space-md);
+}

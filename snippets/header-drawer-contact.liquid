@@ -1,0 +1,25 @@
+{%- assign phone_number_link = settings.phone_number | replace: ' ', '' | replace: '-', '' | replace: '(', '' | replace: ')', '' | prepend: 'tel:+1' -%}
+
+<div class="drawer__contact">
+  <p class="drawer__contact-heading">Contact Us</p>
+  <ul class="drawer__contact-methods">
+    <li>
+      <a href="{{ phone_number_link }}">
+        <i>{% render 'icon', icon: 'phone' %}</i>
+        <span>{{ 'sections.header.contact.call' | t }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ phone_number_link }}">
+        <i>{% render 'icon', icon: 'chat' %}</i>
+        <span>{{ 'sections.header.contact.text' | t }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:{{ settings.email_address }}">
+        <i>{% render 'icon', icon: 'envelope' %}</i>
+        <span>{{ 'sections.header.contact.email' | t }}</span>
+      </a>
+    </li>
+  </ul>
+</div>

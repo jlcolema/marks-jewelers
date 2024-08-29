@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "blog_show_date": true,
+        "blog_show_author": false
+      }
+    },
+    "article_promo": {
+      "type": "article-promo",
+      "settings": {
+        "bg_color": "#f6f6f6",
+        "section_header": "Optional Blog Callout",
+        "section_paragraph": "<p>Place small description to set customer expectation for button action.<\/p>",
+        "section_cta_text": "PRIMARY BUTTON",
+        "section_cta_url": "shopify:\/\/collections"
+      }
+    },
+    "popular_articles": {
+      "type": "popular-articles",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "article_promo",
+    "popular_articles"
+  ]
+}

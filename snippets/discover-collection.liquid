@@ -1,0 +1,12 @@
+<div class="discover__collection-row snap-slider" data-component="snap-slider">
+  {% for block in collection_block %}
+    <div class="discover__collection-item snap-slider__item">
+      <a href="{{ block.settings.collection_link }}">
+        {{ block.settings.collection_text }}
+        <div class="discover__collection-image">
+          {% render 'img', img: block.settings.collection_image, width: block.settings.collection_image.width, height: block.settings.collection_image.height, crop: 'center', loading: 'lazy' %}
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>

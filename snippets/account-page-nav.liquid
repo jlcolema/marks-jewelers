@@ -1,0 +1,18 @@
+<div class="account-links account-hide-mobile" data-component="account-links">
+  <a href="/account">Dashboard</a>
+  <a href="/account/addresses">Information</a>
+  <a href="/account?view=history">Order History</a>
+  <!--<a href="#">Wishlist</a>-->
+</div>
+<div class="account-links account-show-mobile">
+  <details>
+    <summary class="ac-account">Jump to: <span>My Account</span></summary>
+    <div class="account-nav">
+      <a href="/account">Dashboard</a>
+      <a href="/account/addresses">Information</a>
+      <a href="/account?view=history">Order History</a>
+      <!--<a href="#">Wishlist</a>-->
+      <a class="logout" href="{{ routes.account_logout_url }}">Sign Out</a>
+    </div>
+  </details>
+</div>

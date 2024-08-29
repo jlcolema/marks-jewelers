@@ -1,0 +1,171 @@
+{%- capture styling -%}
+  {%- if section.settings.bg_color != blank -%}
+    --bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.bg_image != blank -%}
+    --background-image: url({{ section.settings.bg_image | image_url }});
+  {%- endif -%}
+  {%- if section.settings.section_spacing_top != blank -%}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_bottom != blank -%}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_top != blank -%}
+    --section-inner-spacing-top: {% render 'to-rem', n: section.settings.section_inner_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_inner_spacing_bottom != blank -%}
+    --section-inner-spacing-bottom: {% render 'to-rem', n: section.settings.section_inner_spacing_bottom %};
+  {%- endif -%}
+  {%- if section.settings.full_width -%}
+    --section-max-width: 100%;
+  {%- else -%}
+    --section-max-width: 73.125rem;
+  {%- endif -%}
+{%- endcapture -%}
+{{ 'section-marks-promise.css' | asset_url | stylesheet_tag }}
+
+<div class="section__marks-promise" style="{{ styling }}">
+  <div class="container">
+    <div class="hero__promise--pre-header text-center">
+      <p>{{ section.settings.pre_header }}</p>
+    </div>
+    <div class="content__hero--promise-header text-center">
+      <h2>{{ section.settings.section_header }}</h2>
+      <strong>{{ section.settings.section_sub_header }}</strong>
+      <p>{{ section.settings.section_paragraph }}</p>
+      <a href="{{ section.settings.section_cta_url }}" class="btn">{{ section.settings.section_cta_text }}</a>
+    </div>
+
+    <div class="content__promises flex">
+      {%- for block in section.blocks -%}
+        <div class="content__promise text-center">
+          <div class="content__promise--icon">
+            {% render 'img', img: block.settings.block_icon, width: block.settings.block_icon.width, height: block.settings.block_icon.height, loading: 'lazy' %}
+          </div>
+          <div class="content__marks-promise--copy">
+            <h2>{{ block.settings.block_header }}</h2>
+            <p>{{ block.settings.block_paragraph }}</p>
+            <a href="{{ block.settings.block_cta_url }}" class="btn">{{ block.settings.block_cta_text }}</a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marks Promise",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "pre_header",
+      "type": "richtext",
+      "label": "Hero copy"
+    },
+    {
+      "id": "section_header",
+      "type": "richtext",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_sub_header",
+      "type": "richtext",
+      "label": "Section Sub Header"
+    },
+    {
+      "id": "section_paragraph",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    },
+    {
+      "id": "section_cta_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "section_cta_url",
+      "type": "url",
+      "label": "Button URL"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "bg_image",
+      "type": "image_picker",
+      "label": "Background image"
+    },
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_top",
+      "type": "text",
+      "label": "Section Top Padding",
+      "info": "px"
+    },
+    {
+      "id": "section_inner_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Padding",
+      "info": "px"
+    },
+    {
+      "id": "full_width",
+      "type": "checkbox",
+      "label": "Full width?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Promise",
+      "settings": [
+        {
+          "id": "block_icon",
+          "type": "image_picker",
+          "label": "Promise Icon"
+        },
+        {
+          "id": "block_header",
+          "type": "richtext",
+          "label": "Header"
+        },
+        {
+          "id": "block_paragraph",
+          "type": "richtext",
+          "label": "Paragraph"
+        },
+        {
+          "id": "block_cta_text",
+          "type": "text",
+          "label": "Button Text"
+        },
+        {
+          "id": "block_cta_url",
+          "type": "url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marks Promise"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,17 @@
+{%- liquid
+  if product.available
+    if product.selected_variant and product.selected_variant.available
+      assign variant_id = product.selected_variant.id
+    elsif product.variants.first.available
+      assign variant_id = product.variants.first.id
+    else
+      for variant in product.variants
+        if variant.available
+          assign variant_id = variant.id
+          break
+        endif
+      endfor
+    endif
+  endif
+-%}
+<div class="hide" data-component="recently-viewed" data-template="{{ template.name }}">{"productTitle": "{{ product.title }}","productImg": "{% if product.featured_image %}{{ product.featured_image | image_url: width: 300 }}{% else %}{{ 'placeholder.jpg' | asset_url }}{% endif %}","productPrice": "{{ product.price | money }}","productUrl": "{{ product.url }}","productImageAltText": "{{ product.featured_media.alt | escape }}","variantId":"{{ variant_id }}"}</div>

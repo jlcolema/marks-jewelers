@@ -1,0 +1,48 @@
+{{ 'section-main-article.css' | asset_url | stylesheet_tag }}
+
+<div class="article container">
+  {%- if article.image -%}
+    <div class="article-image-container">
+      {{ article | image_url: 'full', scale: 1 | image_tag: '' }}
+    </div>
+  {%- endif -%}
+  <div class="article-title">
+    <h1>{{ article.title | escape }}</h1>
+  </div>
+  <div class="article-timestamp">
+    {%- if section.settings.blog_show_date -%}
+      <span class="article-date">{{ article.published_at | time_tag: format: 'date' }}</span>
+    {%- endif -%}
+    {%- if section.settings.blog_show_author -%}
+      <span class="article-author">{{ article.author }}</span>
+    {%- endif -%}
+    <hr />
+  </div>
+  <div class="article-content">
+    {{ article.content }}
+  </div>
+  {%- if section.settings.show_promo -%}
+
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Article",
+  "tag": "article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "default": true,
+      "label": "Show Date"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "default": false,
+      "label": "Show Author"
+    }
+  ]
+}
+{% endschema %}

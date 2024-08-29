@@ -1,0 +1,19 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<div class="page container">
+  <h1>
+    {{ page.title | escape }}
+  </h1>
+  {{ page.content }}
+</div>
+
+
+{% schema %}
+{
+  "name": "Page",
+  "tag": "section",
+  "settings": [
+
+  ]
+}
+{% endschema %}

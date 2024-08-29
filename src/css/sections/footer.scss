@@ -1,0 +1,62 @@
+@use '../components/footer';
+
+// ==========================================================================
+// SECTION: FOOTER
+// ==========================================================================
+
+.footer {
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer__content {
+  padding-bottom: var(--space-md);
+
+  @media (--sm) {
+    padding: var(--space-xl) 0;
+  }
+}
+
+.footer__associations {
+  border-top: 1px solid var(--color-contrast-low);
+  border-bottom: 1px solid var(--color-contrast-low);
+
+  @media (--sm) {
+    border: none;
+  }
+}
+
+.footer__info {
+  text-align: center;
+}
+
+.footer__payment-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-xs) 0;
+
+  > * {
+    margin: 0 var(--space-xxs);
+  }
+
+  > img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.footer__copyright {
+  padding-bottom: var(--space-md);
+  font-size: var(--text-xxxs);
+
+  @media (--sm) {
+    font-size: var(--text-sm);
+  }
+}

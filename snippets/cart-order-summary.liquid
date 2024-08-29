@@ -1,0 +1,13 @@
+<div class="cart__order-summary">
+  <p class="order-summary__title">{{ 'sections.cart.order_summary' | t }}</p>
+  <p class="order-summary__shipping-container">
+    <span class="order-summary__shipping--method">{{ 'sections.cart.shipping_method' | t }}</span>
+    <span class="order-summary__shipping--price">{{ 'sections.cart.shipping_free' | t }}</span>
+    <span class="order-summary__shipping--message">{{ 'sections.cart.shipping_message' | t }}</span>
+  </p>
+  <p class="order-summary__subtotal-container">
+    <span class="order-summary__subtotal">{{ 'sections.cart.subtotal' | t }}</span>
+    <span class="order-summary__subtotal--price">{{ cart.total_price | money }}</span>
+  </p>
+  {% render 'cart-checkout-buttons' %}
+</div>

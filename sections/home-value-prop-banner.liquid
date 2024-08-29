@@ -1,0 +1,114 @@
+
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --value-props-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --value-props-bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.value_props_color != blank -%}
+    --value-props-prop-color: {{ section.settings.value_props_color }};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-home-value-prop-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="value-props" style="{{ styling }}">
+  <div class="container container--sm snap-slider__container">
+    <div class="value-prop__banner snap-slider" data-component="snap-slider-paginated">
+      {% for block in section.blocks %}
+        <div class="value-prop__item snap-slider__item">
+          {% if block.setting.value_prop_image != '' %}
+            <div class="value-prop__item-image">
+              {% render 'home-icons', icon: block.settings.value_prop_image, class: 'icon--md' %}
+            </div>
+          {% endif %}
+          <div class="value-prop__item-info" tabindex="0" aria-label="Item Info {{ block.settings.value_prop_head }}" title="Item Info {{ block.settings.value_prop_head }}" role="button">
+            {% if block.setting.value_prop_head != '' %}
+              <div class="value-prop__item-info-head">{{ block.settings.value_prop_head }}</div>
+            {% endif %}
+            {% if block.setting.value_prop_text != '' %}
+              <p class="value-prop__item-info-text">{{ block.settings.value_prop_text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="snap-slider__pagination">
+      {%- for block in section.blocks -%}
+        <button class="snap-slider__pagination-dot">
+          <span class="sr-only">{{ 'general.slider.go_to' | t }} {{ forloop.index }}</span>
+        </button>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Value Prop",
+  "tag": "section",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "value_props_color",
+      "type": "color",
+      "label": "Value prop color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value_prop",
+      "name": "Value Prop",
+      "settings": [
+        {
+          "id": "value_prop_image",
+          "type": "select",
+          "label": "Value Prop Image",
+          "options": [
+            {
+              "value": "ribbon",
+              "label": "Ribbon"
+            },
+            {
+              "value": "location-mark",
+              "label": "Location Mark"
+            },
+            {
+              "value": "chat-star",
+              "label": "Chat Star"
+            }
+          ]
+        },
+        {
+          "id": "value_prop_head",
+          "type": "richtext",
+          "label": "Value Prop Head"
+        },
+        {
+          "id": "value_prop_text",
+          "type": "text",
+          "label": "Value Prop Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Value Prop"
+    }
+  ]
+}
+{% endschema %}

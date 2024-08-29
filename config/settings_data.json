@@ -1,0 +1,297 @@
+{
+  "current": {
+    "phone_number": "(215) 362-7132",
+    "email_address": "info@marks-jewelers.com",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
+    "checkout_logo_size": "medium",
+    "checkout_heading_font": "Lato",
+    "checkout_accent_color": "#a07383",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#ed1d27",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "772c14f3-469b-497f-b6a7-69be0f579d80": {
+            "type": "main_menu_item",
+            "settings": {
+              "label": "Diamonds",
+              "menu_item": "#",
+              "submenu": "diamonds_new",
+              "narrow_menu": false,
+              "diamond_menu": false,
+              "image": "shopify:\/\/shop_images\/Diamond-Image.jpg",
+              "image_width": 250,
+              "image_link": "",
+              "background_image": false,
+              "collection": "",
+              "collection_title": ""
+            }
+          },
+          "046925f2-2e0d-4be1-9ff4-4ba4245e5e31": {
+            "type": "main_menu_item",
+            "settings": {
+              "label": "Engagement Rings",
+              "menu_item": "shopify:\/\/collections\/engagement-rings",
+              "submenu": "engagement-rings",
+              "narrow_menu": false,
+              "diamond_menu": false,
+              "image": "shopify:\/\/shop_images\/Couture-Collections_1.jpg",
+              "image_width": 360,
+              "image_link": "",
+              "background_image": true,
+              "collection": "",
+              "collection_title": ""
+            }
+          },
+          "7d123897-2609-43dc-8743-66b648b51c0b": {
+            "type": "main_menu_item",
+            "settings": {
+              "label": "Wedding Rings",
+              "menu_item": "\/collections\/ladies-diamond-wedding-rings",
+              "submenu": "wedding-rings",
+              "narrow_menu": true,
+              "diamond_menu": false,
+              "image": "shopify:\/\/shop_images\/collection-weddings.jpg",
+              "image_width": 436,
+              "image_link": "",
+              "background_image": true,
+              "collection": "",
+              "collection_title": ""
+            }
+          },
+          "23cf1af0-84d9-4c5b-b950-c21e51ce17fe": {
+            "type": "main_menu_item",
+            "settings": {
+              "label": "Fine Jewelry",
+              "menu_item": "\/collections\/fine-jewelry",
+              "submenu": "fine-jewelry-new",
+              "narrow_menu": false,
+              "diamond_menu": false,
+              "image_width": 330,
+              "image_link": "",
+              "background_image": false,
+              "collection": "",
+              "collection_title": ""
+            }
+          },
+          "60872664-c1a7-4a9f-bdd9-9ecef48e0f8b": {
+            "type": "main_menu_item",
+            "settings": {
+              "label": "Luxury Handbags",
+              "menu_item": "shopify:\/\/collections\/luxury-handbags",
+              "submenu": "luxury-handbags",
+              "narrow_menu": false,
+              "diamond_menu": false,
+              "image": "shopify:\/\/shop_images\/MJ-LuxuryHandbag-Flyout-Image.jpg",
+              "image_width": 300,
+              "image_link": "shopify:\/\/collections\/frederque-constant-timepieces",
+              "background_image": false,
+              "collection": "",
+              "collection_title": ""
+            }
+          },
+          "3246b08e-ae36-4a6d-ab4e-de393891073d": {
+            "type": "main_menu_item",
+            "settings": {
+              "label": "Services",
+              "menu_item": "",
+              "submenu": "services",
+              "narrow_menu": false,
+              "diamond_menu": false,
+              "image": "shopify:\/\/shop_images\/serv1.jpg",
+              "image_width": 460,
+              "image_link": "shopify:\/\/collections",
+              "background_image": false,
+              "collection": "",
+              "collection_title": ""
+            }
+          },
+          "6f542fa7-2337-45af-92ae-c5decc6817de": {
+            "type": "main_menu_item",
+            "settings": {
+              "label": "Sale",
+              "menu_item": "shopify:\/\/collections\/sale-items",
+              "submenu": "sale",
+              "narrow_menu": false,
+              "diamond_menu": false,
+              "image_link": "",
+              "background_image": false,
+              "collection": "sale-items",
+              "collection_title": "Popular Items on Sale"
+            }
+          }
+        },
+        "block_order": [
+          "772c14f3-469b-497f-b6a7-69be0f579d80",
+          "046925f2-2e0d-4be1-9ff4-4ba4245e5e31",
+          "7d123897-2609-43dc-8743-66b648b51c0b",
+          "23cf1af0-84d9-4c5b-b950-c21e51ce17fe",
+          "60872664-c1a7-4a9f-bdd9-9ecef48e0f8b",
+          "3246b08e-ae36-4a6d-ab4e-de393891073d",
+          "6f542fa7-2337-45af-92ae-c5decc6817de"
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo_width": 204,
+          "contact_text": "<p>Text or Call <a href=\"tel:phone\" title=\"tel:phone\">[phone]<\/a><\/p>"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "f87a134a-8868-4d58-9daf-7745a4ae0fdb": {
+            "type": "footer_logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-gia.png",
+              "logo_width": 120
+            }
+          },
+          "0fd62f97-77d5-4519-9795-546ddc9c7b06": {
+            "type": "footer_logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Mem_Horiz_color_tag.jpg",
+              "logo_width": 120
+            }
+          },
+          "57e49797-5785-4cb9-899a-9bd9b7d47078": {
+            "type": "footer_logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-pschamber.png",
+              "logo_width": 120
+            }
+          },
+          "23900f48-3d9c-44b6-a097-09aa93c02f6c": {
+            "type": "footer_logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-cbg.png",
+              "logo_width": 90
+            }
+          },
+          "deb517de-3eda-46f0-8d7e-0b71cbab3ce6": {
+            "type": "footer_logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-ijo.png",
+              "logo_width": 110
+            }
+          },
+          "4f85191f-16e5-407c-af79-d90289352ebb": {
+            "type": "footer_logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-fedex.png",
+              "logo_width": 120
+            }
+          },
+          "583dc24f-649b-4953-a736-32f03b026b73": {
+            "type": "footer_logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/seal-compliassure.jpg",
+              "logo_width": 120
+            }
+          }
+        },
+        "block_order": [
+          "f87a134a-8868-4d58-9daf-7745a4ae0fdb",
+          "0fd62f97-77d5-4519-9795-546ddc9c7b06",
+          "57e49797-5785-4cb9-899a-9bd9b7d47078",
+          "23900f48-3d9c-44b6-a097-09aa93c02f6c",
+          "deb517de-3eda-46f0-8d7e-0b71cbab3ce6",
+          "4f85191f-16e5-407c-af79-d90289352ebb",
+          "583dc24f-649b-4953-a736-32f03b026b73"
+        ],
+        "settings": {
+          "footer_text": "<p>We would love to hear from you. Text us anytime day or night <a href=\"tel:+12153627132\" title=\"tel:+12153627132\">(215) 362-7132<\/a><\/p>",
+          "footer_menu": "footer",
+          "social_menu": "social-menu",
+          "subscribe_id": "JA5WrG",
+          "subscribe_endpoint": "https:\/\/manage.kmail-lists.com\/ajax\/subscriptions\/subscribe",
+          "subscribe_image": "shopify:\/\/shop_images\/rainbow-flag.png"
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "text": "<p>Free Shipping On All Orders Over $200 with Coupon Code: <strong>MFREESHIP<\/strong><\/p>",
+          "link": ""
+        }
+      },
+      "customer-testimonials": {
+        "type": "customer-testimonials",
+        "settings": {
+          "title": "What Our Customers Are Saying..."
+        }
+      },
+      "main-collection": {
+        "type": "main-collection",
+        "settings": {
+          "products_per_page": 25,
+          "enable_filtering": true,
+          "enable_sorting": true
+        }
+      },
+      "handbags-collection-header": {
+        "type": "handbags-collection-header",
+        "settings": {
+          "image_1": "shopify:\/\/shop_images\/mj-luxe-slide-desk-1.jpg",
+          "image_1_mobile": "shopify:\/\/shop_images\/mj-luxe-slide-mobile-1.jpg",
+          "image_2": "shopify:\/\/shop_images\/MJ-LUXE-slide-desk-2.webp",
+          "image_2_mobile": "shopify:\/\/shop_images\/MJ-LUXE-slide-mobile-2.webp",
+          "image_3": "shopify:\/\/shop_images\/MJ-LUXE-ecom-pg_slide-desk-3.jpg",
+          "image_3_mobile": "shopify:\/\/shop_images\/MJ-LUXE-slide-mobile-3.webp"
+        }
+      },
+      "permlinked": {
+        "type": "permlinked",
+        "custom_css": [
+          ".faqs {padding-top: 0;}"
+        ],
+        "settings": {
+          "desktop_image": "shopify:\/\/shop_images\/MJ-permanently-linked-besties.jpg",
+          "header_text": "Featuring custom-fitted bracelets and anklets WITHOUT clasps, our new Permanently Linked™ chains are flash welded on in just minutes.",
+          "step_one_text_title": "Choose your person <br> and set a date",
+          "step_one_text": "Getting Permanently Linked&trade; is a fun experience to share with a friend or loved one. Nothing conveys your bond quite like this!",
+          "step_two_text_title": "Pick your chain <br> style and length",
+          "step_two_text": "Each of our 14K Gold and Sterling Silver Permanently Linked&trade; chain styles are sold by the inch and are priced according to chains’ thickness and metal type.",
+          "step_three_text_title": "Get Permanently <br> Linked™ at Marks!",
+          "step_three_text": "Appointments are fun! The process takes about a half hour for 1-3 people, and a little longer for larger groups <br>(the more the merrier)."
+        }
+      },
+      "vwo": {
+        "type": "vwo",
+        "settings": {
+          "enable_vwo": false,
+          "vwo_account_id": "522630"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "319724205969189013": {
+        "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "9144908965052497053": {
+        "type": "shopify:\/\/apps\/related-products-also-bought\/blocks\/app-embed\/75cf2d86-3988-45e7-8f28-ada23c99704f",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "3720565183479497137": {
+        "type": "shopify:\/\/apps\/globo-product-options-variant\/blocks\/app-embed-block\/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  }
+}

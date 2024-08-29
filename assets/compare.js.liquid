@@ -1,0 +1,25 @@
+// document.addEventListener('click', event => {
+//     if(!event.target.closest('#compareButton')) return;
+//     const products = document.querySelectorAll('li.grid__item .card');
+//     const comparedProducts = [];
+//     for(let i = 0; i < products.length; i++) {
+//         const product = products[i];
+//         const compareBox = product.querySelector('[name="compare-check"]');
+//         if ( compareBox.checked ) {
+//             comparedProducts.push(compareBox.value)
+        
+//         }
+//     } 
+//     for(let j = 0; j < comparedProducts.length; j++) {
+//         var cartContents = fetch(`/products/${comparedProducts[j]}.json`)
+//         .then(response => response.json())
+//         .then(data => { 
+//             console.log(data);
+
+
+
+//             return data; 
+//         });
+//     }
+//     const compareModal = `<div id="compareModalWrap"></div>`
+// })

@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "8179a4a7-e859-4d57-881d-7e5e76e5885f": {
+      "type": "content-copy-block-background",
+      "settings": {
+        "marks_logo": true,
+        "heading_color": "",
+        "heading_desktop_size": 40,
+        "heading_mobile_size": 30,
+        "bg_color": "#efefef",
+        "bg_image": "shopify:\/\/shop_images\/awesome_bg_4335ca82-e4d8-4a15-b1b3-4df65edbc586.jpg",
+        "bg_tablet_position": "",
+        "bg_image_alignment": "center center",
+        "content_alignment": "center",
+        "text_color": "",
+        "section_header": "<p>Thank you for connecting with Marks Jewelers!<\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "",
+        "inline_image_alignment": "center",
+        "section_cta_header": "",
+        "section_cta_sub_header": "",
+        "section_cta_paragraph": "",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "100",
+        "section_inner_spacing_bottom": "100",
+        "section_content_text_align": "center",
+        "section_max_width": 500
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8179a4a7-e859-4d57-881d-7e5e76e5885f"
+  ]
+}

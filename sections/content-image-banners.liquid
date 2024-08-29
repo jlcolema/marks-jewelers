@@ -1,0 +1,266 @@
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --heading-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.heading_desktop_size != blank -%}
+    --heading-font-size-desktop: {% render 'to-rem', n: section.settings.heading_desktop_size %};
+  {%- endif -%}
+  {%- if section.settings.heading_mobile_size != blank -%}
+    --heading-font-size-mobile: {% render 'to-rem', n: section.settings.heading_mobile_size %};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_text_color != blank -%}
+  --cta-text-color: {{ section.settings.section_cta_text_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_bg_color != blank -%}
+    --cta-bg-color: {{ section.settings.section_cta_bg_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_color != blank -%}
+    --cta-border-color: {{ section.settings.section_cta_border_color }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_width != blank -%}
+    --cta-border-width: {{ section.settings.section_cta_border_width }}px;
+  {%- endif -%}
+  {%- if section.settings.section_cta_text_color_two != blank -%}
+    --cta-text-color-two: {{ section.settings.section_cta_text_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_bg_color_two != blank -%}
+    --cta-bg-color-two: {{ section.settings.section_cta_bg_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_color_two != blank -%}
+    --cta-border-color-two: {{ section.settings.section_cta_border_color_two }};
+  {%- endif -%}
+  {%- if section.settings.section_cta_border_width_two != blank -%}
+    --cta-border-width-two: {{ section.settings.section_cta_border_width_two }}px;
+  {%- endif -%}
+  {%- if section.settings.section_content_text_align != blank -%}
+    --text-alignment: {{ section.settings.section_content_text_align }};
+  {%- endif -%}
+  {%- if section.settings.section_content_img_align != blank -%}
+    --img-alignment: {{ section.settings.section_content_img_align }};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_top != blank -%}
+    --section-spacing-top: {% render 'to-rem', n: section.settings.section_spacing_top %};
+  {%- endif -%}
+  {%- if section.settings.section_spacing_bottom != blank -%}
+    --section-spacing-bottom: {% render 'to-rem', n: section.settings.section_spacing_bottom %};
+  {%- endif -%}
+  {%- if section.settings.section_max_width != blank -%}
+    --section-width: {{ section.settings.section_max_width }}px;
+  {%- else -%}
+    --section-width: 100%;
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-content-image-banners.css' | asset_url | stylesheet_tag }}
+
+<div class="container section__banner--container" style="{{ styling }}">
+  {%- if section.settings.section_header != blank -%}
+    <h2 class="section__banner--content-heading">{{ section.settings.section_header }}</h2>
+  {%- endif -%}
+  {% if section.settings.section_image_mobile != blank %}
+    <picture>
+      <source srcset="{{ section.settings.section_image_mobile | image_url }}" media="(max-width: 767px)">
+      <source srcset="{{ section.settings.section_image | image_url }}" media="(min-width: 768px)">
+      {% render 'img', img: section.settings.section_image, alt: section.settings.section_image_alt_text %}
+    </picture>
+  {% else %}
+    {% render 'img', img: section.settings.section_image, width: section.settings.section_image.width, height: section.settings.section_image.height, loading: 'lazy', alt: section.settings.section_image_alt_text %}
+  {% endif %}
+  <div class="content__cta-container">
+    {% if section.settings.section_cta_text != blank and section.settings.section_cta_url != blank %}
+      <a class="content__cta btn" href="{{ section.settings.section_cta_url }}">{{ section.settings.section_cta_text }}</a>
+    {% endif %}
+    {% if section.settings.section_cta_or_text == true %}
+      <span class="text-uppercase margin-x-sm">or</span>
+    {% endif %}
+    {% if section.settings.section_cta_text_two != blank and section.settings.section_cta_url_two != blank %}
+      <a class="content__cta-two btn" href="{{ section.settings.section_cta_url_two }}">{{ section.settings.section_cta_text_two }}</a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image Banner Block",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "section_image",
+      "type": "image_picker",
+      "label": "Select image"
+    },
+    {
+      "id": "section_image_mobile",
+      "type": "image_picker",
+      "label": "Different image for mobile?"
+    },
+    {
+      "id": "section_image_alt_text",
+      "type": "text",
+      "label": "Image alt text"
+    },
+    {
+      "id": "heading_desktop_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size desktop"
+    },
+    {
+      "id": "heading_mobile_size",
+      "type": "range",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "label": "Heading font size mobile"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "section_header",
+      "type": "richtext",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_cta_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "section_cta_url",
+      "type": "url",
+      "label": "Button URL"
+    },
+    {
+      "id": "section_cta_text_color",
+      "type": "color",
+      "label": "Button Text Color"
+    },
+    {
+      "id": "section_cta_bg_color",
+      "type": "color",
+      "label": "Button Background Color"
+    },
+    {
+      "id": "section_cta_border_color",
+      "type": "color",
+      "label": "Button Border Color"
+    },
+    {
+      "id": "section_cta_border_width",
+      "type": "range",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "label": "Button Border Width"
+    },
+    {
+      "id": "section_cta_text_two",
+      "type": "text",
+      "label": "Second Button Text"
+    },
+    {
+      "id": "section_cta_url_two",
+      "type": "url",
+      "label": "Second Button URL"
+    },
+    {
+      "id": "section_cta_text_color_two",
+      "type": "color",
+      "label": "Second Button Text Color"
+    },
+    {
+      "id": "section_cta_bg_color_two",
+      "type": "color",
+      "label": "Second Button Background Color"
+    },
+    {
+      "id": "section_cta_border_color_two",
+      "type": "color",
+      "label": "Second Button Border Color"
+    },
+    {
+      "id": "section_cta_border_width_two",
+      "type": "range",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "label": "Second Button Border Width"
+    },
+    {
+      "id": "section_cta_or_text",
+      "type": "checkbox",
+      "label": "Check if you would like 'OR' between the CTA's"
+    },
+    {
+      "id": "section_content_text_align",
+      "type": "select",
+      "label": "Image Alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "id": "section_spacing_top",
+      "type": "text",
+      "label": "Section Top Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_spacing_bottom",
+      "type": "text",
+      "label": "Section Bottom Spacing",
+      "info": "px"
+    },
+    {
+      "id": "section_content_img_align",
+      "type": "select",
+      "label": "Image Alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-start",
+          "label": "Left"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "id": "section_max_width",
+      "type": "number",
+      "label": "Max width (in pixels)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Banner Block"
+    }
+  ]
+}
+{% endschema %}

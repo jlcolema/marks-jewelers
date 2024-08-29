@@ -1,0 +1,42 @@
+
+.klaviyo-form.klaviyo-form.klaviyo-form {
+  div[aria-labelledby*="kl_interested%20in%20the%20following%20custom%20jewelry"] {
+    width: 380px;
+    max-width: 100%;
+
+    label {
+      display: block !important;
+      background: #F8F8F8;
+      margin-bottom: 20px;
+      padding: 25px 20px !important;
+      text-align: center;
+      border: 1px solid #7D7D7D;
+      border-radius: 3px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      div {
+        text-align: center;
+        display: block !important;
+        font-size: 15px !important;
+        line-height: 18px;
+        margin-right: 0 !important;
+      }
+
+      svg {
+        display: none !important;
+      }
+    }
+
+    input[type=checkbox]:checked + label {
+      border: 2px solid #000000;
+      padding: 23px 20px !important;
+
+      >svg {
+        display: none !important;
+      }
+    }
+  }
+}

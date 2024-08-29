@@ -1,0 +1,412 @@
+<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="{{ 'jewlvision.js' | asset_url }}" async></script>
+
+{{ 'section-jewlvision-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-home-shop-with-confidence.css' | asset_url | stylesheet_tag }}
+
+<div class="page container" data-component="jewlvision-modal">
+  <div class="hero__row">
+    <div class="hero__col hero__img">
+      <img loading="lazy" width="10" height="10" src="{{ 'MJ-JewlVision-Page2-Hero.jpg' | asset_url }}"
+           alt="Hero Image">
+    </div>
+    <div class="hero__col hero__content">
+      <h1>JEWL<strong>VISION<sup>TM</sup></strong></h1>
+      <p>The design possibilities are endless</p>
+      <p>Whether you have an original idea or you want to combine elements from multiple pieces, JEWLVISIONTM by Marks
+        Jewelers is the way to make your unique engagement ring vision a reality.</p>
+      <a class="btn btn--primary get-started">GET STARTED</a>
+    </div>
+  </div>
+  <div class="subHero__row">
+    {% render 'value-prop-banner' %}
+  </div>
+  <div class="processCarousel__row">
+    <div class="container">
+      <svg class="icon icon--logomark logomark" viewBox="0 0 168.37 176.69" aria-hidden="true" focusable="false">
+        <path
+          d="M160.43,73.54V44.31l-5.65-3.26L153,30.87l-43.52-16L84.19.31,78.55,3.56,68.83,0,33.27,29.69,7.94,44.31v6.53L0,57.47l7.94,45.68v29.16l5.64,3.25,1.78,10.26L59.23,161.9l25,14.41,5.56-3.21,9.79,3.59,35.82-29.92,25.07-14.46v-6.46l7.94-6.63ZM7.94,88.49l-5.22-30,5.22-4.36ZM69.33,2.86,75.72,5.2,46,22.37ZM17.58,144l-1.17-6.77,30.11,17.38ZM99,173.83l-6.45-2.37,30.09-17.37Zm32.28-43.52H117.11v-69h-.48l-34.53,69H79.2L44.25,61.8h-1v68.51h-6.2V46.07H51.5l32.78,64.65h.66l32.17-64.65h14.21ZM122.2,22.24l28.59,10.49L152,39.41Zm38.23,66,5.22,30-5.22,4.36Z"></path>
+      </svg>
+      <h1>The JEWL<strong>VISION<sup>TM</sup></strong> process is easier than you think</h1>
+      <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active">1. Discuss Your Ideas</li>
+          <li data-target="#myCarousel" data-slide-to="1">2. Meet with Designer</li>
+          <li data-target="#myCarousel" data-slide-to="2">3. Custom Jewelry Build</li>
+          <li data-target="#myCarousel" data-slide-to="3">4. Reveal Day</li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img loading="lazy" width="10" height="10"
+                 src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/JewlVision%20Page%202/MJ-JewlVision-Step1.jpg"
+                 alt="Step One" style="width:100%;">
+            <h4>1. Be Inspired, Get Creative</h4>
+            <p>Prioritize your ring design inspirations by perusing our 15,000 sq ft showroom in person or browse
+              online. Collaborate with a <strong>JEWLVISION</strong> Designer to formulate and solidify your concept and
+              budget.</p>
+            <div class="carousel__additionalInfo">
+              <p><strong>TIMING:</strong> 1-2 Hour consult (in store or on phone)</p>
+              <p><strong>CHARGE:</strong> FREE Consultation</p>
+              <p><strong>WE DELIVER:</strong> Hand Sketches, Gem Layout, Quote (Good for 30 Days)</p>
+            </div>
+            <a class="btn btn--primary get-started">GET STARTED</a>
+          </div>
+          <div class="item">
+            <img loading="lazy" width="10" height="10"
+                 src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/JewlVision%20Page%202/MJ-JewlVision-Step2.jpg"
+                 alt="Step Two" style="width:100%;">
+            <h4>2. Collaborate, Try on For Size</h4>
+            <p>Meet with your personal <strong>JEWLVISION</strong> Designer to try on your 3-D printed model and view
+              3-D renderings of your design. Evaluate your design from every angle to ensure it is exactly what you
+              originally envisioned.</p>
+            <div class="carousel__additionalInfo">
+              <p><strong>TIMING:</strong> 1-2 Weeks after initial visit</p>
+              <p><strong>CHARGE:</strong> $324 design depost*</p>
+              <p><strong>WE DELIVER:</strong> 3-D Printed Model, 3-D Renderings</p>
+            </div>
+            <a class="btn btn--primary get-started">GET STARTED</a>
+          </div>
+          <div class="item">
+            <img loading="lazy" width="10" height="10"
+                 src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/JewlVision%20Page%202/MJ-JewlVision-Step3.jpg"
+                 alt="Step Three" style="width:100%;">
+            <h4>3. Develop and Take Form</h4>
+            <p>Let your excitement build as we delicately and meticulously create your own personal masterpiece. In a
+              matter of weeks, your customized engagement ring will be cast, assembled, mounted, polished, and appraised
+              for final delivery.</p>
+            <div class="carousel__additionalInfo">
+              <p><strong>TIMING:</strong> 3-4 Weeks</p>
+              <p><strong>CHARGE:</strong> Remaining balance</p>
+              <p><strong>WE DELIVER:</strong> Finished Ring. The Marks Promise</p>
+            </div>
+            <a class="btn btn--primary get-started">GET STARTED</a>
+          </div>
+          <div class="item">
+            <img loading="lazy" width="10" height="10"
+                 src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/JewlVision%20Page%202/MJ-JewlVision-Step4.jpg"
+                 alt="Step Four" style="width: 100%;">
+            <h4>4. Unwrap and Share</h4>
+            <p>Present your masterpiece by <strong>JEWLVISION</strong> with pride! You’ve just created a one-of-a-kind
+              engagement ring that the world has never seen before. Wear it with love. Show it off to the world. Share
+              it!</p>
+            <div class="carousel__socialIcons"></div>
+            <a class="btn btn--primary last-margin get-started">GET STARTED</a>
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left">
+            <img loading="lazy" width="10" height="10"
+                 style="transform: rotate(180deg) translateY(50%)"
+                 src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Homepage-2021/Image%20Assets/Icons/SVGS/MJ-Chevron-Right.svg"
+                 alt="Right Arrow">
+          </span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right">
+            <img loading="lazy" width="10" height="10"
+                 src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Homepage-2021/Image%20Assets/Icons/SVGS/MJ-Chevron-Right.svg"
+                 alt="Right Arrow">
+          </span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="marksPromise__row">
+    <svg class="icon icon--logomark logomark" viewBox="0 0 168.37 176.69" aria-hidden="true" focusable="false">
+      <path
+        d="M160.43,73.54V44.31l-5.65-3.26L153,30.87l-43.52-16L84.19.31,78.55,3.56,68.83,0,33.27,29.69,7.94,44.31v6.53L0,57.47l7.94,45.68v29.16l5.64,3.25,1.78,10.26L59.23,161.9l25,14.41,5.56-3.21,9.79,3.59,35.82-29.92,25.07-14.46v-6.46l7.94-6.63ZM7.94,88.49l-5.22-30,5.22-4.36ZM69.33,2.86,75.72,5.2,46,22.37ZM17.58,144l-1.17-6.77,30.11,17.38ZM99,173.83l-6.45-2.37,30.09-17.37Zm32.28-43.52H117.11v-69h-.48l-34.53,69H79.2L44.25,61.8h-1v68.51h-6.2V46.07H51.5l32.78,64.65h.66l32.17-64.65h14.21ZM122.2,22.24l28.59,10.49L152,39.41Zm38.23,66,5.22,30-5.22,4.36Z"></path>
+    </svg>
+    <h2>The Marks Promise</h2>
+    <p>No other jeweler in the industry promises what we do. Jewelry is meant to be worn. It becomes a part of you going
+      down all of life’s bumpy paths. We will stand by your bridal jewelry with cleanings, inspections, and even repairs
+      due to normal wear - at no cost to you.</p>
+    <a href="/pages/usp">Learn More About the Marks Promise
+      <img loading="lazy" width="10" height="10"
+           src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/MJ-Right-Arrow.svg"
+           alt="Right Arrow">
+    </a>
+  </div>
+  <img loading="lazy" width="10" height="10" class="loveGrowsHere__banner"
+       src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/JewlVision%20Page%202/MJ-LoveGrowsHere-Banner.png"
+       alt="Love Grows Here">
+  <div class="contactInfo__row">
+    <div class="contactInfo__titleContent">
+      <h2>Your custom jewelry reimagined</h2>
+      <p>Ready to design with us? Chat with a designer today or schedule a free design consultation.</p>
+    </div>
+    <div class="contactInfo__card">
+      <h2>Have Design Questions?</h2>
+      <p>Our JEWLVISION Design experts are available 24/7. Chat with one of our experts today</p>
+      <a class="btn btn--primary" onclick="window.PodiumWebChat.open()">
+        <img loading="lazy" width="10" height="10"
+             src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/MJ-Chat-Icon.svg"
+             alt="Chat Icon">
+        CHAT WITH A DESIGNER
+      </a>
+      <img loading="lazy" width="10" height="10"
+           src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/JewlVision%20Page%202/MJ-LiveChat-Image.jpg"
+           alt="Live Chat Image">
+    </div>
+    <div class="contactInfo__card"
+         style="background-image: url('https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/JewlVision%20Page%202/MJ-FreeConsultation-Image.jpg')">
+      <h2>Free Design Consultation</h2>
+      <p>Schedule your free consultation today. Use the scheduling below or call to request an appointment</p>
+      <a href="/pages/contact" class="btn btn--primary">
+        <img loading="lazy" width="10" height="10"
+             src="https://storage.googleapis.com/images.trinity.one/MarksJewelers/MJ-Shopify-Project-2022/JewlVision/MJ-Schedule-Icon.svg"
+             alt="Schedule Icon">
+        SCHEDULE NOW
+      </a>
+      <p><strong>CALL</strong> (215) 362-7132</p>
+      <p class="contactInfo__mobileTrigger">STORE HOURS <span class="down-angle"></span></p>
+      <div class="contactInfo__consultHours">
+        <ul>
+          <li><strong>Normal Hours of Operation</strong> (EST)</li>
+          <li><strong>Monday:</strong> Closed</li>
+          <li><strong>Tuesday:</strong> 11:00 AM to 5:00 PM</li>
+          <li><strong>Wednesday:</strong> 11:00 AM to 8:00 PM</li>
+          <li><strong>Thursday:</strong> 11:00 AM to 8:00 PM</li>
+          <li><strong>Friday:</strong> 11:00 AM to 6:00 PM</li>
+          <li><strong>Saturday:</strong> 10:00 AM to 5:00 PM</li>
+          <li><strong>Sunday:</strong> Closed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="faq__row">
+    <h2>Frequently asked questions</h2>
+    <ul class="faq__list">
+      <li>
+        <p class="faq__toggle">
+          Is custom more expensive than ready-made jewelry?
+        </p>
+        <p class="faq__answer">
+          Doing all of our work in-house, allows us to control costs and craft you an exquisite piece of jewelry at a
+          fair price. Pricing is based on design complexity, metal, and gemstones. Quotes are 100% free.</p>
+      </li>
+      <li>
+        <p class="faq__toggle">
+          How long does it take to complete a custom project?
+        </p>
+        <p class="faq__answer">
+          The time it takes to finish a custom project can vary greatly, with a turnaround time of 4-6 weeks for a
+          standard design and 6-8 weeks for a more complex model. Let us know if there is an important event on the
+          horizon and we will do our best to accommodate you! </p>
+      </li>
+      <li>
+        <p class="faq__toggle">
+          Can I recycle my old gold into my new custom piece?
+        </p>
+        <p class="faq__answer">
+          We can absolutely recycle heirloom gemstones into your new jewelry, it’s what we excel at! Recycling “used”
+          gold for a new casting frequently creates pieces with blemishes and pitting that affects the finish and
+          strength of the piece. We only use refined casting grain so we can be confident that your jewelry will
+          withstand the test of time. Old metal can be scrapped and credited towards the cost of your custom piece. </p>
+      </li>
+      <li>
+        <p class="faq__toggle">
+          Does my custom jewelry come with an appraisal?
+        </p>
+        <p class="faq__answer">
+          Yes. Every custom piece of jewelry comes with an insurance replacement document, completed by one of our
+          GIA-trained graduate gemologists. </p>
+      </li>
+      <li>
+        <p class="faq__toggle">
+          Do you offer a warranty?
+        </p>
+        <p class="faq__answer">
+          No other jeweler in the industry promises what we do. Jewelry is meant to be worn. It becomes a part of you
+          going down all of life’s bumpy paths. We will stand by your bridal jewelry with cleanings, inspections, and
+          even repairs due to normal wear - at no cost to you.
+        </p>
+      </li>
+    </ul>
+  </div>
+  <section id="shopify-section-template--15913924559070__1642523869a3f46738" class="shopify-section">
+    <div class="section__confidence"
+         style="--confidence-bg-color: #efefef;--confidence-cta-text-color: #ffffff;--confidence-cta-bg-color: #000000;">
+      <h2 class="home-section-heading">Shop with Confidence</h2>
+      <div class="confidence-prop__item-row">
+        <div class="confidence-prop__item">
+          <div class="confidence-prop__item-image">
+            <svg class="icon icon--warranty " viewBox="0 0 108.77 124.69" aria-hidden="true" focusable="false">
+              <defs>
+                <style>
+                  .icon--warranty .cls-1 {
+                    fill: none;
+                    stroke: #a07282;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 2.88px;
+                  }
+
+                  .icon--warranty .cls-2, .icon--warranty .cls-3 {
+                    fill: #231f20;
+                  }
+
+                  .icon--warranty .cls-3 {
+                    font-size: 13.58px;
+                    font-family: NunitoSans-Bold, Nunito Sans;
+                    font-weight: 700;
+                    letter-spacing: 0.02em;
+                  }
+
+                  .icon--warranty .cls-4 {
+                    letter-spacing: 0em;
+                  }
+
+                  .icon--warranty .cls-5 {
+                    letter-spacing: 0.02em;
+                  }
+                </style>
+              </defs>
+              <g data-name="Layer 2">
+                <g data-name="Layer 1">
+                  <path class="cls-1"
+                        d="m107.32 92.45-.39-60.9L53.99 1.44 1.44 32.23l.4 60.91 52.94 30.11 52.54-30.8z"></path>
+                  <path class="cls-2"
+                        d="M30.32 76.5V32.65h7.04l17.69 32.54 16.09-32.54h7.31V76.5h-7.43V40.52L53.15 76.61 33.13 40.63v35.98l-2.81-.11z"></path>
+                  <text class="cls-3" transform="translate(30.37 94.03)">BRI
+                    <tspan class="cls-4" x="23.35" y="0">D</tspan>
+                    <tspan class="cls-5" x="33.62" y="0">AL</tspan>
+                  </text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="confidence-prop__item-info">
+            <p class="confidence-prop__item-info-text">Lifetime <br>Warranty</p>
+          </div>
+        </div>
+        <div class="confidence-prop__item">
+          <div class="confidence-prop__item-image">
+            <svg class="icon icon--diamond-circle " viewBox="0 0 103.47 120.2" aria-hidden="true" focusable="false">
+              <defs>
+                <style>
+                  .icon--diamond-circle .cls-1, .icon--diamond-circle .cls-2 {
+                    fill: none;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                  }
+
+                  .icon--diamond-circle .cls-1 {
+                    stroke: #000;
+                    stroke-width: 2.58px;
+                  }
+
+                  .icon--diamond-circle .cls-2 {
+                    stroke: #a07282;
+                    stroke-width: 2.88px;
+                  }
+                </style>
+              </defs>
+              <g data-name="Layer 2">
+                <g data-name="Layer 1">
+                  <path class="cls-1"
+                        d="M69.99 46.83H33.48L14.36 69.37l37.8 37.27 36.96-37.27-19.13-22.54zM14.35 69.37h74.77"></path>
+                  <path class="cls-1" d="M69.99 69.37 51.32 46.83 33.48 69.37l18.68 37.27 17.83-37.27z"></path>
+                  <path class="cls-2" d="M59.12 35.18 42.25 18.31 59.12 1.44"></path>
+                  <path class="cls-2" d="M1.44 68.46a50.3 50.3 0 1 0 50.3-50.29h-9.49"></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="confidence-prop__item-info">
+            <p class="confidence-prop__item-info-text">30 Day <br>Returns</p>
+          </div>
+        </div>
+        <div class="confidence-prop__item">
+          <div class="confidence-prop__item-image">
+            <svg class="icon icon--diamond-upgrade " viewBox="0 0 130.36 103.92" aria-hidden="true" focusable="false">
+              <defs>
+                <style>
+                  .icon--diamond-upgrade .cls-1, .icon--diamond-upgrade .cls-2 {
+                    fill: none;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                  }
+
+                  .icon--diamond-upgrade .cls-1 {
+                    stroke: #000;
+                    stroke-width: 2.58px;
+                  }
+
+                  .icon--diamond-upgrade .cls-2 {
+                    stroke: #a07282;
+                    stroke-width: 2.88px;
+                  }
+                </style>
+              </defs>
+              <g data-name="Layer 2">
+                <g data-name="Layer 1">
+                  <path class="cls-1"
+                        d="M83.37 43.36H47.46L27.91 65.72l37.94 36.91 37.12-36.88-19.6-22.39zM62.36 1.29H49.35M82.87 1.29H70.65M101.87 7.77l-5.49-6.48h-6.59M117.17 26.25l-7.84-9.61M122.64 46.2l6.43-6.38-4.92-5.79M109.52 59.24l6.99-6.94"></path>
+                  <path class="cls-1"
+                        d="m28.82 66.6 37.03 36.03 37.12-36.88M13.29 51.49l7.52 7.32M6.73 33.41l-5.44 6.41 6.47 6.29M22.66 14.63l-10.6 12.5M41.64 1.29h-7.66l-5.81 6.84M28.65 65.53h73.53"></path>
+                  <path class="cls-1" d="M83.37 65.53 65 43.36 47.46 65.53l18.39 37.1 17.52-37.1z"></path>
+                  <path class="cls-2"
+                        d="m84.97 35.54 8.61-26.98M86.47 12.75l7.11-4.19 3.14 6.74M46.7 37.09l-7.17-27.4M35.76 17.04l3.77-7.35 6.26 4.01"></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="confidence-prop__item-info">
+            <p class="confidence-prop__item-info-text">100% <br>Upgrade <br>Policy</p>
+          </div>
+        </div>
+        <div class="confidence-prop__item">
+          <div class="confidence-prop__item-image">
+            <svg class="icon icon--money-bag " viewBox="0 0 82.55 120.91" aria-hidden="true" focusable="false">
+              <defs>
+                <style>
+                  .icon--money-bag .cls-1 {
+                    fill: #231f20;
+                  }
+
+                  .icon--money-bag .cls-2 {
+                    fill: none;
+                    stroke: #9f7281;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 2.88px;
+                  }
+                </style>
+              </defs>
+              <g data-name="Layer 2">
+                <g data-name="Layer 1">
+                  <path class="cls-1"
+                        d="M52.77 93.74a15.4 15.4 0 0 1-8.23 3.79 1.74 1.74 0 0 0-1.45 1.72V103a1.75 1.75 0 0 1-1.75 1.75h-.13a1.76 1.76 0 0 1-1.75-1.75v-3.6a1.74 1.74 0 0 0-1.55-1.73A24.05 24.05 0 0 1 31.24 96a21.54 21.54 0 0 1-5.65-3.37 1.78 1.78 0 0 1-.44-2.19v-.08a1.77 1.77 0 0 1 2.62-.56 22.52 22.52 0 0 0 5.31 3.09 20.66 20.66 0 0 0 7.64 1.36c3.67 0 6.51-.79 8.54-2.37a8 8 0 0 0 3.05-6.7 5.52 5.52 0 0 0-1.56-4.08A10.48 10.48 0 0 0 47 78.75a65.27 65.27 0 0 0-6.34-1.88 63.7 63.7 0 0 1-7.93-2.43 12.79 12.79 0 0 1-5.12-3.69 10 10 0 0 1-2.1-6.7 11.69 11.69 0 0 1 1.75-6.31 12.65 12.65 0 0 1 4.95-4.53A17 17 0 0 1 38 51.38a1.75 1.75 0 0 0 1.5-1.73V46a1.75 1.75 0 0 1 1.75-1.75h.06A1.75 1.75 0 0 1 43 46v3.69a1.73 1.73 0 0 0 1.47 1.72 21.55 21.55 0 0 1 5.72 1.68 20.26 20.26 0 0 1 4.84 3.06 1.76 1.76 0 0 1 .42 2.17 1.75 1.75 0 0 1-2.68.51A18.14 18.14 0 0 0 41 54.73q-5.31 0-8.39 2.49a8.31 8.31 0 0 0-3.07 6.83 6.54 6.54 0 0 0 1.68 4.69 10.59 10.59 0 0 0 4.14 2.69 64.15 64.15 0 0 0 6.67 1.94 61.83 61.83 0 0 1 7.58 2.3 12.29 12.29 0 0 1 4.82 3.43 9.18 9.18 0 0 1 2 6.19 11.08 11.08 0 0 1-3.66 8.45Z"></path>
+                  <path class="cls-2"
+                        d="M68.52 119.47H14a12.59 12.59 0 0 1-12.49-13.89l5.32-46.13a34.29 34.29 0 0 1 34.45-30.64 34.29 34.29 0 0 1 34.44 30.64L81 105.58a12.59 12.59 0 0 1-12.48 13.89ZM31.56 22.73 19.06 1.44h44.43L51.15 22.46"></path>
+                  <path class="cls-2"
+                        d="M53.09 30.23V26.4a3.92 3.92 0 0 0-3-3.79h-.17a35.79 35.79 0 0 0-17.57 0 3.92 3.92 0 0 0-2.94 3.79v4.2"></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="confidence-prop__item-info">
+            <p class="confidence-prop__item-info-text">Flexible <br>Financing</p>
+          </div>
+        </div>
+      </div>
+      <a class="confidence__cta btn" href="/pages/usp">Learn More</a>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "JewlVision Inner Page",
+  "tag": "section",
+  "settings": [
+
+  ]
+}
+{% endschema %}

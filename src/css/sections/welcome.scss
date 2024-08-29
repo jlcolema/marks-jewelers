@@ -1,0 +1,19 @@
+// ==========================================================================
+// SECTION: WELCOME
+// ==========================================================================
+
+.welcome {
+  --flex-min: 16rem;
+}
+
+.welcome__content {
+  margin-bottom: var(--space-lg);
+
+  @media (--md) {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+.welcome__card {
+  flex: 1 1 var(--flex-min);
+}

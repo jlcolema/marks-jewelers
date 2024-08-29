@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1648948445603486dc": {
+      "type": "tour",
+      "blocks": {
+        "5482a325-12d4-4ced-8121-dad80c703df1": {
+          "type": "area",
+          "settings": {
+            "tour_location": "JEWLVISION",
+            "tour_iframe": "https:\/\/360player.io\/p\/qdZHtL\/"
+          }
+        },
+        "5464a99e-2c1f-449f-85b5-e9383591647e": {
+          "type": "area",
+          "settings": {
+            "tour_location": "Diamond Diner",
+            "tour_iframe": "https:\/\/360player.io\/p\/Qg7WvM\/"
+          }
+        },
+        "12d75a1a-4034-4fb9-8a54-ca1dee656e97": {
+          "type": "area",
+          "settings": {
+            "tour_location": "Fashion Lounge",
+            "tour_iframe": "https://360player.io/p/hXQttX/"
+          }
+        },
+        "90c6a8f1-c79a-4be7-b458-b9b4bf3d561d": {
+          "type": "area",
+          "settings": {
+            "tour_location": "Timepiece Terrace",
+            "tour_iframe": "https:\/\/360player.io\/p\/tDKHsH\/"
+          }
+        }
+      },
+      "block_order": [
+        "5482a325-12d4-4ced-8121-dad80c703df1",
+        "5464a99e-2c1f-449f-85b5-e9383591647e",
+        "12d75a1a-4034-4fb9-8a54-ca1dee656e97",
+        "90c6a8f1-c79a-4be7-b458-b9b4bf3d561d"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1648948445603486dc"
+  ]
+}

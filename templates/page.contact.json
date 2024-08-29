@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16505938442668f6af": {
+      "type": "contact-info-block",
+      "settings": {
+        "call_header": "<p>Call Us<\/p>",
+        "call_sub_header": "<p>Need assistance? Have a question? We love to chat give us a call <a href=\"tel:12153627132\" title=\"tel:12153627132\"><strong>(215) 362-7132<\/strong><\/a><\/p>",
+        "call_para": "<p>Hours of Operation (<strong>Eastern Standard Time<\/strong>):<\/p><p>• Monday: Closed<br\/>• Tuesday: 11:00 AM to 5:00 PM<br\/>• Wednesday: 11:00 AM to 8:00 PM<br\/>• Thursday: 11:00 AM to 8:00 PM<br\/>• Friday: 11:00 AM to 6:00 PM<br\/>• Saturday: 10:00 AM to 5:00 PM<br\/>• Sunday: Closed<\/p>",
+        "mail_header": "<p>Mail Us<\/p>",
+        "mail_para": "<p>Customers who chose to make a Payment with a Check or Money Order, please mail your balance amount to the following Address:<\/p><p>Marks Inc.<br\/>975 Bethlehem Pike<br\/>Montgomeryville, PA 18936<\/p>",
+        "email_header": "<p>Email Us<\/p>",
+        "email_para": "<p>We will do our best to respond to your message as soon as possible. We look forward to hearing from you.<\/p>",
+        "contact_form_list": "JeJHw6",
+        "chat_header": "<p>Text Us<\/p>",
+        "section_chat_cta": "Chat Us",
+        "chat_para": "<p>Text us anytime, day or night<a href=\"tel:12153627132\" title=\"tel:12153627132\"><strong>(215) 362-7132<\/strong><\/a><\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16505938442668f6af"
+  ]
+}

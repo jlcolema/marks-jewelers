@@ -1,0 +1,8 @@
+<form style="background-color: #FFF;" action="{{ routes.search_url }}" method="get" role="search" class="expandable-search js-expandable-search" data-component="expandable-search">
+  <label class="sr-only" for="expandable-search">{{ 'general.search.search' | t }}</label>
+  <input style="z-index: 1000;background-color: transparent;" class="reset expandable-search__input js-expandable-search__input" type="search" name="q" id="expandable-search" placeholder="{{ 'general.search.search' | t }}">
+  <button class="reset expandable-search__btn">
+    {% render 'icon', icon: 'search' %}
+    <span class="sr-only">{{ 'general.search.search' | t }}</span>
+  </button>
+</form>

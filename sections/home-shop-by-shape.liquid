@@ -1,0 +1,119 @@
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --diamond-heading-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --diamond-bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+  {%- if section.settings.diamond_text_color != blank -%}
+    --diamond-text-color: {{ section.settings.diamond_text_color }};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-home-shop-by-shape.css' | asset_url | stylesheet_tag }}
+
+<div class="container">
+  <div class="diamond-shape__header-logo">
+    {% render 'img', img: section.settings.logo, width: 50, height: 55, crop: 'center', loading: 'lazy' %}
+  </div>
+  <h2 class="home-section-heading text-center">{{ section.settings.section_header }}</h2>
+  <div class="text-center margin-bottom-lg section-paragraph">{{ section.settings.section_paragraph }}</div>
+
+  <div class="section__diamond-shape snap-slider__container hidden">
+    <div class="diamond-shape__item-row snap-slider" data-component="snap-slider">
+      {% for block in section.blocks %}
+        <div class="diamond-shape__item snap-slider__item">
+          <a href="{{ block.setting.diamond_shape_link }}">
+            {% if block.setting.diamond_shape_image != '' %}
+              <div class="diamond-shape__item-image">
+                {% render 'img', img: block.settings.diamond_shape_image, width: block.settings.diamond_shape_image.width, height: block.settings.diamond_shape_image.height, crop: 'center', loading: 'lazy' %}
+              </div>
+            {% endif %}
+            <div class="diamond-shape__item-info">
+              {% if block.setting.diamond_shape_text != '' %}
+                <p class="diamond-shape__item-info-text">{{ block.settings.diamond_shape_text }}</p>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    {% render 'snap-slider-arrows' %}
+  </div>
+  <div class="section__diamond-ctas">
+    <a href="/apps/vdb-app/search-filters?structure=new" class="section__diamond-ctas btn">
+      Shop Mined Diamonds
+    </a>
+    <a href="/apps/vdb-app/search-filters?diamondSearchType=Lab_grown_Diamond&structure=new" class="section__diamond-ctas btn">
+      Shop Lab-Grown Diamonds
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Shop by Shape",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "diamond_text_color",
+      "type": "color",
+      "label": "Diamond text color"
+    },
+    {
+      "id": "logo",
+      "type": "image_picker",
+      "label": "Section Logo"
+    },
+    {
+      "id": "section_header",
+      "type": "text",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_paragraph",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "diamond_shape",
+      "name": "Diamond Shape",
+      "settings": [
+        {
+          "id": "diamond_shape_image",
+          "type": "image_picker",
+          "label": "Diamond Image"
+        },
+        {
+          "id": "diamond_shape_text",
+          "type": "text",
+          "label": "Diamond Text"
+        },
+        {
+          "id": "diamond_shape_link",
+          "type": "url",
+          "label": "Diamond Collection URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Shop by Shape"
+    }
+  ]
+}
+{% endschema %}

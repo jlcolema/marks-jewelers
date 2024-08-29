@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-locket-page",
+      "blocks": {
+        "62ca089f-d394-4ffb-9ca5-c1893cd6d5b9": {
+          "type": "product",
+          "settings": {
+            "product_s": "reversible-round-diamond-locket-lc2130",
+            "product_name": "Round",
+            "image": "shopify:\/\/shop_images\/round.png"
+          }
+        },
+        "10237441-e6fc-4f65-bb78-30939e0e0af8": {
+          "type": "product",
+          "settings": {
+            "product_s": "reversible-diamond-heart-locket-lc2134",
+            "product_name": "Heart",
+            "image": "shopify:\/\/shop_images\/heart.png"
+          }
+        },
+        "72addeda-79a9-47e6-a592-48e348b7dead": {
+          "type": "product",
+          "settings": {
+            "product_s": "reversible-oval-diamond-locket-lc2131",
+            "product_name": "Oval",
+            "image": "shopify:\/\/shop_images\/oval.png"
+          }
+        },
+        "e81e8645-ebc8-4f12-936e-760ea7cdeebc": {
+          "type": "product",
+          "settings": {
+            "product_s": "reversible-pear-shaped-locket-lc2132",
+            "product_name": "Pear",
+            "image": "shopify:\/\/shop_images\/pear.png"
+          }
+        },
+        "44998e68-d228-4e67-89af-1192c4575e2c": {
+          "type": "product",
+          "settings": {
+            "product_s": "rose-gold-reversible-diamond-rectangle-locket-lc2133",
+            "product_name": "Rectangle",
+            "image": "shopify:\/\/shop_images\/rectangle.png"
+          }
+        }
+      },
+      "block_order": [
+        "62ca089f-d394-4ffb-9ca5-c1893cd6d5b9",
+        "10237441-e6fc-4f65-bb78-30939e0e0af8",
+        "72addeda-79a9-47e6-a592-48e348b7dead",
+        "e81e8645-ebc8-4f12-936e-760ea7cdeebc",
+        "44998e68-d228-4e67-89af-1192c4575e2c"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-repairs",
+      "settings": {
+        "hero_img": "shopify:\/\/shop_images\/repair_image.webp",
+        "form_id": "iGysDFGdDjOjf2y__RU9Dg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

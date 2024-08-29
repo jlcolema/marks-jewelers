@@ -1,0 +1,18 @@
+<div class="accordion__item js-accordion__item">
+  <p class="footer-nav__heading accordion__header js-accordion__trigger js-tab-focus">
+    <span>{{ menu.title }}</span>
+    {%- render 'icon' icon: 'accordion-arrow', class: 'accordion__icon-arrow no-js:is-hidden hide@sm' -%}
+  </p>
+  <div class="accordion__panel js-accordion__panel">
+    <div class="accordion__panel-content">
+      <nav label="{{ menu.title }}" aria-label="{{ menu.title }}" title="{{ menu.title }}">
+        <ul class="footer-nav__list">
+          {% for link in menu.links %}
+            <li><a href= "{{ link.url }}" aria-label="{{ link.title }} Button">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>

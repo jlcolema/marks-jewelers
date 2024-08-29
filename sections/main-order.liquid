@@ -1,0 +1,127 @@
+<div class="container customer order">
+  <div id="order-main">
+    <a class="modal-close close-x">X</a>
+    <div class="modal-header">
+      <div class="top-line">
+        {%- assign order_date = order.created_at | time_tag: format: "date" -%}
+        <span class="modal-order account-hide-mobile">{{ 'customer.order.title' | t: name: order.name }}</span>
+        <span class="modal-date"><strong>Order Date:</strong> {{ 'customer.order.date_html' | t: date: order_date }}</span>
+      </div>
+      <div class="modal-status">
+        <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
+        {{ order.fulfillment_status_label }}
+      </div>
+    </div>
+    <div class="modal-body">
+      {%- for line_item in order.line_items -%}
+        <div class="modal-card">
+          <div class="modal-image account-hide-mobile">
+            <picture>
+              <source srcset="{{ line_item.image | image_url }}" media="(max-width: 767px)">
+              {% render 'img', img: line_item.image, alt: '', class: 'prod__image' %}
+            </picture>
+          </div>
+          <div class="modal-item">
+            <span class="item-title">
+              {%- if line_item.url != blank -%}
+                <a href="{{ line_item.url }}">{{ line_item.title }}</a>
+               {%- else -%}
+                <p>{{ line_item.title }}</p>
+              {%- endif -%}
+            </span>
+            <span class="item-option">
+              {% unless line_item.product.has_only_default_variant %}
+                {% for option in line_item.options_with_values %}
+                  <span><strong>{{ option.name }}:</strong> {{ option.value }}</span>
+                {% endfor %}
+              {% endunless %}
+            </span>
+          </div>
+          <div class="modal-item-price">{{ line_item.original_price | money }}</div>
+        </div>
+      {%- endfor -%}
+      <div class="modal-body-bot">
+        <div class="modal-contact">
+          <div class="contact-top">
+            <span class="contact-logo">
+              <svg class="icon icon--logomark logomark" viewBox="0 0 168.37 176.69" aria-hidden="true" focusable="false">
+                <path d="M160.43,73.54V44.31l-5.65-3.26L153,30.87l-43.52-16L84.19.31,78.55,3.56,68.83,0,33.27,29.69,7.94,44.31v6.53L0,57.47l7.94,45.68v29.16l5.64,3.25,1.78,10.26L59.23,161.9l25,14.41,5.56-3.21,9.79,3.59,35.82-29.92,25.07-14.46v-6.46l7.94-6.63ZM7.94,88.49l-5.22-30,5.22-4.36ZM69.33,2.86,75.72,5.2,46,22.37ZM17.58,144l-1.17-6.77,30.11,17.38ZM99,173.83l-6.45-2.37,30.09-17.37Zm32.28-43.52H117.11v-69h-.48l-34.53,69H79.2L44.25,61.8h-1v68.51h-6.2V46.07H51.5l32.78,64.65h.66l32.17-64.65h14.21ZM122.2,22.24l28.59,10.49L152,39.41Zm38.23,66,5.22,30-5.22,4.36Z"></path>
+              </svg>
+            </span>
+            <span class="contact-help account-hide-mobile">
+              We are here to help
+            </span>
+          </div>
+          <div class="class-contact-bottom account-hide-mobile">
+            <span class="contact-call">
+              <strong>Call or Text:</strong> <a href="tel:2153627132">(215) 362-7132</a>
+            </span>
+            <span class="contact-email">
+              <strong>Email:</strong> <a href="mailto:service@marksjewelers.com">service@marksjewelers.com</a>
+            </span>
+          </div>
+        </div>
+        <div class="modal-totals">
+          <fieldset>
+            <dl>
+              <dt>{{ 'customer.order.subtotal' | t }}:</dt>
+              <dd>{{ order.line_items_subtotal_price | money }}</dd>
+            </dl>
+            {%- if order.cart_level_discount_applications != blank -%}
+              {%- for discount_application in order.cart_level_discount_applications -%}
+                <dl>
+                  <dt>{{ 'customer.order.discount' | t }}:</dt>
+                  <dd>{{ discount_application.total_allocated_amount | money }}</dd>
+                </dl>
+              {%- endfor -%}
+            {%- endif -%}
+            {%- for shipping_method in order.shipping_methods -%}
+              <dl>
+                <dt>{{ 'customer.order.shipping' | t }}: ({{ shipping_method.title }})</dt>
+                <dd>{{ shipping_method.price | money }}</dd>
+              </dl>
+            {%- endfor -%}
+            <dl class="modal-total">
+              <dt>{{ 'customer.order.total' | t }}:</dt>
+              <dd>{{ order.total_price | money }}</dd>
+            </dl>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="shipping">
+        <h3>{{ 'customer.order.shipping_address' | t }}</h3>
+        {{ order.shipping_address | format_address }}
+      </div>
+      <div class="billing">
+        <h3>{{ 'customer.order.billing_address' | t }}</h3>
+        {{ order.billing_address | format_address }}
+      </div>
+      <div class="payment-info">
+        <h3>{{ 'customer.order.payment' | t }}</h3>
+        <p>
+          <strong>{{ 'customer.order.payment_status' | t }}:</strong>
+          {{ order.financial_status_label }}
+        </p>
+        <p>
+          {%- for transaction in order.transaction -%}
+            {{ transaction.payment_details.credit_card_number }}
+            {{ transaction.name }}
+          {%- endfor -%}
+        </p>
+      </div>
+    </div>
+    <div class="modal-close close-txt account-show-mobile">Close order details</div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Order",
+  "tag": "section",
+  "settings": [
+
+  ]
+}
+{% endschema %}

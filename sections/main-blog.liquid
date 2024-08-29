@@ -1,0 +1,68 @@
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+<div class="blog container">
+  <div class="blog-container-top">
+    <div class="blog-search">
+      <form action="/search" method="get" role="search">
+        <input type="hidden" name="type" value="article" />
+        <div class="input-group--underline">
+          <input class="input-group__field" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search" aria-label="Search">
+          <div class="input-group__btn">
+            <button type="submit" class="btn-clear">
+              <svg class="icon icon--search " viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                <path d="m347 238c0-36-12-66-37-91c-25-25-55-37-91-37c-35 0-65 12-90 37c-25 25-38 55-38 91c0 35 13 65 38 90c25 25 55 38 90 38c36 0 66-13 91-38c25-25 37-55 37-90z m147 237c0 10-4 19-11 26c-7 7-16 11-26 11c-10 0-19-4-26-11l-98-98c-34 24-72 36-114 36c-27 0-53-5-78-16c-25-11-46-25-64-43c-18-18-32-39-43-64c-10-25-16-51-16-78c0-28 6-54 16-78c11-25 25-47 43-65c18-18 39-32 64-43c25-10 51-15 78-15c28 0 54 5 79 15c24 11 46 25 64 43c18 18 32 40 43 65c10 24 16 50 16 78c0 42-12 80-36 114l98 98c7 7 11 15 11 25z"></path>
+              </svg>
+              <span class="sr-only">Search</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="categories-list">
+      <span class="categories-heading">Featured Categories</span>
+      <ul class="blog-categories" data-component="blog-links">
+        {% for tag in blog.all_tags %}
+          <li><span class="category-link">{{ tag | escape }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% paginate blog.articles by 4 %}
+    <div class="blog-article-cards">
+      {% for article in blog.articles %}
+        <div class="blog-article-card">
+          {%- if article.image -%}
+          <a href="{{ article.url }}">{{ article | image_url: 'large', scale: 1 | image_tag: '' }}</a>
+          {%- endif -%}
+          <h3 class="hide-mobile">
+            {% for tag in article.tags limit: 1 %}
+              {{ tag }}
+            {% endfor %}
+          </h3>
+          <div class="article-heading"><a href="{{ article.url }}">{{ article.title }}</a></div>
+        </div>
+      {% endfor %}
+    </div>
+   {%- if paginate.pages > 1 -%}
+      {%- if paginate.next -%}
+      <div class="paginate-blog" data-component="blog-loadmore">
+        <a href="{{ paginate.next.url }}" class="btn btn--primary load-more loaded">Load More</a>
+      </div>
+      {%- endif -%}
+    {%- endif -%}
+    <div id="pages" style="display: none;">{{ paginate.pages }}</div>
+  {% endpaginate %}
+
+
+</div>
+
+{% schema %}
+{
+  "name": "Blog",
+  "tag": "section",
+  "settings": [
+
+  ]
+}
+{% endschema %}

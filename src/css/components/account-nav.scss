@@ -1,0 +1,78 @@
+.account-links {
+  background: #F6F6F6;
+  padding: 10px 10px;
+
+  @media (--md) {
+    align-items: baseline;
+    gap: 40px;
+    padding-left: 50px;
+    font-weight: 600;
+  }
+
+  .account-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+    margin-top: 10px;
+
+    a:hover {
+      font-weight: 600;
+      color: #A07282;
+    }
+  }
+
+  .active-link {
+    color: #A07282;
+    text-decoration: none;
+
+    @media (--md) {
+      color: #000;
+      border-bottom: 4px solid #A07282;
+    }
+  }
+}
+
+.ac-account {
+  font-size: 15px;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+summary.ac-account::marker {
+  content: '';
+}
+
+summary.ac-account:after {
+  content: '';
+  background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTEyIDE4LjkxLTExLjcxLTExLjcgMS40Mi0xLjQyIDEwLjI5IDEwLjMgMTAuMjktMTAuMyAxLjQyIDEuNDJ6Ii8+PC9zdmc+);
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 3px;
+  left: 10px;
+}
+
+details[open] summary.ac-account:after {
+  transform: rotate(180deg);
+}
+
+.account-show-mobile {
+  display: block !important;
+
+  @media (--md) {
+    display: none !important;
+  }
+}
+
+.account-hide-mobile {
+  display: none !important;
+
+  @media (--md) {
+    display: flex !important;
+  }
+}
+

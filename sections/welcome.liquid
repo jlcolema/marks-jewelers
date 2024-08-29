@@ -1,0 +1,74 @@
+{{ 'section-welcome.css' | asset_url | stylesheet_tag }}
+
+<div class="welcome container">
+  <div class="welcome__content flow">
+    <h1 class="welcome__heading">{{ section.settings.heading }}</h1>
+    <p class="welcome__description">{{ section.settings.description }}</p>
+    <a class="btn btn--primary btn--lg" href="{{ section.settings.link_url }}">{{ section.settings.link_label }}</a>
+  </div>
+
+  <div class="welcome__cards grid gap-lg gap-xl@md">
+    {%- for block in section.blocks -%}
+      {%- if block.settings.heading != blank and block.settings.description != blank -%}
+        <div class="welcome__card col">
+          <h2 class="welcome__card-title">{{ block.settings.heading }}</h2>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Welcome",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Card",
+      "type": "card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Welcome"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,24 @@
+.hero-slider__content {
+  --mobile-top-padding: var(--space-md);
+  --mobile-bottom-padding: 13.75rem;
+  --desktop-top-padding: var(--space-lg);
+  --desktop-bottom-padding: var(--space-lg);
+  background-color: var(--background-color);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.shopify-section:first-child .hero-slider__content {
+  border-top: none;
+}
+
+.hero-slider__image {
+  margin: 0 auto;
+}
+
+@media (min-width: 48rem) {
+  .hero-slider__content {
+    padding-top: var(--desktop-top-padding);
+    padding-bottom: var(--desktop-bottom-padding);
+  }
+}

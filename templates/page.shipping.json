@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1650585754e7baf30c": {
+      "type": "content-video-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/shipping.jpg",
+        "section_image_alt_text": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_iframe_url": "https:\/\/www.youtube.com\/embed\/z3iF3a5eGpU",
+        "section_spacing_top": "",
+        "section_spacing_bottom": ""
+      }
+    },
+    "1650585902d891f9ad": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "text_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_paragraph": "<p>Marks Jewelers provides fast and free shipping on all purchases. Your peace of mind is our priority, so we fully insure all packages over $75.<\/p><p>Purchases:<\/p><p>Under $500:<br\/>• Free Locker Pickup<br\/>• $19.95 - Ground<br\/>• $24.95 - Overnight<\/p><p>Over $500:<br\/>• Free Locker Pickup<br\/>• Free Ground<br\/>• Free Overnight<\/p><p>All purchases over $500 require a signature for delivery with no exceptions. You may elect to dismiss the delivery signature only for purchases under $500 at your own risk.<\/p><p>Marks Jewelers will ship to an alternative address provided that the address is on file with the credit card company. If you do not have an alternative address on file, simply call the 1-800 number on the back of your card and ask them to add an address to your account.<\/p>",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "20",
+        "section_inner_spacing_bottom": "",
+        "section_content_text_align": "left",
+        "section_max_width": 1210
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1650585754e7baf30c",
+    "1650585902d891f9ad"
+  ]
+}

@@ -1,0 +1,65 @@
+// ==========================================================================
+// SECTION: Home Value Prop
+// ==========================================================================
+
+.value-props {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: var(--value-props-bg-color);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-sm);
+
+  @media (--sm) {
+    padding-bottom: var(--space-md);
+  }
+
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+
+    @media (--to-sm) {
+      max-width: 25rem;
+    }
+  }
+
+  .snap-slider__pagination {
+    margin-top: var(--space-sm);
+    @media (--sm) {
+      display: none;
+    }
+  }
+}
+
+.value-prop__banner {
+  grid-auto-columns: 100%;
+  gap: var(--space-md);
+
+  @media (--sm) {
+    grid-auto-columns: auto;
+    justify-content: space-between;
+  }
+}
+
+.value-prop__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-xs);
+}
+
+.value-prop__item-info-head,
+.value-prop__item-info-text {
+  font-size: var(--text-xs);
+}
+
+.value-prop__item-info-text {
+  font-weight: 100;
+}
+
+.value-prop__item-image {
+  width: 35px;
+  flex-shrink: 0;
+
+  svg {
+    fill: var(--value-props-prop-color);
+  }
+}

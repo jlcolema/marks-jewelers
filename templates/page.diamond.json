@@ -1,0 +1,382 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16498981648d7419f8": {
+      "type": "content-image-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/Marks-Diamonds-Couples-pic.jpg",
+        "section_image_mobile": "shopify:\/\/shop_images\/marks_diamond_mob.jpg",
+        "section_image_alt_text": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_img_url": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "section_content_img_align": "center"
+      }
+    },
+    "16498981661a806ca8": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 36,
+        "heading_mobile_size": 28,
+        "bg_color": "#a07282",
+        "text_color": "#ffffff",
+        "section_header": "<p>YOU’VE <strong>DONE IT<\/strong><\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>You made the most important decision of your life. You’re going to propose.<br\/>Now it’s time to find that one special symbol that will represent your love<br\/>forever… a diamond.<\/p>",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "45",
+        "section_inner_spacing_bottom": "35",
+        "section_content_text_align": "center"
+      }
+    },
+    "1649899666e2e38a5d": {
+      "type": "content-diamond-search",
+      "blocks": {
+        "2b708bb7-2c55-4a3b-8f29-ffc2e0898385": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Round-pic.webp",
+            "diamond_name": "Round",
+            "diamond_url": ""
+          }
+        },
+        "8e43cef9-e50a-4714-a6d8-98162471253d": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Oval-pic.webp",
+            "diamond_name": "Oval",
+            "diamond_url": ""
+          }
+        },
+        "dee3e33f-e20e-4fb6-b846-3eb0dd82d2e5": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Princess-pic.webp",
+            "diamond_name": "Princess",
+            "diamond_url": ""
+          }
+        },
+        "f3212adc-94af-46b6-85df-e15a3a0167bb": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Cushion-pic.webp",
+            "diamond_name": "Cushion",
+            "diamond_url": ""
+          }
+        },
+        "90ca7ba2-367f-40c2-bbe2-4e389eeabd1b": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Pear-pic.webp",
+            "diamond_name": "Pear",
+            "diamond_url": ""
+          }
+        },
+        "e8612908-0d97-404c-a4d5-efab7d4613b8": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Asscher-pic.webp",
+            "diamond_name": "Asscher",
+            "diamond_url": ""
+          }
+        },
+        "5bb44ab0-2738-4f05-8361-30ab4f438d77": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Radiant-pic.webp",
+            "diamond_name": "Radiant",
+            "diamond_url": ""
+          }
+        },
+        "6d796001-57fe-4fc3-ac34-b2709e46c0a2": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Asscher-pic_cd74c99c-4af7-4f2a-a10a-593b6c8a10ea.webp",
+            "diamond_name": "Emerald",
+            "diamond_url": ""
+          }
+        },
+        "e1a298fb-1002-40a6-bfb2-b1d14188422d": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Radiant-pic_90b3de6d-98e0-4a3b-a78a-bdf47840d7cb.webp",
+            "diamond_name": "Radiant",
+            "diamond_url": ""
+          }
+        },
+        "8e4257f9-a14c-4fdd-bd6e-d55cb55ca7df": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Emerald-pic_56d6b1c5-90db-4a6b-be9e-58720c9fc9e6.webp",
+            "diamond_name": "Emerald",
+            "diamond_url": ""
+          }
+        },
+        "e92e6483-b37c-4927-96cf-51ad607194dc": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Marquise-pic.webp",
+            "diamond_name": "Marquise",
+            "diamond_url": ""
+          }
+        },
+        "966c0af0-f3a4-4787-b34f-0acac285c0ec": {
+          "type": "collection",
+          "settings": {
+            "diamond_image": "shopify:\/\/shop_images\/Marks-Diamonds-Heart-pic.webp",
+            "diamond_name": "Heart",
+            "diamond_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "2b708bb7-2c55-4a3b-8f29-ffc2e0898385",
+        "8e43cef9-e50a-4714-a6d8-98162471253d",
+        "dee3e33f-e20e-4fb6-b846-3eb0dd82d2e5",
+        "f3212adc-94af-46b6-85df-e15a3a0167bb",
+        "90ca7ba2-367f-40c2-bbe2-4e389eeabd1b",
+        "e8612908-0d97-404c-a4d5-efab7d4613b8",
+        "5bb44ab0-2738-4f05-8361-30ab4f438d77",
+        "6d796001-57fe-4fc3-ac34-b2709e46c0a2",
+        "e1a298fb-1002-40a6-bfb2-b1d14188422d",
+        "8e4257f9-a14c-4fdd-bd6e-d55cb55ca7df",
+        "e92e6483-b37c-4927-96cf-51ad607194dc",
+        "966c0af0-f3a4-4787-b34f-0acac285c0ec"
+      ],
+      "settings": {
+        "section_cta_text": "Start Your Diamond Search",
+        "section_cta_url": "\/apps\/vdb-app\/search-filters?structure=new",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "10",
+        "section_inner_spacing_bottom": "10"
+      }
+    },
+    "16498982775ee3544c": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "#e7e7e7",
+        "text_color": "",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_paragraph": "<p>Finding the right diamond is like falling in love - you just know it when you see it. We promise to always provide you with most beautiful options today's market has to offer so you can feel confident that you've found the perfect diamond.<\/p>",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "30",
+        "section_inner_spacing_bottom": "30",
+        "section_content_text_align": "center",
+        "section_max_width": 750
+      }
+    },
+    "164997159680781e70": {
+      "type": "diamond-shop-section",
+      "blocks": {
+        "c06ebe1d-6111-437b-920d-bb57b8db0dd3": {
+          "type": "collection",
+          "settings": {
+            "block_header": "",
+            "block_sub_header": "",
+            "block_paragraph": "<p>Beautiful, rare and responsibly sourced, each De Beers Forevermark® diamond carries a promise of its own, making it a powerful symbol of your most meaningful promises.<\/p>",
+            "section_diamond_img": "shopify:\/\/shop_images\/forevermark.webp",
+            "section_brand_img": "shopify:\/\/shop_images\/DBFM_ADIF_LOGO_CMYK.png",
+            "section_cta_text": "Learn More",
+            "section_cta_url": "shopify:\/\/collections\/forevermark-fine-jewelry"
+          }
+        },
+        "d455fbd5-7f61-444c-b331-9184114d1f54": {
+          "type": "collection",
+          "settings": {
+            "block_header": "",
+            "block_sub_header": "",
+            "block_paragraph": "<p><strong>​​​​​​​<\/strong>The Most Perfectly Cut Diamond In The World®, Hearts On Fire is a diamond of extraordinary beauty and brilliance, and a diamond that is recognized around the globe for its exclusive cut.<\/p>",
+            "section_diamond_img": "shopify:\/\/shop_images\/hearts-on-fire.webp",
+            "section_brand_img": "shopify:\/\/shop_images\/HOF-logo.png",
+            "section_cta_text": "Shop Now",
+            "section_cta_url": "shopify:\/\/collections\/hearts-on-fire-fine-jewelry"
+          }
+        },
+        "19b6adc2-1494-47e0-be32-a067a294ab3a": {
+          "type": "collection",
+          "settings": {
+            "block_header": "",
+            "block_sub_header": "",
+            "block_paragraph": "<p>Purchasing a diamond should be easy and fun. Our 5 GIA graduate gemologists do the hard work for you, selecting only the most visually beautiful and structurally sound diamonds.<\/p>",
+            "section_diamond_img": "shopify:\/\/shop_images\/marks-signature.png",
+            "section_brand_img": "shopify:\/\/shop_images\/MJ-signature-logo.webp",
+            "section_prompt_img": "shopify:\/\/shop_images\/hand-picked-beauty.webp",
+            "section_cta_text": "Shop Now",
+            "section_cta_url": "shopify:\/\/collections\/marks-89-fine-jewelry"
+          }
+        },
+        "6503df8c-e4b1-409c-b7bc-30831a484bf2": {
+          "type": "collection",
+          "settings": {
+            "block_header": "<p>PURE<strong>MARK<\/strong><\/p>",
+            "block_sub_header": "<p>ARTISAN CREATED DIAMONDS<\/p>",
+            "block_paragraph": "<p>Not all diamonds available today are mined from the earth. Get the biggest diamond for your budget without sacrificing beauty or your love of the earth with a Lab-grown, synthetic diamond. <strong>Love without a footprint.<\/strong><\/p>",
+            "section_diamond_img": "shopify:\/\/shop_images\/puremark-diamond.webp",
+            "section_brand_img": "shopify:\/\/shop_images\/m-icon.webp",
+            "section_cta_text": "Learn More",
+            "section_cta_url": "shopify:\/\/collections\/marks-89-fine-jewelry"
+          }
+        }
+      },
+      "block_order": [
+        "c06ebe1d-6111-437b-920d-bb57b8db0dd3",
+        "d455fbd5-7f61-444c-b331-9184114d1f54",
+        "19b6adc2-1494-47e0-be32-a067a294ab3a",
+        "6503df8c-e4b1-409c-b7bc-30831a484bf2"
+      ],
+      "settings": {
+        "bg_color": "#e7e7e7",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": ""
+      }
+    },
+    "1649987992b35f6f0c": {
+      "type": "section-marks-promise",
+      "blocks": {
+        "97c38dbb-bb92-4ee6-a3a8-6ebb155469e4": {
+          "type": "collection",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-110.webp",
+            "block_header": "<p>100%<br\/>Upgrade<\/p>",
+            "block_paragraph": "<p>As your love grows, upgrading your diamond is a very meaningful way to celebrate milestones in your life. We promise to make this as easy and affordable as possible with no strings attached.<\/p>",
+            "block_cta_text": "Learn More",
+            "block_cta_url": "\/pages\/usp#upgrade"
+          }
+        },
+        "7019b770-9238-41f3-8615-a48f86091b1f": {
+          "type": "collection",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-lifetime.png",
+            "block_header": "<p>Lifetime<br\/>Warranty<\/p>",
+            "block_paragraph": "<p>In our desire for you to get the most out of your jewelry, we take the responsibility of the effects of everyday wear. Just like your promise to your partner, we are here for you through the good and the bad.<\/p>",
+            "block_cta_text": "Learn More",
+            "block_cta_url": "shopify:\/\/pages\/warranty"
+          }
+        },
+        "047d7211-8912-41a5-b09b-092d95462167": {
+          "type": "collection",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-pilers.png",
+            "block_header": "<p>On-Site<br\/>Jeweler<\/p>",
+            "block_paragraph": "<p>With over 35 years of experience in diamonds and jewelry, and with 5 GIA Graduate Gemologists on staff, we are more than just a diamond or jewelry reseller - WE ARE JEWELERS.<\/p>",
+            "block_cta_text": "Learn More",
+            "block_cta_url": "shopify:\/\/pages\/repairs"
+          }
+        }
+      },
+      "block_order": [
+        "97c38dbb-bb92-4ee6-a3a8-6ebb155469e4",
+        "7019b770-9238-41f3-8615-a48f86091b1f",
+        "047d7211-8912-41a5-b09b-092d95462167"
+      ],
+      "settings": {
+        "pre_header": "<p><strong>A lot more goes into buying a diamond than just the grading report. Regardless of where you end up purchasing your diamond, we urge you to consider the following:<\/strong><\/p>",
+        "section_header": "<p>THE MARKS <strong>PROMISE<\/strong><\/p>",
+        "section_sub_header": "<p><strong>No other jeweler in the industry promises what we do.<\/strong><\/p>",
+        "section_paragraph": "<p>Jewelry is meant to be worn. It becomes a part of you going down all of life’s bumpy paths. We will stand by your bridal jewelry with cleanings, inspections, and even repairs due to normal wear - at no cost to you.<\/p>",
+        "section_cta_text": "Learn More",
+        "section_cta_url": "\/pages\/usp#promise",
+        "bg_color": "#e7e7e7",
+        "bg_image": "shopify:\/\/shop_images\/wood-pic.jpg",
+        "section_spacing_top": "0",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "30",
+        "section_inner_spacing_bottom": "30",
+        "full_width": false
+      }
+    },
+    "1650045239cfd5c632": {
+      "type": "content-tour-block",
+      "settings": {
+        "heading_desktop_size": 28,
+        "heading_mobile_size": 24,
+        "section_image": "shopify:\/\/shop_images\/tour-both.png",
+        "text_color": "#ffffff",
+        "section_header": "<p>DIAMOND DINER<br\/><strong>SNEAK-PEEK<\/strong><\/p>",
+        "section_sub_header": "<p>360˚ TOUR<\/p>",
+        "section_paragraph": "<p>View diamonds in the comfort<br\/>of our Diamond Diner.<\/p>",
+        "section_cta_text": "Start Your Tour",
+        "section_cta_url": "shopify:\/\/pages\/360",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": ""
+      }
+    },
+    "1649898559fd4f0bf0": {
+      "type": "content-image-block",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/love-grows-here.webp",
+        "section_image_alt_text": "Love Grows Here",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "#e7e7e7",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_content_text_align": "center",
+        "section_img_url": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "20",
+        "section_inner_spacing_bottom": "20",
+        "section_content_img_align": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16498981648d7419f8",
+    "16498981661a806ca8",
+    "1649899666e2e38a5d",
+    "16498982775ee3544c",
+    "164997159680781e70",
+    "1649987992b35f6f0c",
+    "1650045239cfd5c632",
+    "1649898559fd4f0bf0"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-account",
+      "blocks": {
+        "coupon": {
+          "type": "coupon",
+          "settings": {
+            "show_coupon": true,
+            "days": "0",
+            "percent": "15",
+            "code": "JEWELRY5",
+            "coupon_img": "shopify:\/\/shop_images\/puremark-diamond.webp"
+          }
+        }
+      },
+      "block_order": [
+        "coupon"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": ["main"]
+}

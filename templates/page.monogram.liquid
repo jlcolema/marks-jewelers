@@ -1,0 +1,288 @@
+{{ 'custom_page_base.css' | asset_url | stylesheet_tag }}
+{{ 'page_monogram.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-collection.css' | asset_url | stylesheet_tag }}
+
+<div class="page">
+  <div class="image-header" style="background-image: url({{ 'name-kimberly.jpeg' | asset_url }}); background-position: center bottom;"></div>
+  <section class="page-header">
+    <div class="container">
+
+      <h1 class="page-title sr-only">Monogram Jewelry</h1>
+      <img
+        class="margin-bottom-sm"
+        src="{{ 'MJ-monogram-jewelry-logo.png' | asset_url }}"
+        alt="Marks Monogram Jewelry. A Name. A Letter. A Legacy."
+        width="332"
+        height="176"
+        loading="lazy">
+      <p>There is nothing more traditional than a monogram - in all its forms. Choose from a selection of font options
+        and layouts to create a monogrammed necklace, bracelet, ring, or earrings that feel like the story, you want to
+                tell over and over again.</p>
+
+    </div>
+  </section>
+
+  {{ 'section-main-collection.css' | asset_url | stylesheet_tag }}
+  <section class="section-monogram-collections">
+    <div class="container">
+
+      <h2 class="title--rules">
+        <span>Monogram Jewelry</span>
+      </h2>
+      <p class="text-center">
+        <a href="#" class="link--arrow">View Full Collection</a>
+      </p>
+
+      <div class="collection">
+        <div class="loading-overlay gradient"></div>
+
+        <div class="product-grid grid product-grid grid--2-col-tablet-down grid--5-col-desktop">
+          {%- for product in collections.all.products limit: 10 -%}
+            {% assign lazy_load = false %}
+            {%- if forloop.index > 2 -%}
+              {%- assign lazy_load = true -%}
+            {%- endif -%}
+
+            <div class="grid__item">
+              {% render 'card-product'
+               , card_product: product,
+               media_aspect_ratio: section.settings.image_ratio,
+               show_secondary_image: section.settings.show_secondary_image,
+               show_vendor: section.settings.show_vendor,
+               show_rating: section.settings.show_rating,
+               lazy_load: lazy_load %}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="banner-monogram"></div>
+
+  <section class="section-monogram-boxes section-boxes">
+    <div class="container">
+
+      <div class="section-boxes-wrap">
+        <div class="section-boxes-tagline">Get Inspired</div>
+
+        <div class="grid">
+          <div class="section-boxes-bg col-6-sm order-2-sm" style="background-image: url({{ 'letter-necklace.jpg' | asset_url }});"></div>
+          <div class="section-boxes-content col-6-sm order-1-sm">
+            <h2 class="margin-bottom-sm">Single letter designs that stand out</h2>
+            <p>It’s fun to rock your initial or that of a child or friend. And letter jewelry is one of the easiest
+              gifts to give because you can never go wrong with so many styles to choose from.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="section-boxes-bg col-6-sm" style="background-image: url({{ 'name-claire.jpeg' | asset_url }});"></div>
+          <div class="section-boxes-content col-6-sm">
+            <h2 class="margin-bottom-sm">Put your name on it and style any way you want</h2>
+            <p>What girl doesn’t want her name in gold? Name jewelry is so fun to design and wear! Plus, it makes a
+              statement and can be dressed or dressed down for day or night.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="section-boxes-bg col-6-sm order-2-sm" style="background-image: url({{ 'mono-name-earrings.jpeg' | asset_url }});"></div>
+          <div class="section-boxes-content col-6-sm order-1-sm">
+            <h2 class="margin-bottom-sm">Modern and fun script names</h2>
+            <p>Monograms don’t have to be old-school. You can consider short and abbreviated words. It’s common to spell
+              out your or your child’s name, and you can even add custom shapes.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="section-boxes-bg col-6-sm" style="background-image: url({{ 'monogram-diamond-bracelet.jpeg' | asset_url }});"></div>
+          <div class="section-boxes-content col-6-sm">
+            <h2 class="margin-bottom-sm">Custom-designed monograms</h2>
+            <p>The traditional look of a monogram is often sought after to acknowledge family legacies and pay respect
+              to those who brought their story to generations of family members. Create ANY design with JewlVision.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  {{ 'custom_slick.css' | asset_url | stylesheet_tag }}
+  {{ 'custom_slick_theme.css' | asset_url | stylesheet_tag }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+  <script
+    type="text/javascript"
+    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    defer></script>
+
+  <section class="section-howworks">
+    <div class="container">
+
+      <div class="box text-center">
+        <h2 class="box-title">How It Works</h2>
+
+        <div class="slider margin-bottom-md">
+          <div class="slide">
+
+            <div class="slide-card">
+              <img
+                src="{{ 'name-fonts-block.jpg' | asset_url }}"
+                alt="monogram jewelry block font"
+                width="290"
+                height="290"
+                loading="lazy">
+              <p class="card-title">Block</p>
+            </div>
+
+          </div>
+          <div class="slide">
+
+            <div class="slide-card">
+              <img
+                src="{{ 'name-fonts-brush.jpg' | asset_url }}"
+                alt="monogram jewelry brush font"
+                width="290"
+                height="290"
+                loading="lazy">
+              <p class="card-title">Brush</p>
+            </div>
+
+          </div>
+          <div class="slide">
+
+            <div class="slide-card">
+              <img
+                src="{{ 'name-fonts-cursive.jpg' | asset_url }}"
+                alt="monogram jewelry cursive font"
+                width="290"
+                height="290"
+                loading="lazy">
+              <p class="card-title">Cursive</p>
+            </div>
+
+          </div>
+          <div class="slide">
+
+            <div class="slide-card">
+              <img
+                src="{{ 'name-fonts-doodle.jpg' | asset_url }}"
+                alt="monogram jewelry doodle font"
+                width="290"
+                height="290"
+                loading="lazy">
+              <p class="card-title">Doodle</p>
+            </div>
+
+          </div>
+          <div class="slide">
+
+            <div class="slide-card">
+              <img
+                src="{{ 'name-fonts-gothic.jpg' | asset_url }}"
+                alt="monogram jewelry gothic font"
+                width="290"
+                height="290"
+                loading="lazy">
+              <p class="card-title">Gothic</p>
+            </div>
+
+          </div>
+          <div class="slide">
+
+            <div class="slide-card">
+              <img
+                src="{{ 'name-fonts-vert-roman.jpg' | asset_url }}"
+                alt="monogram jewelry roman numeral font"
+                width="290"
+                height="290"
+                loading="lazy">
+              <p class="card-title">Roman Numerals</p>
+            </div>
+
+          </div>
+        </div>
+
+        <script type="module" defer>
+          $(document)
+          .ready(function () {
+                        $('.slider')
+                          .slick({
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            responsive: [{
+                              breakpoint: 900,
+                              settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                              }
+                            },
+                              {
+                                breakpoint: 700,
+                                settings: {
+                                  slidesToShow: 1,
+                                  slidesToScroll: 1
+                                }
+                              }]
+                          });
+                      });
+        </script>
+
+        <h3>Pick your product</h3>
+        <p class="subtitle">All styles come in 5mm and 7mm height options</p>
+
+        <div class="grid margin-top-xxl">
+          <div class="col-6-sm">
+            <img
+              src="{{ 'options-chains.png' | asset_url }}"
+              alt="two-tone diamond cut chain and paperclip chain"
+              width="402"
+              height="174"
+              loading="lazy">
+            <h3>Choose from two-tone diamond cut chain or paperclip chain</h3>
+            <p class="subtitle">Lengths adj 14-15-16” or adj 16-18”</p>
+          </div>
+
+          <div class="col-6-sm">
+            <img
+              src="{{ 'options-metals.png' | asset_url }}"
+              alt="14K yellow, rose or white gold"
+              width="402"
+              height="174"
+              loading="lazy">
+            <h3>Select your metal</h3>
+            <p class="subtitle">14K yellow, rose or white gold</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-fingerprints-form section-imagewtext section-imagewtext--left">
+    <div class="container">
+
+      <div
+        class="section-imagewtext-image"
+        style="background-image: url({{ 'monogram-necklace.jpeg' | asset_url }});"
+        width=""
+        height=""></div>
+
+      <div class="section-imagewtext-text text-center">
+        <h2 class="section-imagewtext-title">Ready to create?</h2>
+        <p>Our design team will work with you to create your custom name necklace, earrings or ring. Connect with us
+          today and get started!</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer-tagline">
+    <div class="container">
+      Love
+      <b>grows</b>
+      here
+    </div>
+  </div>
+
+</div>

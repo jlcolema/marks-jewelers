@@ -1,0 +1,23 @@
+# OS generated files #
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Enviroment files #
+src
+node_modules
+_build
+.github
+.vscode
+src/assets/*.json
+package.json
+package-lock.json
+
+# Other files #
+/\.(txt|md|lock)$/
+
+# Ignore all JSON config files #
+#config/*.json#

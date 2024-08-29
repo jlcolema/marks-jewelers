@@ -1,0 +1,32 @@
+{%- if section.links != blank -%}
+  <span class="header-nav__label">
+    {{ section.title | replace: '[', '<span class="hide@md">' | replace: ']', '</span>' }}
+  </span>
+  {%- else -%}
+  <a class="header-nav__label header-nav__label--link" href="{{ section.url }}">
+    {{ section.title | replace: '[', '<span class="hide@md">' | replace: ']', '</span>' }}
+    <i>{% render 'icon', icon: 'arrow-right' %}</i>
+  </a>
+  {%- endif -%}
+
+  {%- if section.links != blank -%}
+  <ul class="header-nav__links">
+    {%- for link in section.links -%}
+      {%- unless diamond_submenu -%}
+        <li>
+          <a href="{{ link.url }}" aria-label="{{ link.title }} Button">{{ link.title }}</a>
+        </li>
+      {%- else -%}
+        <li>
+          {%- assign diamond_img = link.title | handleize | prepend: 'diamond-shapes-' | append: '.png' -%}
+          <a href="{{ link.url }}">
+            <span class="header-nav__diamond-image">
+              {% render 'img', img: diamond_img, width: 48 %}
+            </span>
+            <span>{{ link.title }}</span>
+          </a>
+        </li>
+      {%- endunless -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

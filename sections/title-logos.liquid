@@ -1,0 +1,105 @@
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- if section.settings.heading_color != blank -%}
+    --title-logos-heading-color: {{ section.settings.heading_color }};
+  {%- endif -%}
+  {%- if section.settings.bg_color != blank -%}
+    --title-logos-bg-color: {{ section.settings.bg_color }};
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-title-logos.css' | asset_url | stylesheet_tag }}
+
+<div class="section__title-logos container" style="{{ styling }}">
+  {% if section.settings.logo != '' %}
+  <span class="title-logos__header-logo">
+    {% render 'img', img: section.settings.section_logo, width: 50, height: 50, loading: 'lazy' %}
+  </span>
+{% endif %}
+  <h2 class="home-section-heading">{{ section.settings.section_header }}</h2>
+  <div class="title-logos__paragraph">
+    {{ section.settings.section_text }}
+    {%- if section.settings.enable_modal == true -%}
+      <button class="btn btn--link" aria-label="Open strict guidlines modal" aria-controls="modal-strict-guidelines">{{ 'general.home_page.strict_guidlines_button_text' | t }}</button>
+    {%- endif -%}
+  </div>
+  <div class="logo-prop__item-row">
+    {% for block in section.blocks %}
+      <div class="logo-prop__item">
+        {% if block.settings.prop_logo != '' %}
+          <a href="{{ block.settings.prop_url }}" aria-label="Logo Button {{ block.settings.prop_url }}">
+            {% render 'img', img: block.settings.prop_logo, width: 170, height: 35, loading: 'lazy' %}
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{%- if section.settings.enable_modal == true -%}
+  {% render 'modal-strict-guidelines' %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Title And Logos",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "id": "heading_color",
+      "type": "color",
+      "label": "Heading color"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "section_logo",
+      "type": "image_picker",
+      "label": "Section Logo"
+    },
+    {
+      "id": "section_header",
+      "type": "text",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_text",
+      "type": "richtext",
+      "label": "Section Text"
+    },
+    {
+      "id": "enable_modal",
+      "type": "checkbox",
+      "label": "Show Guidlines Modal?",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title-logos_prop",
+      "name": "Logo Prop",
+      "settings": [
+        {
+          "id": "prop_logo",
+          "type": "image_picker",
+          "label": "Logo Prop Image"
+        },
+        {
+          "id": "prop_url",
+          "type": "url",
+          "label": "Logo Prop URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title And Logos"
+    }
+  ]
+}
+{% endschema %}

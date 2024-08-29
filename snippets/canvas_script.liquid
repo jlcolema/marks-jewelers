@@ -1,0 +1,678 @@
+<script defer>
+  var mobile = isMobile = window.innerWidth < 750;
+  var Engine = Matter.Engine,
+    Render = Matter.Render,
+    World = Matter.World,
+    Bodies = Matter.Bodies;
+  var engine = Engine.create({
+    enableSleeping: false,
+  });
+  var render = Render.create({
+    element: document.getElementById('canvas-container'),
+    engine: engine,
+    options: {
+      width: 600,
+      height: 800,
+      wireframes: false,
+      background: `transparent`,
+      showSleeping: false,
+    },
+  });
+  const cat = {
+    static: 0x0001,
+    nodrag: 1234,
+    drag: 0x0004,
+  };
+  var charmScaleX = -0.6;
+  var charmScaleY = -0.6;
+
+  let test = {
+    1: {
+      x: 200,
+      y: 100,
+    },
+    2: {
+      x: 221.31744023629423,
+      y: 221.31744023629423,
+    },
+    3: {
+      x: 227.74892201527487,
+      y: 121.45968347318848,
+    },
+    4: {
+      x: 234.08449982780374,
+      y: 138.10459062434617,
+    },
+    5: {
+      x: 240.29822513318794,
+      y: 155.17002355004718,
+    },
+    6: {
+      x: 246.20789939359233,
+      y: 171.83708336943923,
+    },
+    7: {
+      x: 252.025711223581,
+      y: 188.3769518077666,
+    },
+    8: {
+      x: 257.8736741692513,
+      y: 204.77409867828933,
+    },
+    9: {
+      x: 264.1609334730185,
+      y: 221.14478219853615,
+    },
+    10: {
+      x: 270.44990008307644,
+      y: 237.51443516631699,
+    },
+    11: {
+      x: 276.81629624325376,
+      y: 253.8680459466901,
+    },
+    12: {
+      x: 283.2395470489473,
+      y: 270.1917428930637,
+    },
+    13: {
+      x: 289.66364964537894,
+      y: 286.50114291268005,
+    },
+    14: {
+      x: 286.6679009518484,
+      y: 305.7464950369887,
+    },
+    15: {
+      x: 297.9618144450774,
+      y: 296.7123861499991,
+    },
+    16: {
+      x: 302.8390628217756,
+      y: 279.6248248571803,
+    },
+    17: {
+      x: 307.6631795600931,
+      y: 262.44273470439936,
+    },
+    18: {
+      x: 312.28874865582463,
+      y: 245.63903568195786,
+    },
+    19: {
+      x: 316.90312018836,
+      y: 228.51479313852417,
+    },
+    20: {
+      x: 321.5557527794969,
+      y: 211.20573863405536,
+    },
+    21: {
+      x: 326.16741424593044,
+      y: 193.83044306311118,
+    },
+    22: {
+      x: 330.68342030001344,
+      y: 176.722672722547,
+    },
+    23: {
+      x: 334.8845846180698,
+      y: 159.1088840964564,
+    },
+    24: {
+      x: 339.4453771003718,
+      y: 141.5778637966036,
+    },
+    25: {
+      x: 343.83945941770355,
+      y: 125.24813303928056,
+    },
+    26: {
+      x: 350,
+      y: 100,
+    },
+  };
+
+  engine.timing.timeScale = 0.3;
+  var rest = 0.9,
+    space = 600 / 5;
+  const listEls = document.querySelectorAll('.chain_link');
+  const stack = Matter.Composites.stack(
+    0, 0, listEls.length, 1, 0, 0,
+    (xx, yy, i) => {
+      const {
+        x,
+        y,
+        width,
+        height,
+      } = listEls[i].getBoundingClientRect();
+      if (i + 1 === listEls.length) {
+        return Matter.Bodies.rectangle(400, 100, 20, 10, {
+          isStatic: true,
+          render: {
+            visible: false,
+          },
+        });
+      } else {
+        if (i === 14 || i === 13 || i === 15 || i === 16) {
+          return Matter.Bodies.rectangle(test[i].x, test[i].y, 20, 10, {
+            collisionFilter: {
+              category: 2,
+              group: -1,
+              mask: 0,
+            },
+            render: i === 0 ? { visible: false } : {
+              sprite: {
+                texture: `{{ 'chain_link_2.png' | asset_url }}`,
+              },
+            },
+          });
+        } else {
+          return Matter.Bodies.rectangle(200, 100, 20, 10, {
+            isStatic: i === 0,
+            render: i === 0 ? { visible: false } : {
+              sprite: {
+                texture: `{{ 'chain_link_2.png' | asset_url }}`,
+              },
+            },
+          });
+        }
+      }
+    },
+  );
+
+  var group = Matter.Body.nextGroup(true);
+  Matter.Composites.chain(stack, 0.35, 0, -0.35, 0, {
+    isStatic: true,
+    collisionFilter: {
+      category: 2,
+      group: -1,
+      mask: 0,
+    },
+    length: 5,
+    render: {
+      visible: false,
+    },
+  });
+
+  var locket = Matter.Bodies.rectangle(310, 410, 170, 170, {
+    spec: 'locket',
+    render: {
+      sprite: {
+        texture: ``,
+        xScale: '0.30',
+        yScale: '0.30',
+      },
+      fillStyle: 'transparent',
+    },
+    collisionFilter: {
+      category: 2,
+      group: -1,
+      mask: 0,
+    },
+  });
+
+  var constraint = Matter.Constraint.create({
+    bodyA: stack.bodies[13],
+    pointA: {
+      x: 0,
+      y: 0,
+    },
+    bodyB: locket,
+    pointB: {
+      x: 0,
+      y: -75,
+    },
+    length: 20,
+    render: {
+      visible: false,
+    },
+    collisionFilter: {
+      category: 2,
+      group: -1,
+      mask: 0,
+    },
+  });
+  const gift = {
+    render: {
+      sprite: {},
+    },
+    collisionFilter: {
+      category: cat.nodrag,
+    },
+  };
+
+  var boxA = Bodies.rectangle(400, 200, 80, 80);
+  var ballA = Bodies.circle(380, 100, 40, 10);
+  var ballB = Bodies.circle(460, 10, 40, 10);
+  var ground = Bodies.rectangle(400, 800, 810, 60, {
+    isStatic: true,
+    render: {
+      visible: false,
+    },
+  });
+  World.add(engine.world, [locket, constraint, stack]);
+  Matter.Runner.run(engine);
+  Render.run(render);
+  listEls.forEach(e => {
+    e.style.position = 'absolute';
+    e.addEventListener('click', e =>
+      console.log(e.target.textContent),
+    );
+  });
+
+  var mouse = Matter.Mouse.create(render.canvas);
+  mouseConstraint = Matter.MouseConstraint.create(engine, {
+    mouse: mouse,
+    constraint: {
+      stiffness: 0.2,
+      render: {
+        visible: false,
+      },
+    },
+  });
+  World.add(engine.world, [mouse, mouseConstraint]);
+
+  let getCharmsDiv = $('.charms');
+  (function update() {
+    requestAnimationFrame(update);
+    let data = engine.world.bodies;
+    data.forEach((block, i) => {
+
+      if (block.spec == 'svg') {
+        block.position.x = engine.world.bodies[0].position.x;
+        block.speed = engine.world.bodies[0].speed;
+      }
+
+      stack.bodies.forEach((block, i) => {
+        const li = listEls[i];
+        const {
+          x,
+          y,
+        } = block.vertices[0];
+      });
+    });
+  })();
+
+  var select = function (root, selector) {
+    return Array.prototype.slice.call(root.querySelectorAll(selector));
+  };
+  var loadSvg = function (url) {
+    return fetch(url)
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (raw) {
+        return (new window.DOMParser()).parseFromString(raw, 'image/svg+xml');
+      });
+  };
+
+  function animateCharms(image, id) {
+    imageScaling(id);
+    var charmsArray = JSON.parse(localStorage.getItem('charmsID'));
+    if (charmsArray.length < 7) {
+      var charmImage = Bodies.circle(300, 400, 13, {
+        restitution: rest,
+        spec: 'product',
+        render: {
+          sprite: {
+            texture: image,
+            productId: id,
+            xScale: charmScaleX,
+            yScale: charmScaleY,
+          },
+        },
+        frictionAir: 0.05,
+      });
+      charmsArray.push(id);
+      addToCartCharm(id);
+      localStorage.setItem('charmsID', JSON.stringify(charmsArray));
+      World.add(engine.world, charmImage);
+      changeState();
+      return false;
+    } else {
+      alert('Can\'t add more than Seven Charms.');
+      return false;
+    }
+    return true;
+  }
+
+  function deleteCharm(id) {
+    let data = engine.world.bodies;
+    data.map(function (val, index) {
+      if (val.render.sprite.productId == id) {
+        Matter.Composite.remove(engine.world, val);
+        return true;
+      }
+    });
+
+  }
+
+  function deleteCharmDiv(charm_id) {
+    let delId = charm_id + '_deleteid';
+    var charmsDiv = document.getElementsByClassName('charms');
+    for (let i = 0; i < charmsDiv.length; i++) {
+      if (charmsDiv[i].getAttribute('data-id') == delId) {
+        charmsDiv[i].remove();
+        break;
+      }
+    }
+    return true;
+  }
+
+  function addcharmonClick(image, id) {
+    imageScaling(id);
+    var charmsArray = JSON.parse(localStorage.getItem('charmsID'));
+    if (charmsArray.length <= 6) {
+      let x = Math.floor((Math.random() * 10) + 1);
+      let y = Math.floor((Math.random() * 10) + 1);
+      var charmImage = Bodies.circle(300 - x, 400 - y, 13, {
+        restitution: rest,
+        spec: 'product',
+        render: {
+          sprite: {
+            texture: image,
+            productId: id,
+            xScale: charmScaleX,
+            yScale: charmScaleY,
+          },
+        },
+        frictionAir: 0.05,
+        frictionAir: 0.05,
+      });
+      charmsArray.push(id);
+      localStorage.setItem('charmsID', JSON.stringify(charmsArray));
+      World.add(engine.world, charmImage);
+      changeState();
+      return false;
+    } else {
+      alert('Can\'t add more than Seven Charms.');
+      return false;
+    }
+    return false;
+  }
+
+  function clearCharms() {
+    let data = engine.world.bodies;
+    data.map(function (val, index) {
+      if (val.render.sprite.productId) {
+        deleteCharmDiv(val.render.sprite.productId);
+        Matter.Composite.remove(engine.world, val);
+      }
+    });
+    setTimeout(function () {
+      data.map(function (val, index) {
+        if (val.render.sprite.productId) {
+          deleteCharmDiv(val.render.sprite.productId);
+          Matter.Composite.remove(engine.world, val);
+        }
+      });
+    }, 1000);
+    setTimeout(function () {
+      data.map(function (val, index) {
+        if (val.render.sprite.productId) {
+          deleteCharmDiv(val.render.sprite.productId);
+          Matter.Composite.remove(engine.world, val);
+        }
+      });
+    }, 1000);
+  }
+
+  Matter.Events.on(mouseConstraint, 'mousedown', event => {
+
+    if (mouseConstraint.body) {
+      console.log('sdfhskdjfhskdjfh');
+      changeState2();
+      let charm_id = mouseConstraint.body.render.sprite.productId;
+      if (charm_id) {
+        Matter.Composite.remove(engine.world, mouseConstraint.body);
+        deleteCharmDiv(charm_id);
+        let charmsArray = JSON.parse(localStorage.getItem('charmsID'));
+        for (let j = 0; j < charmsArray.length; j++) {
+          if (charm_id == charmsArray[j]) {
+            charmsArray.splice(j, 1);
+            localStorage.setItem('charmsID', JSON.stringify(charmsArray));
+            break;
+          }
+        }
+        return false;
+      }
+    }
+  });
+  const runner = Matter.Runner.create();
+  $(window)
+    .load(function () {
+      setTimeout(function () {
+        const charmsArray = JSON.parse(localStorage.getItem('charmsID'));
+        for (let i = 0; i < charmsArray.length; i++) {
+          let image_id = Number(charmsArray[i]);
+          imageScaling(image_id);
+          let tagElement = document.getElementById(charmsArray[i]);
+          let imageSrc = tagElement.getAttribute('src');
+          var productData = Charms.find(x => x.id === Number(charmsArray[i]));
+          var charmImage = Bodies.circle(300, 400, 13, {
+            spec: 'product',
+            render: {
+              sprite: {
+                texture: productData.image_src,
+                productId: charmsArray[i],
+                xScale: charmScaleX,
+                yScale: charmScaleY,
+              },
+            },
+            restitution: 0.9,
+            frictionAir: 0.05,
+          });
+          addToCartCharm(charmsArray[i]);
+          World.add(engine.world, charmImage);
+
+        }
+      }, 6000);
+    });
+
+  function changeLocket(id) {
+    if (id == '43609383960798') {
+      let svgPath = '{{ 'New-Project-_3_.svg' | asset_url }}';
+      changeSvg(id, svgPath, 300, 390, 72, -50);
+      engine.world.bodies[0].render.sprite.texture = '{{ 'LC2130-Y-V1_3000x.png' | asset_url }}';
+      engine.world.bodies[0].render.sprite.xScale = '0.3';
+      engine.world.bodies[0].render.sprite.yScale = '0.3';
+      engine.world.bodies[0].isStatic = true;
+    }
+    //Heart
+    if (id == '43609384943838') {
+      let svgPath = '{{ 'New-Project-_25_.svg' | asset_url }}';
+      changeSvg(id, svgPath, 330, 390, 38, -40);
+      engine.world.bodies[0].render.sprite.texture = '{{ 'LC2134-Y-V1_3000x.png' | asset_url }}';
+      engine.world.bodies[0].render.sprite.xScale = '0.28';
+      engine.world.bodies[0].render.sprite.yScale = '0.28';
+      engine.world.bodies[0].isStatic = true;
+    }
+    //Oval
+    if (id == '43609384190174') {
+      let svgPath = '{{ 'New-Project-_13_.svg' | asset_url }}';
+      changeSvg(id, svgPath, 300, 390, 45, -75);
+      engine.world.bodies[0].isStatic = true;
+      engine.world.bodies[0].render.sprite.xScale = '0.3';
+      engine.world.bodies[0].render.sprite.yScale = '0.3';
+      engine.world.bodies[0].render.sprite.texture = '{{ 'LC2131-Y-V1_3000x.png' | asset_url }}';
+    }
+    //PEAR LOCKET
+    if (id == '43609384452318') {
+      let svgPath = '{{ 'New-Project-_13_.svg' | asset_url }}';
+      changeSvg(id, svgPath, 300, 390, 45, -75);
+      engine.world.bodies[0].isStatic = true;
+      engine.world.bodies[0].render.sprite.xScale = '0.28';
+      engine.world.bodies[0].render.sprite.yScale = '0.28';
+      engine.world.bodies[0].render.sprite.texture = '{{ 'LC2132-Y-V1_3000x.png' | asset_url }}';
+    }
+
+    if (id == '43609384648926') {
+      let svgPath = '{{ 'newrectanle_svg_1114.svg' | asset_url }}';
+      changeSvg(id, svgPath, 330, 390, 47, -65);
+      engine.world.bodies[0].isStatic = true;
+      engine.world.bodies[0].render.sprite.xScale = '0.28';
+      engine.world.bodies[0].render.sprite.yScale = '0.28';
+      engine.world.bodies[0].render.sprite.texture = '{{ 'LC2133-Y-V1_3000x.png' | asset_url }}';
+    }
+  }
+
+  function deleteSvg() {
+    let data = engine.world.bodies;
+    data.map(function (val, index) {
+      if (val.spec === 'svg') {
+        Matter.Composite.remove(engine.world, val);
+      }
+    });
+  }
+
+  function charmsState() {
+    let data = engine.world.bodies;
+    data.map(function (val, index) {
+      if (val.render.sprite.productId) {
+        Matter.Composite.remove(engine.world, val);
+      }
+    });
+    setTimeout(function () {
+      data.map(function (val, index) {
+        if (val.render.sprite.productId) {
+          Matter.Composite.remove(engine.world, val);
+        }
+      });
+    }, 1000);
+    setTimeout(function () {
+      data.map(function (val, index) {
+        if (val.render.sprite.productId) {
+          Matter.Composite.remove(engine.world, val);
+        }
+      });
+    }, 1000);
+    return true;
+  }
+
+  function changeCharmsState() {
+    const charmsArray = JSON.parse(localStorage.getItem('charmsID'));
+    for (let i = 0; i < charmsArray.length; i++) {
+      let tagElement = document.getElementById(charmsArray[i]);
+      imageScaling(charmsArray[i]);
+      let imageSrc = tagElement.getAttribute('src');
+      var productData = Charms.find(x => x.id === Number(charmsArray[i]));
+      var charmImage = Bodies.circle(300, 400, 13, {
+        spec: 'product',
+        render: {
+          sprite: {
+            texture: productData.image_src,
+            productId: charmsArray[i],
+            xScale: charmScaleX,
+            yScale: charmScaleY,
+          },
+        },
+        restitution: 0.9,
+        frictionAir: 0.05,
+      });
+      World.add(engine.world, charmImage);
+    }
+  }
+
+  function changeSvg(id, svgPath, x, y, length, yaxis) {
+    deleteSvg();
+    loadSvg(svgPath)
+      .then(function (root) {
+        var paths = select(root, 'path');
+        var vertexSets = paths.map(function (path) {
+          return Matter.Svg.pathToVertices(path, 10);
+        });
+        var terrain = Matter.Bodies.fromVertices(x, y, vertexSets, {
+          spec: 'svg',
+          collisionFilter: { category: 0x0002 },
+          render: {
+            fillStyle: 'transparent',
+            // lineWidth: 2,
+            isStatic: true,
+          },
+        });
+        var constraint = Matter.Constraint.create({
+          bodyA: stack.bodies[13],
+          pointA: {
+            x: -5,
+            y: 0,
+          },
+          bodyB: terrain,
+          pointB: {
+            x: 0,
+            y: yaxis,
+          },
+          length: length,
+          render: {
+            visible: false,
+          },
+          collisionFilter: {
+            category: 2,
+            group: -1,
+            mask: 0,
+          },
+        });
+
+        Matter.Composite.add(engine.world, [constraint, terrain]);
+      });
+  }
+
+  mouseConstraint.collisionFilter.mask = cat.static | cat.drag;
+
+  function changeState() {
+    return true;
+  }
+
+  function changeState2() {
+    if (mobile == false) {
+      engine.world.bodies[0].isStatic = false;
+    }
+    return true;
+  }
+
+  function imageScaling(id) {
+    var roman_array = [43609406701790, 43609406374110, 43609406046430, 43609405685982, 43609405391070, 43609405063390, 43609404801246, 43609404571870, 43609404309726, 43609404047582, 43609403654366, 43609403392222];
+    for (let i = 0; i < roman_array.length; i++) {
+      if (roman_array.includes(Number(id))) {
+        charmScaleX = -0.6;
+        charmScaleY = -0.6;
+      } else {
+        charmScaleX = -0.45;
+        charmScaleY = -0.45;
+      }
+    }
+    return true;
+  }
+
+  function changeCharms(productId, varId, imgSrc) {
+
+    imageScaling(varId);
+    let data = engine.world.bodies;
+    data.map(function (val, index) {
+      if (val.render.sprite.productId == varId) {
+        let result = '';
+        if (imgSrc.search('.png') > 0) {
+          result = imgSrc.replace('.png', '_100x.png');
+          //val.render.sprite.texture=result;
+        } else {
+          result = imgSrc.replace('.jpg', '_100x.jpg');
+        }
+        Matter.Composite.remove(engine.world, val);
+        var charmImage = Bodies.circle(300, 400, 13, {
+          render: {
+            sprite: {
+              texture: result,
+              productId: varId,
+              xScale: charmScaleX,
+              yScale: charmScaleY,
+            },
+          },
+          restitution: 0.5,
+        });
+        World.add(engine.world, charmImage);
+        return true;
+      }
+    });
+  }
+
+</script>

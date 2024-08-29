@@ -1,0 +1,108 @@
+{%- liquid
+  assign multi_items = 'off'
+  if section.settings.allow_multiple_items
+    assign multi_items = 'on'
+  endif
+
+  assign open_class = 'accordion__item--is-open'
+-%}
+
+{%- capture styling -%}
+  {%- if section.settings.section_max_width != blank -%}
+    --section-width: {{ section.settings.section_max_width }}px;
+  {%- else -%}
+    --section-width: 100%;
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-faqs.css' | asset_url | stylesheet_tag }}
+
+<div class="faqs container" style="{{ styling }}">
+  <div class="faqs__content flow">
+    <h1 class="faqs__heading">{{ section.settings.heading }}</h1>
+    <p class="faqs__description">{{ section.settings.description }}</p>
+  </div>
+
+  <ul class="faqs__items accordion js-accordion" data-animation="on" data-multi-items="{{ multi_items }}" data-component="accordion">
+    {%- for block in section.blocks -%}
+      {%- assign open_item = false -%}
+      {%- if block.settings.heading != blank and block.settings.description != blank -%}
+        {%- if forloop.first == true and section.settings.open_first_item == true -%}
+          {%- assign open_item = true -%}
+        {%- endif -%}
+        <li class="accordion__item js-accordion__item {% if open_item %}{{ open_class }}{% endif %}">
+          <button class="reset accordion__header js-accordion__trigger js-tab-focus">
+            <span>{{ block.settings.heading }}</span>
+            {%- render 'icon' icon: 'accordion-arrow', class: 'accordion__icon-arrow no-js:is-hidden' -%}
+          </button>
+
+          <div class="accordion__panel js-accordion__panel">
+            <div class="accordion__panel-content">
+              {{ block.settings.description }}
+            </div>
+          </div>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</div>
+
+
+{% schema %}
+{
+  "name": "FAQs",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "description"
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_multiple_items",
+      "default": false,
+      "label": "Allow multiple accordion items to be open"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_item",
+      "default": false,
+      "label": "Open first accordion item"
+    },
+    {
+      "id": "section_max_width",
+      "type": "number",
+      "label": "Max width (in pixels)"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Accordion Item",
+      "type": "accordion",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs"
+    }
+  ]
+}
+{% endschema %}

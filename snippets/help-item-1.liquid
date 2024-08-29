@@ -1,0 +1,11 @@
+{%- if heading != blank -%}
+  <div class="help__header">{{ heading }}</div>
+{%- endif -%}
+
+{%- if paragraph != blank -%}
+  <p>{{ paragraph }}</p>
+{%- endif -%}
+
+{%- if email_visible == true -%}
+  {% render 'subscribe-form' %}
+{%- endif -%}

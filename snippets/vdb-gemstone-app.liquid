@@ -1,0 +1,148 @@
+{% comment %} Don't change this file {% endcomment %}
+
+{% comment %}
+
+{% assign page_type_handle = request.page_type | handle %}
+
+{% if page_type_handle == "product" %}
+
+  <script defer>
+
+    var form_id = 'addToCartForm';
+
+    var btn_id = 'addToCartBtn';
+
+    document.getElementById(btn_id).onclick = function () {
+
+      var current_var_id = '{{ current_variant.id }}';
+
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+          var cartResult = JSON.parse(this.responseText);
+
+          var item_existed = 'No';
+
+          if (cartResult.item_count > 0) {
+
+            for (var i = 0; i < cartResult.items.length; i++) {
+
+              if (cartResult.items[i].vendor == 'VDB' && cartResult.items[i].id == current_var_id) {
+
+                item_existed = 'Yes';
+
+              }
+
+            }
+
+          }
+
+          if (item_existed == 'No') {
+
+            document.getElementById(form_id)
+              .submit();
+
+          } else {
+
+            location.href = '/cart';
+
+          }
+
+        }
+
+      };
+
+      xhttp.open('GET', '/cart.json', true);
+
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+      xhttp.send();
+
+    };
+
+  </script>
+
+{%- elsif page_type_handle == "cart" -%}
+
+  {% assign variant_ids = '' %}
+
+  {%- for item in cart.items -%}
+
+    {%- if item.vendor == "VDB" -%}
+
+      {% assign variant_ids = variant_ids | append: ',' | append: item.variant_id %}
+
+    {%- endif -%}
+
+  {%- endfor -%}
+
+  <script defer>
+
+    var checkoutBtnId = 'checkout_btn';
+
+    document.getElementById(checkoutBtnId).onclick = function () {
+
+      var variant_ids = '{{ variant_ids }}';
+
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+          var obj = JSON.parse(this.responseText);
+
+          if (obj.SUCCESS == 'TRUE') {
+
+            var all_available = 'Yes';
+
+            var err_msg = '';
+
+            for (var i = 0; i < obj.DATA.length; i++) {
+
+              if (obj.DATA[i].available == 'No') {
+
+                all_available = 'No';
+
+                err_msg += 'Product ' + obj.DATA[i].vdb_item_id + ' is out of stock. ';
+
+              }
+
+            }
+
+            if (all_available == 'Yes') {
+
+              location.href = '/checkout';
+
+            } else {
+
+              alert(err_msg);
+
+            }
+
+          } else {
+
+            location.href = '/checkout';
+
+          }
+
+        }
+
+      };
+
+      xhttp.open('POST', '/apps/gemstone-search/gemstone.php', true);
+
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+      xhttp.send('shop=' + Shopify.shop + '&action=check_vdb_product_stock&variant_ids=' + variant_ids);
+
+    };
+
+  </script>
+
+{%- endif -%}
+
+{% endcomment %}

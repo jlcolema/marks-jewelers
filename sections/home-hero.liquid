@@ -1,0 +1,167 @@
+<script src="{{ 'jewlvision.js' | asset_url }}" async></script>
+
+{%- comment -%} Tokens to style block {%- endcomment -%}
+{%- capture styling -%}
+  {%- comment -%} General appearance {%- endcomment -%}
+  {%- if section.settings.background_color != blank -%}
+    --background-color: {{ section.settings.background_color }};
+  {%- endif -%}
+  {%- if section.settings.border_color != blank -%}
+    --border-color: {{ section.settings.border_color | color_modify: 'alpha', section.settings.border_opacity }};
+  {%- endif -%}
+  {%- if section.settings.mobile_top_padding != blank -%}
+    --mobile-top-padding: {% render 'to-rem', n: section.settings.mobile_top_padding %};
+  {%- endif -%}
+  {%- if section.settings.mobile_bottom_padding != blank -%}
+    --mobile-bottom-padding: {% render 'to-rem', n: section.settings.mobile_bottom_padding %};
+  {%- endif -%}
+  {%- if section.settings.desktop_top_padding != blank -%}
+    --desktop-top-padding: {% render 'to-rem', n: section.settings.desktop_top_padding %};
+  {%- endif -%}
+  {%- if section.settings.desktop_bottom_padding != blank -%}
+    --desktop-bottom-padding: {% render 'to-rem', n: section.settings.desktop_bottom_padding %};
+  {%- endif -%}
+  {%- if section.settings.desktop_image_height != blank -%}
+    --desktop-background-image-height: {{ section.settings.desktop_image_height }}px;
+  {%- endif -%}
+  {%- if section.settings.mobile_image_height != blank -%}
+    --mobile-background-image-height: {{ section.settings.mobile_image_height }}px;
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'section-home-hero.css' | asset_url | stylesheet_tag }}
+
+{% capture inline_style %}--image-ratio:{{ section.settings.mobile_image.aspect_ratio }};{% endcapture %}
+{% capture inline_style %}--desk-image-ratio:{{ section.settings.desktop_image.aspect_ratio }};{% endcapture %}
+
+<div class="flexible-hero__content" tabindex="0" style="{{ inline_style }} {{ styling }}" aria-label="Hero Content" title="Hero Content" role="button">
+  {%- if section.settings.banner_link != blank -%}<a href="{{ section.settings.banner_link }}">{%- endif -%}
+    <picture>
+      <source srcset="{{ section.settings.mobile_image | image_url }}" media="(max-width: 767px)">
+      <source srcset="{{ section.settings.desktop_image | image_url }}" media="(min-width: 768px)">
+      {% render 'img', img: section.settings.desktop_image, alt: '', class: 'flexible-hero__image' %}
+    </picture>
+    {%- if section.settings.banner_link != blank -%}</a>{%- endif -%}
+</div>
+
+{% render 'start-design-modal' %}
+
+{% schema %}
+{
+  "name": "Flexible Hero",
+  "tag": "section",
+  "class": "flexible-hero",
+  "settings": [
+    {
+      "id": "banner_link",
+      "label": "Does banner link somewhere?",
+      "type": "url"
+    },
+    {
+      "id": "background_color",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "id": "desktop_image",
+      "type": "image_picker",
+      "label": "Desktop image"
+    },
+    {
+      "id": "desktop_image_height",
+      "type": "text",
+      "label": "Desktop image custom height",
+      "info": "px"
+    },
+    {
+      "id": "mobile_image",
+      "type": "image_picker",
+      "label": "Mobile image"
+    },
+    {
+      "id": "mobile_image_height",
+      "type": "text",
+      "label": "Mobile image custom height",
+      "info": "px"
+    },
+    {
+      "id": "desktop_position",
+      "type": "select",
+      "label": "Desktop content position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "id": "desktop_top_padding",
+      "type": "text",
+      "label": "Desktop padding top",
+      "info": "px"
+    },
+    {
+      "id": "desktop_bottom_padding",
+      "type": "text",
+      "label": "Desktop padding bottom",
+      "info": "px"
+    },
+    {
+      "id": "mobile_position",
+      "type": "select",
+      "label": "Mobile content position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "id": "mobile_top_padding",
+      "type": "text",
+      "label": "Mobile padding top",
+      "info": "px"
+    },
+    {
+      "id": "mobile_bottom_padding",
+      "type": "text",
+      "label": "Mobile padding bottom",
+      "info": "px"
+    },
+    {
+      "id": "border_color",
+      "label": "Border color",
+      "type": "color"
+    },
+    {
+      "id": "border_opacity",
+      "label": "Border color opacity",
+      "type": "range",
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.1,
+      "default": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flexible Hero",
+      "category": "Homepage"
+    }
+  ]
+}
+{% endschema %}

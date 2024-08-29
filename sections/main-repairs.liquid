@@ -1,0 +1,52 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-repairs.css' | asset_url | stylesheet_tag }}
+
+<h1 class="repairs__heading is-hidden--desktop">
+  {{ page.title | escape }}
+</h1>
+
+{% if section.settings.hero_img %}
+{{ 'section-content-image-block.css' | asset_url | stylesheet_tag }}
+<div class="container section__image--content repairs__hero">
+  <div class="content__img--container repairs__img--container">
+    {% render 'img',
+      img: section.settings.hero_img,
+      width: section.settings.hero_img.width,
+      height: section.settings.hero_img.height,
+      crop: 'top',
+      loading: 'eager',
+      alt: section.settings.hero_img
+    %}
+  </div>
+</div>
+{% endif %}
+
+<div class="page container page__repairs">
+  <div class="repairs__content">
+    {{ page.content }}
+  </div>
+  <div class="repairs__form">
+    <div class="pxFormGenerator" id="{{ section.settings.form_id }}"></div>
+  </div>
+</div>
+
+<script src="{{ 'repairs.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Repairs Page",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "hero_img",
+      "type": "image_picker",
+      "label": "Hero Banner Image"
+    },
+    {
+      "id": "form_id",
+      "type": "text",
+      "label": "Form ID"
+    }
+  ]
+}
+{% endschema %}

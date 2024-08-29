@@ -1,0 +1,53 @@
+<div class="article container">
+  <div class="article-promo" style="background:{{ section.settings.bg_color }};">
+      <div class="article-promo-heading">
+        {%- if section.settings.section_header != blank -%}
+          <h2 class="section__text-half-image-half-heading">{{ section.settings.section_header }}</h2>
+        {%- endif -%}
+      </div>
+      <div class="article-promo-text">
+        {%- if section.settings.section_paragraph != blank -%}
+          <p> {{ section.settings.section_paragraph }} </p>
+        {%- endif -%}
+      </div>
+      <div class="article-promo-button">
+        {% if section.settings.section_cta_text != blank and section.settings.section_cta_url != blank %}
+          <a class="text-half-image-half__cta btn btn--primary" href="{{ section.settings.section_cta_url }}" role="button">{{ section.settings.section_cta_text }}</a>
+        {% endif %}
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Article Promo",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background color"
+    },
+    {
+      "id": "section_header",
+      "type": "text",
+      "label": "Section Header"
+    },
+    {
+      "id": "section_paragraph",
+      "type": "richtext",
+      "label": "Section Paragraph"
+    },
+    {
+      "id": "section_cta_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "section_cta_url",
+      "type": "url",
+      "label": "Button URL"
+    }
+  ]
+}
+{% endschema %}

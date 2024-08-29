@@ -1,0 +1,541 @@
+{% if product.type == 'Dynamic Product' %}
+  <p style="text-align: center;color: red;font-size: 20px;padding-top: 15px;">You cannot purchase this product.</p>
+  <script defer>
+    setTimeout(function () {
+      location.href = "{{ shop.url }}/products/personalized-skinny-charm-bangle-™";
+    }, 3000);
+  </script>
+{% else %}
+
+  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
+  {% render 'product-gallery-modal', product: product %}
+
+  {% render 'add-to-cart-modal', product: product %}
+
+  {% render 'product-sticky-form', product: product %}
+  <div class="product-page container"
+       {% if product.metafields.custom.dynamic_product == true %}id="dynamic-custom-product"{% endif %}>
+    <div class="product-page__top">
+      <div class="product-page__left-column">
+        <div class="product-page__left-column-inner flex flex-column">
+          <!-- code added by dinesh for personalized product -->
+          {% if product.metafields.custom.dynamic_product == true %}
+            <div id="custom_personalization"></div>
+          {% endif %}
+          <!-- End of code added by dinesh for personalized product -->
+          <div class="product-page__medias">
+            {% render 'product-media', product: product %}
+          </div>
+          <div class="product-hide-mobile">{% render 'product-accordion', product: product %}</div>
+        </div>
+      </div>
+      <div class="product-page__right-column">
+        <div class="product-page__right-column-inner flex flex-column gap-xs padding-sm">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'title' %}
+                <div class="product-page__title">
+                  <h1>
+                    {%- if block.settings.show_vendor -%}
+                      {%- if product.tags contains 'ReMARKable Product' -%}
+                        <span>ReMARKable Designs </span>
+                      {%- elsif product.tags contains 'Forevermark Product' -%}
+                        <span>De Beers </span>
+                      {%- elsif product.type contains 'Luxury Handbags' -%}
+                        {{ product.metafields.itemDetails['Designer'] }}
+                      {%- else -%}
+                        <span>{{ product.vendor }} </span>
+                      {%- endif -%}
+                    {%- endif -%}
+                    {{ product.title }}
+                  </h1>
+                </div>
+              {% when 'share' %}
+                <div class="product-page__share hidden">
+                  [Share Buttons]
+                </div>
+              {% when 'price' %}
+                <!-- code added by dinesh for personalized product -->
+                <span id="bangle_price"></span>
+                <!-- End of code added by dinesh for personalized product -->
+                {%- unless product.type == 'Gift Cards' -%}
+                  <div class="product-page__price">
+                    <span class="current-price">
+                    {{ product.price | money }}
+                    </span>
+                    {%- if product.compare_at_price > product.price -%}
+                      <span class="original-price">
+                      {{ product.compare_at_price | money }}
+                    </span>
+                    {%- endif -%}
+                  </div>
+                {%- endunless -%}
+                {% if product.available %}
+                  <div id="bread-checkout-btn-product" style="width:350px; margin-bottom: 20px;"></div>
+                {% endif %}
+              {% when 'variant_picker' %}
+                <form id="addToCartForm" action="/cart/add" method="post" enctype="multipart/form-data">
+                {% if product.has_only_default_variant %}
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                  <!-- code added by dinesh for personalized product -->
+                  {% if product.metafields.custom.dynamic_product == true %}
+                    <div id="right_product"></div>
+                  {% endif %}
+                  <!-- End of code added by dinesh for personalized product -->
+                  {%- for variant in product.variants -%}
+                    <div class="product-page__single-variant" data-value="{{ variant.id }}"></div>
+                    <!-- {{ product.tags | join: ", " }} -->
+                    {%- if block.settings.show_guide and product.tags contains 'Product Type:Ring' -%}
+                      <div class="size-guide">
+                        <span><a href="#" data-target="sizing-modal" data-toggle="modal"
+                                 data-modal="true">Size Guide</a></span>
+                      </div>
+                      {% render 'product-sizing-modal' %}
+                    {% endif %}
+                  {%- endfor -%}
+                {% else %}
+                  <div class="product-page__variants">
+                    <div class="product-options-title">
+                      {% for product_option in product.options_with_values %}
+                        <label class="option__label" for="Variants-{{ section.id }}">
+                          {{ product_option.name }}
+                        </label>
+                      {% endfor %}
+                      {%- if block.settings.show_guide and product.tags contains 'Product Type:Ring' -%}
+                        <div class="size-guide">
+                        <span><a href="#" data-target="sizing-modal" data-toggle="modal"
+                                 data-modal="true">Size Guide</a></span>
+                        </div>
+                        {% render 'product-sizing-modal' %}
+                      {%- endif -%}
+                    </div>
+                    <select name="id" class="product-options">
+                      {%- for variant in product.variants -%}
+                        {% if variant.available %}
+                          <option selected="selected" value="{{ variant.id }}">{{ variant.title }}</option>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </select>
+                  </div>
+                {% endif %}
+              {% when 'free_shipping' %}
+                <div class="product-page__free-ship">
+                  <strong>FREE SHIPPING: </strong><span>Item will be shipped before or on <span
+                      id="populate-ship-date"></span>. Ready for pickup in 2 hours if ordered before 4PM.</span>
+                </div>
+                <div class="divider"></div>
+              {% when 'quantity_selector' %}
+                <div class="product-page__quantity">
+                  {%- unless product.vendor == 'LAGOS' -%}
+                    <label class="quant__label" for="Quantity-{{ section.id }}">
+                      {{ 'products.product.quantity.label' | t }}:
+                    </label>
+                    <quantity-input class="quantity">
+                      <input class="quantity__input"
+                             type="number"
+                             name="quantity"
+                             id="Quantity-{{ section.id }}"
+                             min="1"
+                             value="1"
+                             form="product-form-{{ section.id }}"
+                      >
+                    </quantity-input>
+                  {%- endunless -%}
+                  <div class="stock">
+                    {%- if product.available -%}
+                      <span class="check">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                           stroke="#37B034" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline
+                          points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                      <span class="in-stock">In Stock</span>
+                    {%- else -%}
+                      <span class="out-stock">Out of Stock</span>
+                    {%- endif -%}
+                  </div>
+                  <div class="product-page__instore-viewing">
+                    <svg class="icon icon--logomark logomark" viewBox="0 0 168.37 176.69" aria-hidden="true"
+                         focusable="false">
+                      <path
+                        d="M160.43,73.54V44.31l-5.65-3.26L153,30.87l-43.52-16L84.19.31,78.55,3.56,68.83,0,33.27,29.69,7.94,44.31v6.53L0,57.47l7.94,45.68v29.16l5.64,3.25,1.78,10.26L59.23,161.9l25,14.41,5.56-3.21,9.79,3.59,35.82-29.92,25.07-14.46v-6.46l7.94-6.63ZM7.94,88.49l-5.22-30,5.22-4.36ZM69.33,2.86,75.72,5.2,46,22.37ZM17.58,144l-1.17-6.77,30.11,17.38ZM99,173.83l-6.45-2.37,30.09-17.37Zm32.28-43.52H117.11v-69h-.48l-34.53,69H79.2L44.25,61.8h-1v68.51h-6.2V46.07H51.5l32.78,64.65h.66l32.17-64.65h14.21ZM122.2,22.24l28.59,10.49L152,39.41Zm38.23,66,5.22,30-5.22,4.36Z"></path>
+                    </svg>
+                    <span>Available for free viewing in-store</span>
+                  </div>
+                </div>
+
+              {% when 'no_contact_pickup' %}
+                <div class="product-page__pickup">
+                  {% if product.vendor == 'LAGOS' %}
+                    <span class="blip-body">Why LAGOS must be purchased in-store.</span>
+                    <span class="tool-tip-trigger lagos">i
+                    <span class="ti-tool-tip lagos"><p>Due to manufacturer restrictions, we are unable to sell this item online. To place an order please call or text us at 215-362-7132.</p></span>
+                  </span>
+                  {%- else -%}
+                    {%- if block.settings.show_blip -%}
+                      <span class="blip">{{ block.settings.blip }}</span>
+                    {%- endif -%}
+                    <span class="blip-body">{{ block.settings.text_body }}</span>
+                    <span class="tool-tip-trigger">i
+                    <span
+                      class="ti-tool-tip"><strong>{{ block.settings.hover_head }}</strong><p>{{ block.settings.hover_body }}</p></span>
+                  </span>
+                  {%- endif -%}
+                </div>
+              {% when 'buy_buttons' %}
+                {% if product.vendor == 'LAGOS' %}
+                  <a href="/pages/contact" class="btn btn--primary">Schedule Appointment</a>
+                {%- else -%}
+                  <div class="product-page__cart-button">
+                    {%- if product.available -%}
+                      <button id="addToCartBtn" type="submit" class="btn-add-cart" data-target="add-to-cart-modal"
+                              data-toggle="modal" data-modal="true">
+                        Add to Cart
+                      </button>
+                    {%- else -%}
+                      Sold Out
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+                </form>
+
+
+              {% when 'learn_more' %}
+                <div class="product-page__video-learn">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="video"
+                       class="svg-inline--fa fa-video fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 576 512" color="#000000" style="margin-right: 6px;">
+                    <path fill="currentColor"
+                          d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"></path>
+                  </svg>
+                  <p>
+                    {{ block.settings.learn_more_header }}
+                    <span>{{ block.settings.learn_more_copy }}</span>
+                    <span class="learn-more-click">Learn More</span>
+                  </p>
+
+                </div>
+
+                <div class="ghost-ctc" data-ghost-widget="637f995191cd63c4ba9e9ae1" style="display: none;"></div>
+                <a href="https://calendly.com/marks-jewelers" target="_blank" style="max-height:40px;max-width:275px;">
+                  <div class="ghost-ctc" style="max-height:40px;max-width:275px;">
+                    <div width="inherit" height="100%" class="Box-sc-pa2njf-0 Flex-sc-x8ddj1-0 iLeQqA kCliBy"
+                         style="pointer-events: none;max-height:40px;max-width:275px;">
+                      <div width="inherit" height="100%" class="Box-sc-pa2njf-0 Flex-sc-x8ddj1-0 eDvbUW kCliBy"
+                           style="cursor: pointer; pointer-events: all;max-height:40px;max-width:275px;display:flex;align-items: center;justify-content: center;">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="video"
+                             class="svg-inline--fa fa-video fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 576 512" color="#FFFFFFFF" style="margin-right: 6px;max-height:20px;">
+                          <path fill="currentColor"
+                                d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"></path>
+                        </svg>
+                        <div color="#FFFFFFFF" class="Box-sc-pa2njf-0 bIDzoz">Speak With An Expert</div>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle"
+                             class="svg-inline--fa fa-circle fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 512 512" color="#FFFFFFFF" style="font-size: 3px; margin-left: 2px;">
+                          <path fill="currentColor"
+                                d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              {% when 'wish_drop' %}
+                <div class="product-page__wish-drop">
+                <span class="heart" style="display: none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill='#000000'><path
+                        d="M18,4c-4-1-6,3-6,3s-2-4-6-3s-4,6-2,8l8,8l8-8C22,10,22,5,18,4z"></path></g></svg>
+                  {{ block.settings.wish_txt }}
+                </span>
+                  <span class="email" data-target="hint-modal" data-toggle="modal" data-modal="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill='#000000'><path
+                        d="M1 5v14l7-7-7-7zm22 14V5l-7 7 7 7zm-11-3l-3.5-3.5L1 20h22l-7.5-7.5L12 16zM1 4l11 11L23 4H1z"></path></g></svg>
+                  {{ block.settings.hint_txt }}
+                </span>
+                  <span class="phone">
+                  <div class="product-show-mobile">Need Assistance?</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill='#000000'><path
+                        d="M15 17c-2 0-8-6-8-8 0-1 2-2 2-3S6 0 5 0 0 3 0 4c0 8 12 20 20 20 1 0 4-4 4-5s-5-4-6-4-2 2-3 2z"></path></g></svg>
+                  <a href="tel:{{ block.settings.call_url }}">{{ block.settings.call_txt }}</a>
+                </span>
+                </div>
+              {% when 'financing_options' %}
+                {% render 'product-financing',
+                  fin_head: block.settings.finance_head,
+                  fin_txt: block.settings.finance_txt,
+                  fin_12: block.settings.finance_12,
+                  fin_36: block.settings.finance_36,
+                  fin_60: block.settings.finance_60,
+                  fin_cta: block.settings.finance_cta %}
+              {% else %}
+            {% endcase %}
+          {% endfor %}
+          <div class="product-show-mobile">{% render 'product-accordion', product: product %}</div>
+        </div>
+      </div>
+    </div>
+    <div class="product-page__bottom"></div>
+  </div>
+
+  {% render 'marks-promise' %}
+  {% render 'value-prop-banner-pdp' %}
+
+  {% render 'hint-modal' %}
+
+  {% render 'recently-viewed-prod-data' %}
+{% endif %}
+<script src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script>
+
+<script async>
+  const vendorType = `{{ product.vendor }}`;
+  const productType = `{{ product.type }}`;
+  const productID = `{{ product.id }}`;
+  const shopDomain = `{{ shop.permanent_domain }}`;
+  const dynamicProduct = `{{ product.metafields.custom.dynamic_product }}`;
+</script>
+
+<script defer>
+  function getTwoDaysLater() {
+    let today = new Date();
+    let twoDaysLater = new Date(today.setDate(today.getDate() + 2));
+
+    // Check if Saturday or Sunday
+    if (twoDaysLater.getDay() === 6) {
+      twoDaysLater.setDate(twoDaysLater.getDate() + 2);
+    } else if (twoDaysLater.getDay() === 0) {
+      twoDaysLater.setDate(twoDaysLater.getDate() + 1);
+    }
+
+    let monthNames = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December',
+    ];
+
+    let month = monthNames[twoDaysLater.getMonth()];
+    let day = twoDaysLater.getDate();
+    let suffix;
+
+    if (day % 10 === 1 && day !== 11) {
+      suffix = 'st';
+    } else if (day % 10 === 2 && day !== 12) {
+      suffix = 'nd';
+    } else if (day % 10 === 3 && day !== 13) {
+      suffix = 'rd';
+    } else {
+      suffix = 'th';
+    }
+
+    return `${month} ${day}${suffix}`;
+  }
+
+  document.querySelector('#populate-ship-date').textContent = getTwoDaysLater();
+</script>
+
+<script src="{{ 'product.js' | asset_url }}" defer></script>
+
+
+{% schema %}
+{
+"name": "Product Information",
+"tag": "section",
+"blocks": [
+{
+"type": "title",
+"name": "Product Title",
+"limit": 1,
+"settings": [
+{
+"type": "checkbox",
+"id": "show_vendor",
+"label": "Display Vendor Name?",
+"info": "Check box to display product vendor"
+}
+]
+},
+{
+"type": "share",
+"name": "Product Share",
+"limit": 1
+},
+{
+"type": "price",
+"name": "Price",
+"limit": 1
+},
+{
+"type": "variant_picker",
+"name": "Variants",
+"limit": 1,
+"settings": [
+{
+"type": "checkbox",
+"id": "show_guide",
+"label": "Display Sizing Guide?",
+"info": "Check box to show sizing guide"
+}
+]
+},
+{
+"type": "free_shipping",
+"name": "Free Shipping",
+"limit": 1,
+"settings": [
+{
+"type": "text",
+"id": "text",
+"label": "Free Shipping Message"
+}
+]
+},
+{
+"type": "quantity_selector",
+"name": "Quantity",
+"limit": 1
+},
+{
+"type": "no_contact_pickup",
+"name": "No Contact Pickup",
+"limit": 1,
+"settings": [
+{
+"type": "checkbox",
+"id": "show_blip",
+"label": "Display Flag?",
+"info": "Check box to show Flag"
+},
+{
+"type": "text",
+"id": "blip",
+"label": "Blip Text"
+},
+{
+"type": "text",
+"id": "text_body",
+"label": "Flag Message"
+},
+{
+"type": "text",
+"id": "hover_head",
+"label": "Hover Heading"
+},
+{
+"type": "richtext",
+"id": "hover_body",
+"label": "Hover Body"
+}
+]
+},
+{
+"type": "buy_buttons",
+"name": "Buy Buttons",
+"limit": 1,
+"settings": [
+{
+"type": "checkbox",
+"id": "show_dynamic_checkout",
+"label": "Show dynamic checkout buttons",
+"info": "Using the payment methods available on your store, customers see their preferred option, like PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+}
+]
+},
+{
+"type": "in_store_view",
+"name": "In Store Viewing",
+"limit": 1,
+"settings": [
+{
+"type": "text",
+"id": "text",
+"label": "In Store Viewing Text"
+}
+]
+},
+{
+"type": "learn_more",
+"name": "Learn More",
+"limit": 1,
+"settings": [
+{
+"type": "text",
+"id": "learn_more_header",
+"label": "Learn More Header"
+},
+{
+"type": "text",
+"id": "learn_more_copy",
+"label": "Learn More Text"
+}
+]
+},
+{
+"type": "wish_drop",
+"name": "Wish / Drop / Call",
+"limit": 1,
+"settings": [
+{
+"type": "text",
+"id": "wish_txt",
+"label": "Wishlist Text"
+},
+{
+"type": "text",
+"id": "hint_txt",
+"label": "Hint Text"
+},
+{
+"type": "text",
+"id": "call_txt",
+"label": "Phone Text"
+},
+{
+"type": "text",
+"id": "call_url",
+"label": "Phone Url",
+"info": "Phone number with no spaces or special characters"
+}
+]
+},
+{
+"type": "financing_options",
+"name": "Financing Options",
+"limit": 1,
+"settings": [
+{
+"type": "text",
+"id": "finance_head",
+"label": "Financing Options Heading"
+},
+{
+"type": "text",
+"id": "finance_txt",
+"label": "Financing Options Body Text"
+},
+{
+"type": "text",
+"id": "finance_12",
+"label": "12-month Financing Option Text"
+},
+{
+"type": "text",
+"id": "finance_36",
+"label": "36-month Financing Option Text"
+},
+{
+"type": "text",
+"id": "finance_60",
+"label": "60-month Financing Option Text"
+},
+{
+"type": "text",
+"id": "finance_cta",
+"label": "Financing CTA"
+}
+]
+}
+],
+"settings": [
+
+]
+}
+{% endschema %}

@@ -1,0 +1,26 @@
+.section-content.section__content--get-started {
+  padding: var(--space-lg);
+  background-image: var(--background-image);
+  background-size: cover;
+
+  .container {
+    max-width: var(--container-max-width);
+    background: rgba(0,0,0,0.6);
+    border: 2px solid #fff;
+    padding: var(--space-md);
+
+    p {
+      margin-bottom: var(--space-md);
+    }
+  }
+  .btn {
+    border-color: var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-black);
+
+    &:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+  }
+}

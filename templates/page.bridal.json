@@ -1,0 +1,363 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "165024735600e1910e": {
+      "type": "bridal-hero",
+      "blocks": {
+        "41d8e2a5-661e-4c62-81fa-2fe90ceefeda": {
+          "type": "collection",
+          "settings": {
+            "block_paragraph": "<p>Things are no longer just casual. There is something undeniably special and you can't get her off your mind. Show her she's special.<\/p>",
+            "bridal_img": "shopify:\/\/shop_images\/bridal.jpg",
+            "block_cta_text": "Shop Promise Gifts",
+            "block_cta_url": "shopify:\/\/collections\/rings"
+          }
+        },
+        "43e59cf9-1dc6-4ea8-b767-e4c7fd728da1": {
+          "type": "collection",
+          "settings": {
+            "block_paragraph": "<p>No one else even comes close in comparison, she is the one - the only one. All you have to do is ask.<\/p>",
+            "bridal_img": "shopify:\/\/shop_images\/engagement.jpg",
+            "block_cta_text": "Shop Engagement Rings",
+            "block_cta_url": "shopify:\/\/collections\/engagement-rings"
+          }
+        },
+        "6aeb62dd-9cba-48bd-81b3-4aeda41bd49f": {
+          "type": "collection",
+          "settings": {
+            "block_paragraph": "<p>With no beginning and no end, your rings connect you in ways that can be understood only by those truly in love. Make it official.<\/p>",
+            "bridal_img": "shopify:\/\/shop_images\/wedding.jpg",
+            "block_cta_text": "Shop Wedding Bands",
+            "block_cta_url": "shopify:\/\/collections\/wedding-rings"
+          }
+        },
+        "8e1a9bae-29d9-40bc-ba59-fe7a3343b6c8": {
+          "type": "collection",
+          "settings": {
+            "block_paragraph": "<p>Remind her of the time already spent together and cherish the time to come. Because you love her still.<\/p>",
+            "bridal_img": "shopify:\/\/shop_images\/anniversarry.jpg",
+            "block_cta_text": "Shop Anniversary Gifts",
+            "block_cta_url": "shopify:\/\/pages\/shop-by-occassion"
+          }
+        }
+      },
+      "block_order": [
+        "41d8e2a5-661e-4c62-81fa-2fe90ceefeda",
+        "43e59cf9-1dc6-4ea8-b767-e4c7fd728da1",
+        "6aeb62dd-9cba-48bd-81b3-4aeda41bd49f",
+        "8e1a9bae-29d9-40bc-ba59-fe7a3343b6c8"
+      ],
+      "settings": {
+        "bg_color": "#a07282",
+        "text_color": "#ffffff",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "30",
+        "section_inner_spacing_bottom": "30",
+        "section_header": "LIFE LOVE STAGES",
+        "section_paragraph": "What greater feeling is there, than to share your journey in life with a partner you love? It's pretty magical, if you ask us."
+      }
+    },
+    "1650228732749f8804": {
+      "type": "content-form-block",
+      "settings": {
+        "form_list_id": "J4pM8z",
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "#a07282",
+        "text_color": "#ffffff",
+        "section_header": "",
+        "section_sub_header": "",
+        "section_paragraph": "",
+        "section_spacing_top": "Whether you're interested in a custom design or are just looking for some extra assistance to find the perfect piece, we're here to help.",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "10",
+        "section_inner_spacing_bottom": "35",
+        "section_content_text_align": "center",
+        "section_max_width": 650
+      }
+    },
+    "1650234910c4727240": {
+      "type": "content-copy-block-background",
+      "settings": {
+        "marks_logo": false,
+        "heading_color": "",
+        "heading_desktop_size": 40,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "bg_image": "shopify:\/\/shop_images\/awesome_bg_4335ca82-e4d8-4a15-b1b3-4df65edbc586.jpg",
+        "bg_tablet_position": "",
+        "mobile_image": "shopify:\/\/shop_images\/thats_awesome_bg.jpg",
+        "bg_image_alignment": "center center",
+        "content_alignment": "center",
+        "text_color": "",
+        "section_header": "<p>Here you are.<\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>You said you’d never do it, and hey, maybe you<br\/>didn’t even see this coming - but it’s happening.<br\/>It’s time to ask the big question.<\/p>",
+        "inline_image_alignment": "center",
+        "section_cta_header": "<p>THAT'S <strong>AWESOME<\/strong><\/p>",
+        "section_cta_sub_header": "",
+        "section_cta_paragraph": "<p>This is a great place to begin.<\/p>",
+        "section_cta_text": "Start with your Setting",
+        "section_cta_url": "shopify:\/\/collections\/engagement-rings",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "Start with your Diamond",
+        "section_cta_url_two": "shopify:\/\/pages\/diamonds",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "40",
+        "section_inner_spacing_bottom": "20",
+        "section_content_text_align": "center",
+        "section_max_width": 875
+      }
+    },
+    "1650234917d2115cff": {
+      "type": "content-copy-block-background",
+      "settings": {
+        "marks_logo": true,
+        "heading_color": "",
+        "heading_desktop_size": 38,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "bg_image": "shopify:\/\/shop_images\/seal-deal.jpg",
+        "bg_tablet_position": "-200",
+        "mobile_image": "shopify:\/\/shop_images\/seal_ring_b_3cf5a571-abfd-4aa0-bbed-94595fda818d.jpg",
+        "bg_image_alignment": "left center",
+        "content_alignment": "center",
+        "text_color": "",
+        "section_header": "<p>SEAL <strong>THE DEAL<\/strong><\/p>",
+        "section_sub_header": "<p>You’ve got this.<\/p>",
+        "section_paragraph": "",
+        "inline_image": "shopify:\/\/shop_images\/seal_ring_b_3cf5a571-abfd-4aa0-bbed-94595fda818d.png",
+        "inline_image_alignment": "right center",
+        "section_cta_header": "",
+        "section_cta_sub_header": "",
+        "section_cta_paragraph": "",
+        "section_cta_text": "Shop Pre-Set Rings",
+        "section_cta_url": "shopify:\/\/pages\/marks-diamonds",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "130",
+        "section_inner_spacing_bottom": "190",
+        "section_content_text_align": "center"
+      }
+    },
+    "165024535791e8876d": {
+      "type": "diamond-shop-section",
+      "blocks": {
+        "d515e45f-3a88-402f-ac9c-cdfcee04d7b6": {
+          "type": "collection",
+          "settings": {
+            "block_header": "",
+            "block_sub_header": "",
+            "block_paragraph": "<p>Beautiful, rare and responsibly sourced, each De Beers Forevermark® diamond carries a promise of its own, making it a powerful symbol of your most meaningful promises.<\/p>",
+            "section_diamond_img": "shopify:\/\/shop_images\/forevermark.webp",
+            "section_brand_img": "shopify:\/\/shop_images\/DBFM_ADIF_LOGO_CMYK.png",
+            "section_cta_text": "Learn More",
+            "section_cta_url": "shopify:\/\/collections\/forevermark-fine-jewelry"
+          }
+        },
+        "36da3930-9400-42e1-8a25-c3e100022536": {
+          "type": "collection",
+          "settings": {
+            "block_header": "",
+            "block_sub_header": "",
+            "block_paragraph": "<p><strong>​​​​​​​<\/strong>The Most Perfectly Cut Diamond In The World®, Hearts On Fire is a diamond of extraordinary beauty and brilliance, and a diamond that is recognized around the globe for its exclusive cut.<\/p>",
+            "section_diamond_img": "shopify:\/\/shop_images\/Marks-Diamonds-HeartsOnFire-pic.webp",
+            "section_brand_img": "shopify:\/\/shop_images\/HOF-logo.png",
+            "section_cta_text": "Shop Now",
+            "section_cta_url": "shopify:\/\/collections\/hearts-on-fire-fine-jewelry"
+          }
+        }
+      },
+      "block_order": [
+        "d515e45f-3a88-402f-ac9c-cdfcee04d7b6",
+        "36da3930-9400-42e1-8a25-c3e100022536"
+      ],
+      "settings": {
+        "bg_color": "#fafafa",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "30",
+        "section_inner_spacing_bottom": "30"
+      }
+    },
+    "1650235055b836e3fe": {
+      "type": "content-copy-block-background",
+      "settings": {
+        "marks_logo": true,
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "bg_tablet_position": "",
+        "mobile_image": "shopify:\/\/shop_images\/cust_ring.jpg",
+        "bg_image_alignment": "left center",
+        "content_alignment": "flex-end",
+        "text_color": "",
+        "section_header": "<p>CUSTOM<strong> DESIGN<\/strong><\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "<p>CREATING <br\/><strong>ENGAGEMANT RINGS<\/strong><\/p><p>TURNING UP<br\/><strong>PRECIOUS HEIRLOOMS<\/strong><\/p><p>PAIRING<br\/><strong>PERFECT WEDDING BANDS<\/strong><\/p>",
+        "inline_image": "shopify:\/\/shop_images\/cust_ring.jpg",
+        "inline_image_alignment": "left center",
+        "section_cta_header": "",
+        "section_cta_sub_header": "",
+        "section_cta_paragraph": "",
+        "section_cta_text": "Experience JewlVision",
+        "section_cta_url": "shopify:\/\/pages\/jewlvision",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "80",
+        "section_inner_spacing_bottom": "70",
+        "section_content_text_align": "center"
+      }
+    },
+    "16502290432eb9ff93": {
+      "type": "content-copy-block",
+      "settings": {
+        "heading_color": "#ffffff",
+        "heading_desktop_size": 40,
+        "heading_mobile_size": 24,
+        "bg_color": "#000000",
+        "text_color": "",
+        "section_header": "<p>LOVE GROWS HERE<\/p>",
+        "section_sub_header": "",
+        "section_paragraph": "",
+        "section_cta_text": "",
+        "section_cta_url": "",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "20",
+        "section_inner_spacing_bottom": "20",
+        "section_content_text_align": "center"
+      }
+    },
+    "165023763709262f40": {
+      "type": "content-copy-block-background",
+      "settings": {
+        "marks_logo": true,
+        "heading_color": "",
+        "heading_desktop_size": 24,
+        "heading_mobile_size": 24,
+        "bg_color": "",
+        "bg_image": "shopify:\/\/shop_images\/wedding-bands.jpg",
+        "bg_tablet_position": "",
+        "mobile_image": "shopify:\/\/shop_images\/wedding-bands.jpg",
+        "bg_image_alignment": "right center",
+        "content_alignment": "flex-start",
+        "text_color": "",
+        "section_header": "",
+        "section_sub_header": "<p>Well, it’s coming - the big day.<br\/>Check one more thing off your list by getting your wedding bands ready to rock.<\/p>",
+        "section_paragraph": "",
+        "inline_image_alignment": "center",
+        "section_cta_header": "<p>BE <strong>READY<\/strong><\/p>",
+        "section_cta_sub_header": "<p>You’re big day is almost here<\/p>",
+        "section_cta_paragraph": "",
+        "section_cta_text": "Find Your Wedding Bands",
+        "section_cta_url": "shopify:\/\/collections\/wedding-rings",
+        "section_cta_text_color": "",
+        "section_cta_bg_color": "",
+        "section_cta_border_color": "",
+        "section_cta_border_width": 1,
+        "section_cta_text_two": "",
+        "section_cta_url_two": "",
+        "section_cta_text_color_two": "",
+        "section_cta_bg_color_two": "",
+        "section_cta_border_color_two": "",
+        "section_cta_border_width_two": 1,
+        "section_cta_or_text": false,
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "80",
+        "section_inner_spacing_bottom": "100",
+        "section_content_text_align": "center"
+      }
+    },
+    "165022903560675d2b": {
+      "type": "section-marks-promise",
+      "settings": {
+        "pre_header": "",
+        "section_header": "<p>THE MARKS <strong>PROMISE<\/strong><\/p>",
+        "section_sub_header": "<p>No other jeweler in the industry promises what we do.<\/p>",
+        "section_paragraph": "<p>Jewelry is meant to be worn. It becomes a part of you going down all of life’s bumpy paths. We will stand by your bridal jewelry with cleanings, inspections, and even repairs due to normal wear - at no cost to you.<\/p>",
+        "section_cta_text": "Learn More",
+        "section_cta_url": "\/pages\/usp#promise",
+        "bg_color": "rgba(0,0,0,0)",
+        "bg_image": "shopify:\/\/shop_images\/wood-pic.jpg",
+        "section_spacing_top": "60",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": "",
+        "full_width": true
+      }
+    },
+    "1650244525838871f8": {
+      "type": "diamond-shop-section",
+      "settings": {
+        "bg_color": "",
+        "section_spacing_top": "",
+        "section_spacing_bottom": "",
+        "section_inner_spacing_top": "",
+        "section_inner_spacing_bottom": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165024735600e1910e",
+    "1650228732749f8804",
+    "1650234910c4727240",
+    "1650234917d2115cff",
+    "165024535791e8876d",
+    "1650235055b836e3fe",
+    "16502290432eb9ff93",
+    "165023763709262f40",
+    "165022903560675d2b",
+    "1650244525838871f8"
+  ]
+}

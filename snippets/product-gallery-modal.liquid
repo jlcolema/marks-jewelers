@@ -1,0 +1,27 @@
+<div id="media-modal" class="modals">
+  <div class="modal-overlay" data-modal="true" data-dismiss="modal"></div>
+  <div class="modal-window gallery">
+    <span class="close" data-modal="true" data-dismiss="modal">&times;</span>
+    <div class="carousel-container prod-modal">
+      <div class="thumbnail-container">
+        <ul class="next-list">
+          {% for media in product.media %}
+            {%- case media.media_type -%}
+              {%- when 'image' -%}
+                <li><img src="{{ media | image_url: width: 1024 }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ media.preview_image.alt }}" class="image-of-list" loading="lazy"></li>
+              {%- else -%}
+            {%- endcase -%}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="top-container">
+        <span class="arrow arrow-left disabled" style="visibility: hidden;"></span>
+        <div class="main-image-container">
+          {%- assign featured_image = product.featured_image -%}
+          <img src="{{ featured_image | image_url: width: 1024 }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ featured_image.alt | escape }}" class="current-image" loading="lazy">
+        </div>
+        <span class="arrow arrow-right" style="visibility: hidden;"></span>
+      </div>
+    </div>
+  </div>
+</div>

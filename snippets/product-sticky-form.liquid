@@ -1,0 +1,36 @@
+<div class="product-sticky-form" {% if product.title contains "PERSONALIZED SKINNY CHARM BANGLE" %}style="display: none;"{% endif %}>
+  <form action="/cart/add" method="post" enctype="multipart/form-data">
+    {%- assign featured_image = product.featured_image -%}
+    <div class="sticky-img"><img src="{{ featured_image | image_url: width: 1024 }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ featured_image.alt | escape }}" class="current-image" loading="lazy"></div>
+    <div class="sticky-title">{{ product.title }}</div>
+    <div class="sticky-right">
+      <div class="sticky-price">{{ product.price | money }}</div>
+      <div class="sticky-divide"></div>
+      <div class="sticky-qty">
+        <label class="quant__label" for="Quantity-{{ section.id }}">
+          {{ 'products.product.quantity.label' | t }}:
+        </label>
+        <quantity-input class="quantity">
+          <input class="quantity__input"
+              type="number"
+              name="quantity"
+              id="Quantity-{{ section.id }}-sticky"
+              min="1"
+              value="1"
+              form="product-form-{{ section.id }}"
+          >
+        </quantity-input>
+      </div>
+      <div class="sticky-divide"></div>
+      <div class="sticky-add-cart">
+        {%- if product.available -%}
+          <button type="submit" class="btn btn-add-cart" data-target="add-to-cart-modal" data-toggle="modal" data-modal="true">
+            Add to Cart
+          </button>
+        {%- else -%}
+          Sold Out
+        {%- endif -%}
+      </div>
+    </div>
+  </form>
+</div>
